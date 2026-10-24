@@ -1,0 +1,100 @@
+{
+ "titulo": "El Alfoz de Burgos — Dos fuegos. Una casa.",
+ "formato": "vertical",
+ "fuentes": [
+  "Cormorant Garamond:400,500,600,400i,500i",
+  "Jost:300,400,500"
+ ],
+ "musica": {
+  "archivo": "musica/musica-sfx.mp3",
+  "volumen": 0.95,
+  "fundido": 0.8
+ },
+ "planos": [
+  {
+   "id": "fuego",
+   "medio": "anuncio/planos/01_fuego.mp4",
+   "compases": 1,
+   "desde": 1.8
+  },
+  {
+   "id": "pala",
+   "medio": "anuncio/planos/02_pala.mp4",
+   "compases": 1,
+   "desde": 1.6
+  },
+  {
+   "id": "lechazo",
+   "medio": "anuncio/planos/03_lechazo.mp4",
+   "compases": 1,
+   "desde": 2.45
+  },
+  {
+   "id": "asador",
+   "medio": "anuncio/planos/04_asador.mp4",
+   "compases": 1,
+   "desde": 1.4,
+   "antes": 0.35
+  },
+  {
+   "id": "morcilla",
+   "medio": "anuncio/planos/05_morcilla.mp4",
+   "pulsos": 2,
+   "desde": 0.6
+  },
+  {
+   "id": "camara",
+   "medio": "anuncio/planos/06_camara.mp4",
+   "compases": 1,
+   "desde": 1.8
+  },
+  {
+   "id": "parrilla",
+   "medio": "anuncio/planos/07_parrilla.mp4",
+   "compases": 1.5,
+   "desde": 1.2
+  },
+  {
+   "id": "corte",
+   "medio": "anuncio/planos/08_corte.mp4",
+   "compases": 1,
+   "desde": 1.5
+  },
+  {
+   "id": "galeria",
+   "medio": "anuncio/planos/09_galeria.mp4",
+   "compases": 1,
+   "desde": 1.2,
+   "antes": 0.35
+  },
+  {
+   "id": "vino",
+   "medio": "anuncio/planos/10_vino.mp4",
+   "pulsos": 2,
+   "desde": 0.5
+  },
+  {
+   "id": "chuletillas",
+   "medio": "anuncio/planos/11_chuletillas.mp4",
+   "pulsos": 2,
+   "desde": 2.0
+  },
+  {
+   "id": "cierre",
+   "medio": "anuncio/planos/12_mesa.mp4",
+   "compases": 2,
+   "extra": 1.2,
+   "desde": 0.0,
+   "ritmo": 0.78,
+   "antes": 0.35
+  }
+ ],
+ "diseno": "anuncio/diseno",
+ "salida": "el-alfoz-anuncio.mp4",
+ "revisar": [
+  1.6,
+  8.6,
+  20.8,
+  28.5
+ ]
+}

@@ -6,3 +6,9 @@ negocios/*/web/espacios/
 negocios/*/web/pdf/
 negocios/*/web/cartas/*.pdf
 negocios/*/musica/candidatas/
+# Producción: clips e imágenes generadas (se vuelven a bajar con anuncio/jobs.json → urls_descarga)
+# y la carpeta de render de HyperFrames
+negocios/*/anuncio*/planos/*.mp4
+negocios/*/anuncio*/fotogramas/*.png
+negocios/*/anuncio*/video-anuncio/
+negocios/*/web/albumes/
