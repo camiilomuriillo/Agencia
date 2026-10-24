@@ -1,0 +1,8 @@
+# Material descargado de terceros (fotos de Google Maps y de la web, pistas candidatas):
+# solo se usa como referencia y se vuelve a bajar con los scripts de la skill.
+negocios/*/maps/fotos/
+negocios/*/web/imagenes/
+negocios/*/web/espacios/
+negocios/*/web/pdf/
+negocios/*/web/cartas/*.pdf
+negocios/*/musica/candidatas/

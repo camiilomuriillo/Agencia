@@ -1,0 +1,834 @@
+{
+  "resumen": {
+    "fuentes": {
+      "http://www.elalfozdeburgos.com/": "ficha de Maps (web)"
+    },
+    "dominios": [
+      "elalfozdeburgos.com"
+    ],
+    "paginas": 20,
+    "paginas_del_local": [
+      "https://www.elalfozdeburgos.com/",
+      "https://www.elalfozdeburgos.com/contacto/"
+    ],
+    "paginas_de_otro_local": [],
+    "marca_con_varios_locales": false,
+    "aviso": null,
+    "enlaces_rotos": [
+      {
+        "url": "https://www.elalfozdeburgos.com/?page_id=15",
+        "de": "enlace «COLMADO\n                        (TIENDA)»",
+        "http": 404
+      }
+    ],
+    "horarios": {
+      "https://www.elalfozdeburgos.com/contacto/": [
+        "Fin de semana y festivos 07:00 - 01:30 h",
+        "Lunes a jueves 13:00 - 16:30 h / 20:00 - 23:30 h",
+        "Viernes 13:00 - 16:30 h",
+        "Lunes a domingo 13:00 - 16:30 h",
+        "Sábados noche 20:30 - 23:30 h"
+      ]
+    },
+    "telefonos": [
+      "34947206860"
+    ],
+    "emails": [
+      "elalfoz@elalfozdeburgos.es"
+    ],
+    "redes": {
+      "instagram": "https://www.instagram.com/elalfoz/",
+      "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+      "twitter": "https://twitter.com/elalfozdeburgos",
+      "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+    },
+    "reservas": [
+      "https://www.elalfozdeburgos.com/reservas-asador/",
+      "https://www.elalfozdeburgos.com/reservas/"
+    ],
+    "pedidos": [],
+    "productos_schema": [
+      "Lechazo IGP 1/4",
+      "Chuleta 45 días de maduración",
+      "Callos y morro de Waygú",
+      "Carrillera Ibérica",
+      "Bacalao a la burgalesa",
+      "Gallo de corral",
+      "Lengua escarlata",
+      "Chorizo ahumado El Colmado",
+      "Albóndigas de chuleta"
+    ],
+    "pdfs": [],
+    "imagenes": 32,
+    "logos": [
+      "web/logos/001.svg",
+      "web/logos/002.jpg"
+    ],
+    "videos": []
+  },
+  "paginas": [
+    {
+      "url": "https://www.elalfozdeburgos.com/",
+      "llegada": "ficha de Maps (web)",
+      "titulo": "El Alfoz de Burgos - Restaurante asador, hotel, eventos, colmado, cafetería",
+      "descripcion": "Gastronomía tradicional de Castilla con el refinamiento de la cocina actual. A 5 minutos de Burgos. Restaurante asador, hotel, eventos, colmado, cafetería.",
+      "de_quien": "local",
+      "coincide_con_maps": [
+        "telefono"
+      ],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [
+        "elalfoz@elalfozdeburgos.es"
+      ],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas-asador/",
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [],
+      "texto": "El Alfoz de Burgos - Restaurante asador, hotel, eventos, colmado, cafetería\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nCarta\nAsador\nDESCARGAR\nCarta\nde Vinos\nDESCARGAR\nCarta\nCafetería\nDESCARGAR\nProductos\nColmado\nVER\nInformación\nnutricional\nVER\nGASTRONOMÍA TRADICIONAL DE CASTILLA CON EL REFINAMIENTO DE LA COCINA ACTUAL.\nRESERVAR MESA >\nCONTACTO\nUBICACIÓN\n+34 947 206 860\nelalfoz@elalfozdeburgos.es\nVER >\nCOLMADO\n(TIENDA)\nEl Colmado del Alfoz es la nueva tienda de productos\nartesanales autóctonos y la marca de morcillas y\nchorizos propias que producimos en El Alfoz\nVER >\nGALERÍA\nDE IMAGENES\nTenemos mucho que enseñar, entra y explora\nlos álbumes de imágenes.\nVER >\nINSTAGRAM\n@ELALFOZ\nNuestro lado más natural e instantáneo.\nPara ver más publicaciones visita nuestro perfil\nen la red social y síguenos.\nCAFETERÍA\nRESTAURANTE\nEVENTOS\nCONTACTO\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/tienda/",
+      "llegada": "enlace «ProductosColmado\n                    VER»",
+      "titulo": "Tienda - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [],
+      "texto": "Tienda - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nTienda online\nPide, Recoge y Saborea\nEnvasado 1/4 Delantero\nEnvasado 1/4 Trasero\nCaliente 1/4 Delantero\nCaliente 1/4 Trasero\nAsado\nLechazo IGP 1/4\n€ 55,00 – € 65,00\nSeleccionar opciones\n1 Chuleta ±1.200 gr.\n1 Chuleta ±1.600 gr.\nParrilla\nChuleta 45 días de maduración\n€ 80,00 – € 99,00\nSeleccionar opciones\n±500 gr.\nGuiso\nCallos y morro de Waygú\n€ 19,00\nSeleccionar opciones\n±450 gr.\nGuiso\nCarrillera Ibérica\n€ 22,00\nSeleccionar opciones\n±450 gr.\nAl horno\nBacalao a la burgalesa\n€ 24,50\nSeleccionar opciones\n±650 gr.\nGuiso\nGallo de corral\n€ 20,50\nSeleccionar opciones\n±150 gr.\nEmbutido\nLengua escarlata\n€ 16,00\nSeleccionar opciones\n±400 gr.\nEmbutido\nChorizo ahumado El Colmado\n€ 13,00\nSeleccionar opciones\n±250 gr.\nGuiso\nAlbóndigas de chuleta\n€ 17,00\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/contacto/",
+      "llegada": "enlace «CONTACTO\n                        UBICACI»",
+      "titulo": "Contacto - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "local",
+      "coincide_con_maps": [
+        "telefono"
+      ],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [
+        "Fin de semana y festivos 07:00 - 01:30 h",
+        "Lunes a jueves 13:00 - 16:30 h / 20:00 - 23:30 h",
+        "Viernes 13:00 - 16:30 h",
+        "Lunes a domingo 13:00 - 16:30 h",
+        "Sábados noche 20:30 - 23:30 h"
+      ],
+      "telefonos": [
+        "34947206860"
+      ],
+      "emails": [
+        "elalfoz@elalfozdeburgos.es"
+      ],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [],
+      "texto": "Contacto - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nCONTACTO\nBienvenido al Alfoz. Cuéntanos en qué podemos ayudarte\n+34 947 206 860\nelalfoz@elalfozdeburgos.es\nUbicación (Google Maps)\nUBICACIÓN\nA 5 min. de Burgos.\nVillagonzalo Pedernales. Ctra.\nMadrid-irun, Km 233\nGoogle Maps\nVer\nvCard\nGuardar\nSalida\n232\nDirección Burgos / BU\nVer >\nSalida\n233\nDirección Madrid / MAD\nVer >\nHorario\nBar - Cafetería\nHorario ordinario\n07:00 - 00:00 h\nHorario singular\n07:00 - 01:00 h\nFin de semana y festivos\n07:00 - 01:30 h\nBar - Restaurante\nLunes a jueves\n13:00 - 16:30 h / 20:00 - 23:30 h\nViernes\n13:00 - 16:30 h\nSábados, domingos y festivos\nSin servicio\nRestaurante Asador\nLunes a domingo\n13:00 - 16:30 h\nSábados noche\n20:30 - 23:30 h\nHotel\nCheck-in: consultar\nCheck-out: consultar\nDías de cierre\n24 de Dic. Horario reducido de 09:00 — 17:00h.\n25 de Dic. Cerrado\n31 de Dic. Horario reducido de 09:00 — 17:00h.\n1 de Ene. Cerrado\nCAFETERÍA\nRESTAURANTE\nEVENTOS\nHOTEL\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/reservas/",
+      "llegada": "enlace «CONTACTO»",
+      "titulo": "Reservas - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas-asador/",
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [],
+      "texto": "Reservas - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nReservas\nOnline\nASADOR\nReserva online\nACCEDER >\nCOLMADO\nTienda online\nACCEDER >\nHOTEL\nReserva online\nACCEDER >\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/categoria-producto/asado/",
+      "llegada": "enlace «Asado»",
+      "titulo": "Asado archivos - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [],
+      "texto": "Asado archivos - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nTienda online\nPide, Recoge y Saborea\nEnvasado 1/4 Delantero\nEnvasado 1/4 Trasero\nCaliente 1/4 Delantero\nCaliente 1/4 Trasero\nAsado\nLechazo IGP 1/4\n€ 55,00 – € 65,00\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/producto/lechazo-igp-1-4/",
+      "llegada": "enlace «Seleccionar opciones»",
+      "titulo": "Lechazo IGP 1/4 - El Alfoz de Burgos",
+      "descripcion": "2-3 Pax.",
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [
+        {
+          "@type": "Product",
+          "name": "Lechazo IGP 1/4",
+          "description": "2-3 Pax.",
+          "offers": [
+            {
+              "@type": "AggregateOffer",
+              "lowPrice": "55.00",
+              "highPrice": "65.00",
+              "offerCount": 4,
+              "priceCurrency": "EUR",
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.elalfozdeburgos.com/producto/lechazo-igp-1-4/",
+              "seller": {
+                "@type": "Organization",
+                "name": "El Alfoz de Burgos",
+                "url": "https://www.elalfozdeburgos.com"
+              }
+            }
+          ],
+          "url": "https://www.elalfozdeburgos.com/producto/lechazo-igp-1-4/",
+          "image": "https://www.elalfozdeburgos.com/wp-content/uploads/2020/05/Alfoz_0030_Lechazo-asado-scaled.jpg"
+        }
+      ],
+      "texto": "Lechazo IGP 1/4 - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nVolver\nTienda\nAsado\nLechazo IGP 1/4\n€ 55,00 – € 65,00\nElige una opciónEnvasado 1/4 Delantero (€ 60,00)Envasado 1/4 Trasero (€ 55,00)Caliente 1/4 Delantero (€ 65,00)Caliente 1/4 Trasero (€ 60,00)\n-\n+\nAñadir al carrito\nPreparación\nCalentar 5 min. dentro de la bolsa en el microondas\nSalar la piel y meter al horno 20 min / 200º C\n2-3 Pax.\n*Todos los productos son susceptibles de ser congelados en casa hasta 3 meses en un congelador convencional. Para su descongelación mantener 2 días en la nevera y posteriormente calentar según el modo de preparación.\nIngredientes\nLechazo IGP\nAgua\nZumo de limón\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/categoria-producto/parrilla/",
+      "llegada": "enlace «Parrilla»",
+      "titulo": "Parrilla archivos - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [],
+      "texto": "Parrilla archivos - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nTienda online\nPide, Recoge y Saborea\n1 Chuleta ±1.200 gr.\n1 Chuleta ±1.600 gr.\nParrilla\nChuleta 45 días de maduración\n€ 80,00 – € 99,00\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/producto/chuleta-45-dias-de-maduracion/",
+      "llegada": "enlace «Seleccionar opciones»",
+      "titulo": "Chuleta 45 días de maduración - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [
+        {
+          "@type": "Product",
+          "name": "Chuleta 45 días de maduración",
+          "description": "",
+          "offers": [
+            {
+              "@type": "AggregateOffer",
+              "lowPrice": "80.00",
+              "highPrice": "99.00",
+              "offerCount": 2,
+              "priceCurrency": "EUR",
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.elalfozdeburgos.com/producto/chuleta-45-dias-de-maduracion/",
+              "seller": {
+                "@type": "Organization",
+                "name": "El Alfoz de Burgos",
+                "url": "https://www.elalfozdeburgos.com"
+              }
+            }
+          ],
+          "url": "https://www.elalfozdeburgos.com/producto/chuleta-45-dias-de-maduracion/",
+          "image": "https://www.elalfozdeburgos.com/wp-content/uploads/2020/05/chuleta-cruda-web-scaled.jpg"
+        }
+      ],
+      "texto": "Chuleta 45 días de maduración - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nVolver\nTienda\nParrilla\nChuleta 45 días de maduración\n€ 80,00 – € 99,00\nElige una opción1 Chuleta ±1.200 gr. (€ 80,00)1 Chuleta ±1.600 gr. (€ 99,00)\n-\n+\nAñadir al carrito\nPreparación\nAtemperar\nBrasa o sartén muy fuerte\nSalar las 2 caras\n*Todos los productos son susceptibles de ser congelados en casa hasta 3 meses en un congelador convencional. Para su descongelación mantener 2 días en la nevera y posteriormente calentar según el modo de preparación.\nIngredientes\nLomo alto de chuleta madurada\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/categoria-producto/guiso/",
+      "llegada": "enlace «Guiso»",
+      "titulo": "Guiso archivos - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [],
+      "texto": "Guiso archivos - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nTienda online\nPide, Recoge y Saborea\n±500 gr.\nGuiso\nCallos y morro de Waygú\n€ 19,00\nSeleccionar opciones\n±450 gr.\nGuiso\nCarrillera Ibérica\n€ 22,00\nSeleccionar opciones\n±650 gr.\nGuiso\nGallo de corral\n€ 20,50\nSeleccionar opciones\n±250 gr.\nGuiso\nAlbóndigas de chuleta\n€ 17,00\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/producto/callos-y-morro-de-waygu/",
+      "llegada": "enlace «Seleccionar opciones»",
+      "titulo": "Callos y morro de Waygú - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [
+        {
+          "@type": "Product",
+          "name": "Callos y morro de Waygú",
+          "description": "",
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "19.00",
+              "priceValidUntil": "2027-12-31",
+              "priceSpecification": {
+                "price": "19.00",
+                "priceCurrency": "EUR",
+                "valueAddedTaxIncluded": "false"
+              },
+              "priceCurrency": "EUR",
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.elalfozdeburgos.com/producto/callos-y-morro-de-waygu/",
+              "seller": {
+                "@type": "Organization",
+                "name": "El Alfoz de Burgos",
+                "url": "https://www.elalfozdeburgos.com"
+              }
+            }
+          ],
+          "url": "https://www.elalfozdeburgos.com/producto/callos-y-morro-de-waygu/",
+          "image": "https://www.elalfozdeburgos.com/wp-content/uploads/2020/05/Callos-web-scaled.jpg"
+        }
+      ],
+      "texto": "Callos y morro de Waygú - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nVolver\nTienda\nGuiso\nCallos y morro de Waygú\n€ 19,00\nElige una opción±500 gr. (€ 19,00)\n-\n+\nAñadir al carrito\nPreparación\nCalentar 5 min en el microondas con bolsa\n*Todos los productos son susceptibles de ser congelados en casa hasta 3 meses en un congelador convencional. Para su descongelación mantener 2 días en la nevera y posteriormente calentar según el modo de preparación.\nAlérgenos\nContiene gluten\nDióxido de azufre y sulfitos\nIngredientes\nCallos 50% y Morro 50%\nVerduras\nGuindilla\nHierbas aromáticas\nEscoge más platos\n±450 gr.\nGuiso\nCarrillera Ibérica\n€ 22,00\nSeleccionar opciones\n±250 gr.\nGuiso\nAlbóndigas de chuleta\n€ 17,00\nSeleccionar opciones\n±650 gr.\nGuiso\nGallo de corral\n€ 20,50\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/producto/carrillera-iberica/",
+      "llegada": "enlace «Seleccionar opciones»",
+      "titulo": "Carrillera Ibérica - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [
+        {
+          "@type": "Product",
+          "name": "Carrillera Ibérica",
+          "description": "",
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "22.00",
+              "priceValidUntil": "2027-12-31",
+              "priceSpecification": {
+                "price": "22.00",
+                "priceCurrency": "EUR",
+                "valueAddedTaxIncluded": "false"
+              },
+              "priceCurrency": "EUR",
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.elalfozdeburgos.com/producto/carrillera-iberica/",
+              "seller": {
+                "@type": "Organization",
+                "name": "El Alfoz de Burgos",
+                "url": "https://www.elalfozdeburgos.com"
+              }
+            }
+          ],
+          "url": "https://www.elalfozdeburgos.com/producto/carrillera-iberica/",
+          "image": "https://www.elalfozdeburgos.com/wp-content/uploads/2020/05/Carrilleras-web-scaled.jpg"
+        }
+      ],
+      "texto": "Carrillera Ibérica - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nVolver\nTienda\nGuiso\nCarrillera Ibérica\n€ 22,00\nElige una opción±450 gr. (€ 22,00)\n-\n+\nAñadir al carrito\nPreparación\nCalentar 1 min microondas\nLevantar en sartén hasta homogeneizar salsa\n*Todos los productos son susceptibles de ser congelados en casa hasta 3 meses en un congelador convencional. Para su descongelación mantener 2 días en la nevera y posteriormente calentar según el modo de preparación.\nAlérgenos\nContiene gluten\nDióxido de azufre y sulfitos\nIngredientes\nVerduras\nCarrillera ibérica\nEspecias\nVino\nEscoge más platos\n±500 gr.\nGuiso\nCallos y morro de Waygú\n€ 19,00\nSeleccionar opciones\n±250 gr.\nGuiso\nAlbóndigas de chuleta\n€ 17,00\nSeleccionar opciones\n±650 gr.\nGuiso\nGallo de corral\n€ 20,50\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/categoria-producto/al-horno/",
+      "llegada": "enlace «Al horno»",
+      "titulo": "Al horno archivos - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [],
+      "texto": "Al horno archivos - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nTienda online\nPide, Recoge y Saborea\n±450 gr.\nAl horno\nBacalao a la burgalesa\n€ 24,50\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/producto/bacalao-a-la-burgalesa/",
+      "llegada": "enlace «Seleccionar opciones»",
+      "titulo": "Bacalao a la burgalesa - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [
+        {
+          "@type": "Product",
+          "name": "Bacalao a la burgalesa",
+          "description": "",
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "24.50",
+              "priceValidUntil": "2027-12-31",
+              "priceSpecification": {
+                "price": "24.50",
+                "priceCurrency": "EUR",
+                "valueAddedTaxIncluded": "false"
+              },
+              "priceCurrency": "EUR",
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.elalfozdeburgos.com/producto/bacalao-a-la-burgalesa/",
+              "seller": {
+                "@type": "Organization",
+                "name": "El Alfoz de Burgos",
+                "url": "https://www.elalfozdeburgos.com"
+              }
+            }
+          ],
+          "url": "https://www.elalfozdeburgos.com/producto/bacalao-a-la-burgalesa/",
+          "image": "https://www.elalfozdeburgos.com/wp-content/uploads/2023/06/Bacalao-a-la-burgalesa_1.jpg"
+        }
+      ],
+      "texto": "Bacalao a la burgalesa - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nVolver\nTienda\nAl horno\nBacalao a la burgalesa\n€ 24,50\nElige una opción±450 gr. (€ 24,50)\n-\n+\nAñadir al carrito\nPreparación\nCalentar en microondas 4 min. con bolsa\n*Todos los productos son susceptibles de ser congelados en casa hasta 3 meses en un congelador convencional. Para su descongelación mantener 2 días en la nevera y posteriormente calentar según el modo de preparación.\nAlérgenos\nContiene gluten\nPescado\nDióxido de azufre y sulfitos\nIngredientes\nLomo alto de Bacalao\nVerduras\nTomate frito\nLicores\nEspecias\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/producto/gallo-de-corral/",
+      "llegada": "enlace «Seleccionar opciones»",
+      "titulo": "Gallo de corral - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [
+        {
+          "@type": "Product",
+          "name": "Gallo de corral",
+          "description": "",
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "20.50",
+              "priceValidUntil": "2027-12-31",
+              "priceSpecification": {
+                "price": "20.50",
+                "priceCurrency": "EUR",
+                "valueAddedTaxIncluded": "false"
+              },
+              "priceCurrency": "EUR",
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.elalfozdeburgos.com/producto/gallo-de-corral/",
+              "seller": {
+                "@type": "Organization",
+                "name": "El Alfoz de Burgos",
+                "url": "https://www.elalfozdeburgos.com"
+              }
+            }
+          ],
+          "url": "https://www.elalfozdeburgos.com/producto/gallo-de-corral/",
+          "image": "https://www.elalfozdeburgos.com/wp-content/uploads/2020/05/Gallo-web-scaled.jpg"
+        }
+      ],
+      "texto": "Gallo de corral - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nVolver\nTienda\nGuiso\nGallo de corral\n€ 20,50\nElige una opción±650 gr. (€ 20,50)\n-\n+\nAñadir al carrito\nPreparación\nCalentar 5 min en el microondas con bolsa\n*Todos los productos son susceptibles de ser congelados en casa hasta 3 meses en un congelador convencional. Para su descongelación mantener 2 días en la nevera y posteriormente calentar según el modo de preparación.\nAlérgenos\nContiene gluten\nDióxido de azufre y sulfitos\nIngredientes\nGallo de corral\nVerduras\nLicores\nHierbas aromáticas\nEscoge más platos\n±500 gr.\nGuiso\nCallos y morro de Waygú\n€ 19,00\nSeleccionar opciones\n±450 gr.\nGuiso\nCarrillera Ibérica\n€ 22,00\nSeleccionar opciones\n±250 gr.\nGuiso\nAlbóndigas de chuleta\n€ 17,00\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/categoria-producto/embutido/",
+      "llegada": "enlace «Embutido»",
+      "titulo": "Embutido archivos - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [],
+      "texto": "Embutido archivos - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nTienda online\nPide, Recoge y Saborea\n±150 gr.\nEmbutido\nLengua escarlata\n€ 16,00\nSeleccionar opciones\n±400 gr.\nEmbutido\nChorizo ahumado El Colmado\n€ 13,00\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/producto/lengua-escarlata/",
+      "llegada": "enlace «Seleccionar opciones»",
+      "titulo": "Lengua escarlata - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [
+        {
+          "@type": "Product",
+          "name": "Lengua escarlata",
+          "description": "",
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "16.00",
+              "priceValidUntil": "2027-12-31",
+              "priceSpecification": {
+                "price": "16.00",
+                "priceCurrency": "EUR",
+                "valueAddedTaxIncluded": "false"
+              },
+              "priceCurrency": "EUR",
+              "availability": "http://schema.org/OutOfStock",
+              "url": "https://www.elalfozdeburgos.com/producto/lengua-escarlata/",
+              "seller": {
+                "@type": "Organization",
+                "name": "El Alfoz de Burgos",
+                "url": "https://www.elalfozdeburgos.com"
+              }
+            }
+          ],
+          "url": "https://www.elalfozdeburgos.com/producto/lengua-escarlata/",
+          "image": "https://www.elalfozdeburgos.com/wp-content/uploads/2020/05/Lengua-escarlata-web-scaled.jpg"
+        }
+      ],
+      "texto": "Lengua escarlata - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nVolver\nTienda\nEmbutido\nLengua escarlata\n€ 16,00\nElige una opción±150 gr. (€ 16,00)\n-\n+\nAñadir al carrito\nPreparación\nAtemperar\nSacar antes 10 min antes de consumir\nAñadir al gusto\n*Todos los productos son susceptibles de ser congelados en casa hasta 3 meses en un congelador convencional. Para su descongelación mantener 2 días en la nevera y posteriormente calentar según el modo de preparación.\nAlérgenos\nDióxido de azufre y sulfitos\nIngredientes\nLengua de vaca Waygú\nCebolla roja\nVinagre\nEscoge más platos\n±400 gr.\nEmbutido\nChorizo ahumado El Colmado\n€ 13,00\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/producto/chorizo-ahumado-el-colmado/",
+      "llegada": "enlace «Seleccionar opciones»",
+      "titulo": "Chorizo ahumado El Colmado - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [
+        {
+          "@type": "Product",
+          "name": "Chorizo ahumado El Colmado",
+          "description": "",
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "13.00",
+              "priceValidUntil": "2027-12-31",
+              "priceSpecification": {
+                "price": "13.00",
+                "priceCurrency": "EUR",
+                "valueAddedTaxIncluded": "false"
+              },
+              "priceCurrency": "EUR",
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.elalfozdeburgos.com/producto/chorizo-ahumado-el-colmado/",
+              "seller": {
+                "@type": "Organization",
+                "name": "El Alfoz de Burgos",
+                "url": "https://www.elalfozdeburgos.com"
+              }
+            }
+          ],
+          "url": "https://www.elalfozdeburgos.com/producto/chorizo-ahumado-el-colmado/",
+          "image": "https://www.elalfozdeburgos.com/wp-content/uploads/2020/05/chorizo-colmado-web-scaled.jpg"
+        }
+      ],
+      "texto": "Chorizo ahumado El Colmado - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nVolver\nTienda\nEmbutido\nChorizo ahumado El Colmado\n€ 13,00\nElige una opción±400 gr. (€ 13,00)\n-\n+\nAñadir al carrito\nPreparación\nCortar en rodajas\n*Todos los productos son susceptibles de ser congelados en casa hasta 3 meses en un congelador convencional. Para su descongelación mantener 2 días en la nevera y posteriormente calentar según el modo de preparación.\nIngredientes\nMagro y panceta de cerdo\nCarne de vacuno\nSal\nPimentón\nAjo\nEspecias\nEscoge más platos\n±150 gr.\nEmbutido\nLengua escarlata\n€ 16,00\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/producto/albondigas-de-chuleta/",
+      "llegada": "enlace «Seleccionar opciones»",
+      "titulo": "Albóndigas de chuleta - El Alfoz de Burgos",
+      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [
+        {
+          "@type": "Product",
+          "name": "Albóndigas de chuleta",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "17.00",
+              "priceValidUntil": "2027-12-31",
+              "priceSpecification": {
+                "price": "17.00",
+                "priceCurrency": "EUR",
+                "valueAddedTaxIncluded": "false"
+              },
+              "priceCurrency": "EUR",
+              "availability": "http://schema.org/InStock",
+              "url": "https://www.elalfozdeburgos.com/producto/albondigas-de-chuleta/",
+              "seller": {
+                "@type": "Organization",
+                "name": "El Alfoz de Burgos",
+                "url": "https://www.elalfozdeburgos.com"
+              }
+            }
+          ],
+          "url": "https://www.elalfozdeburgos.com/producto/albondigas-de-chuleta/",
+          "image": "https://www.elalfozdeburgos.com/wp-content/uploads/2020/05/Albondigas-web-scaled.jpg"
+        }
+      ],
+      "texto": "Albóndigas de chuleta - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nVolver\nTienda\nGuiso\nAlbóndigas de chuleta\n€ 17,00\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nElige una opción±250 gr. (€ 17,00)\n-\n+\nAñadir al carrito\nPreparación\nCalentar 1 min microondas\nLevantar en sartén hasta homogeneizar salsa\n*Todos los productos son susceptibles de ser congelados en casa hasta 3 meses en un congelador convencional. Para su descongelación mantener 2 días en la nevera y posteriormente calentar según el modo de preparación.\nAlérgenos\nContiene gluten\nLácteos\nDióxido de azufre y sulfitos\nIngredientes\nVerduras\nCarne vaca madurada\nHarina\nEspecias\nAceite\nEscoge más platos\n±450 gr.\nGuiso\nCarrillera Ibérica\n€ 22,00\nSeleccionar opciones\n±650 gr.\nGuiso\nGallo de corral\n€ 20,50\nSeleccionar opciones\n±500 gr.\nGuiso\nCallos y morro de Waygú\n€ 19,00\nSeleccionar opciones\nTodos los productos son susceptibles de ser congelados hasta 3 meses en un congelador convencional de casa.\nPago con tarjeta\nResumen\n(X0)\n€ 0,00\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/reservas-asador/",
+      "llegada": "enlace «RESERVAR MESA >»",
+      "titulo": "Reservas asador - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": true,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas-asador/",
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [],
+      "texto": "Reservas asador - El Alfoz de Burgos\nValoramos tu privacidad\nUsamos cookies para mejorar su experiencia de navegación, mostrarle anuncios o contenidos personalizados y analizar nuestro tráfico. Al hacer clic en “Aceptar todo” usted da su consentimiento a nuestro uso de las cookies.\nPersonalizar Rechazar todo Aceptar todo\nPersonalizar las preferencias de consentimiento\nUsamos cookies para ayudarle a navegar de manera eficiente y realizar ciertas funciones. Encontrará información detallada sobre cada una de las cookies bajo cada categoría de consentimiento a continuación.\nLas cookies categorizadas como “Necesarias” se guardan en su navegador, ya que son esenciales para permitir las funcionalidades básicas del sitio web.... Mostrar más\nNecesariaSiempre activas\nLas cookies necesarias son cruciales para las funciones básicas del sitio web y el sitio web no funcionará de la forma prevista sin ellas.Estas cookies no almacenan ningún dato de identificación personal.\nCookie\ncookieyes-consent\nDuración\n1 año\nDescripción\nCookieYes establece esta cookie para recordar las preferencias de consentimiento de los usuarios, de modo que se respeten sus preferencias en las siguientes visitas a este sitio. No recoge ni almacena ninguna información personal sobre los visitantes del sitio.\nCookie\nPHPSESSID\nDuración\n14 días\nDescripción\nEsta cookie es originaria de las aplicaciones PHP. La cookie almacena e identifica el ID de sesión único de un usuario para gestionar las sesiones de los usuarios en el sitio web. La cookie es de sesión y se borrará cuando se cierren todas las ventanas del navegador.\nFuncional\nLas cookies funcionales ayudan a realizar ciertas funcionalidades, como compartir el contenido del sitio web en plataformas de redes sociales, recopilar comentarios y otras características de terceros.\nNo hay cookies para mostrar.\nAnalítica\nLas cookies analíticas se utilizan para comprender cómo interactúan los visitantes con el sitio web. Estas cookies ayudan a proporcionar información sobre métricas el número de visitantes, el porcentaje de rebote, la fuente de tráfico, etc.\nCookie\n_ga\nDuración\n1 año 1 mes 4 días\nDescripción\nGoogle Analytics establece esta cookie para calcular los datos de los visitantes, de las sesiones y de las campañas y para hacer un seguimiento del uso del sitio para el informe de análisis del sitio. La cookie almacena la información de forma anónima y asigna un número generado aleatoriamente para reconocer a los visitantes únicos.\nCookie\n_gid\nDuración\n1 día\nDescripción\nGoogle Analytics establece esta cookie para almacenar información sobre el uso que hacen los visitantes de un sitio web, al tiempo que crea un informe analítico sobre el rendimiento del sitio. Algunos de los datos recogidos incluyen el número de visitantes, su origen y las páginas que visitan de forma anónima.\nCookie\n_hjTLDTest\nDuración\nsesión\nDescripción\nPara determinar la ruta de la cookie más genérica que debe usarse en lugar del nombre de host de la página, Hotjar usa la cookie _hjTLDTest para almacenar diferentes alternativas de subcadenas de URL hasta que falle.\nCookie\n_hjSessionUser_*\nDuración\n1 año\nDescripción\nHotjar sets this cookie to ensure data from subsequent visits to the same site is attributed to the same user ID, which persists in the Hotjar User ID, which is unique to that site.\nCookie\n_hjSession_*\nDuración\n1 hora\nDescripción\nHotjar sets this cookie to ensure data from subsequent visits to the same site is attributed to the same user ID, which persists in the Hotjar User ID, which is unique to that site.\nel rendimiento\nLas cookies de rendimiento se utilizan para comprender y analizar los índices de rendimiento clave del sitio web, lo que ayuda a proporcionar una mejor experiencia de usuario para los visitantes.\nCookie\n_gat\nDuración\n1 minuto\nDescripción\nGoogle Universal Analytics establece esta cookie para restringir la tasa de solicitudes y así limitar la recopilación de datos en los sitios de alto tráfico.\nAnuncio\nLas cookies publicitarias se utilizan para entregar a los visitantes anuncios personalizados basados ​​en las páginas que visitaron antes y analizar la efectividad de la campaña publicitaria.\nNo hay cookies para mostrar.\nSin categorizar\nOtras cookies no categorizadas son las que se están analizando y aún no se han clasificado en una categoría.\nCookie\nm\nDuración\n1 año 1 mes 4 días\nDescripción\nNo description available.\nCookie\ndebug\nDuración\nNunca\nDescripción\nNo description available.\nRechazar todo Guardar mis preferencias Aceptar todo\nPowered by\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    },
+    {
+      "url": "https://www.elalfozdeburgos.com/galeria/",
+      "llegada": "enlace «GALERÍADE IMAGENES\n                Tenem»",
+      "titulo": "Galería - El Alfoz de Burgos",
+      "descripcion": null,
+      "de_quien": "marca",
+      "coincide_con_maps": [],
+      "otras_direcciones": [],
+      "renderizada": false,
+      "horarios_texto": [],
+      "telefonos": [],
+      "emails": [],
+      "redes": {
+        "instagram": "https://www.instagram.com/elalfoz/",
+        "facebook": "https://www.facebook.com/P%C3%A1gina-El-Alfoz-de-Burgos-1049747598492292/",
+        "twitter": "https://twitter.com/elalfozdeburgos",
+        "linkedin": "https://www.linkedin.com/company/el-alfoz-de-burgos/"
+      },
+      "reservas": [
+        "https://www.elalfozdeburgos.com/reservas/"
+      ],
+      "pedidos": [],
+      "schema": [],
+      "texto": "Galería - El Alfoz de Burgos\nSaltar al contenido\nRESERVAS ONLINE\nRESERVAS ONLINE >\nInicio\nEl Alfoz\nAsador\nHotel\nEventos\nColmado\nCafetería\nContacto\nReservas\nÁlbumes10\nColmado en casa\n16\nInstalaciones / Todo\n13\nDegustacción\n5\nEventos\n6\nWinter Garden\n10\nLa Oficina\n9\nPlatos\n54\nAsador\n5\nLa Fuente\n1\nCestas Navidad\n3\nINICIO\nNOTICIAS BREVES\nCONTACTO\nRESERVAS\nTWITTER\nLINKEDIN\nINSTAGRAM\nFACEBOOK\nPOLÍTICA DE PRIVACIDAD\nAVISO LEGAL\nCONDICIONES GENERALES DE CONTRATACIÓN\nPOLÍTICA DE COOKIES\nCopyright © 2026 / EL Alfoz de Burgos S.L.U."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "archivo": "web/logos/001.svg",
+    "url": "https://www.elalfozdeburgos.com/wp-content/themes/alfoz-child/img/logos/dark-logo.svg",
+    "tam": null,
+    "pagina": "https://www.elalfozdeburgos.com/",
+    "alt": "El Alfoz de Burgos",
+    "vectorial": true
+  },
+  {
+    "archivo": "web/logos/002.jpg",
+    "url": "https://www.elalfozdeburgos.com/wp-content/themes/alfoz-child/img/subvencion/subvecion-logo.jpg",
+    "tam": [
+      1140,
+      108
+    ],
+    "pagina": "https://www.elalfozdeburgos.com/",
+    "alt": ""
+  }
+]

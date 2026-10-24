@@ -1,0 +1,25 @@
+{
+  "titulo": "Masking the Masters",
+  "artista": "Eugenio Mininni",
+  "genero": "Orchestral Hybrid",
+  "duracion": 220,
+  "fuente": "Mixkit",
+  "mp3": "https://assets.mixkit.co/music/552/552.mp3",
+  "licencia": "Mixkit Stock Music Free License",
+  "licencia_url": "https://mixkit.co/license/#musicFree",
+  "atribucion_obligatoria": false,
+  "archivo": "musica/musica.mp3",
+  "ritmo": {
+    "bpm": 100.0,
+    "pulso": 0.6,
+    "compas": 2.4,
+    "inicio": 10.223,
+    "caida": 12.623,
+    "compases": 11,
+    "fin": 39.023,
+    "final_natural": true,
+    "caida_con_subida": true,
+    "claridad": 2.41
+  },
+  "creditos": "Música: «Masking the Masters» de Eugenio Mininni (Mixkit)"
+}

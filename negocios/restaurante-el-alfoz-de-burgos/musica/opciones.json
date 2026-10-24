@@ -1,0 +1,301 @@
+[
+  {
+    "id": 552,
+    "titulo": "Masking the Masters",
+    "artista": "Eugenio Mininni",
+    "genero": "Orchestral Hybrid",
+    "duracion": 220,
+    "mp3": "https://assets.mixkit.co/music/552/552.mp3",
+    "generos": [
+      "electronica",
+      "orchestral-hybrid"
+    ],
+    "ritmo": {
+      "bpm": 100.0,
+      "pulso": 0.6,
+      "compas": 2.4,
+      "inicio": 10.223,
+      "caida": 12.623,
+      "compases": 11,
+      "fin": 39.023,
+      "final_natural": true,
+      "caida_con_subida": true,
+      "claridad": 2.41
+    },
+    "nota": 8.41
+  },
+  {
+    "id": 677,
+    "titulo": "Epical Drums 02",
+    "artista": "Grigoriy Nuzhny",
+    "genero": "Percussion Trailer",
+    "duracion": 123,
+    "mp3": "https://assets.mixkit.co/music/677/677.mp3",
+    "generos": [
+      "cinematic",
+      "percussion-trailer",
+      "sound-elements"
+    ],
+    "ritmo": {
+      "bpm": 120.0,
+      "pulso": 0.5,
+      "compas": 2.0,
+      "inicio": 86.441,
+      "caida": 88.441,
+      "compases": 14,
+      "fin": 116.441,
+      "final_natural": true,
+      "caida_con_subida": false,
+      "claridad": 2.36
+    },
+    "nota": 7.36
+  },
+  {
+    "id": 466,
+    "titulo": "Games Worldbeat",
+    "artista": "Bernardo R.",
+    "genero": "World",
+    "duracion": 107,
+    "mp3": "https://assets.mixkit.co/music/466/466.mp3",
+    "generos": [
+      "cinematic",
+      "medieval",
+      "world"
+    ],
+    "ritmo": {
+      "bpm": 116.0,
+      "pulso": 0.5172,
+      "compas": 2.069,
+      "inicio": 68.346,
+      "caida": 70.414,
+      "compases": 14,
+      "fin": 99.38,
+      "final_natural": true,
+      "caida_con_subida": false,
+      "claridad": 2.05
+    },
+    "nota": 7.05
+  },
+  {
+    "id": 686,
+    "titulo": "Epical Drums 06",
+    "artista": "Grigoriy Nuzhny",
+    "genero": "Sound Elements",
+    "duracion": 103,
+    "mp3": "https://assets.mixkit.co/music/686/686.mp3",
+    "generos": [
+      "percussion-trailer",
+      "sound-elements"
+    ],
+    "ritmo": {
+      "bpm": 145.01,
+      "pulso": 0.4138,
+      "compas": 1.6551,
+      "inicio": 14.428,
+      "caida": 16.083,
+      "compases": 19,
+      "fin": 47.529,
+      "final_natural": true,
+      "caida_con_subida": true,
+      "claridad": 2.36
+    },
+    "nota": 6.36
+  },
+  {
+    "id": 676,
+    "titulo": "Epical Drums 01",
+    "artista": "Grigoriy Nuzhny",
+    "genero": "Sound Elements",
+    "duracion": 106,
+    "mp3": "https://assets.mixkit.co/music/676/676.mp3",
+    "generos": [
+      "cinematic",
+      "percussion-trailer",
+      "sound-elements"
+    ],
+    "ritmo": {
+      "bpm": 145.01,
+      "pulso": 0.4138,
+      "compas": 1.6551,
+      "inicio": 2.015,
+      "caida": 3.67,
+      "compases": 16,
+      "fin": 30.151,
+      "final_natural": true,
+      "caida_con_subida": true,
+      "claridad": 2.15
+    },
+    "nota": 6.15
+  },
+  {
+    "id": 270,
+    "titulo": "Shark Thank",
+    "artista": "Arulo",
+    "genero": "Orchestral Hybrid",
+    "duracion": 97,
+    "mp3": "https://assets.mixkit.co/music/270/270.mp3",
+    "generos": [
+      "orchestral-hybrid"
+    ],
+    "ritmo": {
+      "bpm": 89.98,
+      "pulso": 0.6668,
+      "compas": 2.6673,
+      "inicio": 11.951,
+      "caida": 14.618,
+      "compases": 10,
+      "fin": 41.291,
+      "final_natural": true,
+      "caida_con_subida": true,
+      "claridad": 1.94
+    },
+    "nota": 5.94
+  },
+  {
+    "id": 743,
+    "titulo": "Holiday 01",
+    "artista": "Lily J",
+    "genero": "Film & Orchestral",
+    "duracion": 105,
+    "mp3": "https://assets.mixkit.co/music/743/743.mp3",
+    "generos": [
+      "film-and-orchestral"
+    ],
+    "ritmo": {
+      "bpm": 137.99,
+      "pulso": 0.4348,
+      "compas": 1.7393,
+      "inicio": 68.237,
+      "caida": 69.977,
+      "compases": 16,
+      "fin": 97.805,
+      "final_natural": true,
+      "caida_con_subida": false,
+      "claridad": 2.02
+    },
+    "nota": 5.02
+  },
+  {
+    "id": 597,
+    "titulo": "Vertigo",
+    "artista": "Eugenio Mininni",
+    "genero": "Film Score",
+    "duracion": 191,
+    "mp3": "https://assets.mixkit.co/music/597/597.mp3",
+    "generos": [
+      "cinematic",
+      "film-score"
+    ],
+    "ritmo": {
+      "bpm": 126.0,
+      "pulso": 0.4762,
+      "compas": 1.9048,
+      "inicio": 3.02,
+      "caida": 4.924,
+      "compases": 15,
+      "fin": 33.496,
+      "final_natural": false,
+      "caida_con_subida": false,
+      "claridad": 1.58
+    },
+    "nota": 3.58
+  },
+  {
+    "id": 712,
+    "titulo": "Classical 5",
+    "artista": "Jonny S.",
+    "genero": "Film Score",
+    "duracion": 216,
+    "mp3": "https://assets.mixkit.co/music/712/712.mp3",
+    "generos": [
+      "film-score"
+    ],
+    "ritmo": {
+      "bpm": 100.02,
+      "pulso": 0.5999,
+      "compas": 2.3995,
+      "inicio": 17.331,
+      "caida": 19.73,
+      "compases": 12,
+      "fin": 48.524,
+      "final_natural": false,
+      "caida_con_subida": false,
+      "claridad": 0.46
+    },
+    "nota": 2.46
+  },
+  {
+    "id": 625,
+    "titulo": "Fragments Of Bangkok",
+    "artista": "Eugenio Mininni",
+    "genero": "Film Score",
+    "duracion": 300,
+    "mp3": "https://assets.mixkit.co/music/625/625.mp3",
+    "generos": [
+      "atmospheres",
+      "film-score"
+    ],
+    "ritmo": {
+      "bpm": 112.0,
+      "pulso": 0.5357,
+      "compas": 2.1429,
+      "inicio": 36.939,
+      "caida": 39.082,
+      "compases": 13,
+      "fin": 66.939,
+      "final_natural": false,
+      "caida_con_subida": false,
+      "claridad": 0.36
+    },
+    "nota": 2.36
+  },
+  {
+    "id": 684,
+    "titulo": "Classical vibes 4",
+    "artista": "Grigoriy Nuzhny",
+    "genero": "Film Score",
+    "duracion": 137,
+    "mp3": "https://assets.mixkit.co/music/684/684.mp3",
+    "generos": [
+      "film-score"
+    ],
+    "ritmo": {
+      "bpm": 140.0,
+      "pulso": 0.4286,
+      "compas": 1.7143,
+      "inicio": 82.229,
+      "caida": 83.943,
+      "compases": 16,
+      "fin": 111.372,
+      "final_natural": false,
+      "caida_con_subida": false,
+      "claridad": 1.9
+    },
+    "nota": 1.9
+  },
+  {
+    "id": 672,
+    "titulo": "Wedding Harp",
+    "artista": "Francisco Alvear",
+    "genero": "Film Score",
+    "duracion": 141,
+    "mp3": "https://assets.mixkit.co/music/672/672.mp3",
+    "generos": [
+      "film-and-orchestral",
+      "film-score"
+    ],
+    "ritmo": {
+      "bpm": 144.0,
+      "pulso": 0.4167,
+      "compas": 1.6667,
+      "inicio": 51.61,
+      "caida": 53.277,
+      "compases": 17,
+      "fin": 81.61,
+      "final_natural": false,
+      "caida_con_subida": false,
+      "claridad": 0.94
+    },
+    "nota": 0.94
+  }
+]

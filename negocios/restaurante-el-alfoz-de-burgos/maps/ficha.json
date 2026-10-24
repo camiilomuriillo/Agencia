@@ -1,0 +1,216 @@
+{
+  "nombre": "Restaurante El Alfoz de Burgos",
+  "categoria": "Restaurante",
+  "categorias": [
+    "Restaurante"
+  ],
+  "descripcion": "Hotel informal con habitaciones y suites funcionales, restaurante, café‑bar y parque infantil.",
+  "direccion": "A-1, Km. 233, 09195 Villagonzalo Pedernales, Burgos, España",
+  "direccion_completa": {
+    "street": "A-1, Km. 233",
+    "postal_code": "09195",
+    "city": "Villagonzalo Pedernales",
+    "country_code": "ES"
+  },
+  "ciudad": "Villagonzalo Pedernales",
+  "pais": "ES",
+  "telefono": "+34 947 20 68 60",
+  "web": "http://www.elalfozdeburgos.com/",
+  "carta": null,
+  "reservas": null,
+  "valoracion": 4.3,
+  "num_resenas": 11850,
+  "horarios": {
+    "sábado": "7:30–23:00",
+    "domingo": "7:30–23:00",
+    "lunes": "7:30–23:00",
+    "martes": "7:30–23:00",
+    "miércoles": "7:30–23:00",
+    "jueves": "7:30–23:00",
+    "viernes": "7:30–23:00"
+  },
+  "cerrado_temporalmente": false,
+  "cerrado_definitivamente": false,
+  "coordenadas": {
+    "lat": 42.2908671,
+    "lng": -3.7025213
+  },
+  "atributos": {
+    "Opciones de servicio": {
+      "si": [
+        "Terraza",
+        "Para llevar",
+        "Comer allí"
+      ],
+      "no": [
+        "A domicilio"
+      ]
+    },
+    "Destacado": {
+      "si": [
+        "Buen café",
+        "Buena carta de cervezas",
+        "Buena carta de vinos",
+        "Buenos postres"
+      ],
+      "no": []
+    },
+    "Popular por": {
+      "si": [
+        "Desayuno",
+        "Comida",
+        "Cena",
+        "Cenar solo"
+      ],
+      "no": []
+    },
+    "Accesibilidad": {
+      "si": [
+        "Acceso para sillas de ruedas",
+        "Aparcamiento adaptado para sillas de ruedas",
+        "Aseo adaptado para sillas de ruedas",
+        "Asientos adaptados sillas de ruedas"
+      ],
+      "no": []
+    },
+    "Qué ofrece": {
+      "si": [
+        "Bebidas alcohólicas",
+        "Café",
+        "Cerveza",
+        "Cócteles",
+        "Comedor privado",
+        "Comida rápida",
+        "Comida saludable",
+        "Licores fuertes",
+        "Platos pequeños",
+        "Vino"
+      ],
+      "no": []
+    },
+    "Opciones del local": {
+      "si": [
+        "Desayuno",
+        "Brunch",
+        "Comida",
+        "Cena",
+        "Postres",
+        "Sitio para sentarse",
+        "Servicio en mesa"
+      ],
+      "no": []
+    },
+    "Servicios": {
+      "si": [
+        "Aseos",
+        "Bar"
+      ],
+      "no": []
+    },
+    "Ambiente": {
+      "si": [
+        "Acogedor",
+        "De moda",
+        "Informal",
+        "Tranquilo"
+      ],
+      "no": []
+    },
+    "Clientela": {
+      "si": [
+        "Grupos",
+        "Turistas"
+      ],
+      "no": []
+    },
+    "Planificación": {
+      "si": [
+        "Se recomienda hacer una reserva para comer",
+        "Se recomienda hacer una reserva para cenar",
+        "Se aceptan reservas"
+      ],
+      "no": []
+    },
+    "Pagos": {
+      "si": [
+        "Pagos con móvil vía NFC",
+        "Tarjetas de crédito",
+        "Tarjetas de débito",
+        "Tarjetas de crédito"
+      ],
+      "no": []
+    },
+    "Niños": {
+      "si": [
+        "Adecuado para niños",
+        "Menú infantil",
+        "Tiene cambiador",
+        "Tronas"
+      ],
+      "no": []
+    },
+    "Aparcamiento": {
+      "si": [
+        "Muchas plazas libres",
+        "Aparcamiento en la calle gratuito",
+        "Aparcamiento gratuito"
+      ],
+      "no": []
+    },
+    "Mascotas": {
+      "si": [
+        "Se admiten perros en el exterior"
+      ],
+      "no": []
+    }
+  },
+  "etiquetas_resenas": [
+    {
+      "title": "tortilla",
+      "count": 400
+    },
+    {
+      "title": "pincho",
+      "count": 379
+    },
+    {
+      "title": "morcilla",
+      "count": 304
+    },
+    {
+      "title": "lechazo",
+      "count": 122
+    },
+    {
+      "title": "parque infantil",
+      "count": 122
+    },
+    {
+      "title": "norte",
+      "count": 110
+    },
+    {
+      "title": "cordero",
+      "count": 75
+    },
+    {
+      "title": "torreznos",
+      "count": 40
+    },
+    {
+      "title": "autopista",
+      "count": 24
+    },
+    {
+      "title": "camas elásticas",
+      "count": 23
+    }
+  ],
+  "enlaces": {
+    "maps": "https://www.google.com/maps/search/?api=1&query=Restaurante%20El%20Alfoz%20de%20Burgos&query_place_id=ChIJaYOaS6vjRQ0R0dMPhvbmWU8"
+  },
+  "extraccion": {
+    "fuente": "apify",
+    "coste_usd": 0.0002
+  }
+}
