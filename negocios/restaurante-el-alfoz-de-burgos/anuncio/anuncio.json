@@ -50,9 +50,10 @@
   },
   {
    "id": "parrilla",
-   "medio": "anuncio/planos/07_parrilla.mp4",
+   "medio": "anuncio/planos/07_parrilla_v2.mp4",
    "compases": 1.5,
-   "desde": 1.2
+   "desde": 0.4,
+   "ritmo": 0.85
   },
   {
    "id": "corte",
@@ -90,11 +91,5 @@
   }
  ],
  "diseno": "anuncio/diseno",
- "salida": "el-alfoz-anuncio.mp4",
- "revisar": [
-  1.6,
-  8.6,
-  20.8,
-  28.5
- ]
+ "salida": "el-alfoz-anuncio-v2.mp4"
 }

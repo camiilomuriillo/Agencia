@@ -52,8 +52,17 @@
   "11_chuletillas.mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261024_091155_3f4afcdc-580b-41de-b0ac-ecd9daa26081.mp4",
   "11_chuletillas.png": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261024_090742_ee100092-bb9c-488c-8c14-131cbeca5d65.png",
   "12_mesa.mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261024_091155_e6f9956b-e770-4539-897f-39c004397622.mp4",
-  "12_mesa.png": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261024_090742_638dcf1c-4200-4312-ba9c-a8a5925d29a8.png"
+  "12_mesa.png": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261024_090742_638dcf1c-4200-4312-ba9c-a8a5925d29a8.png",
+  "07_parrilla_v2.png": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261024_094221_c57a92a4-4d6c-4e1f-862f-770d7f3bed78.png",
+  "07_parrilla_v2.mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261024_094414_803006e0-f2e6-4f7e-8c8c-795b453b082e.mp4"
  },
  "creditos_gastados": 129,
- "saldo_final": 2231.9
+ "saldo_final": 2231.9,
+ "rehechos": {
+  "07_parrilla_v2": {
+   "fotograma": "c57a92a4-4d6c-4e1f-862f-770d7f3bed78",
+   "clip": "803006e0-f2e6-4f7e-8c8c-795b453b082e",
+   "motivo": "chulet\u00f3n plano y a media cocci\u00f3n"
+  }
+ }
 }

@@ -102,3 +102,4 @@ em { font-style: italic; color: var(--ascua); white-space: nowrap; }
   background: radial-gradient(ellipse at 50% 55%, rgba(8,5,3,.62) 0%, rgba(8,5,3,.35) 45%, rgba(8,5,3,0) 72%);
 }
 .cierre { top: 540px; }
+#b-premio { top: 230px; bottom: auto; }
