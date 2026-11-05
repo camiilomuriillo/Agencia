@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio IA</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Pantalla de acceso -->
+  <section id="auth" class="auth hidden">
+    <div class="auth-card">
+      <div class="brand big">✦ Estudio IA</div>
+      <p class="muted">Genera imágenes y videos con IA, con presets de cámara y estilo.</p>
+      <form id="auth-form">
+        <input name="email" type="email" placeholder="Email" required autocomplete="email">
+        <input name="password" type="password" placeholder="Contraseña (mín. 8)" required minlength="8" autocomplete="current-password">
+        <button class="btn primary" type="submit" id="auth-submit">Entrar</button>
+        <p class="error" id="auth-error"></p>
+      </form>
+      <button class="link" id="auth-toggle">¿No tienes cuenta? Regístrate</button>
+    </div>
+  </section>
+
+  <!-- Aplicación -->
+  <section id="app" class="hidden">
+    <header class="topbar">
+      <div class="brand">✦ Estudio IA</div>
+      <span id="demo-badge" class="badge warn hidden" title="Añade FAL_KEY en .env para generar de verdad">MODO DEMO</span>
+      <div class="spacer"></div>
+      <span class="credits" title="Créditos disponibles">⚡ <b id="credits">0</b></span>
+      <button class="btn ghost hidden" id="admin-open">Admin</button>
+      <span class="muted small" id="user-email"></span>
+      <button class="btn ghost" id="logout">Salir</button>
+    </header>
+
+    <main class="layout">
+      <form id="gen-form" class="panel">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" data-kind="image">🖼️ Imagen</button>
+          <button type="button" class="tab" data-kind="video">🎞️ Video</button>
+        </div>
+
+        <label class="field">
+          <span>Modelo</span>
+          <select id="model"></select>
+          <small class="muted" id="model-tagline"></small>
+        </label>
+
+        <div class="field hidden" id="image-field">
+          <span>Imagen de partida</span>
+          <label class="drop" id="drop">
+            <input type="file" id="image-input" accept="image/png,image/jpeg,image/webp" hidden>
+            <img id="image-preview" class="hidden" alt="">
+            <span id="drop-text">Haz clic o arrastra una foto aquí</span>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Prompt</span>
+          <textarea id="prompt" rows="4" maxlength="2000" placeholder="Describe lo que quieres ver… p. ej. una taza de café humeante sobre una mesa de madera al amanecer"></textarea>
+        </label>
+
+        <div class="field" id="camera-field">
+          <span>Movimiento de cámara</span>
+          <div class="chips" id="camera-presets"></div>
+        </div>
+
+        <div class="field">
+          <span>Estilo</span>
+          <div class="chips" id="style-presets"></div>
+        </div>
+
+        <div class="row">
+          <label class="field">
+            <span>Formato</span>
+            <select id="aspect"></select>
+          </label>
+          <label class="field" id="duration-field">
+            <span>Duración</span>
+            <select id="duration"></select>
+          </label>
+        </div>
+
+        <button class="btn primary wide" type="submit" id="generate">Generar · ⚡ <span id="cost">1</span></button>
+        <p class="error" id="gen-error"></p>
+      </form>
+
+      <section class="gallery-wrap">
+        <div class="gallery-head">
+          <h2>Tus creaciones</h2>
+          <div class="filters">
+            <button class="chip active" data-filter="all">Todo</button>
+            <button class="chip" data-filter="image">Imágenes</button>
+            <button class="chip" data-filter="video">Videos</button>
+          </div>
+        </div>
+        <div id="gallery" class="gallery"></div>
+        <p id="empty" class="muted empty hidden">Aún no has generado nada. ¡Prueba con tu primer prompt!</p>
+      </section>
+    </main>
+  </section>
+
+  <!-- Visor -->
+  <dialog id="viewer">
+    <div class="viewer-body">
+      <div id="viewer-media"></div>
+      <div class="viewer-info">
+        <p id="viewer-prompt"></p>
+        <p class="muted small" id="viewer-meta"></p>
+        <div class="row">
+          <a class="btn primary" id="viewer-download" download>Descargar</a>
+          <button class="btn ghost" id="viewer-reuse">Reutilizar prompt</button>
+          <button class="btn ghost danger" id="viewer-delete">Borrar</button>
+          <button class="btn ghost" id="viewer-close">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Admin -->
+  <dialog id="admin">
+    <h3>Administración</h3>
+    <form id="admin-form" class="row">
+      <input name="email" type="email" placeholder="Email del usuario" required>
+      <input name="amount" type="number" placeholder="Créditos (+/-)" required>
+      <button class="btn primary">Aplicar</button>
+    </form>
+    <p class="error" id="admin-error"></p>
+    <table class="table"><thead><tr><th>Email</th><th>Créditos</th><th>Generaciones</th></tr></thead><tbody id="admin-users"></tbody></table>
+    <div class="row end"><button class="btn ghost" id="admin-close">Cerrar</button></div>
+  </dialog>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

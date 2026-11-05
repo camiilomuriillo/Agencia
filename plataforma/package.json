@@ -1,0 +1,16 @@
+{
+  "name": "estudio-ia",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Plataforma propia de generación de imagen y video con IA (MVP)",
+  "type": "module",
+  "main": "server/index.js",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env server/index.js",
+    "dev": "node --watch --disable-warning=ExperimentalWarning --env-file-if-exists=.env server/index.js"
+  },
+  "dependencies": {
+    "express": "4.21.2"
+  }
+}
