@@ -4,13 +4,14 @@ import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { db, tx, OUTPUTS_DIR } from './db.js';
 import { getModel, getPreset, costFor } from './catalog.js';
+import { config } from './config.js';
 import * as fal from './providers/fal.js';
 import * as mock from './providers/mock.js';
 
-export const provider = process.env.FAL_KEY ? fal : mock;
+export const provider = config.falKey ? fal : mock;
 const PROVIDERS = { fal, mock };
 const TIMEOUT_MS = 20 * 60 * 1000;
-const POLL_MS = 3000;
+const POLL_MS = Number(process.env.POLL_MS ?? 3000);
 
 export function publicJob(j) {
   return {
@@ -31,12 +32,13 @@ export async function createJob(user, body) {
   const model = getModel(body.modelId);
   if (!model) throw Object.assign(new Error('Modelo no válido'), { status: 400 });
 
-  const prompt = String(body.prompt ?? '').trim();
-  if (!prompt) throw Object.assign(new Error('Escribe un prompt'), { status: 400 });
-  if (prompt.length > 2000) throw Object.assign(new Error('Prompt demasiado largo (máx. 2000)'), { status: 400 });
+  const prompt = model.noPrompt ? model.name : String(body.prompt ?? '').trim();
+  if (!prompt) throw Object.assign(new Error(model.kind === 'audio' ? 'Escribe el texto' : 'Escribe un prompt'), { status: 400 });
+  if (prompt.length > 2000) throw Object.assign(new Error('Texto demasiado largo (máx. 2000 caracteres)'), { status: 400 });
 
-  const aspect = model.aspects.includes(body.aspect) ? body.aspect : model.aspects[0];
+  const aspect = model.aspects?.includes(body.aspect) ? body.aspect : model.aspects?.[0];
   const duration = model.durations?.includes(Number(body.duration)) ? Number(body.duration) : model.durations?.[0];
+  const voice = model.voices ? (model.voices.find((v) => v.id === body.voice) ?? model.voices[0]).id : undefined;
 
   let image;
   if (model.needsImage) {
@@ -47,16 +49,16 @@ export async function createJob(user, body) {
   }
 
   // Aplicar presets: se añaden al prompt del usuario.
-  const presets = (Array.isArray(body.presets) ? body.presets : [])
+  const presets = (Array.isArray(body.presets) && !model.noPrompt ? body.presets : [])
     .map(getPreset).filter((p) => p && p.kinds.includes(model.kind))
     .filter((p, i, all) => all.findIndex((q) => q.group === p.group) === i); // uno por grupo
   const finalPrompt = [prompt, ...presets.map((p) => p.suffix)].join(', ');
 
-  const falInput = model.buildInput({ prompt: finalPrompt, aspect, duration, image });
-  const cost = costFor(model, { duration });
+  const falInput = model.buildInput({ prompt: finalPrompt, aspect, duration, image, voice });
+  const cost = costFor(model, { duration, prompt });
   const id = randomUUID();
   const now = Date.now();
-  const stored = { aspect, duration, fal: { ...falInput, ...(image ? { image_url: '[imagen subida]' } : {}) } };
+  const stored = { aspect, duration, voice, fal: { ...falInput, ...(image ? { image_url: '[imagen subida]' } : {}) } };
 
   // Cobrar créditos y registrar el trabajo de forma atómica.
   tx(() => {
@@ -71,7 +73,7 @@ export async function createJob(user, body) {
   // Enviar a la cola del proveedor. Si falla, se devuelven los créditos.
   const job = db.prepare('SELECT * FROM jobs WHERE id = ?').get(id);
   try {
-    const { statusUrl, responseUrl } = await provider.submit(model, falInput);
+    const { statusUrl, responseUrl } = await provider.submit(model, falInput, { id, kind: model.kind, aspect, prompt, image });
     db.prepare("UPDATE jobs SET status = 'running', status_url = ?, response_url = ?, updated_at = ? WHERE id = ?")
       .run(statusUrl, responseUrl, Date.now(), id);
   } catch (e) {
@@ -87,7 +89,7 @@ async function persist(job, url) {
     const res = await fetch(url);
     if (!res.ok) throw new Error(String(res.status));
     const type = res.headers.get('content-type') ?? '';
-    const ext = type.includes('mp4') ? 'mp4' : type.includes('webm') ? 'webm' : type.includes('png') ? 'png'
+    const ext = type.includes('mpeg') ? 'mp3' : type.includes('wav') ? 'wav' : type.includes('mp4') ? 'mp4' : type.includes('webm') ? 'webm' : type.includes('png') ? 'png'
       : type.includes('webp') ? 'webp' : type.includes('jpeg') ? 'jpg' : (url.split('?')[0].split('.').pop() || 'bin');
     const file = `${job.id}.${ext}`;
     writeFileSync(join(OUTPUTS_DIR, file), Buffer.from(await res.arrayBuffer()));

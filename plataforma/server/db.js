@@ -5,7 +5,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-export const DATA_DIR = join(ROOT, 'data');
+export const DATA_DIR = process.env.DATA_DIR || join(ROOT, 'data');
 export const OUTPUTS_DIR = join(DATA_DIR, 'outputs');
 mkdirSync(OUTPUTS_DIR, { recursive: true });
 
@@ -48,6 +48,19 @@ db.exec(`
     error         TEXT,
     created_at    INTEGER NOT NULL,
     updated_at    INTEGER NOT NULL
+  );
+
+  CREATE TABLE IF NOT EXISTS purchases (
+    id          TEXT PRIMARY KEY,             -- id de la sesión de Stripe (o demo_…)
+    user_id     INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    pack_id     TEXT NOT NULL,
+    credits     INTEGER NOT NULL,
+    amount      INTEGER NOT NULL,             -- céntimos
+    currency    TEXT NOT NULL,
+    mode        TEXT NOT NULL,                -- stripe | demo
+    status      TEXT NOT NULL,                -- pending | paid
+    created_at  INTEGER NOT NULL,
+    paid_at     INTEGER
   );
 
   CREATE INDEX IF NOT EXISTS jobs_user ON jobs(user_id, created_at DESC);

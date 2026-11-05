@@ -1,0 +1,28 @@
+# Despliegue en Render (https://render.com) con un clic: "New > Blueprint" y elige este repositorio.
+# Las claves secretas (FAL_KEY, STRIPE_*) se rellenan en el panel de Render, no aquí.
+services:
+  - type: web
+    name: estudio-ia
+    runtime: docker
+    rootDir: plataforma
+    plan: starter            # el plan gratuito no permite discos persistentes
+    healthCheckPath: /healthz
+    disk:
+      name: datos
+      mountPath: /data
+      sizeGB: 5
+    envVars:
+      - key: BRAND_NAME
+        value: Estudio IA
+      - key: FREE_CREDITS
+        value: "20"
+      - key: CURRENCY
+        value: eur
+      - key: PUBLIC_URL
+        sync: false
+      - key: FAL_KEY
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false

@@ -4,43 +4,74 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Estudio IA</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+  <meta name="description" content="Genera imágenes, videos y voces con IA. Presets de cámara, personajes consistentes y herramientas de edición.">
+  <link rel="icon" href="/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <!-- Pantalla de acceso -->
-  <section id="auth" class="auth hidden">
-    <div class="auth-card">
-      <div class="brand big">✦ Estudio IA</div>
-      <p class="muted">Genera imágenes y videos con IA, con presets de cámara y estilo.</p>
-      <form id="auth-form">
-        <input name="email" type="email" placeholder="Email" required autocomplete="email">
-        <input name="password" type="password" placeholder="Contraseña (mín. 8)" required minlength="8" autocomplete="current-password">
-        <button class="btn primary" type="submit" id="auth-submit">Entrar</button>
-        <p class="error" id="auth-error"></p>
-      </form>
-      <button class="link" id="auth-toggle">¿No tienes cuenta? Regístrate</button>
+  <!-- ================= PÁGINA DE INICIO (pública) ================= -->
+  <section id="landing" class="hidden">
+    <header class="topbar">
+      <a class="brand" href="/"><img src="/logo.svg" alt="" class="logo"><span data-brand>Estudio IA</span></a>
+      <div class="spacer"></div>
+      <a class="btn ghost hide-sm" href="#precios">Precios</a>
+      <button class="btn ghost" data-auth="login">Entrar</button>
+      <button class="btn primary" data-auth="register">Empieza gratis</button>
+    </header>
+
+    <div class="hero">
+      <div class="hero-glow"></div>
+      <span class="pill">✨ <span data-free>20</span> créditos gratis al registrarte</span>
+      <h1>Crea <span class="grad">imágenes, videos y voces</span> con IA en segundos</h1>
+      <p class="lead" data-tagline>Imágenes, videos y voces con IA en segundos</p>
+      <div class="row center">
+        <button class="btn primary lg" data-auth="register">Crear mi primera imagen</button>
+        <a class="btn ghost lg" href="#funciones">Ver funciones</a>
+      </div>
+      <div class="hero-strip" aria-hidden="true">
+        <div class="tile t1"><span>💥 Crash zoom</span></div>
+        <div class="tile t2"><span>🔄 Órbita 360</span></div>
+        <div class="tile t3"><span>🚁 Dron FPV</span></div>
+        <div class="tile t4"><span>🎬 Cine</span></div>
+        <div class="tile t5"><span>📦 Producto</span></div>
+      </div>
     </div>
+
+    <section class="section" id="funciones">
+      <h2>Todo tu estudio creativo en un solo sitio</h2>
+      <div class="features">
+        <article class="feature"><div class="ficon">🖼️</div><h3>Imágenes</h3><p>Los mejores modelos (FLUX, FLUX Pro Ultra) desde bocetos rápidos hasta fotorrealismo.</p></article>
+        <article class="feature"><div class="ficon">🎞️</div><h3>Videos</h3><p>Texto o foto a video con Kling, MiniMax Hailuo y LTX. Hasta 10 segundos.</p></article>
+        <article class="feature"><div class="ficon">🎥</div><h3>Presets de cámara</h3><p>Crash zoom, órbita 360, dron FPV, bullet time… movimientos de cine con un clic.</p></article>
+        <article class="feature"><div class="ficon">🧑</div><h3>Personaje consistente</h3><p>Sube una cara y colócala en cualquier escena, manteniendo su identidad.</p></article>
+        <article class="feature"><div class="ficon">🪄</div><h3>Edición con texto</h3><p>"Cambia el fondo por una playa", "hazlo de noche". Además: quitar fondo y mejorar resolución.</p></article>
+        <article class="feature"><div class="ficon">🎙️</div><h3>Voces y sonido</h3><p>Locuciones naturales en español y efectos de sonido para tus anuncios.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="precios">
+      <h2>Paga solo por lo que usas</h2>
+      <p class="muted center">Sin suscripciones. Los créditos no caducan. Si una generación falla, te devolvemos los créditos.</p>
+      <div class="packs" id="landing-packs"></div>
+    </section>
+
+    <footer class="footer muted small">© <span id="year"></span> <span data-brand>Estudio IA</span></footer>
   </section>
 
-  <!-- Aplicación -->
+  <!-- ================= ESTUDIO (con sesión) ================= -->
   <section id="app" class="hidden">
     <header class="topbar">
-      <div class="brand">✦ Estudio IA</div>
+      <a class="brand" href="/"><img src="/logo.svg" alt="" class="logo"><span data-brand>Estudio IA</span></a>
       <span id="demo-badge" class="badge warn hidden" title="Añade FAL_KEY en .env para generar de verdad">MODO DEMO</span>
       <div class="spacer"></div>
-      <span class="credits" title="Créditos disponibles">⚡ <b id="credits">0</b></span>
+      <button class="credits" id="buy-open" title="Comprar créditos">⚡ <b id="credits">0</b> <span class="plus">+</span></button>
       <button class="btn ghost hidden" id="admin-open">Admin</button>
-      <span class="muted small" id="user-email"></span>
-      <button class="btn ghost" id="logout">Salir</button>
+      <button class="btn ghost" id="account-open" title="Mi cuenta">👤</button>
     </header>
 
     <main class="layout">
       <form id="gen-form" class="panel">
-        <div class="tabs" role="tablist">
-          <button type="button" class="tab active" data-kind="image">🖼️ Imagen</button>
-          <button type="button" class="tab" data-kind="video">🎞️ Video</button>
-        </div>
+        <div class="tabs" id="tabs" role="tablist"></div>
 
         <label class="field">
           <span>Modelo</span>
@@ -49,7 +80,7 @@
         </label>
 
         <div class="field hidden" id="image-field">
-          <span>Imagen de partida</span>
+          <span id="image-label">Imagen de partida</span>
           <label class="drop" id="drop">
             <input type="file" id="image-input" accept="image/png,image/jpeg,image/webp" hidden>
             <img id="image-preview" class="hidden" alt="">
@@ -57,23 +88,29 @@
           </label>
         </div>
 
-        <label class="field">
-          <span>Prompt</span>
-          <textarea id="prompt" rows="4" maxlength="2000" placeholder="Describe lo que quieres ver… p. ej. una taza de café humeante sobre una mesa de madera al amanecer"></textarea>
+        <label class="field" id="prompt-field">
+          <span id="prompt-label">Prompt</span>
+          <textarea id="prompt" rows="4" maxlength="2000"></textarea>
+          <small class="muted right" id="prompt-count">0 / 2000</small>
         </label>
 
-        <div class="field" id="camera-field">
+        <label class="field hidden" id="voice-field">
+          <span>Voz</span>
+          <select id="voice"></select>
+        </label>
+
+        <div class="field hidden" id="camera-field">
           <span>Movimiento de cámara</span>
           <div class="chips" id="camera-presets"></div>
         </div>
 
-        <div class="field">
+        <div class="field" id="style-field">
           <span>Estilo</span>
           <div class="chips" id="style-presets"></div>
         </div>
 
         <div class="row">
-          <label class="field">
+          <label class="field" id="aspect-field">
             <span>Formato</span>
             <select id="aspect"></select>
           </label>
@@ -83,7 +120,7 @@
           </label>
         </div>
 
-        <button class="btn primary wide" type="submit" id="generate">Generar · ⚡ <span id="cost">1</span></button>
+        <button class="btn primary wide" type="submit" id="generate">Generar</button>
         <p class="error" id="gen-error"></p>
       </form>
 
@@ -94,15 +131,59 @@
             <button class="chip active" data-filter="all">Todo</button>
             <button class="chip" data-filter="image">Imágenes</button>
             <button class="chip" data-filter="video">Videos</button>
+            <button class="chip" data-filter="audio">Audio</button>
           </div>
         </div>
         <div id="gallery" class="gallery"></div>
-        <p id="empty" class="muted empty hidden">Aún no has generado nada. ¡Prueba con tu primer prompt!</p>
+        <div id="empty" class="empty hidden">
+          <div class="empty-icon">✨</div>
+          <p><b>Aún no has creado nada</b></p>
+          <p class="muted">Escribe un prompt a la izquierda o prueba uno de estos:</p>
+          <div class="chips center" id="ideas"></div>
+        </div>
       </section>
     </main>
   </section>
 
-  <!-- Visor -->
+  <!-- ================= DIÁLOGOS ================= -->
+  <dialog id="auth-dialog" class="narrow">
+    <form id="auth-form" method="dialog">
+      <div class="brand big"><img src="/logo.svg" alt="" class="logo"><span data-brand>Estudio IA</span></div>
+      <p class="muted" id="auth-sub">Entra para seguir creando</p>
+      <input name="email" type="email" placeholder="Email" required autocomplete="email">
+      <input name="password" type="password" placeholder="Contraseña (mín. 8)" required minlength="8" autocomplete="current-password">
+      <button class="btn primary wide" type="submit" id="auth-submit">Entrar</button>
+      <p class="error" id="auth-error"></p>
+      <button type="button" class="link" id="auth-toggle">¿No tienes cuenta? Regístrate</button>
+    </form>
+    <button class="close" data-close aria-label="Cerrar">×</button>
+  </dialog>
+
+  <dialog id="buy-dialog">
+    <h3>Comprar créditos</h3>
+    <p class="muted small" id="buy-note"></p>
+    <div class="packs" id="buy-packs"></div>
+    <p class="error" id="buy-error"></p>
+    <button class="close" data-close aria-label="Cerrar">×</button>
+  </dialog>
+
+  <dialog id="account-dialog" class="narrow">
+    <h3>Mi cuenta</h3>
+    <p><span class="muted">Email:</span> <b id="acc-email"></b></p>
+    <p><span class="muted">Créditos:</span> <b id="acc-credits"></b></p>
+    <h4>Compras</h4>
+    <div id="acc-purchases" class="small muted">—</div>
+    <h4>Cambiar contraseña</h4>
+    <form id="pass-form" class="stack">
+      <input name="current" type="password" placeholder="Contraseña actual" required autocomplete="current-password">
+      <input name="next" type="password" placeholder="Nueva contraseña (mín. 8)" required minlength="8" autocomplete="new-password">
+      <button class="btn">Guardar</button>
+      <p class="error" id="pass-error"></p>
+    </form>
+    <div class="row end"><button class="btn ghost danger" id="logout">Cerrar sesión</button></div>
+    <button class="close" data-close aria-label="Cerrar">×</button>
+  </dialog>
+
   <dialog id="viewer">
     <div class="viewer-body">
       <div id="viewer-media"></div>
@@ -111,26 +192,34 @@
         <p class="muted small" id="viewer-meta"></p>
         <div class="row">
           <a class="btn primary" id="viewer-download" download>Descargar</a>
-          <button class="btn ghost" id="viewer-reuse">Reutilizar prompt</button>
+          <button class="btn ghost" id="viewer-reuse">Reutilizar</button>
+          <button class="btn ghost" id="viewer-animate" title="Convertir esta imagen en video">🎞️ Animar</button>
+          <button class="btn ghost" id="viewer-edit" title="Editar esta imagen">🪄 Editar</button>
           <button class="btn ghost danger" id="viewer-delete">Borrar</button>
-          <button class="btn ghost" id="viewer-close">Cerrar</button>
         </div>
       </div>
     </div>
+    <button class="close" data-close aria-label="Cerrar">×</button>
   </dialog>
 
-  <!-- Admin -->
   <dialog id="admin">
-    <h3>Administración</h3>
+    <h3>Panel de administración</h3>
+    <div class="stats" id="admin-stats"></div>
+    <h4>Dar o quitar créditos</h4>
     <form id="admin-form" class="row">
       <input name="email" type="email" placeholder="Email del usuario" required>
       <input name="amount" type="number" placeholder="Créditos (+/-)" required>
       <button class="btn primary">Aplicar</button>
     </form>
     <p class="error" id="admin-error"></p>
-    <table class="table"><thead><tr><th>Email</th><th>Créditos</th><th>Generaciones</th></tr></thead><tbody id="admin-users"></tbody></table>
-    <div class="row end"><button class="btn ghost" id="admin-close">Cerrar</button></div>
+    <h4>Usuarios</h4>
+    <div class="table-wrap">
+      <table class="table"><thead><tr><th>Email</th><th>Créditos</th><th>Generaciones</th><th>Pagado</th><th>Alta</th></tr></thead><tbody id="admin-users"></tbody></table>
+    </div>
+    <button class="close" data-close aria-label="Cerrar">×</button>
   </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="/app.js" type="module"></script>
 </body>

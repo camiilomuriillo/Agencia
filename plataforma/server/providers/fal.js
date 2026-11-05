@@ -31,7 +31,7 @@ export async function poll(job) {
   const s = await call(job.status_url);
   if (s.status === 'COMPLETED') {
     const out = await call(job.response_url);
-    const url = out?.video?.url ?? out?.images?.[0]?.url ?? out?.image?.url;
+    const url = out?.video?.url ?? out?.images?.[0]?.url ?? out?.image?.url ?? out?.audio?.url ?? out?.audio_file?.url;
     if (!url) throw new Error('fal.ai no devolvió ningún archivo');
     return { done: true, url };
   }
