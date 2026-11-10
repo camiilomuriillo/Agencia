@@ -1,0 +1,416 @@
+<title>Dossier Producto Ganador · Nov 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: dossier de agencia — columna de lectura de 72ch con tablas anchas en su propio scroll; cabecera de veredicto arriba */
+:root{
+  --bg:#f6f7f8; --paper:#ffffff; --ink:#15212b; --muted:#566573; --line:#d9dfe4;
+  --accent:#0d6b6e; --accent-soft:#e1f0ef; --amber:#a35d00; --amber-soft:#fbefdc;
+  --good:#1d7a3e; --warn:#a35d00; --bad:#b3261e;
+  --f-display:'Archivo',system-ui,sans-serif; --f-body:'IBM Plex Sans',system-ui,sans-serif; --f-mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1519; --paper:#161e24; --ink:#e4eaee; --muted:#9aa9b4; --line:#2a353d;
+  --accent:#5cc3c2; --accent-soft:#16302f; --amber:#f0a94a; --amber-soft:#33250f;
+  --good:#5ccf87; --warn:#f0a94a; --bad:#ff8a80; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1519; --paper:#161e24; --ink:#e4eaee; --muted:#9aa9b4; --line:#2a353d;
+  --accent:#5cc3c2; --accent-soft:#16302f; --amber:#f0a94a; --amber-soft:#33250f;
+  --good:#5ccf87; --warn:#f0a94a; --bad:#ff8a80; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:400 15.5px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1040px;margin:0 auto;padding-block:40px 80px;display:flex;flex-direction:column;gap:48px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(22px,3vw,28px);font-weight:700}
+h3{font-size:18px;font-weight:700}
+p{margin:0;max-width:72ch}
+a{color:var(--accent);text-underline-offset:2px;word-break:break-word}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sec{display:flex;flex-direction:column;gap:16px}
+.sec>header{display:flex;flex-direction:column;gap:8px;border-top:2px solid var(--ink);padding-top:14px}
+.lead{font-size:17px;color:var(--ink)}
+.muted{color:var(--muted)}
+.mono{font-family:var(--f-mono);font-size:13px}
+.verdict{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:24px;display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+.verdict>div{min-width:0;display:flex;flex-direction:column;gap:10px}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.kpi{border-left:3px solid var(--accent);padding:4px 0 4px 12px}
+.kpi b{display:block;font:700 22px/1.2 var(--f-display);font-variant-numeric:tabular-nums}
+.kpi span{font-size:12.5px;color:var(--muted)}
+.tag{display:inline-block;font:500 11.5px/1 var(--f-mono);padding:4px 7px;border-radius:3px;letter-spacing:.03em;white-space:nowrap}
+.t-fact{background:var(--accent-soft);color:var(--accent)}
+.t-est{background:var(--amber-soft);color:var(--amber)}
+.t-hyp{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13px;color:var(--muted)}
+.tbl{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font:600 12px/1.3 var(--f-body);color:var(--muted);text-transform:uppercase;letter-spacing:.04em;background:var(--bg);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;white-space:nowrap}
+.pos{color:var(--good);font-weight:600}.neg{color:var(--bad);font-weight:600}.mid{color:var(--warn);font-weight:600}
+.bar{display:inline-block;height:8px;background:var(--accent);border-radius:2px;vertical-align:middle;margin-right:6px}
+.win td{background:var(--accent-soft)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.box h3 small{font:500 12px var(--f-mono);color:var(--muted);display:block;margin-top:4px}
+ul,ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:74ch}
+.callout{border-left:3px solid var(--amber);background:var(--amber-soft);padding:14px 16px;border-radius:0 6px 6px 0;display:flex;flex-direction:column;gap:6px}
+.risk{border-left-color:var(--bad)}
+details{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:12px 16px}
+summary{cursor:pointer;font-weight:600}
+summary:focus-visible{outline:2px solid var(--accent)}
+.srcs li{font-size:13.5px}
+@media (max-width:760px){.verdict,.grid2,.grid3{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+
+<header class="sec" style="gap:14px">
+  <span class="eyebrow">Investigación de producto · Dropshipping Shopify · consulta 9–10 nov 2026</span>
+  <h1>Qué lanzar primero en España, y con qué números</h1>
+  <p class="lead">85 candidatos revisados en el catálogo de AutoDS (productos ganadores con anuncios en Facebook, región de envío España) y 15 productos de TikTok Shop en crecimiento, cruzados con búsquedas web de competencia, costes publicitarios, fiscalidad y normativa. Diez llegan al ranking, tres a la prueba de rentabilidad y uno a la recomendación de lanzamiento.</p>
+  <div class="legend"><span class="tag t-fact">HECHO</span> dato comprobado con fuente y fecha <span class="tag t-est">ESTIMACIÓN</span> cifra de una herramienta o fuente secundaria <span class="tag t-hyp">HIPÓTESIS</span> supuesto mío, a validar</div>
+</header>
+
+<section class="verdict" aria-label="Veredicto">
+  <div>
+    <span class="eyebrow">Fase E · Recomendación</span>
+    <h2>Saco de dormir para gatos, en España, con pack de dos</h2>
+    <p>Es el finalista con el ROAS de equilibrio más bajo (≈2,8), envío de 8 días a España, sin electrónica ni tallas, y llega en su ventana natural: invierno, Black Friday, Navidad y Reyes. Gana por economía unitaria y bajo riesgo de cumplimiento, no por volumen de demanda; su evidencia de demanda es la más débil de los tres finalistas.</p>
+    <p class="muted">Las puntuaciones de los tres primeros están a 2 puntos (70 · 69 · 68). Con datos así de cercanos, la decisión correcta es una validación barata y rápida, no una apuesta grande. Plan B si no pasa los criterios: elevador de colchón.</p>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><b>29,95 €</b><span>precio (IVA incl.) · pack 2: 49,95 €</span></div>
+    <div class="kpi"><b>≈12,8 €</b><span>CPA máximo de equilibrio (mezcla 70/30)</span></div>
+    <div class="kpi"><b>2,8</b><span>ROAS de equilibrio</span></div>
+    <div class="kpi"><b>≈400 €</b><span>presupuesto mínimo de validación</span></div>
+  </div>
+</section>
+
+<section class="sec">
+  <header><span class="eyebrow">Fase A</span><h2>Investigación: qué está pasando y qué no pude ver</h2></header>
+
+  <h3>Señales del mercado (noviembre 2026)</h3>
+  <ul>
+    <li><span class="tag t-fact">HECHO</span> El comercio electrónico en España facturó 29.643 M€ en el 1T 2026, +15,1 % interanual (CNMC, nota del 2-10-2026). Las ventas dentro de España crecieron un 17 % (Alimarket).</li>
+    <li><span class="tag t-fact">HECHO</span> El 54 % de los hogares españoles convive con mascotas, dos puntos más que el año anterior (3.º Barómetro Pet Parents 2026 de AEDPAC, vía IFEMA/Iberzoo). Los gatos son la categoría de mayor crecimiento: más de un millón de gatos nuevos en hogares entre 2021 y 2025 (fuente sectorial citada por IFEMA).</li>
+    <li><span class="tag t-fact">HECHO</span> Desde el 1-7-2026 la UE aplica un arancel temporal de 3 € a los envíos de bajo valor (≤150 €) de fuera de la UE, hasta julio de 2028 (Comisión Europea, 29-6-2026). Las fuentes secundarias difieren en si se cobra por artículo o por línea arancelaria. Para un producto barato de AliExpress esto puede ser el 30–50 % de su coste.</li>
+    <li><span class="tag t-est">ESTIMACIÓN</span> El CPM y el CPC de Meta en España están muy por debajo de EE. UU.: CPC en España ≈56 % por debajo de la media global (Superads); CPM medio de EE. UU. entre 13,5 $ (mediana Synter, 1S 2026) y 23 $ (Adamigo, proyección). No encontré una cifra fiable de CPM de ecommerce en España en euros.</li>
+    <li><span class="tag t-fact">HECHO</span> En TikTok Shop EE. UU., lo que más crece a 30 días son consumibles de marca: cosmética coreana (PDRN, contorno de ojos), agua de romero y arroz, sérum de pestañas, colutorios y suplementos (AutoDS TikTok Analytics, 9-11-2026). Es demanda real, pero de marcas registradas y productos con requisitos sanitarios: no sirven para dropshipping genérico en la UE. Sí indican que el cuidado en casa y los productos “rutina” convierten.</li>
+  </ul>
+
+  <h3>Fuentes a las que no tuve acceso</h3>
+  <div class="callout">
+    <p><b>Meta Ads Library:</b> la consulta directa devolvió HTTP 403. No he podido verificar fechas de inicio, número de variantes ni países de anuncios. Los enlaces a anuncios de este dossier vienen del registro de AutoDS, que solo prueba que el anuncio existió. Antes de invertir, busca cada producto en <a href="https://www.facebook.com/ads/library/">facebook.com/ads/library</a> con país España y estado “Activo”.</p>
+    <p><b>Google Trends y TikTok Creative Center:</b> necesitan ejecutar la web en un navegador y no los pude consultar. No hay datos de estacionalidad ni de búsquedas en este dossier, y por eso la puntuación de demanda está penalizada en todos los productos.</p>
+    <p><b>Amazon.es:</b> las búsquedas no devolvieron fichas de Amazon España. Precios y reseñas de Amazon están sin verificar; uso ManoMano, Kitsch y tiendas Shopify como referencia.</p>
+  </div>
+
+  <h3>Cómo filtré los 85 candidatos</h3>
+  <p>Fuera: productos de más de 30 € de coste, voluminosos o frágiles, cosmética y suplementos (requisitos sanitarios), marcas registradas, productos de supermercado o ferretería común, y lo que no se puede vender a 3× su coste con IVA. Quedaron 25 candidatos con función clara y pedidos verificables; diez pasan al ranking.</p>
+</section>
+
+<section class="sec">
+  <header><span class="eyebrow">Fase B</span><h2>Ranking de los 10 mejores</h2>
+    <p class="muted">Costes y envío a España del catálogo de AutoDS (región ES, en euros, actualizados entre el 30-10 y el 8-11-2026). Margen = contribución por pedido antes de publicidad, con IVA 21 %, arancel 3 €, pasarela y reserva de devoluciones (supuestos en la fase D). Pedidos = pedidos en el proveedor, no ventas de tiendas Shopify.</p>
+  </header>
+  <div class="tbl"><table>
+    <thead><tr><th>#</th><th>Producto</th><th class="n">Puntos</th><th class="n">Coste+envío</th><th class="n">Precio</th><th class="n">Margen</th><th class="n">ROAS eq.</th><th class="n">Pedidos</th><th class="n">Días</th><th>Mercado</th></tr></thead>
+    <tbody>
+      <tr class="win"><td>1</td><td><b>Saco de dormir para gatos</b></td><td class="n"><span class="bar" style="width:70px"></span>70</td><td class="n">7,21 + 1,77</td><td class="n">29,95</td><td class="n">10,78</td><td class="n">2,78</td><td class="n">202</td><td class="n">8</td><td>ES → IT, PT</td></tr>
+      <tr><td>2</td><td>Elevador de colchón para sábanas</td><td class="n"><span class="bar" style="width:69px"></span>69</td><td class="n">6,95 + 1,77</td><td class="n">24,95</td><td class="n">7,16</td><td class="n">3,48</td><td class="n">10.000</td><td class="n">10</td><td>ES (público 45+)</td></tr>
+      <tr><td>3</td><td>Manta de caza automática para gatos</td><td class="n"><span class="bar" style="width:68px"></span>68</td><td class="n">15,50 + 0</td><td class="n">39,95</td><td class="n">11,06</td><td class="n">3,61</td><td class="n">352</td><td class="n">12</td><td>ES, DE</td></tr>
+      <tr><td>4</td><td>Hamaca para cortar uñas a mascotas</td><td class="n"><span class="bar" style="width:64px"></span>64</td><td class="n">5,50 + 1,77</td><td class="n">22,95</td><td class="n">7,05</td><td class="n">3,26</td><td class="n">481</td><td class="n">13</td><td>ES</td></tr>
+      <tr><td>5</td><td>Burlete de ducha plegable</td><td class="n"><span class="bar" style="width:58px"></span>58</td><td class="n">6,05 + 1,77</td><td class="n">24,95</td><td class="n">8,06</td><td class="n">3,10</td><td class="n">1.000</td><td class="n">13</td><td>ES</td></tr>
+      <tr><td>6</td><td>Rodillo quitapelos mango largo (24 cm)</td><td class="n"><span class="bar" style="width:58px"></span>58</td><td class="n">16,81 + 1,77</td><td class="n">39,95</td><td class="n">8,97</td><td class="n">4,45</td><td class="n">279</td><td class="n">11</td><td>ES, DE</td></tr>
+      <tr><td>7</td><td>Rizador sin calor de satén</td><td class="n"><span class="bar" style="width:57px"></span>57</td><td class="n">7,65 + 1,77</td><td class="n">24,95</td><td class="n">6,46</td><td class="n">3,86</td><td class="n">390</td><td class="n">13</td><td>ES, FR</td></tr>
+      <tr><td>8</td><td>Langosta saltarina para gatos</td><td class="n"><span class="bar" style="width:57px"></span>57</td><td class="n">5,04 + 1,77</td><td class="n">24,95</td><td class="n">8,45</td><td class="n">2,95</td><td class="n">800</td><td class="n">10</td><td>ES</td></tr>
+      <tr><td>9</td><td>Cuenco lento para lamer (perros)</td><td class="n"><span class="bar" style="width:57px"></span>57</td><td class="n">11,19 + 0</td><td class="n">29,95</td><td class="n">8,57</td><td class="n">3,49</td><td class="n">377</td><td class="n">11</td><td>ES</td></tr>
+      <tr><td>10</td><td>Cubo de basura colgante plegable</td><td class="n"><span class="bar" style="width:53px"></span>53</td><td class="n">7,39 + 1,77</td><td class="n">26,95</td><td class="n">8,27</td><td class="n">3,26</td><td class="n">316</td><td class="n">12</td><td>ES</td></tr>
+    </tbody></table></div>
+
+  <details><summary>Desglose de la puntuación (sobre 100)</summary>
+  <div class="tbl" style="margin-top:12px"><table>
+    <thead><tr><th>Producto</th><th class="n">Demanda /20</th><th class="n">Economía /20</th><th class="n">Marketing /15</th><th class="n">Competencia /15</th><th class="n">Logística-legal /10</th><th class="n">Evidencia /10</th><th class="n">Escala /10</th><th>Motivo principal de penalización</th></tr></thead>
+    <tbody>
+      <tr><td>Saco gatos</td><td class="n">11</td><td class="n">16</td><td class="n">13</td><td class="n">9</td><td class="n">9</td><td class="n">7</td><td class="n">5</td><td>Estacional; 202 pedidos; camas de gato se venden en tiendas físicas</td></tr>
+      <tr><td>Elevador colchón</td><td class="n">17</td><td class="n">8</td><td class="n">12</td><td class="n">11</td><td class="n">9</td><td class="n">7</td><td class="n">5</td><td>Precio percibido bajo (2 uds ≈10 $ en Walmart); margen fino</td></tr>
+      <tr><td>Manta de caza</td><td class="n">12</td><td class="n">11</td><td class="n">14</td><td class="n">10</td><td class="n">5</td><td class="n">7</td><td class="n">9</td><td>Electrónico con batería: RAEE, pilas, GPSR; devoluciones</td></tr>
+      <tr><td>Hamaca uñas</td><td class="n">13</td><td class="n">9</td><td class="n">12</td><td class="n">10</td><td class="n">7</td><td class="n">7</td><td class="n">6</td><td>5 tallas: riesgo de devolución por talla</td></tr>
+      <tr><td>Burlete ducha</td><td class="n">13</td><td class="n">9</td><td class="n">12</td><td class="n">6</td><td class="n">8</td><td class="n">6</td><td class="n">4</td><td>Disponible en ManoMano y ferreterías; 7,69 $ en Walmart</td></tr>
+      <tr><td>Rodillo quitapelos</td><td class="n">11</td><td class="n">7</td><td class="n">12</td><td class="n">6</td><td class="n">9</td><td class="n">6</td><td class="n">7</td><td>Es adhesivo (no reutilizable): se vende en supermercados; la versión larga cuesta 16,81 €</td></tr>
+      <tr><td>Rizador sin calor</td><td class="n">12</td><td class="n">7</td><td class="n">12</td><td class="n">5</td><td class="n">9</td><td class="n">6</td><td class="n">6</td><td>Kitsch domina (17,95 €, 1.839 reseñas)</td></tr>
+      <tr><td>Langosta gato</td><td class="n">11</td><td class="n">10</td><td class="n">13</td><td class="n">8</td><td class="n">4</td><td class="n">6</td><td class="n">5</td><td>Electrónico; producto de moda pasajera</td></tr>
+      <tr><td>Cuenco lento</td><td class="n">10</td><td class="n">9</td><td class="n">10</td><td class="n">8</td><td class="n">8</td><td class="n">6</td><td class="n">6</td><td>Poca diferenciación frente a Amazon</td></tr>
+      <tr><td>Cubo colgante</td><td class="n">9</td><td class="n">9</td><td class="n">10</td><td class="n">8</td><td class="n">8</td><td class="n">5</td><td class="n">4</td><td>Beneficio poco emocional; bajo deseo</td></tr>
+    </tbody></table></div>
+  <p class="muted" style="margin-top:10px">La demanda va de 9 a 17 en lugar de hasta 20 porque falta Google Trends en todos los casos. El informe de productos adjunto ordena con una fórmula fija distinta (margen, ventas, competencia, envío y valor percibido), así que su orden puede no coincidir con este.</p>
+  </details>
+
+  <details><summary>Candidatos descartados y por qué (15 de los 25)</summary>
+  <ul style="margin-top:10px">
+    <li>Arnés sin tirones para perro (2.000 pedidos): tallas, saturación alta, competencia de marcas en tiendas físicas.</li>
+    <li>Máquina de hielo de 50 cubos, pelador multifuncional, cuchillo para repollo, rodillo de amasar, freidora con cesta: utensilios que se venden en cualquier bazar o supermercado.</li>
+    <li>Kit de nebulización de jardín: fuera de temporada en noviembre.</li>
+    <li>Selladora al vacío 220 V, molinillo eléctrico, cabezal de ducha con filtro: electrónica de red o afirmaciones de filtrado difíciles de sostener.</li>
+    <li>Protector bucal antirronquidos, masajeadores de pies y bandas para fascitis: afirmaciones de salud; riesgo de producto sanitario.</li>
+    <li>Flequillo de pelo humano: tonos de color y devoluciones; producto de higiene personal.</li>
+    <li>Helicóptero RC, linterna 18650, filtro de agua de camping: baterías grandes, radiofrecuencia o seguridad.</li>
+  </ul></details>
+</section>
+
+<section class="sec">
+  <header><span class="eyebrow">Fase C</span><h2>Competencia de los cinco primeros</h2>
+    <p class="muted">Tiendas y anuncios registrados por AutoDS (consultado el 9-11-2026) y búsquedas web. No he podido confirmar si cada anuncio sigue activo hoy, ni ventas de ninguna tienda: no hay datos de facturación fiables y no los doy.</p></header>
+
+  <div class="grid2">
+    <div class="box">
+      <h3>1 · Saco de dormir para gatos<small>Proveedor: AliExpress, Pet Tribe Store · 4,6★ (68 valoraciones) · 202 pedidos</small></h3>
+      <ul>
+        <li>Competidores: <a href="https://www.aiitle.com/products/cute-cat-sleeping-bag-with-tail">aiitle.com</a> (31,18 €, saco con cola), <a href="https://thetrailtails.com/products/autumn-and-winter-warm-pet-sleeping-bag-lamb-fleece-warm-cat-nest-drill-hole-bedding-semi-closed-dog-nest-suitable-for-dogs?variant=46700057460960">thetrailtails.com</a> (12–21 €), <a href="https://snapklik.com/en-gb/product/cat-sleeping-bag-cat-sleeping-bag-for-indoor-cats-soft-plush-large-cat-sack-self-warm-cat-bed-cat-winter-sleeping-bag-360wrap-comfortable-pet-snuggle-sack-for-cats-up-to-7-5kg-cats-sleeping-bag/0WCW4P47LUFK5">snapklik (UK)</a> (35,62 €). Precios en euros según AutoDS.</li>
+        <li>Anuncios registrados: <a href="https://www.facebook.com/61560249224558/videos/3845031015810879">vídeo de Facebook</a>, <a href="https://www.tiktok.com/@fioanlove168/video/7443783769074453791">TikTok</a>, <a href="https://vt.tiktok.com/ZS6K84T4S/">TikTok 2</a>.</li>
+        <li>Debilidad común: fichas genéricas en inglés, fotos de catálogo, sin guía de tamaño ni lavado. Hueco: tienda en español, foto real de gato español, guía “¿le cabe a mi gato?” por peso, pack dúo para casas con dos gatos.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>2 · Elevador de colchón<small>Proveedor: AliExpress, Stone's Store · 4,9★ (2.411 valoraciones) · 10.000 pedidos</small></h3>
+      <ul>
+        <li>Competidores: <a href="https://avaleric.com/products/mattress-lifter-bed-sheet-tucker-tool">avaleric.com</a> (17,80 €), <a href="https://cur8trend.com/products/2-in-1-mattress-lifter-bed-sheet-tucker-tool-2">cur8trend.com</a> (22,25 €), <a href="https://www.conationfirm.com/products/2-in-1-mattress-lifter-bed-sheet-tucker-tool-2-3-3">conationfirm.com</a> (18,69 €). Kmart Australia y Walmart lo venden barato (2 uds ≈10 $).</li>
+        <li>Anuncios registrados: <a href="https://www.facebook.com/100092580849103/posts/787975360965152">publicación de Facebook</a>, <a href="https://vt.tiktok.com/ZSuMHE64Y/">TikTok</a>.</li>
+        <li>En España no encontré tiendas que lo vendan específicamente. Hueco: posicionarlo como ayuda para espalda y mayores (cuidadores, 55+), con vídeo real de colchón pesado.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>3 · Manta de caza automática para gatos<small>Proveedor: AliExpress, Shop1105288855 · 4,6★ (40) · 352 pedidos · envío gratis</small></h3>
+      <ul>
+        <li>Competidores: <a href="https://www.aiitle.com/products/aiitle-rechargeable-interactive-cat-toy">aiitle.com</a> (32,07 €), <a href="https://petnomestore.com/products/automatic-hide-and-seek-motion-activated-cat-toy-with-moving-feather-animal-chirps">petnomestore.com</a> (25,83 €), <a href="https://pawsnheart.com/products/cat-toys-interactive-hide-and-seek-cat-toy-with-mouse-squeaky-motion-activated-moving-concealed-feathers-kitten-teaser-toy">pawsnheart.com</a> (17,81 €). Marca de referencia: <a href="https://ca.petsafe.com/products/frolicat-pounce">PetSafe FroliCat Pounce</a> (52,99 $). En España, <a href="https://www.petsafe.com/es/p/rolorat-juguete-automatico-para-gatos/PTY19-16224/">PetSafe RoloRat</a> a 28,99 € y una mariposa giratoria a 16,38 € en ManoMano.</li>
+        <li>Anuncios: <a href="https://www.facebook.com/61574422670241/posts/122142789506814089">Facebook</a>, <a href="https://www.facebook.com/share/r/18zMREds9j/">Facebook reel</a>, <a href="https://www.tiktok.com/@keebsandthingz/video/7588900976023571725">TikTok</a>.</li>
+        <li>Mejor potencial de marca, pero es electrónico con batería de 1.200 mAh: hay que resolver RAEE y pilas antes de vender.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>4 · Hamaca para cortar uñas<small>Proveedor: AliExpress, MyHomeTime Store · 4,6★ (126) · 481 pedidos</small></h3>
+      <ul>
+        <li>Competidores: <a href="https://vanpardo.com/products/pet-grooming-hammock">vanpardo.com</a> (17,09 €, con Google Shopping), <a href="https://www.mollyinternational.com/products/pet-grooming-hammock">mollyinternational.com</a> (20,44 €), <a href="https://happytailcenter.com/products/grooming-hammock-bath-bag-for-nail-cutting-anti-scratch-restraint-bag-for-cat-dog-trimming">happytailcenter.com</a> (18,08 €).</li>
+        <li>Anuncios: <a href="https://www.tiktok.com/@cuddlesmeow/video/7353663576822811946">TikTok</a>, <a href="https://www.tiktok.com/@cuddlesmeow/video/7291540162696285483">TikTok 2</a>.</li>
+        <li>Buen complemento (venta cruzada) para una tienda de gatos; como producto principal el precio de mercado (17–20 €) es demasiado bajo.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>5 · Burlete de ducha plegable<small>Proveedor: AliExpress · 1.000 pedidos · 5 competidores</small></h3>
+      <ul>
+        <li>En España ya hay mucha oferta en <a href="https://www.manomano.es/cat/umbral+ducha">ManoMano (umbrales de ducha)</a>; en EE. UU. <a href="https://www.walmart.com/ip/18335312381">Walmart lo vende a 7,69 $</a>.</li>
+        <li>Problema real y demostrable, pero el comprador lo encuentra barato en ferreterías. Sin hueco de precio para pagar publicidad.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <header><span class="eyebrow">Fase D</span><h2>Rentabilidad de los tres finalistas</h2></header>
+
+  <div class="callout">
+    <p><b>Supuestos fiscales y de costes</b> (valídalos con tu gestor antes de lanzar):</p>
+    <ul>
+      <li><span class="tag t-fact">HECHO</span> Coste y envío a España: catálogo AutoDS región ES, en euros (6–8 nov 2026). Uso la variante más cara de cada producto.</li>
+      <li><span class="tag t-hyp">HIPÓTESIS</span> Vendes como empresa o autónomo en España en régimen general: el precio al cliente incluye IVA del 21 %, que se ingresa a Hacienda. Ingreso neto = precio ÷ 1,21.</li>
+      <li><span class="tag t-hyp">HIPÓTESIS</span> El precio de AliExpress a la UE ya incluye el IVA de importación (IOSS) y lo trato como coste no deducible. Es el supuesto prudente; si tu gestor confirma que es deducible, el margen mejora 1–3 €.</li>
+      <li><span class="tag t-hyp">HIPÓTESIS</span> Arancel UE: 3 € por pedido (una línea arancelaria). Si se cobra por artículo, el pack de 2 pierde 3 € más. Compruébalo en el checkout de AliExpress con un pedido de prueba.</li>
+      <li><span class="tag t-est">ESTIMACIÓN</span> Pasarela Shopify Payments: 1,5 % + 0,25 € (no confirmado para España; si fuera 2,9 % + 0,25 €, resta 0,35–0,55 € por pedido). Reserva de devoluciones: 4 % del ingreso neto (7 % en electrónicos). Varios variables: 0,30 €.</li>
+      <li>Fijos mensuales fuera del cálculo por pedido: Shopify Basic ≈32–36 €/mes y aplicaciones ≈20 €/mes.</li>
+    </ul>
+  </div>
+
+  <div class="tbl"><table>
+    <thead><tr><th>Por pedido (€)</th><th class="n">Saco gato ×1</th><th class="n">Saco gato ×2</th><th class="n">Elevador ×1</th><th class="n">Elevador ×2</th><th class="n">Manta caza ×1</th><th class="n">Manta caza ×2</th></tr></thead>
+    <tbody>
+      <tr><td>Precio cliente (IVA incl.)</td><td class="n">29,95</td><td class="n">49,95</td><td class="n">24,95</td><td class="n">39,95</td><td class="n">39,95</td><td class="n">69,95</td></tr>
+      <tr><td>− IVA 21 %</td><td class="n">5,20</td><td class="n">8,67</td><td class="n">4,33</td><td class="n">6,93</td><td class="n">6,93</td><td class="n">12,14</td></tr>
+      <tr><td><b>Ingreso neto</b></td><td class="n"><b>24,75</b></td><td class="n"><b>41,28</b></td><td class="n"><b>20,62</b></td><td class="n"><b>33,02</b></td><td class="n"><b>33,02</b></td><td class="n"><b>57,81</b></td></tr>
+      <tr><td>− Producto</td><td class="n">7,21</td><td class="n">14,42</td><td class="n">6,95</td><td class="n">13,90</td><td class="n">15,50</td><td class="n">31,00</td></tr>
+      <tr><td>− Envío al cliente</td><td class="n">1,77</td><td class="n">3,54</td><td class="n">1,77</td><td class="n">3,54</td><td class="n">0,00</td><td class="n">0,00</td></tr>
+      <tr><td>− Arancel UE</td><td class="n">3,00</td><td class="n">3,00</td><td class="n">3,00</td><td class="n">3,00</td><td class="n">3,00</td><td class="n">3,00</td></tr>
+      <tr><td>− Pasarela</td><td class="n">0,70</td><td class="n">1,00</td><td class="n">0,62</td><td class="n">0,85</td><td class="n">0,85</td><td class="n">1,30</td></tr>
+      <tr><td>− Reserva devoluciones</td><td class="n">0,99</td><td class="n">1,65</td><td class="n">0,82</td><td class="n">1,32</td><td class="n">2,31</td><td class="n">4,05</td></tr>
+      <tr><td>− Varios</td><td class="n">0,30</td><td class="n">0,30</td><td class="n">0,30</td><td class="n">0,30</td><td class="n">0,30</td><td class="n">0,30</td></tr>
+      <tr><td><b>Margen de contribución (antes de anuncios) = CPA de equilibrio</b></td><td class="n pos">10,78</td><td class="n pos">17,38</td><td class="n mid">7,16</td><td class="n mid">10,11</td><td class="n pos">11,06</td><td class="n pos">18,16</td></tr>
+      <tr><td>ROAS de equilibrio (precio ÷ margen)</td><td class="n">2,78</td><td class="n">2,87</td><td class="n">3,48</td><td class="n">3,95</td><td class="n">3,61</td><td class="n">3,85</td></tr>
+    </tbody></table></div>
+
+  <h3>Tres escenarios publicitarios</h3>
+  <p class="muted">Supuestos <span class="tag t-hyp">HIPÓTESIS</span> para una tienda nueva en España, con la mezcla de packs indicada. CPA = CPM ÷ (1.000 × CTR × conversión). Uso las mismas tasas en los tres productos para compararlos; en la práctica un producto más caro convierte algo peor.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Escenario</th><th>Supuestos</th><th class="n">CPA</th><th class="n">Saco (AOV 35,95 · margen 12,76)</th><th class="n">Elevador (AOV 30,95 · margen 8,34)</th><th class="n">Manta (AOV 44,45 · margen 12,12)</th></tr></thead>
+    <tbody>
+      <tr><td>Pesimista</td><td>CPM 7 € · CTR 1,0 % · conv. 1,5 %</td><td class="n">46,70</td><td class="n neg">−33,94</td><td class="n neg">−38,36</td><td class="n neg">−34,58</td></tr>
+      <tr><td>Realista</td><td>CPM 5 € · CTR 1,6 % · conv. 2,5 %</td><td class="n">12,50</td><td class="n mid">+0,26</td><td class="n neg">−4,16</td><td class="n neg">−0,38</td></tr>
+      <tr><td>Optimista</td><td>CPM 4,5 € · CTR 2,2 % · conv. 3,5 %</td><td class="n">5,84</td><td class="n pos">+6,92</td><td class="n pos">+2,50</td><td class="n pos">+6,28</td></tr>
+    </tbody></table></div>
+  <p class="muted">Mezcla de packs supuesta: saco 70 % ×1 y 30 % ×2; elevador 60/40; manta 85/15. Beneficio neto por pedido = margen − CPA, antes de costes fijos.</p>
+
+  <div class="callout risk">
+    <p><b>Lo que dicen estos números:</b> ninguno de los tres es rentable en el primer pedido con resultados normales de una tienda nueva. Con IVA del 21 % y el arancel de 3 €, un producto de 25–40 € solo funciona si el creativo es mejor que la media y si el pack sube el ticket. El saco queda en equilibrio en el escenario realista; los otros dos pierden dinero. Por eso el plan de validación usa límites de gasto estrictos.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <header><span class="eyebrow">Mercados</span><h2>España frente a otros países (para el saco)</h2></header>
+  <div class="tbl"><table>
+    <thead><tr><th>País</th><th class="n">Coste proveedor + envío</th><th class="n">Días</th><th>Coste publicitario</th><th>IVA</th><th>Idioma y barreras</th><th>Valoración</th></tr></thead>
+    <tbody>
+      <tr class="win"><td>España</td><td class="n">6,24–7,21 + 1,77</td><td class="n">8</td><td>Bajo (CPC ≈56 % bajo media global, Superads)</td><td>21 %</td><td>Lengua propia; mercado que conoces</td><td><b>Validar aquí</b></td></tr>
+      <tr><td>Italia</td><td class="n">8,75–9,01 + 1,77</td><td class="n">14</td><td>Bajo-medio (sin dato verificado)</td><td>22 % (OSS)</td><td>Traducir creativos; envío lento</td><td>2.º mercado</td></tr>
+      <tr><td>Alemania</td><td class="n">8,99–9,30, envío gratis</td><td class="n">10</td><td>CAC ≈30 % mayor que España (Eightx, fuente única)</td><td>19 % (OSS)</td><td>Exige alemán impecable; más reclamaciones</td><td>Escalar después</td></tr>
+      <tr><td>Francia</td><td class="n">10,75–11,14, envío gratis</td><td class="n">10</td><td>Medio (sin dato verificado)</td><td>20 % (OSS)</td><td>Coste de proveedor un 50 % mayor</td><td>Escalar después</td></tr>
+      <tr><td>Reino Unido</td><td class="n">5,69–6,89 + 1,77</td><td class="n">8</td><td>Alto (Admanage: CPM parecido a EE. UU.)</td><td>20 %</td><td>Registro de IVA británico y responsable fuera de la UE</td><td>No para empezar</td></tr>
+      <tr><td>EE. UU.</td><td class="n">7,21 + 1,77</td><td class="n">11</td><td>Alto (CPM 13,5–23 $)</td><td>Impuesto estatal</td><td>Aranceles a China y fin de la exención de bajo valor en 2025 (verificar estado actual)</td><td>No para empezar</td></tr>
+    </tbody></table></div>
+  <p>España es la mejor opción para validar: publicidad barata, el envío más rápido del catálogo para este producto y lo puedes gestionar en tu idioma. El techo es el menor poder adquisitivo; por eso el plan de escala apunta a Italia y Portugal con los mismos creativos, y a Alemania y Francia cuando haya una ficha y unas reseñas probadas.</p>
+</section>
+
+<section class="sec">
+  <header><span class="eyebrow">Fase E</span><h2>Por qué el saco, y qué podría hacerlo fracasar</h2></header>
+  <div class="grid2">
+    <div class="box">
+      <h3>Por qué gana</h3>
+      <ul>
+        <li>El menor ROAS de equilibrio de los tres (2,8 frente a 3,5–3,6): es el único que no pierde dinero en el escenario realista.</li>
+        <li>8 días de envío a España, el plazo más corto de los diez.</li>
+        <li>Textil sin electrónica ni tallas: riesgo bajo de devolución y de cumplimiento.</li>
+        <li>Momento justo: frío, Black Friday, Navidad y Reyes. En España la campaña de regalos dura hasta el 6 de enero.</li>
+        <li>El vídeo se entiende en 3 segundos (un gato metiéndose en el saco) y encaja con la tendencia de gatos en hogares españoles.</li>
+        <li>Abre una tienda de gatos: luego se añaden la hamaca de uñas y, cuando el cumplimiento esté resuelto, la manta de caza.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Qué lo puede hundir</h3>
+      <ul>
+        <li><b>Estacionalidad:</b> la demanda cae en marzo. Es un producto de entrada para validar oferta, marca y creativos, no el negocio a 12 meses.</li>
+        <li><b>Demanda débil:</b> 202 pedidos en el proveedor. Si la búsqueda en Meta Ads Library muestra pocos anunciantes activos en España, puede ser falta de mercado y no de competencia.</li>
+        <li><b>Calidad del peluche:</b> fotos de catálogo con mejor aspecto que el producto real. Pide dos muestras antes de gastar en anuncios.</li>
+        <li><b>Comparación con AliExpress o Temu:</b> el comprador puede encontrarlo a 9 €. La marca, las fotos reales y la garantía tienen que justificar los 29,95 €.</li>
+        <li><b>Plazos de Navidad:</b> con 8 días más incidencias, deja de prometer entrega para Navidad hacia el 10 de diciembre y para Reyes hacia el 24 de diciembre.</li>
+        <li><b>GPSR:</b> el Reglamento (UE) 2023/988 exige un operador económico en la UE identificado en los productos vendidos online. Comprueba que el vendedor lo aporta o asume tú ese papel.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <header><span class="eyebrow">Fase F</span><h2>Plan de lanzamiento y validación</h2></header>
+
+  <div class="grid3">
+    <div class="box"><h3>Proveedor</h3><p>AliExpress vía AutoDS: <a href="https://platform.autods.com/marketplace/hand-picked-products/67a2d6128766dabaad1a4713">ficha en AutoDS</a> (ID 67a2d6128766dabaad1a4713), “Envío Premium con Selección AliExpress”, con seguimiento. Alternativa a comparar: CJdropshipping con almacén en Polonia o Alemania (2–7 días según fuentes secundarias) si el volumen pasa de 10 pedidos al día.</p></div>
+    <div class="box"><h3>Oferta inicial</h3><ul><li>1 saco: 29,95 €</li><li>Pack dúo: 49,95 € (“para casas con dos gatos o para regalar”)</li><li>Envío gratis a España incluido en el precio</li><li>Garantía de 30 días si a tu gato no le gusta (cubierta por la reserva del 4 %)</li></ul></div>
+    <div class="box"><h3>Cliente ideal</h3><p>Mujer de 25 a 55 años en España, con uno o dos gatos de interior, piso sin calefacción central o con suelos fríos, que trata al gato como de la familia y compra regalos para él en Navidad. Nivel de conciencia de Schwartz: consciente del problema (el gato busca calor y se mete en la ropa o el sofá), no de la solución.</p></div>
+  </div>
+
+  <div class="grid2">
+    <div class="box">
+      <h3>Página de producto en Shopify</h3>
+      <ol>
+        <li>Galería: primero el vídeo de un gato metiéndose en el saco; después fotos reales de las muestras.</li>
+        <li>Título con el beneficio: “El rincón calentito que tu gato no querrá dejar”.</li>
+        <li>Selector de pack (1 o 2) con el ahorro visible en euros.</li>
+        <li>Tres beneficios: calor que retiene su propio cuerpo, escondite que le da seguridad, lavable a máquina (comprobar con la muestra).</li>
+        <li>Guía de tamaño: 35 × 52 cm, para gatos de hasta unos 6 kg (verificar con la muestra).</li>
+        <li>Plazos honestos: “Entrega en 8–12 días laborables”, con fecha límite para Navidad y Reyes.</li>
+        <li>Garantía de 30 días y política de devoluciones clara (Ley de consumidores: 14 días de desistimiento).</li>
+        <li>Preguntas frecuentes: lavado, tamaño, materiales, envío y devoluciones.</li>
+        <li>Reseñas: solo reales, cuando lleguen. Nunca reseñas importadas ni inventadas.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h3>Cinco ángulos publicitarios</h3>
+      <ol>
+        <li><b>Frío en casa</b> (PAS): “Si tú pasas frío en el sofá, imagina tu gato en el suelo”.</li>
+        <li><b>El escondite</b>: los gatos buscan sitios cerrados para dormir seguros. Le das el suyo antes de que elija tu armario.</li>
+        <li><b>Regalo para el gato</b>: Navidad y Reyes para el miembro peludo de la familia.</li>
+        <li><b>Prueba del gato</b> (UGC): “Lo dejé en el suelo y a los 10 segundos ya estaba dentro”.</li>
+        <li><b>Dos gatos</b>: pack dúo para que no se peleen por el sitio caliente.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>Tres conceptos para Higgsfield</h3>
+    <div class="grid3">
+      <div><b>A · “10 segundos”</b><p class="muted">Vídeo vertical de 9:16 y 12 s. Salón español en invierno, luz de tarde. Un gato atigrado ve el saco en el suelo, lo olfatea y se mete; plano final de la cara asomando. Texto: “Lo dejé en el suelo…”. Usa la foto real de la muestra como referencia.</p></div>
+      <div><b>B · Antes y después</b><p class="muted">Pantalla partida: a la izquierda el gato acurrucado sobre la ropa limpia; a la derecha dormido dentro del saco. Voz en off en español de España. Cierre con el pack dúo y el precio.</p></div>
+      <div><b>C · Unboxing de regalo</b><p class="muted">Avatar UGC (mujer de 30–40 años) abre un paquete junto al árbol de Navidad, el gato salta dentro. Guion de 15 s con el beneficio y la fecha límite de Reyes. Sin afirmaciones de salud.</p></div>
+    </div>
+    <p class="muted">Genera cada concepto con dos ganchos distintos en los primeros 2 segundos para tener 6 creativos. No uses imágenes de competidores ni de marcas.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="box">
+      <h3>Estrategia inicial en Meta</h3>
+      <ul>
+        <li>Píxel y API de conversiones activos, evento de compra probado con un pedido real.</li>
+        <li>1 campaña de ventas, presupuesto por conjunto (ABO), 3 conjuntos de 10 €/día: público amplio España 22–60 años; Advantage+ con sugerencia “gatos”; intereses en gatos y mascotas.</li>
+        <li>2 creativos por conjunto (6 en total). Sin tocar nada durante 72 h salvo que se cumpla una regla de corte.</li>
+        <li>Solo Facebook e Instagram con colocaciones automáticas; TikTok Ads cuando un creativo pase los criterios en Meta.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Presupuesto mínimo de prueba</h3>
+      <div class="tbl"><table>
+        <tbody>
+          <tr><td>Anuncios: 30 €/día × 9 días</td><td class="n">270 €</td></tr>
+          <tr><td>2 muestras a tu casa (calidad y plazo reales)</td><td class="n">≈18 €</td></tr>
+          <tr><td>Shopify Basic, 1 mes</td><td class="n">≈36 €</td></tr>
+          <tr><td>Dominio + 1–2 aplicaciones</td><td class="n">≈30 €</td></tr>
+          <tr><td>Créditos de Higgsfield</td><td class="n">según tu plan</td></tr>
+          <tr><td><b>Total</b></td><td class="n"><b>≈350–400 €</b></td></tr>
+        </tbody></table></div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>Métricas y reglas de decisión</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Señal</th><th>Seguir</th><th>Mejorar</th><th>Cortar</th></tr></thead>
+      <tbody>
+        <tr><td>CTR de enlace (tras 1.500 impresiones)</td><td class="pos">≥ 1,5 %</td><td class="mid">1,0–1,5 %: cambia el gancho</td><td class="neg">&lt; 1,0 %</td></tr>
+        <tr><td>CPC de enlace</td><td class="pos">≤ 0,35 €</td><td class="mid">0,35–0,60 €</td><td class="neg">&gt; 0,60 €</td></tr>
+        <tr><td>Añadir al carrito / visitas</td><td class="pos">≥ 8 %</td><td class="mid">4–8 %: revisa página y precio</td><td class="neg">&lt; 4 %</td></tr>
+        <tr><td>Gasto por creativo sin compra</td><td>—</td><td>—</td><td class="neg">≥ 26 € (2 × CPA de equilibrio)</td></tr>
+        <tr><td>CPA (3 días, ≥ 10 compras)</td><td class="pos">≤ 12,8 €: sube un 20–30 % cada 48 h</td><td class="mid">12,8–20 €: prueba pack y ganchos</td><td class="neg">&gt; 25 € tras 270 € gastados</td></tr>
+      </tbody></table></div>
+    <p class="muted">Si el saco se descarta, repite el mismo plan con el elevador de colchón, apuntando a 45–65 años y con ángulo de espalda. La manta de caza solo cuando tengas resuelta la inscripción como productor de aparatos eléctricos (RAEE) y de pilas en España.</p>
+  </div>
+
+  <div class="box">
+    <h3>Comprobar antes de invertir</h3>
+    <ol>
+      <li>Meta Ads Library, España, activos: “saco gato”, “cama gato invierno”, “cat sleeping bag”. Anota anunciantes, fecha de inicio y número de variantes.</li>
+      <li>Google Trends España, 5 años: “cama para gatos”, “saco para gatos”. Confirma el pico de noviembre a enero.</li>
+      <li>Amazon.es: precio y número de reseñas de los 5 primeros sacos de gato.</li>
+      <li>Un pedido de muestra para ver si AliExpress cobra el arancel de 3 € y cuánto tarda de verdad.</li>
+      <li>Con tu gestor: tratamiento del IVA IOSS en dropshipping y si te conviene darte de alta en OSS para vender a Italia.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec">
+  <header><span class="eyebrow">Fuentes</span><h2>Fuentes consultadas (9–10 nov 2026)</h2></header>
+  <ul class="srcs">
+    <li>AutoDS — productos ganadores (Hogar, Mascotas, Belleza, Deporte; filtro de anuncios en Facebook), detalle de producto y regiones de envío; TikTok Analytics. Consulta del 9-11-2026 por conector.</li>
+    <li><a href="https://commission.europa.eu/news-and-media/news/ensuring-fairness-and-safety-eur3-customs-duty-low-value-parcels-2026-06-29_en">Comisión Europea — arancel de 3 € a paquetes de bajo valor (29-6-2026)</a> · <a href="https://vatcalc.com/eu/eu-e3-levy-low-value-e-commerce-import-package-july-2026">VATCalc</a> · <a href="https://www.forvismazars.com/ie/en/insights/news-opinions/eu-3-duty-on-low-value-imports">Forvis Mazars</a></li>
+    <li><a href="https://www.cnmc.es/sites/default/files/editor_contenidos/Notas%20de%20prensa/2026/20261002_NP_CE_I_26.pdf">CNMC — comercio electrónico 1T 2026</a> · <a href="https://www.alimarket.es/electro/noticia/432122/la-facturacion-del-comercio-electronico-aumento-un-15--en-el-primer-trimestre-de-2026">Alimarket</a></li>
+    <li><a href="https://www.ifema.es/iberpet/notas-prensa/crecimiento-industria-cuidado-de-mascotas">IFEMA Iberpet — Barómetro Pet Parents 2026</a> · <a href="https://www.ifema.es/iberpet/noticias-sector/el-mercado-espanol-de-petcare">IFEMA — mercado español de petcare</a></li>
+    <li><a href="https://www.superads.ai/facebook-ads-costs/cpm-cost-per-mille/spain">Superads — costes Meta España</a> · <a href="https://syntermedia.ai/benchmarks/2026-h1/meta-ads/cpm">Synter — CPM Meta 1S 2026</a> · <a href="https://www.adamigo.ai/blog/meta-ads-cpm-cpc-benchmarks-by-country-2026">Adamigo</a> · <a href="https://eightx.co/blog/eu-ecommerce-cac-benchmark">Eightx — CAC en la UE</a> · <a href="https://admanage.ai/blog/uk-vs-us-meta-cpms">Admanage — CPM Reino Unido y EE. UU.</a></li>
+    <li><a href="https://www.tooltester.com/es/opiniones/shopify/shopify-precios/">Tooltester — precios de Shopify</a> · <a href="https://launchmystore.io/es/tools/shopify-fee-calculator">LaunchMyStore — calculadora</a> (tarifa de España sin confirmar)</li>
+    <li><a href="https://hackceleration.com/es/labs/mejor/proveedores-dropshipping-europeos">Hackceleration — proveedores europeos</a> · <a href="https://www.alidrop.co/es/blogs/cj-dropshipping-opiniones">AliDrop — CJdropshipping</a></li>
+    <li>Competencia: <a href="https://www.mykitsch.com/es/products/satin-heatless-curling-set-charcoal">Kitsch ES</a>, <a href="https://www.manomano.es/cat/umbral+ducha">ManoMano</a>, <a href="https://www.kmart.com.au/product/large-wedge-mattress-lifter-tool-for-easy-bed-making-110010655/">Kmart AU</a>, <a href="https://www.walmart.com/ip/18262910330">Walmart</a>, <a href="https://ca.petsafe.com/products/frolicat-pounce">PetSafe</a>, y las tiendas Shopify enlazadas en la fase C.</li>
+    <li>Sin acceso: Meta Ads Library (HTTP 403), Google Trends, TikTok Creative Center y fichas de Amazon.es.</li>
+  </ul>
+</section>
+
+</div>
