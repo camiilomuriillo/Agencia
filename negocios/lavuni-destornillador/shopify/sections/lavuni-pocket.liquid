@@ -1,0 +1,581 @@
+{%- comment -%}
+  LAVUNI Pocket 24 — landing de producto de un solo artículo.
+  Se asigna a un producto mediante la plantilla templates/product.pocket.json.
+  Todo el texto se edita desde el editor de temas (Personalizar).
+  El formulario de compra es el nativo de Shopify: precios, variantes,
+  disponibilidad y métodos de pago salen del producto y de la tienda reales.
+{%- endcomment -%}
+
+{{ 'lavuni-pocket.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'lavuni-pocket.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign pack_discount_cents = section.settings.pack_discount | times: 100 | round
+  assign pack_total = current_variant.price | times: 2 | minus: pack_discount_cents
+  assign pack_unit = pack_total | divided_by: 2
+  assign media_count = product.media.size
+  assign problem_i = 0
+  assign benefit_i = 0
+-%}
+
+<div class="lp" data-lp-root id="lp-{{ section.id }}">
+  <script type="application/json" data-lp-json>
+    {
+      "moneyFormat": {{ shop.money_format | json }},
+      "packDiscountCents": {% if section.settings.pack_enabled %}{{ pack_discount_cents }}{% else %}0{% endif %},
+      "variants": [
+        {%- for v in product.variants -%}
+          {"id": {{ v.id }}, "price": {{ v.price }}, "available": {{ v.available | json }}}{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+
+  {%- if section.settings.announcement != blank -%}
+    <div class="lp-announce">{{ section.settings.announcement }}</div>
+  {%- endif -%}
+
+  {%- comment -%} ===================== 1. HERO ===================== {%- endcomment -%}
+  <section class="lp-hero" aria-labelledby="lp-title-{{ section.id }}">
+    <div class="lp-wrap lp-hero__grid">
+
+      <div class="lp-gallery">
+        <div class="lp-gallery__main">
+          {%- if product.featured_media -%}
+            {{ product.featured_media
+              | image_url: width: 1100
+              | image_tag:
+                loading: 'eager',
+                fetchpriority: 'high',
+                widths: '400, 600, 800, 1100',
+                sizes: '(min-width: 750px) 55vw, 100vw',
+                alt: product.featured_media.alt | default: product.title,
+                data-lp-main-img: ''
+            }}
+          {%- endif -%}
+        </div>
+        {%- if media_count > 1 -%}
+          <div class="lp-gallery__thumbs" role="list">
+            {%- for m in product.media limit: 8 -%}
+              {%- if m.media_type == 'image' -%}
+                <button type="button" class="lp-gallery__thumb" role="listitem"
+                  data-lp-thumb
+                  data-src="{{ m | image_url: width: 1100 }}"
+                  data-alt="{{ m.alt | default: product.title | escape }}"
+                  aria-label="Ver imagen {{ forloop.index }}"
+                  aria-current="{% if forloop.first %}true{% else %}false{% endif %}">
+                  {{ m | image_url: width: 160 | image_tag: loading: 'lazy', alt: '' }}
+                </button>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="lp-hero__info">
+        {%- if section.settings.hero_badge != blank -%}
+          <span class="lp-hero__badge">{{ section.settings.hero_badge }}</span>
+        {%- endif -%}
+        <h1 class="lp-hero__title" id="lp-title-{{ section.id }}">{{ section.settings.hero_title }}</h1>
+        <p class="lp-hero__sub">{{ section.settings.hero_subtitle }}</p>
+
+        <ul class="lp-checks">
+          {%- for i in (1..3) -%}
+            {%- capture key %}hero_check_{{ i }}{% endcapture -%}
+            {%- if section.settings[key] != blank -%}
+              <li>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".12"/><path d="M7 12.5l3.2 3L17 9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>{{ section.settings[key] }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- form 'product', product, class: 'lp-form', novalidate: 'novalidate', data-lp-form: '' -%}
+          <input type="hidden" name="id" value="{{ current_variant.id }}" data-lp-variant-id>
+          <input type="hidden" name="quantity" value="1" data-lp-qty>
+          {%- if section.settings.skip_cart -%}
+            <input type="hidden" name="return_to" value="/checkout">
+          {%- endif -%}
+
+          {%- unless product.has_only_default_variant -%}
+            <div class="lp-variants">
+              <label for="lp-variant-{{ section.id }}">{{ product.options.first }}</label>
+              <select id="lp-variant-{{ section.id }}" data-lp-variant-select>
+                {%- for v in product.variants -%}
+                  <option value="{{ v.id }}" {% if v.id == current_variant.id %}selected{% endif %} {% unless v.available %}disabled{% endunless %}>
+                    {{ v.title }}{% unless v.available %} — agotado{% endunless %}
+                  </option>
+                {%- endfor -%}
+              </select>
+            </div>
+          {%- endunless -%}
+
+          {%- if section.settings.pack_enabled -%}
+            <fieldset class="lp-offers">
+              <legend>Elige tu opción</legend>
+              <label class="lp-offer">
+                <input type="radio" name="lp-offer" value="1" checked>
+                <span>
+                  <span class="lp-offer__title">{{ section.settings.offer1_title }}</span>
+                  <span class="lp-offer__desc">{{ section.settings.offer1_desc }}</span>
+                </span>
+                <span class="lp-offer__price" data-lp-unit-price>{{ current_variant.price | money }}</span>
+              </label>
+              <label class="lp-offer">
+                {%- if section.settings.offer2_tag != blank -%}<span class="lp-offer__tag">{{ section.settings.offer2_tag }}</span>{%- endif -%}
+                <input type="radio" name="lp-offer" value="2">
+                <span>
+                  <span class="lp-offer__title">{{ section.settings.offer2_title }}</span>
+                  <span class="lp-offer__desc">{{ section.settings.offer2_desc }}</span>
+                </span>
+                <span class="lp-offer__price">
+                  <span data-lp-pack-price>{{ pack_total | money }}</span>
+                  <small><span data-lp-pack-unit>{{ pack_unit | money }}</span> / ud.</small>
+                </span>
+              </label>
+            </fieldset>
+          {%- else -%}
+            <div class="lp-price">
+              <span class="lp-price__now" data-lp-price>{{ current_variant.price | money }}</span>
+            </div>
+          {%- endif -%}
+
+          <p class="lp-price__note">{{ section.settings.price_note }}</p>
+
+          <button type="submit" name="add" class="lp-btn" data-lp-submit
+            data-label="{{ section.settings.cta_label | escape }}"
+            data-soldout="Agotado temporalmente"
+            {% unless current_variant.available %}disabled{% endunless %}>
+            {%- if current_variant.available -%}{{ section.settings.cta_label }}{%- else -%}Agotado temporalmente{%- endif -%}
+          </button>
+          <div class="lp-form-error" role="status" aria-live="polite"></div>
+
+          {%- if section.settings.cutoff_text != blank -%}
+            <p class="lp-cutoff">{{ section.settings.cutoff_text }}</p>
+          {%- endif -%}
+
+          <ul class="lp-trust">
+            {%- for i in (1..4) -%}
+              {%- capture key %}trust_{{ i }}{% endcapture -%}
+              {%- if section.settings[key] != blank -%}
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.2 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>{{ section.settings[key] }}</span>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+
+          {%- if shop.enabled_payment_types.size > 0 -%}
+            <div class="lp-payments" aria-label="Métodos de pago aceptados">
+              {%- for type in shop.enabled_payment_types -%}
+                {{ type | payment_type_svg_tag }}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===================== 2. PROBLEMA ===================== {%- endcomment -%}
+  <section class="lp-section lp-section--soft">
+    <div class="lp-wrap">
+      <div class="lp-center lp-reveal">
+        <span class="lp-eyebrow">{{ section.settings.problem_eyebrow }}</span>
+        <h2 class="lp-h2">{{ section.settings.problem_title }}</h2>
+        <p class="lp-lead">{{ section.settings.problem_text }}</p>
+      </div>
+      <div class="lp-problems">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'problem' -%}
+            {%- assign problem_i = problem_i | plus: 1 -%}
+            <article class="lp-problem lp-reveal" {{ block.shopify_attributes }}>
+              <div class="lp-problem__img">
+                {%- if block.settings.image -%}
+                  {{ block.settings.image | image_url: width: 700 | image_tag: loading: 'lazy', widths: '350, 500, 700', sizes: '(min-width: 750px) 33vw, 100vw', alt: block.settings.image.alt | default: block.settings.title }}
+                {%- endif -%}
+              </div>
+              <div class="lp-problem__body">
+                <h3>{{ block.settings.title }}</h3>
+                <p class="lp-muted">{{ block.settings.text }}</p>
+              </div>
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===================== 3. SOLUCIÓN ===================== {%- endcomment -%}
+  <section class="lp-section lp-section--dark">
+    <div class="lp-wrap">
+      <div class="lp-reveal">
+        <span class="lp-eyebrow">{{ section.settings.solution_eyebrow }}</span>
+        <h2 class="lp-h2">{{ section.settings.solution_title }}</h2>
+        <p class="lp-lead">{{ section.settings.solution_text }}</p>
+      </div>
+      <ol class="lp-steps">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'step' -%}
+            <li class="lp-step lp-reveal" {{ block.shopify_attributes }}>
+              <div>
+                <h3>{{ block.settings.title }}</h3>
+                <p class="lp-muted">{{ block.settings.text }}</p>
+              </div>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ol>
+      {%- if section.settings.solution_image -%}
+        <div class="lp-solution__media lp-reveal">
+          {{ section.settings.solution_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '600, 900, 1400', sizes: '100vw', alt: section.settings.solution_image.alt | default: section.settings.solution_title }}
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  {%- comment -%} ===================== 4. BENEFICIOS ===================== {%- endcomment -%}
+  <section class="lp-section">
+    <div class="lp-wrap">
+      <div class="lp-center lp-reveal">
+        <span class="lp-eyebrow">{{ section.settings.benefits_eyebrow }}</span>
+        <h2 class="lp-h2">{{ section.settings.benefits_title }}</h2>
+      </div>
+      <div class="lp-benefits">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'benefit' -%}
+            {%- assign benefit_i = benefit_i | plus: 1 -%}
+            <article class="lp-benefit lp-reveal" {{ block.shopify_attributes }}>
+              <div class="lp-benefit__img">
+                {%- if block.settings.image -%}
+                  {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400, 600, 800', sizes: '(min-width: 750px) 50vw, 100vw', alt: block.settings.image.alt | default: block.settings.title }}
+                {%- else -%}
+                  {%- assign media_index = benefit_i | modulo: media_count -%}
+                  {%- assign fallback = product.media[media_index] -%}
+                  {%- if fallback -%}
+                    {{ fallback | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400, 600, 800', sizes: '(min-width: 750px) 50vw, 100vw', alt: block.settings.title }}
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+              <div>
+                <span class="lp-benefit__num">{{ benefit_i | prepend: '0' | slice: -2, 2 }}</span>
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.text }}</p>
+              </div>
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===================== 5. VÍDEO ===================== {%- endcomment -%}
+  <section class="lp-section lp-section--dark">
+    <div class="lp-wrap lp-center">
+      <div class="lp-reveal">
+        <span class="lp-eyebrow">{{ section.settings.video_eyebrow }}</span>
+        <h2 class="lp-h2">{{ section.settings.video_title }}</h2>
+        <p class="lp-lead">{{ section.settings.video_text }}</p>
+      </div>
+      <div class="lp-video lp-reveal">
+        {%- if section.settings.video != blank -%}
+          {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, controls: true, preload: 'none', image_size: '720x' }}
+        {%- else -%}
+          <div class="lp-video__placeholder">Vídeo vertical pendiente.<br>Súbelo en Personalizar › Vídeo demostración.</div>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===================== 6. COMPARATIVA ===================== {%- endcomment -%}
+  <section class="lp-section">
+    <div class="lp-wrap">
+      <div class="lp-center lp-reveal">
+        <span class="lp-eyebrow">Comparativa</span>
+        <h2 class="lp-h2">{{ section.settings.compare_title }}</h2>
+      </div>
+      <div class="lp-compare-wrap lp-reveal">
+        <table class="lp-compare">
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Característica</span></th>
+              <th scope="col" class="is-us">{{ section.settings.product_short_name }}</th>
+              <th scope="col">Destornillador normal</th>
+              <th scope="col">Juego tradicional</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'compare_row' -%}
+                <tr {{ block.shopify_attributes }}>
+                  <th scope="row">{{ block.settings.feature }}</th>
+                  <td class="is-us"><span class="lp-yes">{{ block.settings.us }}</span></td>
+                  <td><span class="{% if block.settings.normal == '—' or block.settings.normal == 'No' %}lp-no{% endif %}">{{ block.settings.normal }}</span></td>
+                  <td><span class="{% if block.settings.set == '—' or block.settings.set == 'No' %}lp-no{% endif %}">{{ block.settings.set }}</span></td>
+                </tr>
+              {%- endif -%}
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+      {%- if section.settings.compare_note != blank -%}
+        <p class="lp-compare-note">{{ section.settings.compare_note }}</p>
+      {%- endif -%}
+    </div>
+  </section>
+
+  {%- comment -%} ===================== 7. OPINIONES (solo reales) ===================== {%- endcomment -%}
+  {%- if section.settings.show_reviews -%}
+    <section class="lp-section lp-section--soft">
+      <div class="lp-wrap">
+        <div class="lp-center lp-reveal">
+          <span class="lp-eyebrow">Opiniones de clientes</span>
+          <h2 class="lp-h2">{{ section.settings.reviews_title }}</h2>
+        </div>
+        <div class="lp-reviews">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'review' -%}
+              <figure class="lp-review lp-reveal" {{ block.shopify_attributes }}>
+                <div class="lp-review__stars" aria-label="{{ block.settings.stars }} de 5 estrellas">
+                  {%- for s in (1..5) -%}{% if s <= block.settings.stars %}★{% else %}☆{% endif %}{%- endfor -%}
+                </div>
+                <blockquote>{{ block.settings.text }}</blockquote>
+                <figcaption class="lp-review__author">
+                  {{ block.settings.author }}
+                  {%- if block.settings.verified %} · <span class="lp-review__verified">Compra verificada</span>{% endif -%}
+                </figcaption>
+              </figure>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+
+  {%- comment -%} ===================== 8. OFERTA ===================== {%- endcomment -%}
+  <section class="lp-section lp-section--soft" id="oferta">
+    <div class="lp-wrap lp-box">
+      <div class="lp-box__img lp-reveal">
+        {%- assign box_img = section.settings.box_image | default: product.featured_media -%}
+        {%- if box_img -%}
+          {{ box_img | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 700, 900', sizes: '(min-width: 750px) 50vw, 100vw', alt: product.title }}
+        {%- endif -%}
+      </div>
+      <div class="lp-reveal">
+        <span class="lp-eyebrow">La oferta</span>
+        <h2 class="lp-h2">{{ section.settings.offer_title }}</h2>
+        <div class="lp-price"><span class="lp-price__now" data-lp-unit-price>{{ current_variant.price | money }}</span><span class="lp-muted">IVA incluido</span></div>
+        {%- if section.settings.pack_enabled -%}
+          <p class="lp-muted">Pack de 2: <strong data-lp-pack-price>{{ pack_total | money }}</strong> (<span data-lp-pack-unit>{{ pack_unit | money }}</span> / ud.)</p>
+        {%- endif -%}
+
+        <ul class="lp-includes">
+          {%- assign includes = section.settings.includes | newline_to_br | split: '<br />' -%}
+          {%- for line in includes -%}
+            {%- assign l = line | strip -%}
+            {%- if l != blank -%}<li>{{ l }}</li>{%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        <dl class="lp-facts">
+          <div><dt>Envío</dt><dd>{{ section.settings.fact_shipping }}</dd></div>
+          <div><dt>Entrega</dt><dd>{{ section.settings.fact_delivery }}</dd></div>
+          <div><dt>Devoluciones</dt><dd>{{ section.settings.fact_returns }}</dd></div>
+          <div><dt>Garantía</dt><dd>{{ section.settings.fact_warranty }}</dd></div>
+          <div><dt>Pago</dt><dd>{{ section.settings.fact_payment }}</dd></div>
+        </dl>
+
+        <p style="margin-top:20px"><a href="#lp-title-{{ section.id }}" class="lp-btn" data-lp-goto-form>{{ section.settings.cta_label }}</a></p>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===================== 9. FAQ ===================== {%- endcomment -%}
+  <section class="lp-section">
+    <div class="lp-wrap">
+      <div class="lp-center lp-reveal">
+        <span class="lp-eyebrow">Preguntas frecuentes</span>
+        <h2 class="lp-h2">{{ section.settings.faq_title }}</h2>
+      </div>
+      <div class="lp-faq">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'faq' -%}
+            <details {{ block.shopify_attributes }}>
+              <summary>{{ block.settings.question }}</summary>
+              <div class="lp-faq__a">{{ block.settings.answer }}</div>
+            </details>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ===================== 10. CIERRE ===================== {%- endcomment -%}
+  <section class="lp-section lp-section--dark lp-final" data-lp-final>
+    <div class="lp-wrap">
+      <h2 class="lp-h2">{{ section.settings.final_title }}</h2>
+      <p class="lp-lead">{{ section.settings.final_text }}</p>
+      <div class="lp-final__img">
+        {%- assign final_img = section.settings.final_image | default: product.featured_media -%}
+        {%- if final_img -%}
+          {{ final_img | image_url: width: 720 | image_tag: loading: 'lazy', widths: '360, 720', sizes: '360px', alt: product.title }}
+        {%- endif -%}
+      </div>
+      <p class="lp-price" style="justify-content:center"><span class="lp-price__now" data-lp-unit-price>{{ current_variant.price | money }}</span></p>
+      <a href="#lp-title-{{ section.id }}" class="lp-btn" data-lp-goto-form>{{ section.settings.cta_label }}</a>
+      <p class="lp-final__trust">{{ section.settings.final_trust }}</p>
+    </div>
+  </section>
+
+  {%- comment -%} Barra fija (solo móvil) {%- endcomment -%}
+  <div class="lp-sticky" data-lp-sticky aria-hidden="false">
+    <div class="lp-sticky__info">
+      <div class="lp-sticky__name">{{ section.settings.product_short_name }}</div>
+      <div class="lp-sticky__price" data-lp-price>{{ current_variant.price | money }}</div>
+    </div>
+    <a href="#lp-title-{{ section.id }}" class="lp-btn" data-lp-goto-form>Comprar</a>
+  </div>
+
+  {%- if section.settings.structured_data -%}
+    <script type="application/ld+json">{{ product | structured_data }}</script>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Landing Pocket 24",
+  "class": "lp-section-wrapper",
+  "settings": [
+    { "type": "header", "content": "Producto y oferta" },
+    { "type": "text", "id": "product_short_name", "label": "Nombre comercial corto", "default": "LAVUNI Pocket 24" },
+    { "type": "text", "id": "announcement", "label": "Barra superior", "default": "Envío gratis a toda España · Pago 100 % seguro" },
+    { "type": "checkbox", "id": "pack_enabled", "label": "Mostrar opción pack de 2", "default": true, "info": "IMPORTANTE: crea en Descuentos un descuento automático 'Compra 2 uds.' con el MISMO importe que el campo siguiente. Si no, el precio mostrado no coincidirá con el del pago." },
+    { "type": "number", "id": "pack_discount", "label": "Descuento del pack de 2 (€)", "default": 14.99 },
+    { "type": "text", "id": "offer1_title", "label": "Opción 1 — título", "default": "1 unidad" },
+    { "type": "text", "id": "offer1_desc", "label": "Opción 1 — descripción", "default": "Para tener siempre a mano" },
+    { "type": "text", "id": "offer2_title", "label": "Opción 2 — título", "default": "Pack de 2 unidades" },
+    { "type": "text", "id": "offer2_desc", "label": "Opción 2 — descripción", "default": "Una para ti y otra para regalar" },
+    { "type": "text", "id": "offer2_tag", "label": "Opción 2 — etiqueta", "default": "La más elegida para regalar", "info": "Cambia el texto si todavía no es la más vendida, p. ej. 'Ideal para regalar'." },
+    { "type": "text", "id": "price_note", "label": "Nota bajo el precio", "default": "IVA incluido · Envío gratis" },
+    { "type": "text", "id": "cta_label", "label": "Texto del botón de compra", "default": "Comprar ahora" },
+    { "type": "checkbox", "id": "skip_cart", "label": "Ir directo al pago al pulsar comprar", "default": true },
+
+    { "type": "header", "content": "1 · Hero" },
+    { "type": "text", "id": "hero_badge", "label": "Etiqueta superior", "default": "🎁 El regalo útil de esta Navidad" },
+    { "type": "text", "id": "hero_title", "label": "Titular (H1)", "default": "24 herramientas en una que cabe en tu bolsillo" },
+    { "type": "textarea", "id": "hero_subtitle", "label": "Subtítulo", "default": "Destornillador de trinquete con puntas magnéticas: monta muebles, aprieta y repara en casa sin buscar la caja de herramientas." },
+    { "type": "text", "id": "hero_check_1", "label": "Beneficio 1", "default": "Trinquete reversible: gira sin soltar la mano" },
+    { "type": "text", "id": "hero_check_2", "label": "Beneficio 2", "default": "Puntas magnéticas: el tornillo no se cae" },
+    { "type": "text", "id": "hero_check_3", "label": "Beneficio 3", "default": "Acero al cromo-vanadio, compacto y portátil" },
+    { "type": "text", "id": "cutoff_text", "label": "Aviso de fecha límite (vacío = oculto)", "default": "🎄 Para recibirlo antes de Navidad, pide antes del 8 de diciembre.", "info": "Revisa la fecha con el plazo real del proveedor. Bórralo a partir de esa fecha." },
+    { "type": "text", "id": "trust_1", "label": "Confianza 1", "default": "Envío gratis con seguimiento" },
+    { "type": "text", "id": "trust_2", "label": "Confianza 2", "default": "14 días para devolverlo" },
+    { "type": "text", "id": "trust_3", "label": "Confianza 3", "default": "Garantía legal de 3 años" },
+    { "type": "text", "id": "trust_4", "label": "Confianza 4", "default": "Pago seguro cifrado" },
+
+    { "type": "header", "content": "2 · Problema" },
+    { "type": "text", "id": "problem_eyebrow", "label": "Antetítulo", "default": "¿Te suena?" },
+    { "type": "text", "id": "problem_title", "label": "Titular", "default": "El tornillo siempre está donde no llega tu destornillador" },
+    { "type": "textarea", "id": "problem_text", "label": "Texto", "default": "Buscar la herramienta, probar tres puntas, girar y soltar mil veces… y que el tornillo se caiga justo detrás del mueble." },
+
+    { "type": "header", "content": "3 · Solución" },
+    { "type": "text", "id": "solution_eyebrow", "label": "Antetítulo", "default": "La solución" },
+    { "type": "text", "id": "solution_title", "label": "Titular", "default": "Elige la punta, encájala y gira. Así de simple." },
+    { "type": "textarea", "id": "solution_text", "label": "Texto", "default": "Todas las puntas viajan contigo en una sola herramienta compacta, y el mecanismo de trinquete hace el trabajo repetitivo por ti." },
+    { "type": "image_picker", "id": "solution_image", "label": "Imagen de uso (opcional)" },
+
+    { "type": "header", "content": "4 · Beneficios" },
+    { "type": "text", "id": "benefits_eyebrow", "label": "Antetítulo", "default": "Por qué te va a encantar" },
+    { "type": "text", "id": "benefits_title", "label": "Titular", "default": "Pensado para el arreglo de todos los días" },
+
+    { "type": "header", "content": "5 · Vídeo" },
+    { "type": "text", "id": "video_eyebrow", "label": "Antetítulo", "default": "Míralo en acción" },
+    { "type": "text", "id": "video_title", "label": "Titular", "default": "15 segundos y lo entiendes" },
+    { "type": "textarea", "id": "video_text", "label": "Texto", "default": "Así funciona el trinquete y así sujetan el tornillo las puntas magnéticas." },
+    { "type": "video", "id": "video", "label": "Vídeo demostración (vertical 9:16)" },
+
+    { "type": "header", "content": "6 · Comparativa" },
+    { "type": "text", "id": "compare_title", "label": "Titular", "default": "Una herramienta en lugar de un cajón" },
+    { "type": "text", "id": "compare_note", "label": "Nota al pie", "default": "Comparativa orientativa con un destornillador manual de punta fija y un juego de destornilladores independientes. Las características pueden variar según el modelo." },
+
+    { "type": "header", "content": "7 · Opiniones" },
+    { "type": "checkbox", "id": "show_reviews", "label": "Mostrar sección de opiniones", "default": false, "info": "Actívala SOLO cuando tengas opiniones reales de tus clientes. No uses reseñas de AliExpress ni inventadas." },
+    { "type": "text", "id": "reviews_title", "label": "Titular", "default": "Lo que dicen quienes ya lo usan" },
+
+    { "type": "header", "content": "8 · Oferta" },
+    { "type": "text", "id": "offer_title", "label": "Titular", "default": "Todo lo que recibes" },
+    { "type": "image_picker", "id": "box_image", "label": "Imagen del contenido (opcional)" },
+    { "type": "textarea", "id": "includes", "label": "Contenido del paquete (una línea por elemento)", "default": "1 destornillador de trinquete 24 en 1\nPuntas intercambiables (lista exacta pendiente de confirmar)\n[Estuche: confirmar si se incluye]" },
+    { "type": "text", "id": "fact_shipping", "label": "Envío", "default": "Gratis a toda España peninsular, con número de seguimiento" },
+    { "type": "text", "id": "fact_delivery", "label": "Plazo", "default": "Entrega estimada en 11–15 días" },
+    { "type": "text", "id": "fact_returns", "label": "Devoluciones", "default": "14 días desde la entrega para desistir de la compra" },
+    { "type": "text", "id": "fact_warranty", "label": "Garantía", "default": "Garantía legal de 3 años por falta de conformidad" },
+    { "type": "text", "id": "fact_payment", "label": "Pago", "default": "Tarjeta y los métodos que se muestran en el pago" },
+
+    { "type": "header", "content": "9 · FAQ" },
+    { "type": "text", "id": "faq_title", "label": "Titular", "default": "Resolvemos tus dudas" },
+
+    { "type": "header", "content": "10 · Cierre" },
+    { "type": "text", "id": "final_title", "label": "Titular", "default": "El arreglo de casa, siempre a mano" },
+    { "type": "textarea", "id": "final_text", "label": "Texto", "default": "24 en 1, trinquete reversible y puntas magnéticas en una herramienta que cabe en el bolsillo." },
+    { "type": "image_picker", "id": "final_image", "label": "Imagen (opcional)" },
+    { "type": "text", "id": "final_trust", "label": "Confianza", "default": "Envío gratis · 14 días para devolverlo · Pago seguro" },
+
+    { "type": "header", "content": "SEO" },
+    { "type": "checkbox", "id": "structured_data", "label": "Añadir datos estructurados de producto", "default": true, "info": "Desactívalo si tu tema ya los genera en la página de producto para no duplicarlos." }
+  ],
+  "blocks": [
+    {
+      "type": "problem", "name": "Problema", "limit": 3,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Imagen" },
+        { "type": "text", "id": "title", "label": "Titular", "default": "Problema" },
+        { "type": "textarea", "id": "text", "label": "Texto" }
+      ]
+    },
+    {
+      "type": "step", "name": "Paso (solución)", "limit": 3,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titular", "default": "Paso" },
+        { "type": "textarea", "id": "text", "label": "Texto" }
+      ]
+    },
+    {
+      "type": "benefit", "name": "Beneficio", "limit": 6,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Imagen", "info": "Si la dejas vacía se usa una foto del producto." },
+        { "type": "text", "id": "title", "label": "Titular", "default": "Beneficio" },
+        { "type": "textarea", "id": "text", "label": "Texto" }
+      ]
+    },
+    {
+      "type": "compare_row", "name": "Fila comparativa", "limit": 8,
+      "settings": [
+        { "type": "text", "id": "feature", "label": "Característica", "default": "Característica" },
+        { "type": "text", "id": "us", "label": "Pocket 24", "default": "Sí" },
+        { "type": "text", "id": "normal", "label": "Destornillador normal", "default": "No" },
+        { "type": "text", "id": "set", "label": "Juego tradicional", "default": "Sí" }
+      ]
+    },
+    {
+      "type": "review", "name": "Opinión (solo reales)", "limit": 9,
+      "settings": [
+        { "type": "range", "id": "stars", "label": "Estrellas", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "text", "label": "Texto literal del cliente" },
+        { "type": "text", "id": "author", "label": "Nombre (con permiso)", "default": "Nombre del cliente" },
+        { "type": "checkbox", "id": "verified", "label": "Compra verificada en esta tienda", "default": false }
+      ]
+    },
+    {
+      "type": "faq", "name": "Pregunta frecuente", "limit": 14,
+      "settings": [
+        { "type": "text", "id": "question", "label": "Pregunta", "default": "Pregunta" },
+        { "type": "richtext", "id": "answer", "label": "Respuesta", "default": "<p>Respuesta</p>" }
+      ]
+    }
+  ]
+}
+{% endschema %}
