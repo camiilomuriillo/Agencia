@@ -1,6 +1,6 @@
 {%- comment -%}
   LAVUNI Pocket 24 — landing de producto de un solo artículo.
-  Se asigna a un producto mediante la plantilla templates/product.pocket.json.
+  Se asigna a un producto mediante la plantilla templates/product.pocket.json (y en la home con el ajuste "Producto").
   Todo el texto se edita desde el editor de temas (Personalizar).
   El formulario de compra es el nativo de Shopify: precios, variantes,
   disponibilidad y métodos de pago salen del producto y de la tienda reales.
@@ -10,11 +10,12 @@
 <script src="{{ 'lavuni-pocket.js' | asset_url }}" defer></script>
 
 {%- liquid
-  assign current_variant = product.selected_or_first_available_variant
+  assign lp_product = section.settings.product | default: product
+  assign current_variant = lp_product.selected_or_first_available_variant
   assign pack_discount_cents = section.settings.pack_discount | times: 100 | round
   assign pack_total = current_variant.price | times: 2 | minus: pack_discount_cents
   assign pack_unit = pack_total | divided_by: 2
-  assign media_count = product.media.size
+  assign media_count = lp_product.media.size
   assign problem_i = 0
   assign benefit_i = 0
 -%}
@@ -25,7 +26,7 @@
       "moneyFormat": {{ shop.money_format | json }},
       "packDiscountCents": {% if section.settings.pack_enabled %}{{ pack_discount_cents }}{% else %}0{% endif %},
       "variants": [
-        {%- for v in product.variants -%}
+        {%- for v in lp_product.variants -%}
           {"id": {{ v.id }}, "price": {{ v.price }}, "available": {{ v.available | json }}}{% unless forloop.last %},{% endunless %}
         {%- endfor -%}
       ]
@@ -42,27 +43,27 @@
 
       <div class="lp-gallery">
         <div class="lp-gallery__main">
-          {%- if product.featured_media -%}
-            {{ product.featured_media
+          {%- if lp_product.featured_media -%}
+            {{ lp_product.featured_media
               | image_url: width: 1100
               | image_tag:
                 loading: 'eager',
                 fetchpriority: 'high',
                 widths: '400, 600, 800, 1100',
                 sizes: '(min-width: 750px) 55vw, 100vw',
-                alt: product.featured_media.alt | default: product.title,
+                alt: lp_product.featured_media.alt | default: lp_product.title,
                 data-lp-main-img: ''
             }}
           {%- endif -%}
         </div>
         {%- if media_count > 1 -%}
           <div class="lp-gallery__thumbs" role="list">
-            {%- for m in product.media limit: 8 -%}
+            {%- for m in lp_product.media limit: 8 -%}
               {%- if m.media_type == 'image' -%}
                 <button type="button" class="lp-gallery__thumb" role="listitem"
                   data-lp-thumb
                   data-src="{{ m | image_url: width: 1100 }}"
-                  data-alt="{{ m.alt | default: product.title | escape }}"
+                  data-alt="{{ m.alt | default: lp_product.title | escape }}"
                   aria-label="Ver imagen {{ forloop.index }}"
                   aria-current="{% if forloop.first %}true{% else %}false{% endif %}">
                   {{ m | image_url: width: 160 | image_tag: loading: 'lazy', alt: '' }}
@@ -92,18 +93,18 @@
           {%- endfor -%}
         </ul>
 
-        {%- form 'product', product, class: 'lp-form', novalidate: 'novalidate', data-lp-form: '' -%}
+        {%- form 'product', lp_product, class: 'lp-form', novalidate: 'novalidate', data-lp-form: '' -%}
           <input type="hidden" name="id" value="{{ current_variant.id }}" data-lp-variant-id>
           <input type="hidden" name="quantity" value="1" data-lp-qty>
           {%- if section.settings.skip_cart -%}
             <input type="hidden" name="return_to" value="/checkout">
           {%- endif -%}
 
-          {%- unless product.has_only_default_variant -%}
+          {%- unless lp_product.has_only_default_variant -%}
             <div class="lp-variants">
-              <label for="lp-variant-{{ section.id }}">{{ product.options.first }}</label>
+              <label for="lp-variant-{{ section.id }}">{{ lp_product.options.first }}</label>
               <select id="lp-variant-{{ section.id }}" data-lp-variant-select>
-                {%- for v in product.variants -%}
+                {%- for v in lp_product.variants -%}
                   <option value="{{ v.id }}" {% if v.id == current_variant.id %}selected{% endif %} {% unless v.available %}disabled{% endunless %}>
                     {{ v.title }}{% unless v.available %} — agotado{% endunless %}
                   </option>
@@ -254,14 +255,13 @@
                   {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400, 600, 800', sizes: '(min-width: 750px) 50vw, 100vw', alt: block.settings.image.alt | default: block.settings.title }}
                 {%- else -%}
                   {%- assign media_index = benefit_i | modulo: media_count -%}
-                  {%- assign fallback = product.media[media_index] -%}
+                  {%- assign fallback = lp_product.media[media_index] -%}
                   {%- if fallback -%}
                     {{ fallback | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400, 600, 800', sizes: '(min-width: 750px) 50vw, 100vw', alt: block.settings.title }}
                   {%- endif -%}
                 {%- endif -%}
               </div>
               <div>
-                <span class="lp-benefit__num">{{ benefit_i | prepend: '0' | slice: -2, 2 }}</span>
                 <h3>{{ block.settings.title }}</h3>
                 <p>{{ block.settings.text }}</p>
               </div>
@@ -359,9 +359,9 @@
   <section class="lp-section lp-section--soft" id="oferta">
     <div class="lp-wrap lp-box">
       <div class="lp-box__img lp-reveal">
-        {%- assign box_img = section.settings.box_image | default: product.featured_media -%}
+        {%- assign box_img = section.settings.box_image | default: lp_product.featured_media -%}
         {%- if box_img -%}
-          {{ box_img | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 700, 900', sizes: '(min-width: 750px) 50vw, 100vw', alt: product.title }}
+          {{ box_img | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 700, 900', sizes: '(min-width: 750px) 50vw, 100vw', alt: lp_product.title }}
         {%- endif -%}
       </div>
       <div class="lp-reveal">
@@ -419,9 +419,9 @@
       <h2 class="lp-h2">{{ section.settings.final_title }}</h2>
       <p class="lp-lead">{{ section.settings.final_text }}</p>
       <div class="lp-final__img">
-        {%- assign final_img = section.settings.final_image | default: product.featured_media -%}
+        {%- assign final_img = section.settings.final_image | default: lp_product.featured_media -%}
         {%- if final_img -%}
-          {{ final_img | image_url: width: 720 | image_tag: loading: 'lazy', widths: '360, 720', sizes: '360px', alt: product.title }}
+          {{ final_img | image_url: width: 720 | image_tag: loading: 'lazy', widths: '360, 720', sizes: '360px', alt: lp_product.title }}
         {%- endif -%}
       </div>
       <p class="lp-price" style="justify-content:center"><span class="lp-price__now" data-lp-unit-price>{{ current_variant.price | money }}</span></p>
@@ -440,7 +440,7 @@
   </div>
 
   {%- if section.settings.structured_data -%}
-    <script type="application/ld+json">{{ product | structured_data }}</script>
+    <script type="application/ld+json">{{ lp_product | structured_data }}</script>
   {%- endif -%}
 </div>
 
@@ -450,15 +450,16 @@
   "class": "lp-section-wrapper",
   "settings": [
     { "type": "header", "content": "Producto y oferta" },
+    { "type": "product", "id": "product", "label": "Producto", "info": "En la página de producto se usa el propio producto. En la página de inicio elige aquí el producto." },
     { "type": "text", "id": "product_short_name", "label": "Nombre comercial corto", "default": "LAVUNI Pocket 24" },
-    { "type": "text", "id": "announcement", "label": "Barra superior", "default": "Envío gratis a toda España · Pago 100 % seguro" },
+    { "type": "text", "id": "announcement", "label": "Barra superior", "default": "Envío gratis a la España peninsular · Pago seguro" },
     { "type": "checkbox", "id": "pack_enabled", "label": "Mostrar opción pack de 2", "default": true, "info": "IMPORTANTE: crea en Descuentos un descuento automático 'Compra 2 uds.' con el MISMO importe que el campo siguiente. Si no, el precio mostrado no coincidirá con el del pago." },
     { "type": "number", "id": "pack_discount", "label": "Descuento del pack de 2 (€)", "default": 14.99 },
     { "type": "text", "id": "offer1_title", "label": "Opción 1 — título", "default": "1 unidad" },
     { "type": "text", "id": "offer1_desc", "label": "Opción 1 — descripción", "default": "Para tener siempre a mano" },
     { "type": "text", "id": "offer2_title", "label": "Opción 2 — título", "default": "Pack de 2 unidades" },
     { "type": "text", "id": "offer2_desc", "label": "Opción 2 — descripción", "default": "Una para ti y otra para regalar" },
-    { "type": "text", "id": "offer2_tag", "label": "Opción 2 — etiqueta", "default": "La más elegida para regalar", "info": "Cambia el texto si todavía no es la más vendida, p. ej. 'Ideal para regalar'." },
+    { "type": "text", "id": "offer2_tag", "label": "Opción 2 — etiqueta", "default": "Ideal para regalar", "info": "No pongas 'la más vendida' hasta que lo sea de verdad." },
     { "type": "text", "id": "price_note", "label": "Nota bajo el precio", "default": "IVA incluido · Envío gratis" },
     { "type": "text", "id": "cta_label", "label": "Texto del botón de compra", "default": "Comprar ahora" },
     { "type": "checkbox", "id": "skip_cart", "label": "Ir directo al pago al pulsar comprar", "default": true },
@@ -576,6 +577,7 @@
         { "type": "richtext", "id": "answer", "label": "Respuesta", "default": "<p>Respuesta</p>" }
       ]
     }
-  ]
+  ],
+  "presets": [{ "name": "Landing Pocket 24" }]
 }
 {% endschema %}

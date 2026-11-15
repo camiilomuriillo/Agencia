@@ -18,7 +18,8 @@
   --lp-radius-sm: 10px;
   --lp-max: 1120px;
   --lp-gutter: 16px;
-  --lp-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --lp-font: var(--font-body-family, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif);
+  --lp-font-heading: var(--font-heading-family, var(--lp-font));
 
   font-family: var(--lp-font);
   color: var(--lp-ink);
@@ -29,7 +30,7 @@
 }
 .lp *, .lp *::before, .lp *::after { box-sizing: border-box; }
 .lp img, .lp video { max-width: 100%; height: auto; display: block; }
-.lp h1, .lp h2, .lp h3 { margin: 0; line-height: 1.12; letter-spacing: -0.02em; font-weight: 800; }
+.lp h1, .lp h2, .lp h3 { font-family: var(--lp-font-heading); margin: 0; line-height: 1.12; letter-spacing: -0.02em; font-weight: 800; }
 .lp p { margin: 0; }
 .lp ul { margin: 0; padding: 0; list-style: none; }
 
