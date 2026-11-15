@@ -1,0 +1,38 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "custom_liquid_3nDQzW": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"top-banner-marquee\">\n  <div class=\"marquee-track\">\n    <div class=\"marquee-content\">\n      <span>{{ 'lavuni_custom.text_0' | t }}</span>\n      <span>{{ 'lavuni_custom.text_1' | t }}</span>\n      <span>{{ 'lavuni_custom.text_2' | t }} \n        <a href=\"{{ routes.root_url | append: '/products/destornillador-trinquete-24-en-1' | replace: '//', '/' }}\" \nclass=\"inline-link\">{{ 'lavuni_custom.text_3' | t }}</a>\n      </span>\n    </div>\n\n    <!-- Duplicate for seamless loop -->\n    <div class=\"marquee-content\">\n      <span>{{ 'lavuni_custom.text_0' | t }}</span>\n      <span>{{ 'lavuni_custom.text_1' | t }}</span>\n      <span>{{ 'lavuni_custom.text_2' | t }} \n        <a href=\"{{ routes.root_url | append: '/products/destornillador-trinquete-24-en-1' | replace: '//', '/' }}\" \nclass=\"inline-link\">{{ 'lavuni_custom.text_3' | t }}</a>\n      </span>\n    </div>\n  </div>\n</div>\n\n<style>\n/* Main container */\n.top-banner-marquee {\n  width: 100%;\n  background-color: #F7D7FC;\n  color: #2E2A39;\n  font-family: Arial, sans-serif;\n  font-size: 1.3rem;\n  font-weight: 600;\n  overflow: hidden;\n  white-space: nowrap;\n  display: flex;\n  align-items: center;\n  height: 42px;\n}\n\n/* Moving track */\n.marquee-track {\n  display: flex;\n  width: max-content;\n  animation: scroll-left 30s linear infinite;\n}\n\n/* Duplicated content */\n.marquee-content {\n  display: flex;\n  flex-shrink: 0;\n}\n\n/* Messages */\n.marquee-content span {\n  padding: 0 3rem;\n  letter-spacing: 0.3px;\n}\n\n/* Link */\n.inline-link {\n  color: #2E2A39;\n  font-weight: 700;\n  text-decoration: underline;\n  text-underline-offset: 2px;\n  transition: opacity 0.3s ease;\n}\n\n.inline-link:hover {\n  opacity: 0.7;\n}\n\n/* Seamless infinite animation */\n@keyframes scroll-left {\n  from { transform: translateX(0); }\n  to { transform: translateX(-50%); }\n}\n\n/* Responsive */\n@media (max-width: 600px) {\n  .top-banner-marquee {\n    font-size: 1.2rem;\n    height: 50px;\n  }\n\n  .marquee-content span {\n    padding: 0 2rem;\n  }\n}\n</style>",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "top-center",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": false,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-2",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_3nDQzW",
+    "header"
+  ]
+}

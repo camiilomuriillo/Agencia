@@ -1,0 +1,1305 @@
+{
+  "general": {
+    "password_page": {
+      "login_form_heading": "Ange lösenord för att komma i butiken:",
+      "login_password_button": "Ange lösenord för att komma in",
+      "login_form_password_label": "Lösenord",
+      "login_form_password_placeholder": "Ditt lösenord",
+      "login_form_error": "Fel lösenord!",
+      "login_form_submit": "Ange",
+      "admin_link_html": "Är du butiksägare? <a href=\"/admin\" class=\"link underlined-link\">Logga in här</a>",
+      "powered_by_shopify_html": "Denna butik kommer drivas av {{ shopify }}"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Dela på Facebook",
+        "share_on_twitter": "Dela på X",
+        "share_on_pinterest": "Spara en pin på Pinterest"
+      },
+      "links": {
+        "twitter": "X (Twitter)",
+        "facebook": "Facebook",
+        "pinterest": "Pinterest",
+        "instagram": "Instagram",
+        "tumblr": "Tumblr",
+        "snapchat": "Snapchat",
+        "youtube": "YouTube",
+        "vimeo": "Vimeo",
+        "tiktok": "TikTok"
+      }
+    },
+    "continue_shopping": "Fortsätt shoppa",
+    "pagination": {
+      "label": "Paginering",
+      "page": "Sida {{ number }}",
+      "next": "Nästa sida",
+      "previous": "Föregående sida"
+    },
+    "search": {
+      "search": "Sök",
+      "reset": "Rensa sökord"
+    },
+    "cart": {
+      "view": "Visa varukorg ({{ count }})",
+      "item_added": "Artikeln har lagts till i varukorgen",
+      "view_empty_cart": "Visa varukorg"
+    },
+    "share": {
+      "copy_to_clipboard": "Kopiera länk",
+      "share_url": "Länk",
+      "success_message": "Länken kopierades till urklipp",
+      "close": "Stäng dela"
+    },
+    "slider": {
+      "of": "av",
+      "next_slide": "Bild till höger",
+      "previous_slide": "Bild till vänster",
+      "name": "Bild"
+    }
+  },
+  "newsletter": {
+    "label": "E-post",
+    "success": "Tack för att du prenumererar",
+    "button_label": "Prenumerera"
+  },
+  "accessibility": {
+    "skip_to_text": "Gå vidare till innehåll",
+    "close": "Stäng",
+    "unit_price_separator": "per",
+    "vendor": "Säljare:",
+    "error": "Fel",
+    "refresh_page": "När du gör ett urval uppdateras sidan.",
+    "link_messages": {
+      "new_window": "Öppnas i ett nytt fönster.",
+      "external": "Öppnar extern webbplats."
+    },
+    "loading": "Laddar ...",
+    "skip_to_product_info": "Gå vidare till produktinformation",
+    "total_reviews": "totalt antal recensioner",
+    "star_reviews_info": "{{ rating_value }} av {{ rating_max }} stjärnor",
+    "collapsible_content_title": "Innehåll som kan döljas",
+    "complementary_products": "Kompletterande produkter"
+  },
+  "blogs": {
+    "article": {
+      "blog": "Blogg",
+      "read_more_title": "Läs mer: {{ title }}",
+      "comments": {
+        "one": "{{ count }} kommentar",
+        "other": "{{ count }} kommentarer",
+        "many": "{{ count }} kommentarer"
+      },
+      "moderated": "Notera att kommentarer behöver godkännas innan de publiceras.",
+      "comment_form_title": "Lämna en kommentar",
+      "name": "Namn",
+      "email": "Email",
+      "message": "Kommentar",
+      "post": "Lägg upp kommentar",
+      "back_to_blog": "Tillbaka till blogg",
+      "share": "Dela denna artikel",
+      "success": "Din kommentar har lagts upp! Tack!",
+      "success_moderated": "Din kommentar har lagts upp. Vi kommer publicera den lite senare, eftersom att bloggen är modererad."
+    }
+  },
+  "onboarding": {
+    "product_title": "Exempel på produktnamn",
+    "collection_title": "Namn på produktserien"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Lägg i varukorgen",
+      "description": "Beskrivning",
+      "on_sale": "Rea",
+      "quantity": {
+        "label": "Kvantitet",
+        "input_label": "Kvantitet för {{ product }}",
+        "increase": "Öka kvantitet för {{ product }}",
+        "decrease": "Minska kvantitet för {{ product }}",
+        "minimum_of": "Minimum på {{ quantity }}",
+        "maximum_of": "Maximum på {{ quantity }}",
+        "multiples_of": "Ökningar i steg om {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i varukorg",
+        "note": "Visa kvantitetsregler",
+        "min_of": "Min. {{ quantity }}",
+        "max_of": "Max. {{ quantity }}",
+        "in_cart_aria_label": "Kvantitet ({{ quantity }} i varukorg)"
+      },
+      "price": {
+        "from_price_html": "Från {{ price }}",
+        "regular_price": "Ordinarie pris",
+        "sale_price": "Försäljningspris",
+        "unit_price": "Enhetspris"
+      },
+      "share": "Dela den här produkten",
+      "sold_out": "Slutsåld",
+      "unavailable": "Inte tillgängliga",
+      "vendor": "Säljare",
+      "video_exit_message": "{{ title }} öppnar helskärmsvideo i samma fönster.",
+      "xr_button": "Visa i ditt utrymme",
+      "xr_button_label": "Visa i ditt utrymme, laddar artiklar i fönster med förstärkt verklighet",
+      "pickup_availability": {
+        "view_store_info": "Visa butiksinformation",
+        "check_other_stores": "Kontrollerar tillgänglighet i andra butiker",
+        "pick_up_available": "Hämtning tillgänglig",
+        "pick_up_available_at_html": "Hämtning tillgänglig på <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Det går för närvarande inte att få hämtning på <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "Det gick inte att ladda hämtningstillgänglighet",
+        "refresh": "Uppdatera"
+      },
+      "media": {
+        "open_media": "Öppna mediet {{ index }} i modalfönster",
+        "play_model": "Spela 3D-visaren",
+        "play_video": "Spela video",
+        "gallery_viewer": "Gallerivisning",
+        "load_image": "Ladda bilden {{ index }} i gallerivisning",
+        "load_model": "Ladda 3D-modellen {{ index }} i gallerivisning",
+        "load_video": "Spela videon {{ index }} i gallerivisning",
+        "image_available": "Bilden {{ index }} är nu tillgänglig i gallerivisning"
+      },
+      "nested_label": "{{ title }} för {{ parent_title }}",
+      "view_full_details": "Visa alla uppgifter",
+      "shipping_policy_html": "Fri frakt till Sverige. Beräknad leveranstid: 10–14 arbetsdagar. <a href=\"{{ link }}\">Leveransinformation</a>",
+      "choose_options": "Välj alternativ",
+      "choose_product_options": "Välj alternativ för {{ product_name }}",
+      "value_unavailable": "{{ option_value }} – inte tillgängligt",
+      "variant_sold_out_or_unavailable": "Varianten är slutsåld eller inte tillgänglig",
+      "inventory_in_stock": "I lager",
+      "inventory_in_stock_show_count": "{{ quantity }} i lager",
+      "inventory_low_stock": "Låg lagernivå",
+      "inventory_low_stock_show_count": "Låg lagernivå: {{ quantity }} kvar",
+      "inventory_out_of_stock": "Slut i lager",
+      "inventory_out_of_stock_continue_selling": "I lager",
+      "sku": "Lagerhållningsenhet",
+      "volume_pricing": {
+        "title": "Volymprissättning",
+        "note": "Volymprissättning är tillgängligt",
+        "minimum": "Fler än {{ quantity }}",
+        "price_range": "{{ minimum }}–{{ maximum }}",
+        "price_at_each_html": "för {{ price }}/st"
+      },
+      "product_variants": "Produktvarianter",
+      "taxes_included": "Moms ingår.",
+      "duties_included": "Tullavgifter ingår.",
+      "duties_and_taxes_included": "Tullavgifter och skatter ingår."
+    },
+    "modal": {
+      "label": "Mediagalleri"
+    },
+    "facets": {
+      "apply": "Tillämpa",
+      "clear": "Rensa",
+      "clear_all": "Ta bort alla",
+      "from": "Från",
+      "filter_and_sort": "Filtrera och sortera",
+      "filter_by_label": "Filter:",
+      "filter_button": "Filter",
+      "filters_selected": {
+        "one": "{{ count }} har valts",
+        "other": "{{ count }} har valts",
+        "many": "{{ count }} valda"
+      },
+      "max_price": "Det högsta priset är {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} av {{ count }} produkt",
+        "other": "{{ product_count }} av {{ count }} produkter"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} produkt",
+        "other": "{{ count }} produkter",
+        "many": "{{ count }} produkter"
+      },
+      "reset": "Återställ",
+      "sort_button": "Sortera",
+      "sort_by_label": "Sortera efter:",
+      "to": "Till",
+      "clear_filter": "Ta bort filter",
+      "filter_selected_accessibility": "{{ type }} ({{ count }}) filter valda",
+      "show_more": "Visa mer",
+      "show_less": "Visa mindre",
+      "filter_and_operator_subtitle": "Matcha alla"
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "Sidan hittades inte",
+      "subtext": "404"
+    },
+    "search": {
+      "no_results": "Inga resultat hittades för \"{{ terms }}\". Kontrollera stavningen eller använd ett annat ord eller fras.",
+      "results_with_count": {
+        "one": "{{ count }} resultat",
+        "other": "{{ count }} resultat",
+        "many": "{{ count }} resultat"
+      },
+      "title": "Sökresultat",
+      "page": "Sida",
+      "products": "Produkter",
+      "search_for": "Sök efter \"{{ terms }}\"",
+      "results_with_count_and_term": {
+        "one": "hittat {{ count }} resultat för \"{{ terms }}\"",
+        "other": "hittat {{ count }} resultat för \"{{ terms }}\"",
+        "many": "{{ count }} resultat hittades för \"{{ terms }}\""
+      },
+      "results_pages_with_count": {
+        "one": "{{ count }}-sida",
+        "other": "{{ count }} sidor",
+        "many": "{{ count }} sidor"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} produkt",
+        "other": "{{ count }} produkter",
+        "many": "{{ count }} produkter"
+      },
+      "suggestions": "Förslag",
+      "pages": "Sidor",
+      "results_suggestions_with_count": {
+        "one": "{{ count }} förslag",
+        "other": "{{ count }} förslag",
+        "many": "{{ count }} förslag"
+      }
+    },
+    "cart": {
+      "cart": "Varukorg"
+    },
+    "contact": {
+      "form": {
+        "name": "Namn",
+        "email": "E-postadress",
+        "phone": "Telefonnummer",
+        "comment": "Kommentar",
+        "send": "Skicka",
+        "post_success": "Tack för att du kontaktar oss. Vi återkommer till dig så snart som möjligt.",
+        "error_heading": "Justera följande:",
+        "title": "Kontaktformulär"
+      }
+    }
+  },
+  "sections": {
+    "header": {
+      "announcement": "Meddelande",
+      "menu": "Meny",
+      "cart_count": {
+        "one": "{{ count }} artikel",
+        "other": "{{ count }} artiklar",
+        "many": "{{ count }} artiklar"
+      }
+    },
+    "cart": {
+      "title": "Din varukorg",
+      "caption": "Varukorgsartiklar",
+      "remove_title": "Ta bort {{ title }}",
+      "note": "Beställ särskilda instruktioner",
+      "checkout": "Gå till kassan",
+      "empty": "Din varukorg är tom",
+      "product_disclosure": "Produktupplysning",
+      "product_disclosures": "Produktupplysningar",
+      "cart_error": "Ett fel uppstod när du uppdaterade din varukorg. Försök igen.",
+      "cart_quantity_error_html": "Du kan endast lägga till {{ quantity }} av denna artikel i din varukorg.",
+      "headings": {
+        "product": "Produkt",
+        "price": "Pris",
+        "total": "Totalt",
+        "quantity": "Kvantitet",
+        "image": "Produktbild"
+      },
+      "update": "Uppdatera",
+      "login": {
+        "title": "Har du ett konto?",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logga in</a> för att gå till kassan snabbare."
+      },
+      "estimated_total": "Beräknad totalsumma",
+      "new_estimated_total": "Nytt beräknat totalbelopp",
+      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Tullavgifter och skatter ingår. Rabatter och <a href=\"{{ link }}\">fraktkostnad</a> beräknas i kassan.",
+      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Tullavgifter och skatter ingår. Rabatter och fraktkostnad beräknas i kassan.",
+      "taxes_included_shipping_at_checkout_with_policy_html": "Skatter ingår. Rabatter och <a href=\"{{ link }}\">fraktkostnad</a> beräknas i kassan.",
+      "taxes_included_shipping_at_checkout_without_policy": "Skatter ingår. Rabatter och fraktkostnad beräknas i kassan.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Tullavgifter ingår. Skatter, rabatter och <a href=\"{{ link }}\">fraktkostnad</a> beräknas i kassan.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Tullavgifter ingår. Skatter, rabatter och fraktkostnad beräknas i kassan.",
+      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Skatter, rabatter och <a href=\"{{ link }}\">fraktkostnad</a> beräknas i kassan.",
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Skatter, rabatter och fraktkostnad beräknas i kassan."
+    },
+    "footer": {
+      "payment": "Betalningsmetoder"
+    },
+    "featured_blog": {
+      "view_all": "Visa alla",
+      "onboarding_title": "Blogginlägg",
+      "onboarding_content": "Ge en sammanfattning av dina bloggposter till dina kunder"
+    },
+    "featured_collection": {
+      "view_all": "Visa alla",
+      "view_all_label": "Visa alla produkter i produktserien {{ collection_name }}"
+    },
+    "collection_list": {
+      "view_all": "Visa alla"
+    },
+    "collection_template": {
+      "title": "Produktserie",
+      "empty": "Inga produkter hittades",
+      "use_fewer_filters_html": "Använd färre filter eller <a class=\"{{ class }}\" href=\"{{ link }}\">ta bort alla</a>"
+    },
+    "video": {
+      "load_video": "Ladda video: {{ description }}"
+    },
+    "slideshow": {
+      "load_slide": "Ladda bild",
+      "previous_slideshow": "Föregående bild",
+      "next_slideshow": "Nästa bild",
+      "pause_slideshow": "Pausa bildspelet",
+      "play_slideshow": "Spela bildspel",
+      "carousel": "Karusell",
+      "slide": "Bild"
+    },
+    "page": {
+      "title": "Sidrubrik"
+    },
+    "announcements": {
+      "previous_announcement": "Tidigare meddelande",
+      "next_announcement": "Kommande meddelande",
+      "carousel": "Karusell",
+      "announcement": "Meddelande",
+      "announcement_bar": "Meddelandefält"
+    },
+    "quick_order_list": {
+      "product_total": "Delsumma för produkt",
+      "view_cart": "Visa varukorg",
+      "each": "{{ money }}/st.",
+      "product": "Produkt",
+      "variant": "Variant",
+      "variant_total": "Totalbelopp för variant",
+      "items_added": {
+        "one": "{{ quantity }} artikel lades till",
+        "other": "{{ quantity }} artiklar lades till",
+        "many": "{{ quantity }} artiklar tillagda"
+      },
+      "items_removed": {
+        "one": "{{ quantity }} artikel togs bort",
+        "other": "{{ quantity }} artiklar togs bort",
+        "many": "{{ quantity }} objekt raderade"
+      },
+      "product_variants": "Produktvarianter",
+      "total_items": "Totalt antal artiklar",
+      "remove_all_items_confirmation": "Ta bort alla {{ quantity }} artiklar från din varukorg?",
+      "remove_all": "Ta bort alla",
+      "cancel": "Avbryt",
+      "remove_all_single_item_confirmation": "Vill du ta bort 1 artikel från varukorgen?",
+      "min_error": "Den här artikeln har minst {{ min }}",
+      "max_error": "Den här artikeln har max {{ max }}",
+      "step_error": "Du kan endast lägga till den här artikeln med ökningar om {{ step }}"
+    }
+  },
+  "localization": {
+    "country_label": "Land/Region",
+    "language_label": "Språk",
+    "update_language": "Uppdatera språk",
+    "update_country": "Uppdatera land/region",
+    "search": "Sök",
+    "popular_countries_regions": "Populära länder/regioner",
+    "country_results_count": "{{ count }} länder/regioner hittades"
+  },
+  "customer": {
+    "account": {
+      "title": "Konto",
+      "details": "Kontouppgifter",
+      "view_addresses": "Visa adresser",
+      "return": "Återgå till kontouppgifter"
+    },
+    "activate_account": {
+      "title": "Aktivera konto",
+      "subtext": "Skapa ditt lösenord för att aktivera ditt konto.",
+      "password": "Lösenord",
+      "password_confirm": "Bekräfta lösenordet",
+      "submit": "Aktivera konto",
+      "cancel": "Avvisa inbjudan"
+    },
+    "addresses": {
+      "title": "Adresser",
+      "default": "Standard",
+      "add_new": "Lägg till en ny adress",
+      "edit_address": "Redigera adress",
+      "first_name": "Förnamn",
+      "last_name": "Efternamn",
+      "company": "Företag",
+      "address1": "Adress 1",
+      "address2": "Adress 2",
+      "city": "Stad",
+      "country": "Land/Region",
+      "province": "Provins",
+      "zip": "Postnummer",
+      "phone": "Telefon",
+      "set_default": "Ange som standardadress",
+      "add": "Lägg till adress",
+      "update": "Uppdatera adress",
+      "cancel": "Avbryt",
+      "edit": "Redigera",
+      "delete": "Radera",
+      "delete_confirm": "Är du säker på att du vill radera den här adressen?"
+    },
+    "log_in": "Logga in",
+    "log_out": "Logga ut",
+    "login_page": {
+      "cancel": "Avbryt",
+      "create_account": "Skapa konto",
+      "email": "E-postadress",
+      "forgot_password": "Har du glömt ditt lösenord?",
+      "guest_continue": "Fortsätt",
+      "guest_title": "Fortsätt som gäst",
+      "password": "Lösenord",
+      "title": "Inloggning",
+      "sign_in": "Logga in",
+      "submit": "Skicka",
+      "alternate_provider_separator": "eller"
+    },
+    "orders": {
+      "title": "Orderhistorik",
+      "order_number": "Order",
+      "order_number_link": "Ordernummer {{ number }}",
+      "date": "Datum",
+      "payment_status": "Betalningsstatus",
+      "fulfillment_status": "Distributionsstatus",
+      "total": "Totalt",
+      "none": "Du har ännu inte lagt någon order."
+    },
+    "recover_password": {
+      "title": "Återställ ditt lösenord",
+      "subtext": "Vi skickar dig ett e-postmeddelande så att du kan återställa ditt lösenord",
+      "success": "Vi har skickat dig ett e-postmeddelande med en länk för att uppdatera ditt lösenord."
+    },
+    "register": {
+      "title": "Skapa konto",
+      "first_name": "Förnamn",
+      "last_name": "Efternamn",
+      "email": "E-postadress",
+      "password": "Lösenord",
+      "submit": "Skapa"
+    },
+    "reset_password": {
+      "title": "Återställ kontolösenord",
+      "subtext": "Ange ett nytt lösenord",
+      "password": "Lösenord",
+      "password_confirm": "Bekräfta lösenordet",
+      "submit": "Återställ lösenord"
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date_html": "Beställd den {{ date }}",
+      "cancelled_html": "Ordern avbröts den {{ date }}",
+      "cancelled_reason": "Anledning: {{ reason }}",
+      "billing_address": "Faktureringsadress",
+      "payment_status": "Betalningsstatus",
+      "shipping_address": "Leveransadress",
+      "fulfillment_status": "Distributionsstatus",
+      "discount": "Rabatt",
+      "shipping": "Frakt",
+      "tax": "Skatt",
+      "product": "Produkt",
+      "sku": "SKU",
+      "price": "Pris",
+      "quantity": "Kvantitet",
+      "total": "Totalt",
+      "fulfilled_at_html": "Distribuerad {{ date }}",
+      "track_shipment": "Spåra försändelse",
+      "tracking_url": "Spårningslänk",
+      "tracking_company": "Transportör",
+      "tracking_number": "Spårningsnummer",
+      "subtotal": "Delsumma",
+      "total_duties": "Tullavgifter",
+      "total_refunded": "Återbetald"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Här är ditt presentkort värt {{ value }} för {{ shop }}!",
+      "subtext": "Ditt presentkort",
+      "gift_card_code": "Presentkortskod",
+      "shop_link": "Besök webbshop",
+      "add_to_apple_wallet": "Lägg till i Apple Wallet",
+      "qr_image_alt": "QR-kod – skanna för att lösa in presentkort",
+      "copy_code": "Kopiera presentkortskod",
+      "expired": "Har gått ut",
+      "copy_code_success": "Koden kopierades",
+      "how_to_use_gift_card": "Använd presentkortskoden online eller QR-koden i butik",
+      "expiration_date": "Går ut {{ expires_on }}"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "Jag vill skicka detta som en gåva",
+      "email_label": "Mottagarens e-postadress",
+      "email": "E-postadress",
+      "name_label": "Mottagarens namn (valfritt)",
+      "name": "Namn",
+      "message_label": "Meddelande (valfritt)",
+      "message": "Meddelande",
+      "max_characters": "Max. {{ max_chars }} tecken",
+      "email_label_optional_for_no_js_behavior": "Mottagarens e-postadress (valfritt)",
+      "send_on": "ÅÅÅÅ-MM-DD",
+      "send_on_label": "Skicka den (valfritt)",
+      "expanded": "Mottagarformulär för presentkort öppnat",
+      "collapsed": "Mottagarformulär för presentkort stängt"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "general": {
+        "map": {
+          "cluster_title": {
+            "many": "Grupp med {{number}} bokmärken"
+          }
+        }
+      },
+      "customer_account": {
+        "saved_address_option_description": {
+          "many": "Du har {{count}} sparade adresser."
+        }
+      },
+      "stock": {
+        "unshippable_product": {
+          "header": {
+            "many": "Ingen leverans möjlig för %{count} artiklar"
+          },
+          "message": {
+            "many": "Dessa varor kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress."
+          }
+        },
+        "item_label": {
+          "many": "{{count}} artiklar"
+        },
+        "out_of_stock": {
+          "missing_items": {
+            "title": {
+              "many": "{{count}} artiklar är inte längre tillgängliga"
+            },
+            "some_available_notice": {
+              "many": "De återstående varorna finns fortfarande tillgängliga för köp. Ej tillgängliga varor kommer att tas bort från varukorgen."
+            },
+            "none_available_notice": {
+              "many": "Dessa artiklar är inte längre tillgängliga och har tagits bort från varukorgen."
+            }
+          }
+        },
+        "unfulfillable_product": {
+          "message": {
+            "many": "%{delivery_method} är inte längre tillgänglig för dessa artiklar."
+          },
+          "default_message": {
+            "many": "Den valda leveransmetoden är inte längre tillgänglig för dessa varor."
+          }
+        }
+      },
+      "order_summary": {
+        "unit_price": {
+          "per_item": {
+            "many": "%{price} för %{count} varor"
+          }
+        },
+        "expand_component_information": {
+          "many": "Visa %{count} objekt"
+        },
+        "collapse_component_information": {
+          "many": "Dölj %{count} objekt"
+        },
+        "discount_discovery": {
+          "merchandise_quantity_label": {
+            "many": "%{count} objekt"
+          }
+        },
+        "discount_title_stacking": {
+          "many": "Rabatter"
+        },
+        "discount_order_stacking": {
+          "many": "Rabatter på beställningar"
+        },
+        "subtotal_label_with_quantity": {
+          "many": "Delsumma · %{count} varor"
+        },
+        "number_items": {
+          "many": "%{count} objekt"
+        },
+        "view_all_items": {
+          "many": "Visa alla %{count} artiklar"
+        },
+        "pickup_unavailable_banner_title": {
+          "many": "Inga butiker tillgängliga med dina varor"
+        },
+        "pickup_unavailable_banner_title_with_country": {
+          "many": "Det finns inga butiker i %{country} med dina varor"
+        },
+        "discount_code_applied_count": {
+          "many": "Visa %{count} rabatter"
+        }
+      },
+      "shipping": {
+        "estimated_delivery_date": {
+          "many": "%{count} arbetsdagar"
+        },
+        "other_method": {
+          "many": "Andra %{count} fraktmetoder tillgängliga från"
+        },
+        "subscription_delivery_description": {
+          "prepaid_delivery_frequency": {
+            "many": "för %{count} leveranser"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "many": "var %{count}:e dag"
+            },
+            "week": {
+              "many": "varje %{count} vecka"
+            },
+            "month": {
+              "many": "varje %{count} månad"
+            },
+            "year": {
+              "many": "vart %{count}:e år"
+            }
+          },
+          "first_n_order_free": {
+            "many": "De första %{count} beställningarna är gratis"
+          },
+          "free_for_first_n_order": {
+            "many": "För de första %{count} beställningarna"
+          },
+          "free_shipping_cycles": {
+            "many": "Fri frakt på %{count} fler leveranser"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "many": "Fri frakt på %{count} leveranser"
+          },
+          "first_n_order_free_with_cycle": {
+            "many": "Gratis frakt för %{count} ytterligare leveranser, sedan %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "many": "Fri frakt för %{count} leveranser, därefter %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "many": "%{count} tilläggsleveranser för %{shipping_price} styck"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "many": "%{count} tilläggsleveranser för %{shipping_price} styck"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "many": "Fri frakt under den första %{cycle}, sedan %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_one_cycle": {
+            "many": "%{shipping_price} för %{count} fler leveranser (à %{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "many": "%{shipping_price} för %{count} leveranser (%{per_delivery_cost} per leverans)"
+          },
+          "prepaid_order_no_cycle": {
+            "many": "%{shipping_price} för %{count} ytterligare leveranser (%{per_delivery_cost}) därefter %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "many": "%{shipping_price} för %{count} leveranser (%{per_delivery_cost}) och därefter för %{recurring_order_shipping_price}"
+          }
+        },
+        "shipping_method_first_shipment_group_title": {
+          "many": "Första leveranserna"
+        },
+        "shipping_method_recurring_shipments_group_title": {
+          "many": "Återkommande leveranser"
+        },
+        "unbranded_description_with_fulfillment_days": {
+          "many": "Skickas inom %{count} arbetsdagar"
+        },
+        "unbranded_description_with_fulfillment_weeks": {
+          "many": "Skickas inom %{count} veckor"
+        },
+        "split_shipping_shipment_count_notice_one_time_purchase": {
+          "many": "Din beställning kommer att levereras i %{count} försändelser"
+        }
+      },
+      "payment": {
+        "order_covered_by_gift_cards_notice": {
+          "many": "Kostnaden för din beställning täcks av dina presentkort."
+        },
+        "card_fields_unavailable_html": {
+          "many": "Betalningar med betal- och kreditkort är för närvarande inte tillgängliga.<br><a href=\"%{current_url}\">Uppdatera sidan</a> eller prova en annan betalningsmetod."
+        },
+        "pending_payment": {
+          "oxxo": {
+            "days_left": {
+              "many": "%{count} dagar"
+            }
+          }
+        },
+        "expired_cards_info": {
+          "many": "Det finns %{count} utgångna kort som du kan visa och redigera i ditt konto."
+        },
+        "order_edit_banner_items_added": {
+          "many": "Lade till %{count}."
+        },
+        "crypto_payment_method": {
+          "cashback_descriptor": {
+            "many": "Du får din återbetalning efter %{count} dagar"
+          }
+        },
+        "discount_show_more_warnings": {
+          "many": "Visa %{count} till"
+        },
+        "discount_codes_removed_summary": {
+          "many": "%{count} rabattkoder raderades"
+        },
+        "discount_codes_modified_summary": {
+          "many": "%{count} rabattkoder modifierade"
+        },
+        "discount_codes_removed_or_modified_summary": {
+          "many": "%{count} rabattkoder togs bort eller ändrades"
+        }
+      },
+      "shipping_errors": {
+        "shipping_method_not_available_generic": {
+          "many": "Vissa varor i din varukorg kan inte skickas till den angivna adressen. Kontrollera att adressen är korrekt och försök igen, eller välj en annan."
+        },
+        "shipping_method_not_available_updated": {
+          "many": "En eller flera varor du lade till kan inte levereras till din plats. Ta bort dem för att slutföra beställningen, eller kontakta butiken."
+        }
+      },
+      "processing": {
+        "wait": {
+          "medium": {
+            "many": "Din beställning behandlas. Beräknad väntetid är %{count} minuter."
+          }
+        }
+      },
+      "thank_you": {
+        "login_reorder_link_text": {
+          "many": "köp även dessa produkter"
+        },
+        "gift_card_confirmation_by_text_typ": {
+          "many": "Inom några minuter får du ett textmeddelande med dina presentkort."
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "many": "Om några minuter får du ett mejl med dina presentkort."
+        },
+        "gift_card_email_title": {
+          "many": "Presentkort via e-post"
+        },
+        "gift_card_text_title": {
+          "many": "Presentkort skickade via sms"
+        },
+        "gift_card_resent_confirmation": {
+          "many": "Presentkorten skickades ut igen."
+        },
+        "gift_card_resend_failure": {
+          "many": "Det uppstod ett fel vid omsändning av dina presentkort. Försök igen eller kontakta oss."
+        },
+        "thank_you_unconfirmed_items_heading": {
+          "many": "Vissa artiklar är inte bekräftade"
+        },
+        "thank_you_unconfirmed_items_description": {
+          "many": "Artiklarna har inte debiterats dig"
+        },
+        "thank_you_item_label": {
+          "many": "%{count} objekt"
+        },
+        "items_fulfilled_by_store": {
+          "many": "Varorna du köpte kommer från andra butiker."
+        }
+      },
+      "review": {
+        "blocks": {
+          "pickup_items_at": {
+            "many": "Tar bort %{count} objekt i"
+          },
+          "ship_items_to": {
+            "many": "Skicka %{count} artiklar till"
+          }
+        }
+      },
+      "order_payment_collection": {
+        "changes_summary": {
+          "added": {
+            "many": "Lade till %{count}."
+          }
+        }
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "many": "Köp %{product_name} och %{count} andra artiklar"
+        }
+      },
+      "subscriptions": {
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "many": "Första %{count} betalningar på %{total_price} vardera"
+          }
+        },
+        "recurring_total_intervals": {
+          "day": {
+            "many": "%{count} dagar"
+          },
+          "week": {
+            "many": "%{count} veckor"
+          },
+          "month": {
+            "many": "%{count} månader"
+          },
+          "year": {
+            "many": "%{count} år gammal"
+          }
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "many": ", sedan %{count} betalningar på %{total_price} var"
+          }
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "many": "Produkter som inte finns i lager"
+        },
+        "products_not_available": {
+          "many": "Dessa produkter tas bort från din varukorg eftersom de inte är tillgängliga i ditt land eller din region."
+        },
+        "all_products_in_cart_unavailable": {
+          "many": "Dessa produkter är inte tillgängliga i ditt land eller din region."
+        }
+      },
+      "throttle": {
+        "estimated_wait_time": {
+          "many": "Beräknad väntetid: {{count}} minuter"
+        }
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "many": "Ingen leverans möjlig för %{count} artiklar"
+          },
+          "message": {
+            "many": "Dessa varor kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress."
+          }
+        }
+      },
+      "pickup_point": {
+        "paginator": {
+          "header": {
+            "many": "Visar %{first} - %{last} av %{count} objekt"
+          },
+          "selected_pickup_point_label": {
+            "many": "%{pickup_point_index} av %{count} utlämningsställen"
+          },
+          "selected_page": {
+            "many": "%{first} – %{last} av %{count} poäng"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "many": "%{count} uttagsplatser nära dig"
+        },
+        "pickup_unavailable_banner_title": {
+          "many": "Det finns inga tillgängliga upphämtningsställen för dina artiklar"
+        }
+      },
+      "notice_banner": {
+        "validation_errors_banner": {
+          "heading": {
+            "many": "Det finns {{count}} fel:"
+          }
+        }
+      },
+      "review_address_modal": {
+        "subtitle": {
+          "many": "Denna beställning kommer att skickas till en adress som angetts av {{merchant}}. Vänligen välj en leveransadress."
+        }
+      },
+      "local_pickup": {
+        "location_information": {
+          "many": "Det finns %{count} butiker med lagersaldo nära dig"
+        },
+        "paginator": {
+          "label": {
+            "many": "%{first} - %{last} av %{count} butiker"
+          }
+        },
+        "reveal_more_label": {
+          "many": "Visa %{count} fler platser"
+        },
+        "all_stores_far_away": {
+          "title_with_item": {
+            "many": "Närmaste filial med dina varor tillgängliga ligger mer än %{distance} från %{location}"
+          }
+        },
+        "location_information_far_away": {
+          "many": "%{count} butiker har din vara"
+        },
+        "location_nearby": {
+          "many": "Det finns %{count} filialer i närheten med din vara i lager"
+        },
+        "location_nearby_short": {
+          "many": "%{count} butiker i närheten har din vara i lager"
+        },
+        "location_far_away": {
+          "many": "%{count} butiker har din vara i lager"
+        },
+        "toggle_more_locations": {
+          "many": "%{count} fler avdelningar"
+        },
+        "pickup_unavailable_banner_title": {
+          "many": "Inga av dina varor finns tillgängliga i några butiker"
+        },
+        "pickup_unavailable_banner_title_with_country": {
+          "many": "Det finns inga filialer i %{country} som har dina varor i lager"
+        },
+        "location_information_far_away_one_item": {
+          "many": "Det finns %{count} filialer med din vara"
+        },
+        "location_information_far_away_other_items": {
+          "many": "Det finns %{count} filialer med dina varor"
+        },
+        "location_nearby_one_item": {
+          "many": "Det finns %{count} butiker nära dig som har varan i lager"
+        },
+        "location_nearby_other_items": {
+          "many": "Det finns %{count} filialer i närheten med dina varor"
+        },
+        "location_nearby_short_one_item": {
+          "many": "%{count} butiker i närheten har din vara"
+        },
+        "location_nearby_short_other_items": {
+          "many": "%{count} närliggande butiker med dina varor"
+        },
+        "location_far_away_one_item": {
+          "many": "%{count} butiker har din vara"
+        },
+        "location_far_away_other_items": {
+          "many": "%{count} grenar med dina objekt"
+        }
+      },
+      "split_delivery": {
+        "inventory_issue_banner": {
+          "heading": {
+            "cannot_be_picked_up": {
+              "many": "%{count} artiklar kan inte tas bort"
+            },
+            "cannot_be_shipped": {
+              "many": "%{count} varor kan inte skickas"
+            }
+          },
+          "remove_item": {
+            "many": "radera artiklar"
+          },
+          "ship_separately": {
+            "many": "Skicka dem separat"
+          },
+          "pick_them_up_in_store": {
+            "many": "Hämta i butik"
+          },
+          "remove_item_only": {
+            "many": "Ta bort objekt"
+          }
+        },
+        "pickup_items_count": {
+          "many": "Ta bort %{count} objekt"
+        },
+        "ship_items_count": {
+          "many": "Skicka %{count} artiklar"
+        },
+        "items_count": {
+          "many": "%{count} objekt"
+        }
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "remove_items_action": {
+          "many": "ta bort otillgängliga artiklar"
+        }
+      },
+      "remote_merchandise_only": {
+        "detail_item_label": {
+          "many": "{{count}} artiklar"
+        }
+      }
+    },
+    "notices": {
+      "order": {
+        "cancel_reason": {
+          "many": "Annat"
+        }
+      }
+    },
+    "page_titles": {
+      "search_results": {
+        "many": "Sökning: %{count} resultat hittades för \"%{terms}\""
+      }
+    }
+  },
+  "customer_accounts": {
+    "navigation_and_structure": {
+      "store_credit_multi_currency_accessibility_label": {
+        "many": "{{formattedBalance}} i tillgodohavande och i {{count}} valutor till"
+      }
+    },
+    "orders": {
+      "order_list": {
+        "items": {
+          "many": "{{count}} artiklar"
+        }
+      },
+      "order_status": {
+        "delivered_description_gift_card": {
+          "many": "Presentkorten skickades via e-post."
+        },
+        "gift_card_label": {
+          "many": "Presentkort"
+        },
+        "confirmed_gift_card_additional_description": {
+          "many": "Varje presentkort skickas i ett separat e-postmeddelande."
+        },
+        "delivered_description_gift_card_text": {
+          "many": "Presentkorten skickades via SMS."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "many": "Varje presentkort skickas i ett separat SMS."
+        },
+        "gift_resend_success": {
+          "many": "Vidarebefordrade presentkort"
+        },
+        "gift_resend_failure": {
+          "many": "Det uppstod ett problem med att skicka dina presentkort igen. Försök igen eller kontakta oss."
+        },
+        "tracking_number": {
+          "many": "Spårningsnummer"
+        },
+        "gift_card_resend_button": {
+          "many": "Skicka presentkort igen"
+        }
+      }
+    },
+    "order_details": {
+      "image_gallery": {
+        "load_more_items": {
+          "many": "Visa {{count}} fler artiklar"
+        }
+      },
+      "subtotal_label_with_quantity": {
+        "many": "Delsumma · {{count}} artiklar"
+      },
+      "discount_order_stacking": {
+        "many": "Rabattsatser"
+      }
+    },
+    "B2B": {
+      "orders": {
+        "draft_order_list": {
+          "pending_tab_accessibility_label": {
+            "pending_orders": {
+              "many": "Du har {{count}} väntande beställningar"
+            }
+          }
+        }
+      },
+      "draft_order_details": {
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "many": "Betalningen förföll för {{count}} dagar sedan."
+            },
+            "banner_due": {
+              "many": "Betalning ska ske inom {{count}} dagar."
+            },
+            "banner_overdue_for_single_fulfillment": {
+              "many": "Betalning av {{amount}} förföll för {{count}} dagar sedan. {{link}}"
+            }
+          }
+        }
+      }
+    },
+    "errors": {
+      "banner_title": {
+        "many": "Det finns {{count}} fel."
+      }
+    },
+    "payment_methods": {
+      "add_payment_method": {
+        "subscription_contracts": {
+          "more_items": {
+            "many": "{{count}} fler produkter"
+          },
+          "product_count": {
+            "many": "{{count}} produkter"
+          }
+        },
+        "updating_contracts": {
+          "many": "Uppdaterar {{count}} prenumerationsavtal..."
+        },
+        "contracts_updated": {
+          "many": "Prenumerationskontrakten har uppdaterats.{{count}}"
+        }
+      }
+    },
+    "ui_components": {
+      "autocompleteOptionsAvailable": {
+        "many": "{{count}} artiklar tillgängliga"
+      },
+      "mapClusterTitle": {
+        "many": "Grupp med {{number}} bokmärken"
+      }
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneHourAgo": {
+          "many": "{{count}} minuter sedan"
+        }
+      }
+    }
+  },
+  "lavuni_custom": {
+    "text_0": "🔧 Todas las puntas que necesitas en un solo estuche",
+    "text_1": "📦 Envío gratis a la España peninsular · 11–15 días",
+    "text_2": "🎁 El regalo útil de esta Navidad —",
+    "text_3": "Comprar ahora",
+    "text_4": "Todas las puntas,",
+    "text_5": "un solo mango",
+    "text_6": "Monta,",
+    "text_7": "aprieta",
+    "text_8": "y repara",
+    "text_9": "LAVUNI · Destornillador de trinquete 24 en 1",
+    "text_10": "Mango de trinquete reversible, adaptador magnético y 24 puntas en un estuche compacto.",
+    "text_11": "COMPRAR AHORA →",
+    "text_12": "",
+    "text_13": "MONTA Y REPARA SIN BUSCAR HERRAMIENTAS",
+    "text_14": "Un mango de trinquete en T y 24 puntas intercambiables en un estuche compacto. Para muebles, electrodomésticos, la bici o el coche: cambias de punta en segundos y trabajas sin soltar la mano.",
+    "text_15": "TRINQUETE REVERSIBLE",
+    "text_16": "Aprieta y afloja sin soltar el mango. Cambias de sentido con el selector.",
+    "text_17": "PUNTAS MAGNÉTICAS",
+    "text_18": "El adaptador magnético sujeta el tornillo para que no se caiga al colocarlo.",
+    "text_19": "24 PUNTAS",
+    "text_20": "Planas, Phillips, Torx y hexagonales para los tornillos más habituales de casa.",
+    "text_21": "TODO EN SU ESTUCHE",
+    "text_22": "Mango y puntas ordenados en un estuche compacto, listos en el cajón o en el coche.",
+    "text_23": "El regalo útil para el manitas",
+    "text_24": "Descubre",
+    "text_25": "LAVUNI",
+    "text_26": "y ten siempre a mano la herramienta para los arreglos de casa.",
+    "text_27": "Monta, aprieta y repara sin buscar herramientas.",
+    "text_28": "Opiniones de clientes",
+    "text_45": "Trinquete reversible: aprieta y afloja sin soltar el mango",
+    "text_46": "Adaptador magnético que sujeta el tornillo",
+    "text_47": "24 puntas intercambiables en estuche compacto",
+    "text_48": "Mango en T: úsalo como destornillador o como llave",
+    "text_49": "Todo lo que necesitas para los arreglos de casa 🔧",
+    "text_50": "Sin soltar la mano",
+    "text_51": "— El trinquete hace el trabajo repetitivo al montar muebles.",
+    "text_52": "El tornillo no se cae",
+    "text_53": "— El adaptador magnético lo sujeta, incluso en huecos estrechos.",
+    "text_54": "Una punta para cada tornillo",
+    "text_55": "— 24 puntas planas, Phillips, Torx y hexagonales.",
+    "text_56": "Todo ordenado",
+    "text_57": "— Mango y puntas guardados en su estuche.",
+    "text_58": "El arreglo de casa, siempre a mano. 🔧",
+    "text_59": "📖 Descripción",
+    "text_60": "Destornillador de trinquete 24 en 1 con mango en T, adaptador magnético y estuche.",
+    "text_61": "El mango de trinquete permite apretar y aflojar sin soltar la mano, y su selector cambia el sentido de giro. Las puntas se encajan en el adaptador magnético, que sujeta el tornillo mientras lo colocas. Sirve para montar muebles, pequeñas reparaciones del hogar, bicicletas y electrodomésticos.",
+    "text_62": "⚙️ Material y características",
+    "text_63": "Contenido:",
+    "text_64": "mango de trinquete, 24 puntas y estuche",
+    "text_65": "Puntas:",
+    "text_66": "planas, Phillips, Torx y hexagonales",
+    "text_67": "Material de las puntas:",
+    "text_68": "acero aleado S2 (según el fabricante)",
+    "text_69": "Mecanismo:",
+    "text_70": "trinquete reversible de 60 dientes (según el fabricante)",
+    "text_71": "Arco de trabajo:",
+    "text_72": "6,2° (según el fabricante)",
+    "text_73": "Sujeción:",
+    "text_74": "adaptador magnético",
+    "text_75": "Formato:",
+    "text_76": "mango en T, usable como destornillador o como llave",
+    "text_77": "Alimentación:",
+    "text_78": "manual, sin batería",
+    "text_79": "Peso y medidas:",
+    "text_80": "pendiente de confirmar",
+    "text_81": "✨ Antes de usarlo",
+    "text_82": "Elige la punta que corresponde exactamente al tipo y a la medida del tornillo.",
+    "text_83": "Importante:",
+    "text_84": "una punta incorrecta puede dañar la cabeza del tornillo. Es una herramienta manual: no la uses con taladros ni atornilladores eléctricos.",
+    "text_85": "Está pensada para tareas domésticas y de bricolaje.",
+    "text_86": "🔧 Cómo se usa",
+    "text_87": "Abre el estuche y elige la punta adecuada para el tornillo.",
+    "text_88": "Encaja la punta en el adaptador magnético del mango.",
+    "text_89": "Selecciona el sentido de giro: apretar o aflojar.",
+    "text_90": "Coloca el tornillo en la punta: el imán lo sujeta.",
+    "text_91": "Gira con movimientos cortos: el trinquete vuelve libre sin que sueltes el mango.",
+    "text_92": "🧰 Cuidado y conservación",
+    "text_93": "Guarda las puntas en su estuche después de cada uso para tenerlas siempre localizadas.",
+    "text_94": "Mantén la herramienta",
+    "text_95": "limpia y seca",
+    "text_96": "para evitar la oxidación, y",
+    "text_97": "no la uses como palanca",
+    "text_98": "ni la golpees como si fuera un martillo.",
+    "text_99": "Para cambiar el sentido de giro, usa el",
+    "text_100": "selector de avance y retroceso",
+    "text_101": "del mango de trinquete.",
+    "text_102": "Elige siempre",
+    "text_103": "la punta y la medida exactas del tornillo",
+    "text_104": ": así evitas que la cabeza se desgaste.",
+    "text_105": "Es una herramienta manual",
+    "text_106": ": no necesita batería ni carga.",
+    "text_107": "🔧 Cómo usar tu destornillador – paso a paso",
+    "text_108": "Paso 1: Elige la punta",
+    "text_109": "Abre el estuche y escoge",
+    "text_110": "la punta que encaja con tu tornillo",
+    "text_111": ". Tienes",
+    "text_112": "24 puntas",
+    "text_113": "ordenadas para encontrarla rápido.",
+    "text_114": "Paso 2: Encájala",
+    "text_115": "Coloca la punta en el",
+    "text_116": "adaptador magnético",
+    "text_117": "del mango. El imán",
+    "text_118": "sujeta el tornillo",
+    "text_119": " para que no se caiga al colocarlo.",
+    "text_120": "Paso 3: Gira con el trinquete",
+    "text_121": "Selecciona el sentido y",
+    "text_122": "gira con movimientos cortos",
+    "text_123": "para apretar o aflojar",
+    "text_124": "sin soltar el mango",
+    "text_125": ". Así de simple. 🔧",
+    "text_126": "ENVÍO GRATIS",
+    "text_127": "A la España peninsular · Entrega estimada: 11–15 días.",
+    "text_128": "DEVOLUCIONES",
+    "text_129": "Tienes 14 días desde la entrega para desistir de tu compra.",
+    "text_130": "ATENCIÓN AL CLIENTE",
+    "text_131": "Te ayudamos con cualquier duda sobre tu pedido.",
+    "text_132": "¿DUDAS SOBRE EL PRODUCTO?",
+    "text_133": "Escríbenos y te ayudamos.",
+    "text_134": "Todas las puntas, un solo mango.",
+    "text_135": "Mango de trinquete y 24 puntas ordenadas en un estuche compacto.",
+    "text_136": "⮜ ARRASTRA ⮞",
+    "text_137": "ANTES",
+    "text_138": "DESPUÉS",
+    "text_139": "Preguntas frecuentes",
+    "text_140": "¿Qué puntas incluye?",
+    "text_141": "Incluye",
+    "text_142": "24 puntas intercambiables",
+    "text_143": " de tipo plano, Phillips, Torx y hexagonal. En las fotos del producto puedes ver todas las medidas.",
+    "text_144": "¿Sirve para montar muebles?",
+    "text_145": "Sí. El trinquete te permite",
+    "text_146": "apretar y aflojar sin soltar el mango",
+    "text_147": ", lo que ahorra muchos gestos al montar muebles.",
+    "text_148": "¿Cómo se usa?",
+    "text_149": "Elige la punta, encájala en el adaptador magnético y",
+    "text_150": "gira con movimientos cortos",
+    "text_151": ". Con el selector cambias entre apretar y aflojar.",
+    "text_152": "¿Necesita batería?",
+    "text_153": "No. Es una herramienta",
+    "text_154": "manual",
+    "text_155": ": no lleva batería ni necesita carga.",
+    "text_156": "¿Cuánto tarda en llegar?",
+    "text_157": "La entrega estimada es de 11 a 15 días y",
+    "text_158": "recibirás un número de seguimiento",
+    "text_159": "por email para seguir tu pedido.",
+    "text_160": "¿Puedo devolverlo?",
+    "text_161": "Sí. Tienes",
+    "text_162": "14 días desde la entrega",
+    "text_163": "para desistir de la compra. Escríbenos y te indicamos cómo hacerlo.",
+    "text_164": "¿Merece la pena frente a un destornillador normal?",
+    "text_165": "Si haces arreglos en casa, el trinquete te permite trabajar",
+    "text_166": "y tienes las 24 puntas ordenadas en un solo estuche.",
+    "image_0": "Destornillador de trinquete 24 en 1 con estuche",
+    "image_1": "Mango de trinquete y puntas en su estuche",
+    "image_2": "Las 24 puntas incluidas",
+    "image_3": "Adaptador magnético sujetando un tornillo",
+    "image_4": "Mecanismo de trinquete reversible",
+    "image_5": "Usos del destornillador de trinquete"
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_Xa9GEJ": {
+          "type": "title",
+          "settings": {}
+        },
+        "custom_liquid_AxaHgR": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"lavuni-product-rating\"\n     aria-label=\"Leverantörens produktbetyg: 4,5 av 5 baserat på 459 recensioner\">\n\n  <span class=\"lavuni-rating-stars\" aria-hidden=\"true\">\n    <span class=\"lavuni-stars-background\">★★★★★</span>\n    <span class=\"lavuni-stars-filled\">★★★★★</span>\n  </span>\n\n  <span class=\"lavuni-rating-score\">4,5/5</span>\n\n  <span class=\"lavuni-rating-count\">\n    459 recensioner hos leverantören\n  </span>\n</div>\n\n<style>\n.lavuni-product-rating {\n  display: flex;\n  align-items: center;\n  flex-wrap: wrap;\n  gap: 7px;\n  margin: 8px 0 14px;\n  font-family: inherit;\n  line-height: 1.4;\n}\n\n.lavuni-rating-stars {\n  position: relative;\n  display: inline-block;\n  font-size: 20px;\n  letter-spacing: 2px;\n  line-height: 1;\n  white-space: nowrap;\n}\n\n.lavuni-stars-background {\n  color: #e5e5e5;\n}\n\n.lavuni-stars-filled {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 90%;\n  overflow: hidden;\n  white-space: nowrap;\n  color: #E5A323;\n}\n\n.lavuni-rating-score {\n  font-size: 14px;\n  font-weight: 700;\n  color: #292929;\n}\n\n.lavuni-rating-count {\n  font-size: 12px;\n  color: #666;\n}\n\n@media (max-width: 749px) {\n  .lavuni-product-rating {\n    gap: 6px;\n  }\n\n  .lavuni-rating-stars {\n    font-size: 18px;\n  }\n\n  .lavuni-rating-count {\n    font-size: 11px;\n  }\n}\n</style>"
+          },
+          "disabled": true
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "custom_liquid_kJqcyM": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"lavuni-benefits\">\n  <div class=\"lavuni-benefit\">\n    <span class=\"lavuni-check\">✓</span>\n    <span>{{ 'lavuni_custom.text_45' | t }}</span>\n  </div>\n\n  <div class=\"lavuni-benefit\">\n    <span class=\"lavuni-check\">✓</span>\n    <span>{{ 'lavuni_custom.text_46' | t }}</span>\n  </div>\n\n  <div class=\"lavuni-benefit\">\n    <span class=\"lavuni-check\">✓</span>\n    <span>{{ 'lavuni_custom.text_47' | t }}</span>\n  </div>\n\n  <div class=\"lavuni-benefit\">\n    <span class=\"lavuni-check\">✓</span>\n    <span>{{ 'lavuni_custom.text_48' | t }}</span>\n  </div>\n</div>\n\n<style>\n  .lavuni-benefits {\n    display: flex;\n    flex-direction: column;\n    gap: 8px;\n    margin: 4px 0 8px;\n  }\n\n  .lavuni-benefit {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    font-size: 14px;\n    line-height: 1.35;\n    color: #302d3a;\n  }\n\n  .lavuni-check {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex: 0 0 19px;\n    width: 19px;\n    height: 19px;\n    border-radius: 50%;\n    background: #f7d7fc;\n    color: #b94f7a;\n    font-size: 13px;\n    font-weight: 700;\n  }\n</style>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "icon_with_text_KRxwTV": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "heart",
+            "image_1": "shopify://shop_images/free-shipping_fe90ff4c-c45b-42a0-83ac-99ff3d44716e.png",
+            "heading_1": "Envío gratis",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/verified_27bc0d34-6aa1-4e74-9029-447d5004ead9.png",
+            "heading_2": "Contáctanos",
+            "icon_3": "truck",
+            "image_3": "shopify://shop_images/like_4cb4c5e0-744b-459c-a2f6-ede0b32043a9.png",
+            "heading_3": "Dudas del producto"
+          }
+        },
+        "custom_liquid_3n4cRD": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product-description-block\">\n  <h2>{{ 'lavuni_custom.text_49' | t }}</h2>\n\n  <ul class=\"key-benefits\">\n    <li>\n      ✨ <strong>{{ 'lavuni_custom.text_50' | t }}</strong>\n      <span>{{ 'lavuni_custom.text_51' | t }}</span>\n    </li>\n\n    <li>\n      🧲 <strong>{{ 'lavuni_custom.text_52' | t }}</strong>\n      <span>{{ 'lavuni_custom.text_53' | t }}</span>\n    </li>\n\n    <li>\n      🔩 <strong>{{ 'lavuni_custom.text_54' | t }}</strong>\n      <span>{{ 'lavuni_custom.text_55' | t }}</span>\n    </li>\n\n    <li>\n      🏠 <strong>{{ 'lavuni_custom.text_56' | t }}</strong>\n      <span>{{ 'lavuni_custom.text_57' | t }}</span>\n    </li>\n  </ul>\n\n  <p class=\"lavuni-closing\">\n    {{ 'lavuni_custom.text_58' | t }}\n  </p>\n</div>\n\n<style>\n.product-description-block {\n  font-family: inherit;\n  color: #2E2A39;\n  max-width: 850px;\n  margin: 0 auto 2rem;\n  text-align: left;\n  line-height: 1.55;\n}\n\n.product-description-block h2 {\n  text-align: left;\n  font-size: 1.4rem;\n  font-weight: 700;\n  margin: 0 0 1.2rem;\n  color: #2E2A39;\n  letter-spacing: 0;\n}\n\n.key-benefits {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n\n.key-benefits li {\n  margin-bottom: 0.85rem;\n  font-size: 1.05rem;\n}\n\n.key-benefits strong {\n  color: #2E2A39;\n  font-weight: 700;\n}\n\n.key-benefits span {\n  color: #5f5a68;\n}\n\n.lavuni-closing {\n  font-size: 1.05rem;\n  font-weight: 700;\n  color: #c95f88;\n  margin: 1.25rem 0 0;\n}\n\n@media screen and (max-width: 749px) {\n  .product-description-block {\n    margin-bottom: 1.5rem;\n  }\n\n  .product-description-block h2 {\n    font-size: 1.25rem;\n    margin-bottom: 1rem;\n  }\n\n  .key-benefits li {\n    font-size: 0.95rem;\n    margin-bottom: 0.75rem;\n  }\n\n  .lavuni-closing {\n    font-size: 0.95rem;\n    margin-top: 1rem;\n  }\n}\n</style>"
+          }
+        },
+        "custom_liquid_9d3Yyn": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"accordion\">\n\n  <div class=\"accordion-item\">\n    <button class=\"accordion-header\">{{ 'lavuni_custom.text_59' | t }}</button>\n    <div class=\"accordion-content\">\n      <p>\n        {{ 'lavuni_custom.text_60' | t }}\n      </p>\n      <p>\n        {{ 'lavuni_custom.text_61' | t }}\n      </p>\n    </div>\n  </div>\n\n  <div class=\"accordion-item\">\n    <button class=\"accordion-header\">{{ 'lavuni_custom.text_62' | t }}</button>\n    <div class=\"accordion-content\">\n      <p>\n        <strong>{{ 'lavuni_custom.text_63' | t }}</strong> {{ 'lavuni_custom.text_64' | t }}<br>\n        <strong>{{ 'lavuni_custom.text_65' | t }}</strong> {{ 'lavuni_custom.text_66' | t }}<br>\n        <strong>{{ 'lavuni_custom.text_67' | t }}</strong> {{ 'lavuni_custom.text_68' | t }}<br>\n        <strong>{{ 'lavuni_custom.text_69' | t }}</strong> {{ 'lavuni_custom.text_70' | t }}<br>\n        <strong>{{ 'lavuni_custom.text_71' | t }}</strong> {{ 'lavuni_custom.text_72' | t }}<br>\n        <strong>{{ 'lavuni_custom.text_73' | t }}</strong> {{ 'lavuni_custom.text_74' | t }}<br>\n        <strong>{{ 'lavuni_custom.text_75' | t }}</strong> {{ 'lavuni_custom.text_76' | t }}<br>\n        <strong>{{ 'lavuni_custom.text_77' | t }}</strong> {{ 'lavuni_custom.text_78' | t }}<br>\n        <strong>{{ 'lavuni_custom.text_79' | t }}</strong> {{ 'lavuni_custom.text_80' | t }}\n      </p>\n    </div>\n  </div>\n\n  <div class=\"accordion-item\">\n    <button class=\"accordion-header\">{{ 'lavuni_custom.text_81' | t }}</button>\n    <div class=\"accordion-content\">\n      <p>\n        {{ 'lavuni_custom.text_82' | t }}\n      </p>\n\n      <p>\n        <strong>{{ 'lavuni_custom.text_83' | t }}</strong> {{ 'lavuni_custom.text_84' | t }}\n      </p>\n\n      <p>\n        {{ 'lavuni_custom.text_85' | t }}\n      </p>\n    </div>\n  </div>\n\n  <div class=\"accordion-item\">\n    <button class=\"accordion-header\">{{ 'lavuni_custom.text_86' | t }}</button>\n    <div class=\"accordion-content\">\n\n      <p>\n        <strong>1.</strong> {{ 'lavuni_custom.text_87' | t }}\n      </p>\n\n      <p>\n        <strong>2.</strong> {{ 'lavuni_custom.text_88' | t }}\n      </p>\n\n      <p>\n        <strong>3.</strong> {{ 'lavuni_custom.text_89' | t }}\n      </p>\n\n      <p>\n        <strong>4.</strong> {{ 'lavuni_custom.text_90' | t }}\n      </p>\n\n      <p>\n        <strong>5.</strong> {{ 'lavuni_custom.text_91' | t }}\n      </p>\n\n    </div>\n  </div>\n\n  <div class=\"accordion-item\">\n    <button class=\"accordion-header\">{{ 'lavuni_custom.text_92' | t }}</button>\n    <div class=\"accordion-content\">\n\n      <p>\n        {{ 'lavuni_custom.text_93' | t }}\n      </p>\n\n      <p>\n        {{ 'lavuni_custom.text_94' | t }} <strong>{{ 'lavuni_custom.text_95' | t }}</strong> {{ 'lavuni_custom.text_96' | t }} <strong>{{ 'lavuni_custom.text_97' | t }}</strong> {{ 'lavuni_custom.text_98' | t }}\n      </p>\n\n      <p>\n        {{ 'lavuni_custom.text_99' | t }} <strong>{{ 'lavuni_custom.text_100' | t }}</strong> {{ 'lavuni_custom.text_101' | t }}\n      </p>\n\n      <p>\n        {{ 'lavuni_custom.text_102' | t }} <strong>{{ 'lavuni_custom.text_103' | t }}</strong>{{ 'lavuni_custom.text_104' | t }} <strong>{{ 'lavuni_custom.text_105' | t }}</strong>{{ 'lavuni_custom.text_106' | t }}\n      </p>\n\n    </div>\n  </div>\n\n</div>\n\n<style>\n.accordion-item {\n  border-top: 1px solid #ddd;\n  overflow: hidden;\n}\n\n.accordion-header {\n  width: 100%;\n  background: none;\n  border: none;\n  text-align: left;\n  padding: 1.2rem 0;\n  font-size: 1.1rem;\n  font-weight: 600;\n  color: #E65286;\n  cursor: pointer;\n  transition: color 0.3s ease;\n}\n\n.accordion-header:hover {\n  color: #b83667;\n}\n\n.accordion-content {\n  max-height: 0;\n  overflow: hidden;\n  opacity: 0;\n  transform: translateY(-10px);\n  transition: all 0.5s ease;\n}\n\n.accordion-item.active .accordion-content {\n  max-height: 900px;\n  opacity: 1;\n  transform: translateY(0);\n}\n\n.accordion-content p {\n  margin-bottom: 1rem;\n  font-size: 1rem;\n  color: #111111;\n  line-height: 1.7;\n}\n</style>\n\n<script>\ndocument.querySelectorAll(\".accordion-header\").forEach(button => {\n  button.addEventListener(\"click\", () => {\n    const item = button.parentElement;\n    const openItem = document.querySelector(\".accordion-item.active\");\n\n    if (openItem && openItem !== item) {\n      openItem.classList.remove(\"active\");\n    }\n\n    item.classList.toggle(\"active\");\n  });\n});\n</script>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Dela"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title_Xa9GEJ",
+        "custom_liquid_AxaHgR",
+        "price",
+        "custom_liquid_kJqcyM",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "icon_with_text_KRxwTV",
+        "custom_liquid_3n4cRD",
+        "custom_liquid_9d3Yyn",
+        "description",
+        "share"
+      ],
+      "custom_css": [
+        ".product-form__submit {background: #d96b92 !important; color: #ffffff !important; border: none !important; font-weight: 700; transition: all 0.2s ease;}",
+        ".product-form__submit:hover {background: #c85b83 !important; transform: translateY(-1px);}",
+        ".product-form__submit::after {box-shadow: none !important;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "custom_liquid_t89Dik": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"reviews-section\">\n  <h2 class=\"reviews-title\">\n    {{ 'lavuni_custom.text_28' | t }}\n  </h2>\n\n  <div class=\"reviews-slider\" id=\"reviewsSlider\">\n    <div class=\"reviews-fade fade-left\"></div>\n    <div class=\"reviews-fade fade-right\"></div>\n\n    <div class=\"reviews-track\" id=\"reviewsTrack\">\n\n      <!-- Reseña 1 -->\n      <div class=\"review-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/review1.avif?v=1789597594\" alt=\"Kundrecension 1\">\n        <div class=\"review-overlay\">\n          <p class=\"short\">“Fungerar jättebra på kluvna toppar.”</p>\n        </div>\n        <div class=\"review-full\">\n          <p>Fungerar jättebra på kluvna toppar.</p>\n        </div>\n      </div>\n\n      <!-- Reseña 2 -->\n      <div class=\"review-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/Review2.avif?v=1789597614\" alt=\"Kundrecension 2\">\n        <div class=\"review-overlay\">\n          <p class=\"short\">“Fungerar fantastiskt och kom fram i gott skick.”</p>\n        </div>\n        <div class=\"review-full\">\n          <p>Produkten kom fram i gott skick. Jag har bara använt den några gånger, men den fungerar fantastiskt. Kartongen var lite tillbucklad, men allt inuti var helt.</p>\n        </div>\n      </div>\n\n      <!-- Reseña 3 -->\n      <div class=\"review-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/review3.avif?v=1789597639\" alt=\"Kundrecension 3\">\n        <div class=\"review-overlay\">\n          <p class=\"short\">“Precis vad jag förväntade mig. Älskar den!”</p>\n        </div>\n        <div class=\"review-full\">\n          <p>Jag älskar den här produkten. Den är precis vad jag förväntade mig. Jag delade upp håret i sektioner och drog apparaten genom varje sektion ungefär tre gånger för att klippa bort skadade och kluvna toppar. Jag rekommenderar att platta håret först så att apparaten glider lättare. Jag använde också några droppar arganolja för att få den att glida smidigt. Jag är väldigt nöjd med mitt köp.</p>\n        </div>\n      </div>\n\n      <!-- Reseña 4 -->\n      <div class=\"review-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/Review4.avif?v=1789597660\" alt=\"Kundrecension 4\">\n        <div class=\"review-overlay\">\n          <p class=\"short\">“Mitt hår ser så fint ut. Älskar den!”</p>\n        </div>\n        <div class=\"review-full\">\n          <p>Jag älskar den! Den gör verkligen det den ska. Jag rekommenderar att använda den en gång i månaden. Håret ser jättefint ut efteråt, och jag älskar färgen 😍</p>\n        </div>\n      </div>\n\n      <!-- Reseña 5 -->\n      <div class=\"review-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/review5.avif?v=1789597665\" alt=\"Kundrecension 5\">\n        <div class=\"review-overlay\">\n          <p class=\"short\">“Kom fram i perfekt skick och fungerar jättebra.”</p>\n        </div>\n        <div class=\"review-full\">\n          <p>Produkten var mycket väl förpackad när den kom fram, hela vägen till Argentina, och fungerar perfekt. Den gör precis det den ska. Jag rekommenderar den.</p>\n        </div>\n      </div>\n\n      <!-- Reseña 6 -->\n      <div class=\"review-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/review6.avif?v=1789597680\" alt=\"Kundrecension 6\">\n        <div class=\"review-overlay\">\n          <p class=\"short\">“Fungerar utmärkt, precis som beskrivet.”</p>\n        </div>\n        <div class=\"review-full\">\n          <p>Den kom fram i utmärkt skick och fungerar fantastiskt. Den är precis som i beskrivningen. Laddningskabel och rengöringsborste ingår, liksom två hårklämmor som håller håret på plats under trimningen.</p>\n        </div>\n      </div>\n\n      <!-- Reseña 7 -->\n      <div class=\"review-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/review7.avif?v=1789597696\" alt=\"Kundrecension 7\">\n        <div class=\"review-overlay\">\n          <p class=\"short\">“Gör precis det den ska. Rekommenderas varmt!”</p>\n        </div>\n        <div class=\"review-full\">\n          <p>Jag är väldigt nöjd med produkten. Den gör precis det den ska. Jag rekommenderar den verkligen 👍</p>\n        </div>\n      </div>\n\n      <!-- Reseña 8 -->\n      <div class=\"review-card\">\n        <img src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/review8.avif?v=1789597803\" alt=\"Kundrecension 8\">\n        <div class=\"review-overlay\">\n          <p class=\"short\">“Snabb leverans och fungerar riktigt bra.”</p>\n        </div>\n        <div class=\"review-full\">\n          <p>Den kom fram väldigt snabbt och fungerar bra. Jag har redan provat den och är nöjd. Jag valde den svarta och tycker verkligen om den.</p>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"reviews-cta\">\n  <div class=\"cta-actions\">\n    <div class=\"rating-block\">\n      <div class=\"score\">\n        {{ 'lavuni_custom.text_12' | t }}\n      </div>\n    </div>\n  </div>\n</div>\n\n<style>\n.reviews-section {\n  background: #ffffff;\n  padding: 3rem 0;\n  text-align: center;\n  position: relative;\n  overflow: hidden;\n}\n\n.reviews-title {\n  font-family: \"Poppins\", sans-serif;\n  font-weight: 700;\n  font-size: 2.4rem;\n  color: #2E2A39;\n  margin-bottom: 3rem;\n}\n\n.reviews-slider {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n\n.reviews-track {\n  display: flex;\n  gap: 2rem;\n  will-change: transform;\n  transform: translateX(0);\n}\n\n.review-card {\n  position: relative;\n  flex: 0 0 320px;\n  border-radius: 16px;\n  overflow: hidden;\n  cursor: pointer;\n  transition: transform 0.3s ease;\n  aspect-ratio: 3 / 4;\n}\n\n.review-card img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  border-radius: 16px;\n  transition: transform 0.3s ease;\n}\n\n.review-card:hover img {\n  transform: scale(1.05);\n}\n\n.review-overlay {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  padding: 1.4rem 1rem;\n  background: linear-gradient(\n    to top,\n    rgba(0,0,0,0.8),\n    rgba(0,0,0,0.1)\n  );\n  color: #fff;\n  text-align: left;\n  border-radius: 0 0 16px 16px;\n}\n\n.short {\n  font-size: 1.1rem;\n  font-weight: 500;\n}\n\n.review-full {\n  position: absolute;\n  bottom: -100%;\n  left: 0;\n  right: 0;\n  background: rgba(0,0,0,0.88);\n  color: #fff;\n  padding: 1.5rem;\n  transition: bottom 0.4s ease;\n  font-size: 1rem;\n  line-height: 1.5;\n  border-radius: 16px;\n}\n\n.review-card:hover .review-full {\n  bottom: 0;\n}\n\n.reviews-fade {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  width: 140px;\n  z-index: 3;\n  pointer-events: none;\n}\n\n.fade-left {\n  left: 0;\n  background: linear-gradient(\n    to right,\n    #f7d7dc 40%,\n    transparent\n  );\n}\n\n.fade-right {\n  right: 0;\n  background: linear-gradient(\n    to left,\n    #f7d7dc 40%,\n    transparent\n  );\n}\n\n.reviews-cta {\n  background: #fff;\n  text-align: center;\n  padding: 2rem 1rem 5rem;\n  margin-top: -0.5rem;\n}\n\n.reviews-cta .cta-actions {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4rem;\n  flex-wrap: wrap;\n}\n\n.reviews-cta .rating-block {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n}\n\n.reviews-cta .score {\n  font-size: 1.05rem;\n  color: #2E2A39;\n  opacity: 0.9;\n  font-weight: 500;\n}\n\n@media (max-width: 900px) {\n  .review-card {\n    flex: 0 0 80vw;\n  }\n\n  .reviews-fade {\n    width: 80px;\n  }\n\n  .reviews-cta {\n    padding: 1.5rem 1rem 4.5rem;\n  }\n\n  .reviews-cta .cta-actions {\n    flex-direction: column;\n    gap: 2rem;\n  }\n\n  .reviews-cta .score {\n    font-size: 1rem;\n    text-align: center;\n  }\n\n  .reviews-cta .rating-block {\n    align-items: center;\n    text-align: center;\n  }\n}\n</style>\n\n<script>\n(function () {\n  const slider = document.getElementById('reviewsSlider');\n  const track = document.getElementById('reviewsTrack');\n\n  if (!slider || !track) return;\n\n  if (!track.dataset.duped) {\n    track.innerHTML += track.innerHTML;\n    track.dataset.duped = '1';\n  }\n\n  let pos = 0;\n  let speed = 40;\n  let last = performance.now();\n  let paused = false;\n  let halfWidth = 0;\n\n  const setPaused = (value) => {\n    paused = value;\n  };\n\n  slider.addEventListener('mouseenter', () => setPaused(true));\n  slider.addEventListener('mouseleave', () => setPaused(false));\n\n  slider.addEventListener(\n    'touchstart',\n    () => setPaused(true),\n    { passive: true }\n  );\n\n  slider.addEventListener(\n    'touchend',\n    () => setPaused(false)\n  );\n\n  document.addEventListener('visibilitychange', () => {\n    last = performance.now();\n  });\n\n  function measure() {\n    halfWidth = track.scrollWidth / 2;\n  }\n\n  const imgs = track.querySelectorAll('img');\n  let pending = imgs.length;\n\n  if (pending === 0) {\n    measure();\n  } else {\n    imgs.forEach(img => {\n      if (img.complete) {\n        if (--pending === 0) measure();\n      } else {\n        img.addEventListener('load', () => {\n          if (--pending === 0) measure();\n        }, { once: true });\n\n        img.addEventListener('error', () => {\n          if (--pending === 0) measure();\n        }, { once: true });\n      }\n    });\n  }\n\n  window.addEventListener('resize', measure);\n\n  function loop(now) {\n    const dt = (now - last) / 1000;\n    last = now;\n\n    if (!paused && halfWidth > 0) {\n      pos -= speed * dt;\n\n      if (-pos >= halfWidth) {\n        pos += halfWidth;\n      }\n\n      track.style.transform = `translateX(${pos}px)`;\n    }\n\n    requestAnimationFrame(loop);\n  }\n\n  requestAnimationFrame(loop);\n})();\n</script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "disclosures": {
+      "type": "disclosures",
+      "settings": {
+        "heading": "Información del producto",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "También te puede gustar",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 68
+      }
+    },
+    "custom_liquid_zWAbkQ": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  .lavuni-howto {\n    width: 100%;\n    background: #ffffff;\n    padding: 55px 20px 65px;\n    box-sizing: border-box;\n  }\n\n  .lavuni-howto-container {\n    max-width: 1250px;\n    margin: 0 auto;\n  }\n\n  /* MAIN TITLE */\n  .lavuni-howto-title {\n    text-align: center;\n    margin: 0 0 48px;\n    color: #292d42;\n    font-size: 32px;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.5px;\n  }\n\n  /* 3-STEP GRID */\n  .lavuni-howto-grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 55px;\n    align-items: start;\n  }\n\n  .lavuni-howto-step {\n    text-align: center;\n  }\n\n  /* CIRCULAR IMAGE */\n  .lavuni-howto-image-wrapper {\n    width: 100%;\n    max-width: 330px;\n    aspect-ratio: 1 / 1;\n    margin: 0 auto 28px;\n    border-radius: 50%;\n    overflow: hidden;\n    background: #f7edf5;\n  }\n\n  .lavuni-howto-image {\n    display: block;\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    object-position: center;\n  }\n\n  /* STEP TITLES */\n  .lavuni-howto-step-title {\n    color: #292d42;\n    font-size: 23px;\n    line-height: 1.25;\n    font-weight: 800;\n    margin: 0 0 17px;\n  }\n\n  /* TEXT */\n  .lavuni-howto-text {\n    max-width: 350px;\n    margin: 0 auto;\n    color: #555765;\n    font-size: 17px;\n    line-height: 1.75;\n    font-weight: 400;\n  }\n\n  .lavuni-howto-text strong {\n    color: #292d42;\n    font-weight: 700;\n  }\n\n  /* TABLET */\n  @media screen and (max-width: 990px) {\n    .lavuni-howto {\n      padding: 45px 24px 55px;\n    }\n\n    .lavuni-howto-grid {\n      gap: 30px;\n    }\n\n    .lavuni-howto-title {\n      font-size: 28px;\n      margin-bottom: 40px;\n    }\n\n    .lavuni-howto-image-wrapper {\n      max-width: 260px;\n    }\n\n    .lavuni-howto-step-title {\n      font-size: 20px;\n    }\n\n    .lavuni-howto-text {\n      font-size: 15.5px;\n      line-height: 1.65;\n    }\n  }\n\n  /* MOBILE */\n  @media screen and (max-width: 749px) {\n    .lavuni-howto {\n      padding: 38px 20px 50px;\n    }\n\n    .lavuni-howto-title {\n      font-size: 25px;\n      line-height: 1.25;\n      margin-bottom: 38px;\n    }\n\n    .lavuni-howto-grid {\n      grid-template-columns: 1fr;\n      gap: 48px;\n    }\n\n    .lavuni-howto-image-wrapper {\n      width: min(82vw, 310px);\n      max-width: none;\n      margin-bottom: 23px;\n    }\n\n    .lavuni-howto-step-title {\n      font-size: 21px;\n      margin-bottom: 13px;\n    }\n\n    .lavuni-howto-text {\n      max-width: 340px;\n      font-size: 16px;\n      line-height: 1.7;\n    }\n  }\n</style>\n\n\n<section class=\"lavuni-howto\">\n  <div class=\"lavuni-howto-container\">\n\n    <h2 class=\"lavuni-howto-title\">\n      {{ 'lavuni_custom.text_107' | t }}\n    </h2>\n\n    <div class=\"lavuni-howto-grid\">\n\n      <!-- STEP 1 -->\n      <div class=\"lavuni-howto-step\">\n\n        <div class=\"lavuni-howto-image-wrapper\">\n          <img\n            class=\"lavuni-howto-image\"\n            src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/Sb047705a6b6046fc92fd760ec71a257dn.webp?v=1794747720\"\n            alt=\"{{ 'lavuni_custom.image_2' | t | escape }}\"\n            loading=\"lazy\"\n          >\n        </div>\n\n        <h3 class=\"lavuni-howto-step-title\">\n          {{ 'lavuni_custom.text_108' | t }}\n        </h3>\n\n        <p class=\"lavuni-howto-text\">\n          {{ 'lavuni_custom.text_109' | t }} <strong>{{ 'lavuni_custom.text_110' | t }}</strong>{{ 'lavuni_custom.text_111' | t }} <strong>{{ 'lavuni_custom.text_112' | t }}</strong> {{ 'lavuni_custom.text_113' | t }}\n        </p>\n\n      </div>\n\n\n      <!-- STEP 2 -->\n      <div class=\"lavuni-howto-step\">\n\n        <div class=\"lavuni-howto-image-wrapper\">\n          <img\n            class=\"lavuni-howto-image\"\n            src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/Sa5d8009b6bbe4a16a37a8dce0d03a1e3J.webp?v=1794747720\"\n            alt=\"{{ 'lavuni_custom.image_3' | t | escape }}\"\n            loading=\"lazy\"\n          >\n        </div>\n\n        <h3 class=\"lavuni-howto-step-title\">\n          {{ 'lavuni_custom.text_114' | t }}\n        </h3>\n\n        <p class=\"lavuni-howto-text\">\n          {{ 'lavuni_custom.text_115' | t }} <strong>{{ 'lavuni_custom.text_116' | t }}</strong> {{ 'lavuni_custom.text_117' | t }}\n          <strong>{{ 'lavuni_custom.text_118' | t }}</strong>{{ 'lavuni_custom.text_119' | t }}\n        </p>\n\n      </div>\n\n\n      <!-- STEP 3 -->\n      <div class=\"lavuni-howto-step\">\n\n        <div class=\"lavuni-howto-image-wrapper\">\n          <img\n            class=\"lavuni-howto-image\"\n            src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/Sc5add91217154fdcabc0529c95855f04c.webp?v=1794747719\"\n            alt=\"{{ 'lavuni_custom.image_4' | t | escape }}\"\n            loading=\"lazy\"\n          >\n        </div>\n\n        <h3 class=\"lavuni-howto-step-title\">\n          {{ 'lavuni_custom.text_120' | t }}\n        </h3>\n\n        <p class=\"lavuni-howto-text\">\n          {{ 'lavuni_custom.text_121' | t }} <strong>{{ 'lavuni_custom.text_122' | t }}</strong> {{ 'lavuni_custom.text_123' | t }}\n          <strong>{{ 'lavuni_custom.text_124' | t }}</strong> {{ 'lavuni_custom.text_125' | t }}\n        </p>\n\n      </div>\n\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_qCnJA9": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"trustbar\">\n\n  <div class=\"trust-item\">\n    <h3>{{ 'lavuni_custom.text_126' | t }}</h3>\n    <p>{{ 'lavuni_custom.text_127' | t }}</p>\n  </div>\n\n  <div class=\"divider\"></div>\n\n  <div class=\"trust-item\">\n    <h3>{{ 'lavuni_custom.text_128' | t }}</h3>\n    <p>{{ 'lavuni_custom.text_129' | t }}</p>\n  </div>\n\n  <div class=\"divider\"></div>\n\n  <div class=\"trust-item\">\n    <h3>{{ 'lavuni_custom.text_130' | t }}</h3>\n    <p>{{ 'lavuni_custom.text_131' | t }}</p>\n  </div>\n\n  <div class=\"divider\"></div>\n\n  <div class=\"trust-item\">\n    <h3>{{ 'lavuni_custom.text_132' | t }}</h3>\n    <p>{{ 'lavuni_custom.text_133' | t }}</p>\n  </div>\n\n</div>\n\n<style>\n.trustbar {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 3rem;\n  background: #f7d7dc;\n  padding: 2.5rem 2rem;\n  text-align: center;\n  font-family: \"Poppins\", sans-serif;\n  color: #2E2A39;\n  flex-wrap: wrap;\n}\n\n.trust-item {\n  max-width: 260px;\n}\n\n.trust-item h3 {\n  font-size: 1.25rem;\n  font-weight: 700;\n  letter-spacing: 0.8px;\n  margin-bottom: 0.4rem;\n}\n\n.trust-item p {\n  font-size: 1rem;\n  color: #333;\n  margin: 0;\n  line-height: 1.5;\n}\n\n.divider {\n  width: 1.5px;\n  height: 50px;\n  background: rgba(0,0,0,0.25);\n}\n\n@media (max-width: 768px) {\n  .trustbar {\n    flex-direction: column;\n    gap: 1.5rem;\n  }\n\n  .divider {\n    display: none;\n  }\n\n  .trust-item h3 {\n    font-size: 1.1rem;\n  }\n\n  .trust-item p {\n    font-size: 0.9rem;\n  }\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_d7zFcP": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"comparison-section\">\n\n  <div class=\"text-side\">\n    <h2>{{ 'lavuni_custom.text_134' | t }}</h2>\n\n    <p>\n      {{ 'lavuni_custom.text_135' | t }}\n    </p>\n  </div>\n\n  <div class=\"image-side\">\n    <div class=\"compare-wrapper\" id=\"compareWrapper\">\n\n      <img\n        src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/despues.png?v=1789685859\"\n        class=\"before\"\n        id=\"beforeImg\"\n        alt=\"{{ 'lavuni_custom.image_4' | t | escape }}\"\n      >\n\n      <img\n        src=\"https://cdn.shopify.com/s/files/1/1065/4226/8680/files/antes.png?v=1789685879\"\n        class=\"after\"\n        id=\"afterImg\"\n        alt=\"{{ 'lavuni_custom.image_5' | t | escape }}\"\n      >\n\n      <div class=\"divider\" id=\"divider\">\n        <span>{{ 'lavuni_custom.text_136' | t }}</span>\n      </div>\n\n      <!-- Labels -->\n      <div class=\"corner-label left\">{{ 'lavuni_custom.text_137' | t }}</div>\n      <div class=\"corner-label right\">{{ 'lavuni_custom.text_138' | t }}</div>\n\n    </div>\n  </div>\n\n</div>\n\n<style>\n\n.comparison-section {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-wrap: wrap;\n  gap: 3rem;\n  padding: 5rem 2rem;\n  background: #fff;\n  font-family: \"Poppins\", sans-serif;\n  color: #2E2A39;\n}\n\n.text-side {\n  flex: 1;\n  max-width: 520px;\n}\n\n.text-side h2 {\n  font-size: 2.6rem;\n  font-weight: 700;\n  line-height: 1.2;\n  margin-bottom: 1rem;\n}\n\n.text-side p {\n  font-size: 1.5rem;\n  line-height: 1.8;\n  color: #444;\n}\n\n.image-side {\n  flex: 1;\n  max-width: 520px;\n  display: flex;\n  justify-content: center;\n  width: 100%;\n}\n\n\n/* --- COMPARISON SLIDER --- */\n\n.compare-wrapper {\n  position: relative;\n  width: 100%;\n  max-width: 520px;\n  aspect-ratio: 3/4;\n  overflow: hidden;\n  border-radius: 16px;\n  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);\n  cursor: ew-resize;\n  user-select: none;\n  touch-action: none;\n  background: #f8f8f8;\n}\n\n.compare-wrapper img {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  object-fit: cover;\n  pointer-events: none;\n  display: block;\n}\n\n.compare-wrapper img.before {\n  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);\n}\n\n.compare-wrapper img.after {\n  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);\n}\n\n.divider {\n  position: absolute;\n  top: 0;\n  left: 50%;\n  width: 2px;\n  height: 100%;\n  background: #E65286;\n  transform: translateX(-1px);\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  pointer-events: none;\n}\n\n.divider span {\n  position: absolute;\n  bottom: 6%;\n  left: 50%;\n  transform: translate(-50%, 0);\n  background: #fff;\n  border: 2px solid #E65286;\n  color: #E65286;\n  font-weight: 600;\n  font-size: 0.85rem;\n  border-radius: 999px;\n  padding: 6px 16px;\n  white-space: nowrap;\n  box-shadow: 0 0 6px rgba(0,0,0,0.2);\n}\n\n\n/* Corner labels */\n\n.corner-label {\n  position: absolute;\n  top: 12px;\n  font-size: 0.9rem;\n  font-weight: 600;\n  color: #fff;\n  background: rgba(0,0,0,0.4);\n  padding: 4px 12px;\n  border-radius: 6px;\n  backdrop-filter: blur(2px);\n  pointer-events: none;\n  user-select: none;\n}\n\n.corner-label.left {\n  left: 12px;\n}\n\n.corner-label.right {\n  right: 12px;\n}\n\n\n/* --- RESPONSIVE --- */\n\n@media (max-width: 900px) {\n\n  .comparison-section {\n    flex-direction: column;\n    text-align: center;\n    padding: 3rem 1.5rem;\n    gap: 2rem;\n  }\n\n  .text-side h2 {\n    font-size: 1.9rem;\n  }\n\n  .text-side p {\n    font-size: 1.2rem;\n  }\n\n  .image-side {\n    max-width: 100%;\n    width: 100%;\n  }\n\n  .divider span {\n    font-size: 0.75rem;\n    padding: 4px 12px;\n    bottom: 4%;\n  }\n\n}\n\n</style>\n\n<script>\n\nconst wrapper = document.getElementById('compareWrapper');\nconst after = document.getElementById('afterImg');\nconst before = document.getElementById('beforeImg');\nconst divider = document.getElementById('divider');\n\nlet isDown = false;\nlet userInteracted = false;\n\n\nfunction moveSlider(x) {\n\n  const rect = wrapper.getBoundingClientRect();\n\n  let offset = x - rect.left;\n\n  offset = Math.max(0, Math.min(offset, rect.width));\n\n  const percent = (offset / rect.width) * 100;\n\n  after.style.clipPath =\n    `polygon(0 0, ${percent}% 0, ${percent}% 100%, 0 100%)`;\n\n  before.style.clipPath =\n    `polygon(${percent}% 0, 100% 0, 100% 100%, ${percent}% 100%)`;\n\n  divider.style.left = `${percent}%`;\n}\n\n\nfunction stopIdle() {\n\n  if (!userInteracted) {\n    userInteracted = true;\n  }\n\n}\n\n\n/* Desktop */\n\nwrapper.addEventListener('mousedown', e => {\n  isDown = true;\n  stopIdle();\n  moveSlider(e.clientX);\n});\n\nwrapper.addEventListener('mousemove', e => {\n  if (isDown) moveSlider(e.clientX);\n});\n\nwindow.addEventListener('mouseup', () => {\n  isDown = false;\n});\n\n\n/* Mobile */\n\nwrapper.addEventListener('touchstart', e => {\n\n  isDown = true;\n\n  stopIdle();\n\n  moveSlider(e.touches[0].clientX);\n\n  e.preventDefault();\n\n}, { passive: false });\n\n\nwrapper.addEventListener('touchmove', e => {\n\n  if (isDown) {\n    moveSlider(e.touches[0].clientX);\n  }\n\n  e.preventDefault();\n\n}, { passive: false });\n\n\nwrapper.addEventListener('touchend', () => {\n  isDown = false;\n});\n\n\n/* --- Occasional hint animation --- */\n\nfunction easeInOutSine(t) {\n  return -(Math.cos(Math.PI * t) - 1) / 2;\n}\n\n\nfunction animateHint() {\n\n  if (userInteracted) return;\n\n  const duration = 2000;\n  const start = 50;\n  const amplitude = 15;\n\n  let startTime = null;\n\n\n  function frame(time) {\n\n    if (!startTime) {\n      startTime = time;\n    }\n\n    const progress = (time - startTime) / duration;\n\n    const offset =\n      amplitude * Math.sin(progress * Math.PI * 2);\n\n    const percent = start + offset;\n\n    const rect = wrapper.getBoundingClientRect();\n\n    moveSlider(\n      rect.left + (rect.width * percent / 100)\n    );\n\n\n    if (progress < 1 && !userInteracted) {\n      requestAnimationFrame(frame);\n    }\n\n  }\n\n\n  requestAnimationFrame(frame);\n\n\n  const nextDelay =\n    2000 + Math.random() * 4000;\n\n\n  setTimeout(() => {\n\n    if (!userInteracted) {\n      animateHint();\n    }\n\n  }, nextDelay);\n\n}\n\n\nsetTimeout(animateHint, 2500);\n\n</script>",
+        "color_scheme": "",
+        "padding_top": 84,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "multicolumn_XeR6cC": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_tATUBe": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/free-shipping.png",
+            "title": "ENVÍO GRATIS",
+            "text": "<p>Envío gratis a la España peninsular · 11–15 días</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_HdxBkN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/verified.png",
+            "title": "DEVOLUCIONES",
+            "text": "<p>14 DÍAS PARA DEVOLVERLO</p><p>Compra con tranquilidad: tienes 14 días desde la entrega para desistir.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hp9dCC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/like.png",
+            "title": "ATENCIÓN AL CLIENTE",
+            "text": "<p>Estamos aquí para ayudarte.<br/><br/></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_tATUBe",
+        "column_HdxBkN",
+        "column_hp9dCC"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_9zqJdB": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  .lavuni-faq {\n    width: 100%;\n    background: #F7D7FC;\n    padding: 60px 20px 70px;\n    box-sizing: border-box;\n  }\n\n  .lavuni-faq-container {\n    max-width: 1050px;\n    margin: 0 auto;\n  }\n\n  .lavuni-faq-title {\n    text-align: center;\n    margin: 0 0 38px;\n    color: #292d42;\n    font-size: 40px;\n    line-height: 1.2;\n    font-weight: 700;\n    letter-spacing: -0.5px;\n  }\n\n  .lavuni-faq-item {\n    border-top: 1px solid rgba(41, 45, 66, 0.12);\n  }\n\n  .lavuni-faq-item:last-child {\n    border-bottom: 1px solid rgba(41, 45, 66, 0.12);\n  }\n\n  .lavuni-faq-question {\n    width: 100%;\n    border: 0;\n    background: transparent;\n    padding: 24px 8px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 20px;\n    cursor: pointer;\n    text-align: left;\n    color: #292d42;\n    font-size: 18px;\n    line-height: 1.4;\n    font-weight: 700;\n    font-family: inherit;\n  }\n\n  .lavuni-faq-question:hover {\n    opacity: 0.75;\n  }\n\n  .lavuni-faq-arrow {\n    width: 9px;\n    height: 9px;\n    border-right: 1.8px solid #292d42;\n    border-bottom: 1.8px solid #292d42;\n    transform: rotate(45deg);\n    transition: transform 0.3s ease;\n    flex-shrink: 0;\n    margin-right: 4px;\n  }\n\n  .lavuni-faq-item.active .lavuni-faq-arrow {\n    transform: rotate(225deg);\n  }\n\n  .lavuni-faq-answer {\n    max-height: 0;\n    overflow: hidden;\n    opacity: 0;\n    transition:\n      max-height 0.4s ease,\n      opacity 0.3s ease,\n      padding 0.4s ease;\n    padding: 0 8px;\n  }\n\n  .lavuni-faq-item.active .lavuni-faq-answer {\n    max-height: 350px;\n    opacity: 1;\n    padding: 0 8px 26px;\n  }\n\n  .lavuni-faq-answer p {\n    margin: 0;\n    max-width: 940px;\n    color: #555765;\n    font-size: 17px;\n    line-height: 1.7;\n    font-weight: 400;\n  }\n\n  .lavuni-faq-answer strong {\n    color: #292d42;\n    font-weight: 700;\n  }\n\n  @media screen and (max-width: 749px) {\n    .lavuni-faq {\n      padding: 42px 18px 50px;\n    }\n\n    .lavuni-faq-title {\n      font-size: 30px;\n      margin-bottom: 28px;\n    }\n\n    .lavuni-faq-question {\n      padding: 20px 3px;\n      font-size: 16px;\n      gap: 15px;\n    }\n\n    .lavuni-faq-answer {\n      padding-left: 3px;\n      padding-right: 3px;\n    }\n\n    .lavuni-faq-item.active .lavuni-faq-answer {\n      padding: 0 3px 22px;\n    }\n\n    .lavuni-faq-answer p {\n      font-size: 15.5px;\n      line-height: 1.65;\n    }\n  }\n</style>\n\n<section class=\"lavuni-faq\">\n\n  <div class=\"lavuni-faq-container\">\n\n    <h2 class=\"lavuni-faq-title\">\n      {{ 'lavuni_custom.text_139' | t }}\n    </h2>\n\n    <!-- QUESTION 1 -->\n    <div class=\"lavuni-faq-item\">\n\n      <button class=\"lavuni-faq-question\" type=\"button\">\n        <span>{{ 'lavuni_custom.text_140' | t }}</span>\n        <span class=\"lavuni-faq-arrow\"></span>\n      </button>\n\n      <div class=\"lavuni-faq-answer\">\n        <p>\n          {{ 'lavuni_custom.text_141' | t }}\n          <strong>{{ 'lavuni_custom.text_142' | t }}</strong>{{ 'lavuni_custom.text_143' | t }}\n        </p>\n      </div>\n\n    </div>\n\n    <!-- QUESTION 2 -->\n    <div class=\"lavuni-faq-item\">\n\n      <button class=\"lavuni-faq-question\" type=\"button\">\n        <span>{{ 'lavuni_custom.text_144' | t }}</span>\n        <span class=\"lavuni-faq-arrow\"></span>\n      </button>\n\n      <div class=\"lavuni-faq-answer\">\n        <p>\n          {{ 'lavuni_custom.text_145' | t }}\n          <strong>{{ 'lavuni_custom.text_146' | t }}</strong>{{ 'lavuni_custom.text_147' | t }}\n        </p>\n      </div>\n\n    </div>\n\n    <!-- QUESTION 3 -->\n    <div class=\"lavuni-faq-item\">\n\n      <button class=\"lavuni-faq-question\" type=\"button\">\n        <span>{{ 'lavuni_custom.text_148' | t }}</span>\n        <span class=\"lavuni-faq-arrow\"></span>\n      </button>\n\n      <div class=\"lavuni-faq-answer\">\n        <p>\n          {{ 'lavuni_custom.text_149' | t }}\n          <strong>{{ 'lavuni_custom.text_150' | t }}</strong>{{ 'lavuni_custom.text_151' | t }}\n        </p>\n      </div>\n\n    </div>\n\n    <!-- QUESTION 4 -->\n    <div class=\"lavuni-faq-item\">\n\n      <button class=\"lavuni-faq-question\" type=\"button\">\n        <span>{{ 'lavuni_custom.text_152' | t }}</span>\n        <span class=\"lavuni-faq-arrow\"></span>\n      </button>\n\n      <div class=\"lavuni-faq-answer\">\n        <p>\n          {{ 'lavuni_custom.text_153' | t }}\n          <strong>{{ 'lavuni_custom.text_154' | t }}</strong>{{ 'lavuni_custom.text_155' | t }}\n        </p>\n      </div>\n\n    </div>\n\n    <!-- QUESTION 5 -->\n    <div class=\"lavuni-faq-item\">\n\n      <button class=\"lavuni-faq-question\" type=\"button\">\n        <span>{{ 'lavuni_custom.text_156' | t }}</span>\n        <span class=\"lavuni-faq-arrow\"></span>\n      </button>\n\n      <div class=\"lavuni-faq-answer\">\n        <p>\n          {{ 'lavuni_custom.text_157' | t }}\n          <strong>{{ 'lavuni_custom.text_158' | t }}</strong> {{ 'lavuni_custom.text_159' | t }}\n        </p>\n      </div>\n\n    </div>\n\n    <!-- QUESTION 6 -->\n    <div class=\"lavuni-faq-item\">\n\n      <button class=\"lavuni-faq-question\" type=\"button\">\n        <span>{{ 'lavuni_custom.text_160' | t }}</span>\n        <span class=\"lavuni-faq-arrow\"></span>\n      </button>\n\n      <div class=\"lavuni-faq-answer\">\n        <p>\n          {{ 'lavuni_custom.text_161' | t }}\n          <strong>{{ 'lavuni_custom.text_162' | t }}</strong> {{ 'lavuni_custom.text_163' | t }}\n        </p>\n      </div>\n\n    </div>\n\n    <!-- QUESTION 7 -->\n    <div class=\"lavuni-faq-item\">\n\n      <button class=\"lavuni-faq-question\" type=\"button\">\n        <span>{{ 'lavuni_custom.text_164' | t }}</span>\n        <span class=\"lavuni-faq-arrow\"></span>\n      </button>\n\n      <div class=\"lavuni-faq-answer\">\n        <p>\n          {{ 'lavuni_custom.text_165' | t }}\n          <strong>{{ 'lavuni_custom.text_124' | t }}</strong>\n          {{ 'lavuni_custom.text_166' | t }}\n        </p>\n      </div>\n\n    </div>\n\n  </div>\n\n</section>\n\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n\n  const faqItems = document.querySelectorAll(\".lavuni-faq-item\");\n\n  faqItems.forEach(function(item) {\n\n    const question = item.querySelector(\".lavuni-faq-question\");\n\n    question.addEventListener(\"click\", function() {\n\n      const isOpen = item.classList.contains(\"active\");\n\n      faqItems.forEach(function(otherItem) {\n        otherItem.classList.remove(\"active\");\n      });\n\n      if (!isOpen) {\n        item.classList.add(\"active\");\n      }\n\n    });\n\n  });\n\n});\n</script>",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_t89Dik",
+    "disclosures",
+    "related-products",
+    "custom_liquid_zWAbkQ",
+    "custom_liquid_qCnJA9",
+    "custom_liquid_d7zFcP",
+    "multicolumn_XeR6cC",
+    "custom_liquid_9zqJdB"
+  ]
+}
