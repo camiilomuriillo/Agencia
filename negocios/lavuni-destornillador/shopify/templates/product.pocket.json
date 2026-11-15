@@ -3,47 +3,241 @@
     "main": {
       "type": "lavuni-pocket",
       "blocks": {
-        "problem_1": { "type": "problem", "settings": { "title": "El tornillo imposible", "text": "Detrás del mueble, dentro del armario, bajo el fregadero: justo donde un destornillador largo no cabe." } },
-        "problem_2": { "type": "problem", "settings": { "title": "La punta que nunca está", "text": "Plano, estrella, Torx… Tienes el destornillador, pero no el que necesitas, y acabas buscando por toda la casa." } },
-        "problem_3": { "type": "problem", "settings": { "title": "Girar, soltar, girar", "text": "Montar un mueble con un destornillador normal es repetir el mismo gesto cientos de veces hasta que la muñeca dice basta." } },
-
-        "step_1": { "type": "step", "settings": { "title": "Elige la punta", "text": "Todas van guardadas en la propia herramienta. Sin cajas, sin búsquedas." } },
-        "step_2": { "type": "step", "settings": { "title": "Encájala", "text": "La punta magnética sujeta el tornillo para que no se caiga al colocarlo." } },
-        "step_3": { "type": "step", "settings": { "title": "Gira con el trinquete", "text": "Aprieta o afloja sin soltar el mango. Cambias de sentido con un gesto." } },
-
-        "benefit_1": { "type": "benefit", "settings": { "title": "Trabaja sin soltar la mano", "text": "El mecanismo de trinquete gira en un sentido y vuelve libre en el otro. Menos gestos, menos esfuerzo y menos tiempo montando muebles." } },
-        "benefit_2": { "type": "benefit", "settings": { "title": "El tornillo no se cae", "text": "Las puntas magnéticas sujetan el tornillo mientras lo colocas, incluso en huecos estrechos o trabajando por encima de la cabeza." } },
-        "benefit_3": { "type": "benefit", "settings": { "title": "24 funciones, una sola herramienta", "text": "Sustituye a un puñado de destornilladores sueltos. Lo que necesitas para los arreglos de casa, siempre en el mismo sitio." } },
-        "benefit_4": { "type": "benefit", "settings": { "title": "Cabe en un bolsillo", "text": "Compacto y portátil: en el cajón de la cocina, en la guantera del coche o en la mochila. Allí donde surja el arreglo." } },
-        "benefit_5": { "type": "benefit", "settings": { "title": "Hecho para durar", "text": "Fabricado en acero al cromo-vanadio, un material habitual en herramientas de calidad por su resistencia al desgaste." } },
-
-        "row_1": { "type": "compare_row", "settings": { "feature": "Varias puntas en una herramienta", "us": "Sí, 24 en 1", "normal": "No", "set": "Sí, en piezas sueltas" } },
-        "row_2": { "type": "compare_row", "settings": { "feature": "Mecanismo de trinquete", "us": "Sí, reversible", "normal": "Habitualmente no", "set": "Habitualmente no" } },
-        "row_3": { "type": "compare_row", "settings": { "feature": "Puntas magnéticas", "us": "Sí", "normal": "Depende del modelo", "set": "Depende del modelo" } },
-        "row_4": { "type": "compare_row", "settings": { "feature": "Cabe en un bolsillo", "us": "Sí", "normal": "Sí", "set": "No" } },
-        "row_5": { "type": "compare_row", "settings": { "feature": "Todo guardado en un único sitio", "us": "Sí", "normal": "—", "set": "Necesita estuche" } },
-
-        "faq_1": { "type": "faq", "settings": { "question": "¿Qué puntas incluye?", "answer": "<p>Incluye las puntas intercambiables del sistema 24 en 1. [PENDIENTE: lista exacta de tipos y medidas una vez confirmada con la muestra.]</p>" } },
-        "faq_2": { "type": "faq", "settings": { "question": "¿Sirve para móviles, portátiles y muebles?", "answer": "<p>El fabricante lo indica para reparación de móviles, portátiles y tareas del hogar. Antes de abrir un dispositivo, comprueba el tipo y la medida del tornillo: algunos fabricantes usan tornillos especiales.</p>" } },
-        "faq_3": { "type": "faq", "settings": { "question": "¿De qué material está hecho?", "answer": "<p>Las puntas están fabricadas en acero al cromo-vanadio.</p>" } },
-        "faq_4": { "type": "faq", "settings": { "question": "¿Cómo funciona el trinquete?", "answer": "<p>Gira y aprieta en un sentido y vuelve libre en el otro, así no tienes que soltar ni recolocar la mano en cada vuelta. Con el selector cambias entre apretar y aflojar.</p>" } },
-        "faq_5": { "type": "faq", "settings": { "question": "¿Necesita batería o carga?", "answer": "<p>No. Es una herramienta manual: no lleva batería ni necesita cargarse.</p>" } },
-        "faq_6": { "type": "faq", "settings": { "question": "¿Cuánto tarda en llegar?", "answer": "<p>La entrega estimada es de 11 a 15 días desde la confirmación del pedido. Recibirás un número de seguimiento por email para ver dónde está tu paquete en todo momento.</p>" } },
-        "faq_7": { "type": "faq", "settings": { "question": "¿Cuánto cuesta el envío?", "answer": "<p>El envío es gratuito a toda la España peninsular. [PENDIENTE: confirmar condiciones para Baleares, Canarias, Ceuta y Melilla.]</p>" } },
-        "faq_8": { "type": "faq", "settings": { "question": "¿Puedo devolverlo?", "answer": "<p>Sí. Tienes 14 días naturales desde que lo recibes para desistir de la compra sin dar explicaciones. Escríbenos y te indicamos cómo hacerlo. [PENDIENTE: indicar quién asume el coste del envío de vuelta.]</p>" } },
-        "faq_9": { "type": "faq", "settings": { "question": "¿Tiene garantía?", "answer": "<p>Sí. Como consumidor en España tienes una garantía legal de 3 años frente a cualquier falta de conformidad del producto.</p>" } },
-        "faq_10": { "type": "faq", "settings": { "question": "¿Es un buen regalo?", "answer": "<p>Es un regalo práctico para quien hace arreglos en casa, monta muebles o tiene que reparar pequeños aparatos. Si lo quieres para Navidad, revisa la fecha límite de pedido indicada junto al botón de compra.</p>" } },
-        "faq_11": { "type": "faq", "settings": { "question": "¿Cómo puedo pagar?", "answer": "<p>Puedes pagar con los métodos que aparecen en la página de pago. El pago se procesa de forma segura y cifrada.</p>" } }
+        "problem_1": {
+          "type": "problem",
+          "settings": {
+            "title": "El tornillo imposible",
+            "text": "Detrás del mueble, dentro del armario, bajo el fregadero: justo donde un destornillador largo no cabe."
+          }
+        },
+        "problem_2": {
+          "type": "problem",
+          "settings": {
+            "title": "La punta que nunca está",
+            "text": "Plano, estrella, Torx… Tienes el destornillador, pero no el que necesitas, y acabas buscando por toda la casa."
+          }
+        },
+        "problem_3": {
+          "type": "problem",
+          "settings": {
+            "title": "Girar, soltar, girar",
+            "text": "Montar un mueble con un destornillador normal es repetir el mismo gesto cientos de veces hasta que la muñeca dice basta."
+          }
+        },
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Elige la punta",
+            "text": "Todas van guardadas en la propia herramienta. Sin cajas, sin búsquedas."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Encájala",
+            "text": "La punta magnética sujeta el tornillo para que no se caiga al colocarlo."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Gira con el trinquete",
+            "text": "Aprieta o afloja sin soltar el mango. Cambias de sentido con un gesto."
+          }
+        },
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "title": "Trabaja sin soltar la mano",
+            "text": "El mecanismo de trinquete gira en un sentido y vuelve libre en el otro. Menos gestos, menos esfuerzo y menos tiempo montando muebles."
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "title": "El tornillo no se cae",
+            "text": "Las puntas magnéticas sujetan el tornillo mientras lo colocas, incluso en huecos estrechos o trabajando por encima de la cabeza."
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "title": "24 funciones, una sola herramienta",
+            "text": "Sustituye a un puñado de destornilladores sueltos. Lo que necesitas para los arreglos de casa, siempre en el mismo sitio."
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "title": "Cabe en un bolsillo",
+            "text": "Compacto y portátil: en el cajón de la cocina, en la guantera del coche o en la mochila. Allí donde surja el arreglo."
+          }
+        },
+        "benefit_5": {
+          "type": "benefit",
+          "settings": {
+            "title": "Hecho para durar",
+            "text": "Fabricado en acero al cromo-vanadio, un material habitual en herramientas de calidad por su resistencia al desgaste."
+          }
+        },
+        "row_1": {
+          "type": "compare_row",
+          "settings": {
+            "feature": "Varias puntas en una herramienta",
+            "us": "Sí, 24 en 1",
+            "normal": "No",
+            "set": "Sí, en piezas sueltas"
+          }
+        },
+        "row_2": {
+          "type": "compare_row",
+          "settings": {
+            "feature": "Mecanismo de trinquete",
+            "us": "Sí, reversible",
+            "normal": "Habitualmente no",
+            "set": "Habitualmente no"
+          }
+        },
+        "row_3": {
+          "type": "compare_row",
+          "settings": {
+            "feature": "Puntas magnéticas",
+            "us": "Sí",
+            "normal": "Depende del modelo",
+            "set": "Depende del modelo"
+          }
+        },
+        "row_4": {
+          "type": "compare_row",
+          "settings": {
+            "feature": "Cabe en un bolsillo",
+            "us": "Sí",
+            "normal": "Sí",
+            "set": "No"
+          }
+        },
+        "row_5": {
+          "type": "compare_row",
+          "settings": {
+            "feature": "Todo guardado en un único sitio",
+            "us": "Sí",
+            "normal": "—",
+            "set": "Necesita estuche"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Qué puntas incluye?",
+            "answer": "<p>Incluye las puntas intercambiables del sistema 24 en 1. [PENDIENTE: lista exacta de tipos y medidas una vez confirmada con la muestra.]</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Sirve para móviles, portátiles y muebles?",
+            "answer": "<p>El fabricante lo indica para reparación de móviles, portátiles y tareas del hogar. Antes de abrir un dispositivo, comprueba el tipo y la medida del tornillo: algunos fabricantes usan tornillos especiales.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "¿De qué material está hecho?",
+            "answer": "<p>Las puntas están fabricadas en acero al cromo-vanadio.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cómo funciona el trinquete?",
+            "answer": "<p>Gira y aprieta en un sentido y vuelve libre en el otro, así no tienes que soltar ni recolocar la mano en cada vuelta. Con el selector cambias entre apretar y aflojar.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Necesita batería o carga?",
+            "answer": "<p>No. Es una herramienta manual: no lleva batería ni necesita cargarse.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cuánto tarda en llegar?",
+            "answer": "<p>La entrega estimada es de 11 a 15 días desde la confirmación del pedido. Recibirás un número de seguimiento por email para ver dónde está tu paquete en todo momento.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cuánto cuesta el envío?",
+            "answer": "<p>El envío es gratuito a toda la España peninsular. [PENDIENTE: confirmar condiciones para Baleares, Canarias, Ceuta y Melilla.]</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Puedo devolverlo?",
+            "answer": "<p>Sí. Tienes 14 días naturales desde que lo recibes para desistir de la compra sin dar explicaciones. Escríbenos y te indicamos cómo hacerlo. [PENDIENTE: indicar quién asume el coste del envío de vuelta.]</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Tiene garantía?",
+            "answer": "<p>Sí. Como consumidor en España tienes una garantía legal de 3 años frente a cualquier falta de conformidad del producto.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Es un buen regalo?",
+            "answer": "<p>Es un regalo práctico para quien hace arreglos en casa, monta muebles o tiene que reparar pequeños aparatos. Si lo quieres para Navidad, revisa la fecha límite de pedido indicada junto al botón de compra.</p>"
+          }
+        },
+        "faq_11": {
+          "type": "faq",
+          "settings": {
+            "question": "¿Cómo puedo pagar?",
+            "answer": "<p>Puedes pagar con los métodos que aparecen en la página de pago. El pago se procesa de forma segura y cifrada.</p>"
+          }
+        }
       },
       "block_order": [
-        "problem_1", "problem_2", "problem_3",
-        "step_1", "step_2", "step_3",
-        "benefit_1", "benefit_2", "benefit_3", "benefit_4", "benefit_5",
-        "row_1", "row_2", "row_3", "row_4", "row_5",
-        "faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6", "faq_7", "faq_8", "faq_9", "faq_10", "faq_11"
+        "problem_1",
+        "problem_2",
+        "problem_3",
+        "step_1",
+        "step_2",
+        "step_3",
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4",
+        "benefit_5",
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11"
       ],
-      "settings": {}
+      "settings": {
+        "announcement": ""
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

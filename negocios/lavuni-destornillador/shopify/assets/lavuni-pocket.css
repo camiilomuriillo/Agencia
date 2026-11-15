@@ -30,7 +30,7 @@
 }
 .lp *, .lp *::before, .lp *::after { box-sizing: border-box; }
 .lp img, .lp video { max-width: 100%; height: auto; display: block; }
-.lp h1, .lp h2, .lp h3 { font-family: var(--lp-font-heading); margin: 0; line-height: 1.12; letter-spacing: -0.02em; font-weight: 800; }
+.lp h1, .lp h2, .lp h3 { font-family: var(--lp-font-heading); color: inherit; margin: 0; line-height: 1.12; letter-spacing: -0.02em; font-weight: 800; }
 .lp p { margin: 0; }
 .lp ul { margin: 0; padding: 0; list-style: none; }
 

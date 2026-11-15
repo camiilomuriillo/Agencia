@@ -12,7 +12,7 @@
 {%- liquid
   assign lp_product = section.settings.product | default: product
   assign current_variant = lp_product.selected_or_first_available_variant
-  assign pack_discount_cents = section.settings.pack_discount | times: 100 | round
+  assign pack_discount_cents = section.settings.pack_discount_cents
   assign pack_total = current_variant.price | times: 2 | minus: pack_discount_cents
   assign pack_unit = pack_total | divided_by: 2
   assign media_count = lp_product.media.size
@@ -93,6 +93,7 @@
           {%- endfor -%}
         </ul>
 
+        {%- if lp_product != blank -%}
         {%- form 'product', lp_product, class: 'lp-form', novalidate: 'novalidate', data-lp-form: '' -%}
           <input type="hidden" name="id" value="{{ current_variant.id }}" data-lp-variant-id>
           <input type="hidden" name="quantity" value="1" data-lp-qty>
@@ -177,6 +178,9 @@
             </div>
           {%- endif -%}
         {%- endform -%}
+        {%- else -%}
+          <p class="lp-muted">Elige el producto en Personalizar › Landing Pocket 24 › Producto (debe estar activo en la tienda online).</p>
+        {%- endif -%}
       </div>
     </div>
   </section>
@@ -454,7 +458,7 @@
     { "type": "text", "id": "product_short_name", "label": "Nombre comercial corto", "default": "LAVUNI Pocket 24" },
     { "type": "text", "id": "announcement", "label": "Barra superior", "default": "Envío gratis a la España peninsular · Pago seguro" },
     { "type": "checkbox", "id": "pack_enabled", "label": "Mostrar opción pack de 2", "default": true, "info": "IMPORTANTE: crea en Descuentos un descuento automático 'Compra 2 uds.' con el MISMO importe que el campo siguiente. Si no, el precio mostrado no coincidirá con el del pago." },
-    { "type": "number", "id": "pack_discount", "label": "Descuento del pack de 2 (€)", "default": 14.99 },
+    { "type": "number", "id": "pack_discount_cents", "label": "Descuento del pack de 2, en céntimos", "default": 1499, "info": "1499 = 14,99 €. Debe coincidir con el descuento automático." },
     { "type": "text", "id": "offer1_title", "label": "Opción 1 — título", "default": "1 unidad" },
     { "type": "text", "id": "offer1_desc", "label": "Opción 1 — descripción", "default": "Para tener siempre a mano" },
     { "type": "text", "id": "offer2_title", "label": "Opción 2 — título", "default": "Pack de 2 unidades" },
