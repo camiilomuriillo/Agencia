@@ -1,0 +1,1049 @@
+<title>Brújula Vocacional</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: una columna tipo cuaderno de orientación; el test avanza por secciones y el resultado se abre en pestañas ordenadas por fases. */
+:root{
+  --bg:#F2F6F4; --surface:#FFFFFF; --surface-2:#E6EEEA; --ink:#13302A; --muted:#536E67; --line:#D0DCD7;
+  --accent:#1B7360; --accent-ink:#FFFFFF; --accent-soft:#D4EAE2; --sun:#A86E0C; --sun-soft:#F5E6C6; --warn:#9F432C; --warn-soft:#F5DED6;
+  --font-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --font-body:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1613; --surface:#14201C; --surface-2:#1B2A25; --ink:#E2EDE8; --muted:#93AAA3; --line:#283A34;
+  --accent:#4BC2A0; --accent-ink:#06201A; --accent-soft:#18372E; --sun:#E3AC4B; --sun-soft:#382D17; --warn:#E68D74; --warn-soft:#3A221C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1613; --surface:#14201C; --surface-2:#1B2A25; --ink:#E2EDE8; --muted:#93AAA3; --line:#283A34;
+  --accent:#4BC2A0; --accent-ink:#06201A; --accent-soft:#18372E; --sun:#E3AC4B; --sun-soft:#382D17; --warn:#E68D74; --warn-soft:#3A221C; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding-block:28px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,6vw,3.2rem);font-weight:800}
+h2{font-size:clamp(1.45rem,3.6vw,1.9rem);font-weight:700}
+h3{font-size:1.2rem;font-weight:700}
+h4{font-size:1rem;font-weight:700}
+p{margin:0}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.eyebrow{font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+.stack{display:flex;flex-direction:column;gap:14px}
+.stack-lg{display:flex;flex-direction:column;gap:28px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+a{color:var(--accent)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--accent);background:var(--accent);color:var(--accent-ink);padding:11px 20px;border-radius:999px;font-weight:700;font-size:1rem}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.quiet{background:transparent;border-color:var(--line);color:var(--ink);font-weight:600}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding-block:12px 8px}
+.hero .lead{font-size:1.15rem;max-width:56ch;color:var(--muted)}
+.compass{width:150px;height:150px}
+@media (max-width:620px){.hero{grid-template-columns:1fr}.compass{width:110px;height:110px;order:-1}}
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.phases li{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;display:flex;gap:12px;min-width:0}
+.phases .n{font-family:var(--font-display);font-weight:800;color:var(--accent);font-size:1.3rem;line-height:1}
+.note{background:var(--sun-soft);border-radius:var(--radius);padding:14px 16px;font-size:.95rem}
+.note.warn{background:var(--warn-soft)}
+.note.ok{background:var(--accent-soft)}
+
+/* Progreso */
+.progress{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:6px}
+.progress span{height:6px;border-radius:3px;background:var(--surface-2)}
+.progress span.done{background:var(--accent)}
+.progress span.now{background:linear-gradient(90deg,var(--accent) 50%,var(--surface-2) 50%)}
+.progress-label{display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);gap:8px;flex-wrap:wrap}
+
+/* Preguntas */
+.q{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:14px}
+.q legend,.q .qt{font-family:var(--font-display);font-weight:700;font-size:1.12rem;line-height:1.3;padding:0}
+.q fieldset{border:0;margin:0;padding:0;min-width:0}
+.q .hint{font-size:.9rem;color:var(--muted)}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px}
+.opt{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;line-height:1.35;display:flex;gap:10px;align-items:flex-start}
+.opt::before{content:"";flex:0 0 18px;height:18px;border-radius:50%;border:2px solid var(--muted);margin-top:1px}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.opt[aria-pressed="true"]::before{border-color:var(--accent);background:radial-gradient(circle,var(--accent) 45%,transparent 50%)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--bg);border:1.5px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.95rem}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--accent-ink);font-weight:600}
+textarea,input[type=number]{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px}
+textarea{min-height:84px;resize:vertical}
+textarea:focus,input:focus{border-color:var(--accent);outline:none}
+.navbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:8px}
+.missing{color:var(--warn);font-weight:600;font-size:.95rem}
+
+/* Resultados */
+.banner{background:var(--sun-soft);border-radius:var(--radius);padding:12px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;font-size:.95rem}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;padding-top:8px;scrollbar-width:thin}
+.tab{flex:0 0 auto;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 14px;font-weight:600;font-size:.95rem;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.tab:disabled{opacity:.45;cursor:not-allowed}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.list li{display:flex;gap:10px;align-items:flex-start;min-width:0}
+.tag{flex:0 0 auto;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:3px 7px;margin-top:3px}
+.tag.hecho{background:var(--accent-soft);color:var(--accent)}
+.tag.hipo{background:var(--sun-soft);color:var(--sun)}
+.tag.explorar{background:var(--surface-2);color:var(--muted)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.hexwrap{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:20px;align-items:center}
+@media (max-width:640px){.hexwrap{grid-template-columns:1fr}}
+.hexwrap svg{width:100%;max-width:300px;height:auto;justify-self:center}
+.traits{display:flex;flex-direction:column;gap:12px}
+
+details.path{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}
+details.path[open]{border-color:var(--accent)}
+details.path summary{list-style:none;cursor:pointer;padding:16px 18px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center}
+details.path summary::-webkit-details-marker{display:none}
+.rank{font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:var(--muted);width:2ch;text-align:right;font-variant-numeric:tabular-nums}
+.ptitle{display:flex;flex-direction:column;gap:4px;min-width:0}
+.pill{display:inline-block;font-size:.75rem;font-weight:700;border-radius:999px;padding:2px 9px;background:var(--surface-2);color:var(--muted);width:fit-content}
+.pill.ia{background:var(--accent-soft);color:var(--accent)}
+.score{font-family:var(--font-display);font-weight:800;font-size:1.6rem;font-variant-numeric:tabular-nums;color:var(--accent);text-align:right;line-height:1}
+.score small{font-size:.8rem;color:var(--muted);font-weight:600}
+.pbody{padding:0 18px 20px;display:flex;flex-direction:column;gap:18px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px 22px}
+.fact h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:3px;font-family:var(--font-body)}
+.bars{display:flex;flex-direction:column;gap:9px}
+.bar{display:grid;grid-template-columns:170px 1fr 2.4ch;gap:10px;align-items:center;font-size:.92rem}
+.bar .track{height:8px;border-radius:4px;background:var(--surface-2);overflow:hidden}
+.bar .fill{height:100%;background:var(--accent);border-radius:4px}
+.bar b{font-variant-numeric:tabular-nums;text-align:right}
+.bar .why{grid-column:1/-1;color:var(--muted);font-size:.86rem;margin-top:-4px}
+@media (max-width:520px){.bar{grid-template-columns:1fr 2.4ch}.bar .track{grid-column:1/-1;grid-row:2}}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.95rem}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700;background:var(--surface-2)}
+td.num{font-variant-numeric:tabular-nums;font-weight:700}
+tr:last-child td{border-bottom:0}
+
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.timeline .card h3 span{color:var(--accent)}
+.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.calc label{display:flex;flex-direction:column;gap:4px;font-size:.92rem;font-weight:600}
+.calc label span{font-weight:400;color:var(--muted);font-size:.82rem}
+.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.out div{background:var(--surface-2);border-radius:10px;padding:12px 14px}
+.out b{display:block;font-family:var(--font-display);font-size:1.45rem;font-variant-numeric:tabular-nums}
+.check{display:flex;gap:10px;align-items:flex-start}
+.check input{margin-top:5px;accent-color:var(--accent);width:18px;height:18px;flex:0 0 auto}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.ai{border:1.5px dashed var(--accent)}
+.thinking{display:flex;gap:10px;align-items:center;color:var(--muted)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--accent);animation:pulse 1.2s infinite ease-in-out}
+@keyframes pulse{50%{opacity:.25;transform:scale(.7)}}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+.fallback{width:100%;min-height:160px;font-family:ui-monospace,monospace;font-size:.85rem}
+footer{margin-top:40px;font-size:.85rem;color:var(--muted)}
+</style>
+
+<div class="wrap" id="app" aria-live="polite"></div>
+
+<script>
+/* ================= DATOS ================= */
+const RIA = ['R','I','A','S','E','C'];
+const RIA_INFO = {
+  R:{n:'Lado práctico', d:'Disfrutas trabajando con las manos, con herramientas o con cosas tangibles, y viendo un resultado concreto.', env:'oficios, mantenimiento, talleres, trabajo de campo', no:'puestos de oficina sin nada tangible que hacer'},
+  I:{n:'Lado curioso', d:'Te atrae entender cómo funcionan las cosas, investigar y resolver problemas difíciles.', env:'técnica, calidad, análisis, tecnología', no:'tareas mecánicas donde no hay nada que pensar'},
+  A:{n:'Lado creativo', d:'Necesitas poner algo tuyo: estética, ideas, sabor, imagen, estilo.', env:'diseño, cocina, contenido, artesanía', no:'entornos rígidos donde todo viene dictado'},
+  S:{n:'Lado de ayuda', d:'Te llena que otras personas estén mejor gracias a ti: escuchar, cuidar, enseñar.', env:'cuidados, enseñanza, bienestar, atención', no:'trabajos aislados sin trato humano'},
+  E:{n:'Lado emprendedor', d:'Te mueve decidir, convencer, negociar y hacer crecer proyectos.', env:'ventas, negocio propio, coordinación de equipos', no:'puestos sin margen para decidir nada'},
+  C:{n:'Lado organizador', d:'Disfrutas del orden, los procesos claros y de que todo cuadre.', env:'administración, gestión, calidad, logística', no:'entornos caóticos sin estructura'}
+};
+const AREAS = [
+  ['cuidado','Cuidar de personas',{S:1}],['salud','Salud y bienestar',{S:1,I:1}],['cocina','Cocina y comida',{A:1,R:1}],
+  ['belleza','Belleza y peluquería',{A:1,S:1}],['moda','Moda y costura',{A:1}],['artesania','Manualidades y artesanía',{A:1,R:1}],
+  ['reparar','Reparar y construir',{R:2}],['tecnologia','Tecnología e informática',{I:1,R:1}],['redes','Redes sociales',{A:1,E:1}],
+  ['diseno','Diseño, dibujo y arte',{A:2}],['numeros','Números y dinero',{C:1,I:1}],['orden','Orden y organización',{C:2}],
+  ['ensenar','Enseñar y explicar',{S:2}],['animales','Animales',{S:1,R:1}],['plantas','Plantas y naturaleza',{R:1}],
+  ['deporte','Deporte y movimiento',{R:1,S:1}],['ventas','Vender y negociar',{E:2}],['hogar','Casa y decoración',{A:1,C:1}],
+  ['foto','Fotografía y vídeo',{A:2}],['escribir','Escribir y leer',{A:1,I:1}],['idiomas','Idiomas y culturas',{S:1,I:1}],
+  ['motor','Coches y motor',{R:2}],['energia','Energía y sostenibilidad',{I:1,R:1}],['segunda','Segunda mano y chollos',{E:1}]
+];
+const AREA_N = Object.fromEntries(AREAS.map(a=>[a[0],a[1]]));
+const AYUDA = [
+  ['arreglar','Arreglar cosas que se estropean',['reparar','motor'],{R:1},'Resolver averías y problemas prácticos'],
+  ['consejos','Escuchar y dar consejo',['cuidado'],{S:1},'Escucha y empatía'],
+  ['organizar','Organizar planes, viajes o eventos',['orden'],{C:1,E:1},'Planificar y coordinar'],
+  ['tecno','Problemas con el móvil o el ordenador',['tecnologia'],{I:1},'Soltura con la tecnología'],
+  ['cocinar','Cocinar o preparar comida',['cocina'],{A:1},'Cocina y cuidado del detalle'],
+  ['papeles','Papeles, trámites o cuentas',['numeros','orden'],{C:1},'Gestionar papeles y números'],
+  ['look','Ropa, look o decoración',['moda','hogar','belleza'],{A:1},'Ojo estético'],
+  ['cuidar','Cuidar niños, mayores o animales',['cuidado','animales'],{S:1},'Responsabilidad y paciencia al cuidar'],
+  ['explicar','Explicar o enseñar algo',['ensenar'],{S:1},'Explicar de forma que se entienda'],
+  ['vender','Vender, regatear o negociar',['ventas','segunda'],{E:1},'Persuadir y negociar'],
+  ['escribir','Escribir textos, mensajes o currículums',['escribir'],{A:1},'Expresión escrita'],
+  ['fotos','Hacer fotos o llevar redes',['foto','redes'],{A:1},'Sentido visual y manejo de redes'],
+  ['pelo','Peinar, maquillar o arreglar uñas',['belleza'],{A:1,S:1},'Habilidad manual fina y estética']
+];
+
+const SECTIONS = [
+ {id:'forma', t:'Tu forma de ser', intro:'No hay respuestas buenas ni malas. Elige lo que harías de verdad, no lo que te gustaría hacer.', qs:[
+  {id:'sabado', type:'single', t:'Un sábado libre y sin planes. ¿Qué es más probable que acabes haciendo?', o:[
+    ['R','Arreglar, montar o mejorar algo con las manos',{R:3}],['I','Investigar a fondo algo que te intriga',{I:3}],
+    ['A','Crear algo: cocinar, decorar, dibujar, grabar un vídeo',{A:3}],['S','Quedar con gente o echar una mano a alguien',{S:3,soc:1}],
+    ['E','Mover un plan: organizar una salida, vender algo, montar un proyecto',{E:3}],['C','Poner orden: la casa, las cuentas, la semana',{C:3}]]},
+  {id:'energia', type:'single', t:'Después de un día con mucha gente alrededor, ¿cómo te quedas?', o:[
+    ['alta','Con más energía. Me gusta estar entre gente',{soc:2,S:1,E:1}],['media','Bien, pero luego necesito un rato a mi aire',{soc:0}],
+    ['baja','Con la batería baja. Necesito silencio para recuperarme',{soc:-2}]]},
+  {id:'grupo', type:'single', t:'Cuando trabajas en grupo, ¿qué papel acabas teniendo casi sin querer?', o:[
+    ['E','Tomo decisiones y tiro del grupo',{E:3}],['C','Reparto tareas y llevo el control',{C:2,E:1}],['A','Propongo ideas nuevas',{A:2,I:1}],
+    ['S','Me fijo en que todo el mundo esté bien',{S:3}],['R','Me pongo con la parte práctica',{R:3}],['solo','Rindo más si me dejan a mi aire',{solo:2}]]},
+  {id:'riesgo', type:'single', t:'Te proponen algo que puede salir muy bien o quedarse en nada. ¿Qué te sale?', o:[
+    ['3','Ilusión. Lo pruebo y ya veré',{risk:3,E:1}],['2','Lo pruebo si no me juego lo que no puedo perder',{risk:2}],['1','Me agobia. Prefiero lo seguro aunque sea menos',{risk:1}]]},
+  {id:'cansa', type:'multi', max:2, opt:true, t:'¿Qué te desgasta más en un trabajo?', hint:'Elige hasta 2.', o:[
+    ['var','Hacer siempre lo mismo',{vari:1}],['struct','Improvisar sin saber qué toca',{struct:1,C:1}],['people','Tratar con gente difícil',{noPeople:1}],
+    ['screen','Pasar horas delante de una pantalla',{noScreen:1}],['phys','El esfuerzo físico',{noPhys:1}],['orders','Que me den órdenes todo el rato',{auto:1,E:1}]]},
+  {id:'orgullo', type:'single', t:'¿Qué te haría sentir más orgullo al acabar el día?', o:[
+    ['I','Haber resuelto un problema que nadie sabía resolver',{I:3}],['S','Que alguien esté mejor gracias a mí',{S:3}],
+    ['A','Haber hecho algo bonito con mi sello',{A:3}],['E','Ver crecer algo que es mío',{E:3}],
+    ['C','Que todo haya salido en orden y sin errores',{C:3}],['R','Tener delante algo que funciona y que he hecho yo',{R:3}]]}
+ ]},
+ {id:'mueve', t:'Lo que te mueve', intro:'Marca lo que te gusta de verdad, aunque no lo veas como un trabajo. Que algo te guste no significa que tengas que convertirlo en negocio.', qs:[
+  {id:'intereses', type:'multi', max:6, t:'¿Qué temas te gustan o te dan curiosidad?', hint:'Elige entre 1 y 6.', o:AREAS.map(a=>[a[0],a[1],Object.assign({area:a[0]},a[2])])},
+  {id:'gratis', type:'text', opt:true, t:'¿Qué harías aunque nadie te pagara?', hint:'Con tus palabras. Una escena concreta vale más que una idea general.'},
+  {id:'sueno', type:'text', opt:true, t:'¿Hay algo que te gustaba o soñabas hacer y fuiste dejando?', hint:'Opcional.'}
+ ]},
+ {id:'talentos', t:'Lo que se te da bien', intro:'A menudo lo que hacemos con facilidad nos parece normal. Para otras personas puede valer dinero.', qs:[
+  {id:'ayuda', type:'multi', max:4, t:'¿Para qué te suele pedir ayuda la gente de tu alrededor?', hint:'Elige hasta 4.', o:AYUDA.map(a=>[a[0],a[1],Object.assign({ayuda:a[0]},a[3])])},
+  {id:'aprende', type:'single', t:'¿Cómo aprendes mejor algo nuevo?', o:[
+    ['practica','Haciéndolo con las manos, probando',{R:1,learn:'practica'}],['video','Con vídeos y tutoriales',{learn:'video'}],
+    ['leer','Leyendo y tomando notas',{I:1,C:1,learn:'leer'}],['persona','Con alguien que me enseñe al lado',{S:1,learn:'persona'}]]},
+  {id:'experiencia', type:'text', opt:true, t:'¿Qué has vivido o superado que podría servir a otras personas?', hint:'Opcional. Por ejemplo: cuidar de un familiar, cambiar de país, salir de una deuda, aprender un oficio de cero.'}
+ ]},
+ {id:'vida', t:'La vida que quieres', intro:'Piensa en dentro de dos o tres años, no en lo que tienes hoy.', qs:[
+  {id:'horas', type:'single', t:'¿Cuántas horas a la semana te gustaría trabajar?', o:[
+    ['menos25','Menos de 25',{wantFlex:2}],['25a35','Entre 25 y 35',{wantFlex:1}],['40','Unas 40, como ahora',{wantFlex:0}],['lasque','Las que hagan falta si es algo mío',{wantFlex:0,E:1}]]},
+  {id:'estabilidad', type:'single', t:'¿Qué pesa más para ti?', o:[
+    ['fijo','Cobrar lo mismo cada mes',{stab:3}],['mixto','Una base fija y un extra variable',{stab:2}],['variable','Ganar según lo que haga, aunque varíe',{stab:1,E:1}]]},
+  {id:'lugar', type:'multi', max:2, t:'¿Dónde te ves trabajando?', hint:'Elige hasta 2.', o:[
+    ['home','En casa',{place:'home'}],['field','En casa de los clientes o en la calle',{place:'field'}],['local','En un taller o local propio',{place:'local'}],
+    ['company','En una empresa, con compañeros',{place:'company'}],['remote','En remoto, desde cualquier sitio',{place:'remote'}]]},
+  {id:'camino', type:'single', t:'¿Qué te atrae más ahora mismo?', o:[
+    ['empleo','Un empleo mejor, en otra cosa',{pref:'empleo'}],['negocio','Montar algo propio',{pref:'negocio'}],
+    ['mixto','Empezar algo propio sin dejar el sueldo y ver qué pasa',{pref:'mixto'}],['nose','Todavía no lo sé',{pref:'nose'}]]}
+ ]},
+ {id:'partida', t:'Tu punto de partida', intro:'Esto sirve para que las propuestas sean realistas. No hace falta tener dinero, título universitario ni experiencia como empresario.', qs:[
+  {id:'tiempo', type:'single', t:'¿Cuántas horas libres a la semana podrías dedicar a probar algo nuevo?', o:[
+    ['1','Menos de 3',{hours:1}],['2','Entre 3 y 6',{hours:2}],['3','Entre 6 y 10',{hours:3}],['4','Más de 10',{hours:4}]]},
+  {id:'dinero', type:'single', t:'¿Cuánto podrías invertir para empezar sin pasarlo mal?', o:[
+    ['1','Casi nada',{budget:1}],['2','Hasta 300 €',{budget:2}],['3','Entre 300 y 1.500 €',{budget:3}],['4','Más de 1.500 €',{budget:4}]]},
+  {id:'digital', type:'single', t:'¿Cómo te manejas con el ordenador y el móvil?', o:[
+    ['1','Lo justo: WhatsApp y redes',{dig:1}],['2','Bien: correo, documentos, apps',{dig:2}],['3','Muy bien: aprendo herramientas nuevas sin ayuda',{dig:3}]]},
+  {id:'colchon', type:'single', t:'Si hoy dejaras de cobrar, ¿cuántos meses podrías cubrir tus gastos?', o:[
+    ['0','Ninguno',{cush:0}],['1','Entre 1 y 3',{cush:1}],['2','Entre 3 y 6',{cush:2}],['3','Más de 6',{cush:3}]]},
+  {id:'extra', type:'multi', max:7, opt:true, t:'Marca lo que tengas', hint:'Opcional. Nos ayuda a filtrar opciones.', o:[
+    ['car','Carnet de conducir',{car:1}],['veh','Vehículo propio',{veh:1}],['space','Un espacio en casa para trabajar',{space:1}],
+    ['fp','Algún título de FP o similar',{fp:1}],['fab','Experiencia en fábrica o producción',{fab:1}],['care','Cargas familiares que limitan mis horarios',{care:1}]]}
+ ]}
+];
+
+/* Catálogo de caminos. inv/entry/flex/growth/contact/digital/phys en escala 1-5. */
+const PATHS = [
+ {id:'calidad', n:'Técnico/a de calidad o mejora de procesos', tipo:'Empleo',
+  que:'Comprobar que lo que se fabrica cumple los estándares, medir, detectar fallos y proponer mejoras en la línea de producción.',
+  dia:'Revisar muestras y mediciones, registrar datos, hablar con producción cuando algo se desvía, preparar informes y participar en auditorías.',
+  sabe:'Metrología básica, norma ISO 9001 y herramientas de mejora (5S, 8D, Lean). Hay FP de grado superior y cursos cortos; la experiencia en planta pesa mucho.',
+  coste:'Bajo. La formación para personas ocupadas suele ser gratuita o subvencionada.',
+  tiempo:'Meses: lo que tardes en formarte y en que salga una vacante, a veces dentro de tu propia empresa.',
+  difi:'Algunas empresas piden titulación. La promoción interna no siempre llega cuando quieres.',
+  clientes:'Pregunta por vacantes internas, habla con el área de calidad de tu planta, portales de empleo industrial y ETT especializadas.',
+  crecer:'Responsable de calidad, mejora continua o auditoría. Crece el sueldo, no un negocio.',
+  libertad:'Baja-media: horario de empresa, pero menos desgaste físico y más estabilidad.',
+  ia:'Hojas de cálculo con IA para analizar datos de producción y redactar informes en minutos.',
+  dem:'Toda industria con normas de calidad necesita este perfil.',
+  r:{R:2,I:2,A:0,S:0,E:0,C:3}, areas:['numeros','orden','reparar','tecnologia'], inv:1, entry:3, flex:1, growth:3, contact:2, digital:2, phys:2, hoursMin:1, places:['company'], fab:true,
+  test:{hacer:'Acompaña una o dos horas a alguien de calidad de una planta y haz un curso corto y gratuito de introducción a la mejora continua.', herramientas:'Un curso gratuito online (busca "Lean introducción" o "ISO 9001 introducción") y una libreta.', dinero:'0 €', primeros:'Pregunta a tu responsable si hay formación interna o vacantes. Mira 10 ofertas reales de "técnico de calidad" en tu zona y apunta qué piden.', seguir:'Te engancha buscar por qué falla algo y ves ofertas cuyos requisitos puedes alcanzar en menos de un año.', cambiar:'Te aburre el papeleo o todas las ofertas piden algo que no quieres estudiar.', disfrute:'¿Se te pasó rápido la hora con la persona de calidad o mirabas el reloj?'}},
+ {id:'prl', n:'Técnico/a en prevención de riesgos laborales', tipo:'Empleo',
+  que:'Detectar riesgos en los puestos de trabajo, formar a la plantilla y proponer medidas para que nadie se haga daño.',
+  dia:'Visitar instalaciones, evaluar puestos, dar charlas de seguridad, investigar accidentes y llevar la documentación.',
+  sabe:'Hay niveles: curso básico (corto), FP superior y máster para nivel superior. Conocer una planta por dentro es una ventaja real.',
+  coste:'Bajo-medio según el nivel de formación.',
+  tiempo:'De meses a un par de años, según el nivel que elijas.',
+  difi:'Hay que estudiar normativa. A veces toca ser la persona que dice lo que nadie quiere oír.',
+  clientes:'Servicios de prevención ajenos, mutuas, empresas industriales y constructoras. Tu propia empresa puede ser la primera puerta.',
+  crecer:'Coordinación de seguridad, consultoría por tu cuenta cuando tengas el nivel y la experiencia.',
+  libertad:'Media: empleo con desplazamientos; más adelante, consultoría propia.',
+  ia:'IA para redactar evaluaciones, planes de formación y materiales de charlas.',
+  dem:'La prevención es obligatoria por ley para las empresas con trabajadores.',
+  r:{R:1,I:2,A:0,S:2,E:1,C:3}, areas:['orden','ensenar','salud','numeros'], inv:2, entry:3, flex:2, growth:3, contact:3, digital:2, phys:2, hoursMin:2, places:['company','field'], fab:true,
+  test:{hacer:'Haz el curso básico de prevención (suele ser corto y a veces gratuito) y pide hablar 20 minutos con el técnico o técnica de prevención de tu empresa.', herramientas:'Curso básico de PRL, una lista de preguntas.', dinero:'0 a 60 €', primeros:'Ofrécete como delegado o delegada de prevención si existe la figura en tu empresa: es experiencia real.', seguir:'Te interesa la normativa y te sientes bien explicando a compañeros cómo protegerse.', cambiar:'La parte legal se te hace muy cuesta arriba.', disfrute:'¿Te gustó más detectar riesgos o explicárselos a otras personas? Las dos cosas forman parte del trabajo.'}},
+ {id:'solar', n:'Electricista e instalador/a de autoconsumo solar', tipo:'Oficio',
+  que:'Instalar y mantener instalaciones eléctricas y placas solares en viviendas, comunidades y naves.',
+  dia:'Desplazarte a obras, montar estructuras y cableado, conectar inversores, revisar instalaciones y hablar con clientes.',
+  sabe:'FP de electricidad o certificado de profesionalidad, y la habilitación correspondiente para firmar instalaciones. Trabajo en altura.',
+  coste:'Medio si te formas y, más adelante, herramientas y furgoneta para ir por tu cuenta.',
+  tiempo:'Meses de formación. Al principio, como empleado o empleada de una instaladora.',
+  difi:'Trabajo físico, a la intemperie y en altura. Hay que formarse de verdad: es un oficio con riesgos.',
+  clientes:'Empresas instaladoras que buscan personal, y después particulares y comunidades de vecinos.',
+  crecer:'Oficial, encargado o encargada, empresa propia con cuadrilla.',
+  libertad:'Media: horarios de obra, pero con autonomía si llegas a ir por tu cuenta.',
+  ia:'IA para preparar presupuestos, calcular ahorros orientativos y responder dudas de clientes.',
+  dem:'La transición energética mantiene la demanda de técnicos eléctricos.',
+  r:{R:3,I:2,A:0,S:0,E:1,C:1}, areas:['reparar','energia','tecnologia'], inv:3, entry:2, flex:2, growth:4, contact:2, digital:1, phys:5, hoursMin:3, places:['field'], car:true, fab:true,
+  test:{hacer:'Haz un taller corto de electricidad básica o un curso de introducción a fotovoltaica, y pide acompañar un día a un instalador.', herramientas:'Curso introductorio, ropa de trabajo.', dinero:'0 a 150 €', primeros:'Escribe a 5 instaladoras de tu zona preguntando qué perfil buscan y si aceptan prácticas o ayudantes.', seguir:'Disfrutas del trabajo físico y técnico y alguna empresa te dice que busca gente.', cambiar:'La altura o el esfuerzo físico te pesan mucho.', disfrute:'Al acabar el día con el instalador, ¿estabas con ganas de volver?'}},
+ {id:'manitas', n:'Reparaciones y pequeñas reformas a domicilio', tipo:'Negocio local',
+  que:'Resolver lo que la gente no sabe o no quiere hacer en casa: montar muebles, colgar cosas, cambiar grifos, pintar, sellar, pequeños arreglos.',
+  dia:'Atender mensajes, ir a dos o tres casas, comprar material, hacer el trabajo y cobrar.',
+  sabe:'Bricolaje sólido y saber cuándo un trabajo necesita a un profesional habilitado (gas, electricidad). Presupuestar bien.',
+  coste:'Bajo-medio: herramientas que quizá ya tienes y un seguro de responsabilidad civil.',
+  tiempo:'Semanas. Los primeros encargos suelen salir de conocidos.',
+  difi:'Cobrar lo justo, organizar desplazamientos y dar imagen de confianza. Trabajo físico.',
+  clientes:'Boca a boca, grupos del barrio, plataformas de servicios, inmobiliarias y administradores de fincas.',
+  crecer:'Especializarte (montaje de cocinas, reformas de baño), contratar ayuda, acuerdos con inmobiliarias.',
+  libertad:'Alta en horarios, aunque la agenda la marcan los clientes.',
+  ia:'IA para presupuestos rápidos, respuestas a clientes y gestionar la agenda.',
+  dem:'Mucha gente no tiene tiempo o habilidad para estos arreglos.',
+  r:{R:3,I:1,A:1,S:1,E:2,C:1}, areas:['reparar','hogar'], inv:2, entry:4, flex:4, growth:3, contact:3, digital:1, phys:4, hoursMin:2, places:['field'], car:true,
+  test:{hacer:'Ofrece 5 arreglos a conocidos o vecinos a un precio de lanzamiento y cobra aunque sea poco.', herramientas:'Tus herramientas, un mensaje de WhatsApp y un cartel en el barrio.', dinero:'0 a 50 €', primeros:'Publica en el grupo de vecinos qué arreglos haces, con una foto de algo que hayas hecho.', seguir:'Te llegan encargos sin insistir y repiten o te recomiendan.', cambiar:'Nadie quiere pagar lo que cuesta tu tiempo o acabas cada encargo con estrés.', disfrute:'¿Te gustó estar en casas ajenas y tratar con la gente, o solo la parte de arreglar?'}},
+ {id:'limpieza', n:'Limpieza especializada', tipo:'Negocio local',
+  que:'Limpiezas que la gente no hace sola: fin de obra, sofás y tapicerías, colchones, cristaleras, placas solares, pisos de alquiler entre huéspedes.',
+  dia:'Preparar equipo, ir a 1-3 servicios, cobrar y hacer fotos de antes y después.',
+  sabe:'Técnicas y productos para cada superficie. Se aprende rápido con práctica y vídeos.',
+  coste:'Bajo-medio: productos y, según la especialidad, una máquina de limpieza de tapicerías.',
+  tiempo:'Semanas.',
+  difi:'Trabajo físico y competencia en precio si no te especializas.',
+  clientes:'Pisos turísticos, inmobiliarias, constructoras pequeñas, redes con fotos de antes y después.',
+  crecer:'Contratos fijos con empresas y alojamientos, contratar personal.',
+  libertad:'Media-alta.',
+  ia:'IA para fotos y textos de anuncios, presupuestos y calendario de reservas.',
+  dem:'La especialización diferencia de la limpieza generalista.',
+  r:{R:3,I:0,A:0,S:1,E:2,C:2}, areas:['orden','hogar'], inv:2, entry:4, flex:3, growth:3, contact:2, digital:1, phys:5, hoursMin:2, places:['field'], car:true,
+  test:{hacer:'Elige una especialidad y haz 3 o 4 servicios a precio de prueba, con fotos de antes y después.', herramientas:'Productos específicos; puedes alquilar maquinaria antes de comprarla.', dinero:'30 a 150 €', primeros:'Ofrécelo a anfitriones de pisos turísticos y a conocidos que se muden.', seguir:'Los clientes repiten o te piden más servicios.', cambiar:'El cuerpo no lo aguanta o el margen después de productos es muy pequeño.', disfrute:'¿Te dio satisfacción ver el antes y el después?'}},
+ {id:'cuidados', n:'Cuidado de personas mayores y ayuda a domicilio', tipo:'Empleo',
+  que:'Acompañar y ayudar en el día a día a personas mayores o dependientes: higiene, comidas, movilidad, compañía, recados.',
+  dia:'Visitas a varios domicilios o atención en un centro, coordinación con familias y registro de lo que se hace.',
+  sabe:'Certificado de profesionalidad de atención sociosanitaria, que suele pedirse para trabajar en el sector.',
+  coste:'Bajo. Hay formación gratuita o subvencionada.',
+  tiempo:'Meses: lo que dure la formación. Luego suele haber vacantes.',
+  difi:'Carga emocional y física. Los sueldos de entrada no son altos.',
+  clientes:'Empresas de ayuda a domicilio, residencias, servicios municipales y, con el tiempo, familias directamente.',
+  crecer:'Coordinación de servicios, gestión de cuidados para familias o una pequeña agencia propia.',
+  libertad:'Media.',
+  ia:'IA para organizar rutas, recordatorios de medicación y partes para las familias.',
+  dem:'El envejecimiento de la población hace crecer la demanda de cuidados.',
+  r:{R:1,I:0,A:0,S:3,E:0,C:1}, areas:['cuidado','salud'], inv:1, entry:3, flex:3, growth:2, contact:5, digital:1, phys:3, hoursMin:2, places:['field','company'],
+  test:{hacer:'Haz voluntariado acompañando a personas mayores durante 3 o 4 semanas, en una asociación o en una residencia.', herramientas:'Una asociación de voluntariado de tu zona.', dinero:'0 €', primeros:'Pregunta en servicios sociales del ayuntamiento por formación gratuita del sector.', seguir:'Sales con energía aunque estés cansado o cansada, y te nace volver.', cambiar:'Te llevas a casa la tristeza de cada situación.', disfrute:'¿Qué momento de la semana recuerdas con más cariño?'}},
+ {id:'organizar', n:'Organización de hogares y mudanzas', tipo:'Negocio local',
+  que:'Ayudar a ordenar armarios, cocinas o trasteros, preparar mudanzas y crear sistemas de orden que la gente pueda mantener.',
+  dia:'Visitar el espacio, proponer un plan, clasificar y ordenar con el cliente y hacer fotos del resultado.',
+  sabe:'Métodos de organización, escucha y tacto: ordenar es muy personal.',
+  coste:'Bajo: cajas y etiquetadora.',
+  tiempo:'Semanas si empiezas con conocidos.',
+  difi:'Mucha gente no sabe que existe el servicio. Hay que educar al cliente sobre el precio.',
+  clientes:'Redes con antes y después, inmobiliarias, mudanzas, familias que heredan una casa.',
+  crecer:'Paquetes de mudanza completa, talleres, venta de productos de orden con comisión.',
+  libertad:'Alta.',
+  ia:'IA para planes de orden, guiones de vídeo y textos de redes.',
+  dem:'Nicho conocido en ciudades grandes, menos en pueblos.',
+  r:{R:2,I:0,A:1,S:2,E:1,C:3}, areas:['orden','hogar'], inv:1, entry:4, flex:4, growth:3, contact:4, digital:1, phys:3, hoursMin:2, places:['field'],
+  test:{hacer:'Ordena 3 espacios (armario, cocina, trastero) de conocidos a cambio de fotos y opiniones, y cobra el cuarto.', herramientas:'Etiquetadora, cajas, el móvil para fotos.', dinero:'0 a 40 €', primeros:'Publica el antes y después de tu propia casa y ofrécelo en tu entorno.', seguir:'Alguien que no te conoce te pide presupuesto.', cambiar:'Te cuesta tratar con las emociones y los objetos de otros.', disfrute:'¿Te dio paz el resultado o te agotó el proceso?'}},
+ {id:'cocina', n:'Comida por encargo y cocina para la semana', tipo:'Negocio local',
+  que:'Preparar comidas para familias, personas mayores u oficinas, tartas por encargo o cocina de la semana en casa del cliente.',
+  dia:'Planificar menús, comprar, cocinar, envasar y repartir o entregar.',
+  sabe:'Cocina organizada y normativa de manipulación de alimentos. Vender comida hecha en casa suele estar restringido: hay que informarse sobre cocinas de alquiler o cocinar en casa del cliente.',
+  coste:'Medio si necesitas obrador o cocina de alquiler; bajo si cocinas en casa del cliente.',
+  tiempo:'Semanas a meses, según permisos.',
+  difi:'Normativa sanitaria, márgenes ajustados y mucho trabajo de pie.',
+  clientes:'Familias con poco tiempo, personas mayores, oficinas cercanas, eventos pequeños.',
+  crecer:'Suscripciones semanales, catering de eventos, obrador propio.',
+  libertad:'Media.',
+  ia:'IA para menús, listas de la compra, cálculo de costes por ración y fotos de producto.',
+  dem:'Hay demanda de comida casera; la competencia es alta en ciudades.',
+  r:{R:2,I:0,A:3,S:1,E:2,C:1}, areas:['cocina'], inv:3, entry:3, flex:3, growth:3, contact:3, digital:1, phys:4, hoursMin:3, places:['home','field','local'],
+  test:{hacer:'Ofrece "cocina para la semana" en casa de 3 clientes: cocinas en su cocina, con su compra, y cobras por horas. Así no necesitas obrador.', herramientas:'Tus recetas, una plantilla de menú semanal.', dinero:'0 a 30 €', primeros:'Familias con niños o personas mayores de tu entorno.', seguir:'Repiten semana tras semana.', cambiar:'No disfrutas cocinando a otro ritmo y para otros gustos.', disfrute:'¿Cocinar por obligación te sigue gustando?'}},
+ {id:'belleza', n:'Peluquería, uñas o estética a domicilio', tipo:'Oficio',
+  que:'Cortes, peinados, manicura o maquillaje en casa del cliente, para eventos o para personas que no pueden desplazarse.',
+  dia:'Desplazarte con tu kit, atender 2-5 citas, publicar trabajos en redes.',
+  sabe:'Formación práctica (certificado de profesionalidad o cursos), práctica real y mucha higiene.',
+  coste:'Bajo-medio: formación y material.',
+  tiempo:'Meses de formación y práctica.',
+  difi:'Competencia alta, hay que destacar por algo y cuidar la postura.',
+  clientes:'Redes con fotos, novias e invitadas a eventos, residencias y personas mayores en casa.',
+  crecer:'Especialización (novias, residencias), cursos, local propio.',
+  libertad:'Alta.',
+  ia:'IA para la agenda, recordatorios, textos y edición de fotos de trabajos.',
+  dem:'Servicio cotidiano con demanda estable; el nicho a domicilio y en residencias está menos cubierto.',
+  r:{R:2,I:0,A:3,S:3,E:1,C:0}, areas:['belleza','moda'], inv:2, entry:3, flex:4, growth:3, contact:5, digital:1, phys:3, hoursMin:2, places:['field','local'],
+  test:{hacer:'Practica con 8-10 personas de tu entorno durante un mes y cobra a partir de la quinta.', herramientas:'Kit básico y el móvil para fotos.', dinero:'50 a 150 €', primeros:'Publica fotos de cada trabajo con permiso y pide que te recomienden.', seguir:'Te piden cita personas que no te conocen.', cambiar:'Hablar con el cliente durante el servicio te agota.', disfrute:'¿Disfrutas más del resultado o de la conversación? Las dos cuentan.'}},
+ {id:'deporte', n:'Monitor/a deportivo o entrenamiento personal', tipo:'Oficio',
+  que:'Dirigir clases en grupo o entrenamientos personalizados en gimnasios, parques o a domicilio.',
+  dia:'Preparar sesiones, dar 2-5 clases o entrenamientos y hacer seguimiento.',
+  sabe:'Título o certificado de monitor o de entrenamiento según la actividad, primeros auxilios y algo de ventas.',
+  coste:'Bajo-medio: formación.',
+  tiempo:'Meses de formación.',
+  difi:'Horarios de tarde y fin de semana; ingresos irregulares al principio.',
+  clientes:'Gimnasios, ayuntamientos, colegios, personas mayores, grupos en parques.',
+  crecer:'Grupos propios, programas online, especialización (mayores, embarazadas, readaptación).',
+  libertad:'Media-alta.',
+  ia:'IA para planificar rutinas, hacer seguimiento y crear contenido.',
+  dem:'Interés creciente por la salud y el ejercicio en personas mayores.',
+  r:{R:2,I:1,A:0,S:3,E:2,C:0}, areas:['deporte','salud'], inv:2, entry:3, flex:3, growth:3, contact:5, digital:1, phys:4, hoursMin:2, places:['field','company'],
+  test:{hacer:'Organiza un grupo gratuito al aire libre una vez a la semana durante un mes, mientras miras la formación.', herramientas:'Un parque, un grupo de WhatsApp.', dinero:'0 €', primeros:'Compañeros de trabajo y vecinos.', seguir:'El grupo vuelve y crece semana a semana.', cambiar:'Te cuesta motivar a otros cuando no tienen ganas.', disfrute:'¿Te gustó más tu entrenamiento o ver progresar a otros?'}},
+ {id:'mascotas', n:'Cuidado y paseo de mascotas', tipo:'Negocio local',
+  que:'Paseos, visitas a domicilio, cuidado en vacaciones y, con formación, educación canina.',
+  dia:'Rutas de paseo por la mañana o la tarde, visitas, mensajes y fotos a los dueños.',
+  sabe:'Manejo de animales, primeros auxilios veterinarios y, para educación canina, formación específica.',
+  coste:'Bajo: seguro y material básico.',
+  tiempo:'Semanas.',
+  difi:'Lluvia, frío, responsabilidad y horarios muy fijos.',
+  clientes:'Vecinos, veterinarios y tiendas de animales, plataformas de cuidadores.',
+  crecer:'Educación canina, guardería, contratar paseadores.',
+  libertad:'Media.',
+  ia:'IA para la agenda, partes con fotos y anuncios.',
+  dem:'Muchos hogares tienen mascota y poco tiempo.',
+  r:{R:2,I:0,A:0,S:2,E:1,C:1}, areas:['animales','plantas','deporte'], inv:1, entry:5, flex:3, growth:2, contact:2, digital:1, phys:3, hoursMin:2, places:['field'],
+  test:{hacer:'Pasea o cuida mascotas de 3 conocidos durante 2 semanas y cobra a partir de la segunda.', herramientas:'Correas, bolsas, un perfil en una plataforma de cuidadores.', dinero:'0 a 30 €', primeros:'Deja un cartel en tu veterinario y en el portal.', seguir:'Repiten y te recomiendan a otros dueños.', cambiar:'Los horarios fijos se te hacen una cadena.', disfrute:'¿Te despejaba el paseo o lo vivías como una obligación?'}},
+ {id:'jardin', n:'Jardinería y mantenimiento de terrazas', tipo:'Negocio local',
+  que:'Mantener jardines, terrazas y huertos urbanos: poda, riego, plantación, diseño sencillo.',
+  dia:'Rutas de mantenimiento, presupuestos y alguna instalación de riego.',
+  sabe:'Jardinería práctica (hay certificados de profesionalidad), plagas y riego.',
+  coste:'Medio: herramientas y transporte.',
+  tiempo:'Semanas a meses.',
+  difi:'Trabajo estacional y físico.',
+  clientes:'Comunidades de vecinos, chalets, terrazas de bares, viveros que buscan personal.',
+  crecer:'Contratos de mantenimiento fijos, diseño de jardines, riego automático.',
+  libertad:'Media-alta.',
+  ia:'IA para identificar plantas y plagas con fotos y preparar presupuestos.',
+  dem:'Depende mucho de tu zona: más en urbanizaciones con casas.',
+  r:{R:3,I:1,A:1,S:0,E:1,C:1}, areas:['plantas','hogar'], inv:3, entry:3, flex:3, growth:3, contact:2, digital:1, phys:4, hoursMin:2, places:['field'], car:true,
+  test:{hacer:'Ofrece mantener 2 o 3 terrazas o jardines de conocidos durante un mes.', herramientas:'Herramientas básicas de poda.', dinero:'30 a 100 €', primeros:'Comunidades de vecinos y vecinos con jardín.', seguir:'Te proponen un mantenimiento fijo mensual.', cambiar:'El trabajo estacional no encaja con lo que necesitas.', disfrute:'¿Te calmaba trabajar con plantas?'}},
+ {id:'costura', n:'Arreglos de ropa y costura', tipo:'Negocio local',
+  que:'Bajos, cremalleras, ajustes, personalización de prendas y, con experiencia, confección a medida.',
+  dia:'Recibir encargos, tomar medidas, coser y entregar.',
+  sabe:'Costura a máquina y a mano; patronaje si quieres confeccionar.',
+  coste:'Bajo-medio: una máquina de coser.',
+  tiempo:'Semanas si ya sabes coser.',
+  difi:'Precios por arreglo bajos si no aprovechas bien el tiempo.',
+  clientes:'Boca a boca, tintorerías y tiendas de ropa que no hacen arreglos, grupos del barrio.',
+  crecer:'Acuerdos con tiendas, disfraces y trajes de fiesta, talleres de costura.',
+  libertad:'Alta: se puede hacer desde casa.',
+  ia:'IA para patrones, tarifas y anuncios.',
+  dem:'Cada vez menos gente sabe coser, y la reparación de ropa gana interés.',
+  r:{R:3,I:0,A:2,S:1,E:1,C:2}, areas:['moda','artesania'], inv:2, entry:4, flex:5, growth:2, contact:2, digital:1, phys:2, hoursMin:1, places:['home','local'],
+  test:{hacer:'Haz 10 arreglos a conocidos en 3 semanas cronometrando cuánto tardas en cada uno.', herramientas:'Máquina de coser y una hoja para apuntar tiempos.', dinero:'0 a 30 €', primeros:'Ofrécelo en el trabajo y en el grupo del barrio.', seguir:'Te salen al menos 15 € limpios por hora de trabajo y te siguen llegando encargos.', cambiar:'Por tiempo invertido no compensa.', disfrute:'¿Te relaja coser o te agobia la prisa del encargo?'}},
+ {id:'artesania', n:'Artesanía y productos hechos a mano', tipo:'Online',
+  que:'Crear y vender productos propios: velas, jabones, cerámica, bisutería, madera, ilustración impresa.',
+  dia:'Producir por lotes, hacer fotos, gestionar la tienda online, enviar pedidos e ir a mercados.',
+  sabe:'Tu técnica, fotografía de producto, cálculo de costes y la normativa de tu producto (cosméticos y velas tienen requisitos).',
+  coste:'Bajo-medio: materiales y una tienda en una plataforma.',
+  tiempo:'Meses para ventas regulares.',
+  difi:'Es fácil vender por debajo del coste real. Mucha competencia; hay que encontrar un estilo propio.',
+  clientes:'Mercados de artesanía, Etsy y similares, Instagram, tiendas de regalo locales.',
+  crecer:'Venta a tiendas, encargos para empresas, talleres.',
+  libertad:'Alta.',
+  ia:'IA para fotos de producto, descripciones, precios y respuestas a clientes.',
+  dem:'Se valora lo hecho a mano, pero la competencia es mucha. Pocas personas viven solo de esto.',
+  r:{R:2,I:0,A:3,S:0,E:2,C:1}, areas:['artesania','diseno','moda','hogar'], inv:2, entry:4, flex:5, growth:3, contact:1, digital:2, phys:2, hoursMin:2, places:['home'],
+  test:{hacer:'Haz un lote de 20 unidades, calcula el coste real con tus horas y ponlas a la venta en un mercado y online durante 30 días.', herramientas:'Materiales, una hoja de costes, una tienda online gratuita o un puesto.', dinero:'50 a 150 €', primeros:'Un mercadillo o feria de tu zona, y amistades.', seguir:'Vendes más de la mitad a desconocidos al precio que cubre tus horas.', cambiar:'Solo compran amistades o el precio justo espanta.', disfrute:'¿Te sigue gustando hacer la unidad número 20?'}},
+ {id:'reventa', n:'Restauración y reventa de segunda mano', tipo:'Online',
+  que:'Comprar muebles, ropa u objetos baratos, mejorarlos y revenderlos con margen.',
+  dia:'Buscar oportunidades, restaurar o limpiar, fotografiar, publicar, negociar y entregar.',
+  sabe:'Olfato para lo que se vende, restauración básica, buenas fotos y negociación.',
+  coste:'Bajo: empiezas con poco y reinviertes.',
+  tiempo:'Días o semanas para la primera venta.',
+  difi:'Espacio para almacenar, tiempo de búsqueda y no enamorarte de lo que compras. Revisa las obligaciones fiscales si se vuelve habitual.',
+  clientes:'Apps de segunda mano, mercadillos, redes.',
+  crecer:'Especializarte (muebles de diseño, ropa vintage), tienda propia, servicio de vaciado de pisos.',
+  libertad:'Alta.',
+  ia:'IA para tasar, escribir anuncios y mejorar fotos.',
+  dem:'La segunda mano crece; el margen depende de tu ojo.',
+  r:{R:2,I:1,A:2,S:0,E:3,C:1}, areas:['segunda','hogar','reparar','moda','ventas'], inv:2, entry:5, flex:5, growth:3, contact:2, digital:2, phys:3, hoursMin:2, places:['home'], space:true,
+  test:{hacer:'Con 50-100 €, compra 5 artículos, mejóralos y revéndelos en 30 días. Apunta las horas que dedicas.', herramientas:'Apps de segunda mano, material de limpieza o pintura.', dinero:'50 a 100 €', primeros:'Tus propias cosas sin uso, para aprender a vender.', seguir:'Recuperas la inversión y ganas algo por hora razonable.', cambiar:'Acumulas sin vender.', disfrute:'¿Disfrutas más buscando, restaurando o vendiendo?'}},
+ {id:'redes', n:'Gestión de redes para negocios locales', tipo:'Con IA',
+  que:'Llevar Instagram, Google Maps y WhatsApp de bares, peluquerías, talleres o tiendas del barrio que no tienen tiempo.',
+  dia:'Hacer fotos y vídeos en los negocios, programar publicaciones, contestar reseñas y medir resultados.',
+  sabe:'Redes, fotos y vídeo con el móvil, textos sencillos y herramientas de IA para ganar tiempo.',
+  coste:'Bajo: el móvil y algunas herramientas gratuitas.',
+  tiempo:'Semanas si empiezas por negocios cercanos.',
+  difi:'Muchos negocios esperan resultados rápidos y pagan poco. Hay que aprender a medir y a vender.',
+  clientes:'Visitas en persona a negocios del barrio con un ejemplo de lo que harías por ellos.',
+  crecer:'Cuotas mensuales con varios negocios, paquetes con vídeo, ayuda de otra persona.',
+  libertad:'Alta.',
+  ia:'IA para escribir publicaciones, editar vídeos, contestar reseñas y planificar contenidos.',
+  dem:'Muchos pequeños negocios tienen las redes abandonadas.',
+  r:{R:0,I:1,A:3,S:2,E:3,C:1}, areas:['redes','foto','escribir','ventas','diseno'], inv:1, entry:4, flex:4, growth:4, contact:3, digital:3, phys:1, hoursMin:2, places:['home','remote','field'],
+  test:{hacer:'Lleva gratis o a precio simbólico las redes de 2 negocios cercanos durante 30 días y mide visitas, mensajes y reseñas.', herramientas:'Móvil, Canva o similar, una herramienta de IA para textos.', dinero:'0 €', primeros:'El bar o la peluquería a la que ya vas.', seguir:'Al menos uno quiere seguir pagando.', cambiar:'Te cuesta inventar contenido cada semana.', disfrute:'¿Te divierte crear contenido para otros cuando no te apetece?'}},
+ {id:'fotovideo', n:'Fotos y vídeos cortos para negocios', tipo:'Con IA',
+  que:'Hacer fotos de producto, vídeos cortos para redes y reportajes de locales con el móvil y edición con IA.',
+  dia:'Sesiones en negocios, edición y entrega.',
+  sabe:'Composición, luz, edición en el móvil y herramientas de IA para retocar y montar.',
+  coste:'Bajo-medio: un buen móvil, un trípode y una luz.',
+  tiempo:'Semanas.',
+  difi:'Construir portafolio y no competir solo en precio.',
+  clientes:'Restaurantes, tiendas, inmobiliarias, artesanos.',
+  crecer:'Paquetes mensuales, anuncios en vídeo, cursos.',
+  libertad:'Alta.',
+  ia:'IA para editar, generar variaciones, subtítulos y música.',
+  dem:'El vídeo corto es lo que más piden las redes ahora.',
+  r:{R:1,I:1,A:3,S:1,E:2,C:0}, areas:['foto','redes','diseno'], inv:2, entry:3, flex:4, growth:4, contact:3, digital:3, phys:2, hoursMin:2, places:['field','home'],
+  test:{hacer:'Haz un portafolio con 3 negocios en 2 semanas y ofrece un paquete pequeño a otros 10.', herramientas:'Móvil, trípode, app de edición.', dinero:'0 a 60 €', primeros:'Negocios donde ya eres cliente.', seguir:'Te contrata alguien que no te conocía.', cambiar:'Solo te piden trabajos gratis.', disfrute:'¿Te absorbe editar o lo haces con desgana?'}},
+ {id:'asistente', n:'Asistente virtual para autónomos y pequeñas empresas', tipo:'Online',
+  que:'Encargarte en remoto de correos, agenda, facturas, presupuestos, atención al cliente o gestión de pedidos.',
+  dia:'Revisar bandejas, organizar agendas, preparar documentos y seguimiento de clientes.',
+  sabe:'Ofimática, organización, buena escritura y herramientas de IA y automatización.',
+  coste:'Bajo: ordenador e internet.',
+  tiempo:'Semanas a meses para el primer cliente estable.',
+  difi:'Encontrar clientes y no cobrar por horas demasiado bajas.',
+  clientes:'Autónomos de tu entorno, LinkedIn, grupos de emprendedores, plataformas de freelance.',
+  crecer:'Especializarte en un sector (inmobiliarias, clínicas), paquetes mensuales.',
+  libertad:'Muy alta: remoto.',
+  ia:'IA para redactar correos, resumir, ordenar facturas y automatizar tareas repetitivas.',
+  dem:'Muchos autónomos pierden horas en tareas administrativas.',
+  r:{R:0,I:1,A:0,S:2,E:1,C:3}, areas:['orden','numeros','escribir','tecnologia'], inv:1, entry:3, flex:5, growth:3, contact:2, digital:3, phys:1, hoursMin:2, places:['home','remote'],
+  test:{hacer:'Ofrece 10 horas a un autónomo conocido para ordenarle facturas, agenda o correos, y cobra a partir de la quinta.', herramientas:'Ordenador, Google Workspace o similar, IA para textos.', dinero:'0 €', primeros:'Fontaneros, peluqueras, fisios o comerciantes que conozcas.', seguir:'Te pide seguir con un paquete mensual.', cambiar:'Te cuesta la comunicación por escrito o la pantalla todo el día.', disfrute:'¿Te gustó dejar ordenado el caos de otro?'}},
+ {id:'automatiza', n:'Automatizaciones con IA para pequeños negocios', tipo:'Con IA',
+  que:'Montar para un negocio sistemas que le ahorran tiempo: respuestas automáticas, citas, recordatorios, presupuestos, formularios.',
+  dia:'Entender cómo trabaja un negocio, configurar herramientas, probar y enseñar a usarlas.',
+  sabe:'Herramientas sin código (Make, Zapier o similares), asistentes de IA y paciencia para aprender cada semana.',
+  coste:'Bajo: muchas herramientas tienen planes gratuitos.',
+  tiempo:'Meses: primero hay que aprender.',
+  difi:'Curva de aprendizaje y explicar el valor a negocios que no saben lo que es.',
+  clientes:'Negocios locales que conoces, demostraciones en persona, contenido en redes enseñando ejemplos.',
+  crecer:'Cuotas de mantenimiento, plantillas reutilizables, formación a negocios.',
+  libertad:'Muy alta.',
+  ia:'Es el centro del servicio.',
+  dem:'Interés alto por la IA en pequeños negocios, aunque muchos todavía no saben qué pedir.',
+  r:{R:0,I:3,A:1,S:1,E:2,C:2}, areas:['tecnologia','orden','ventas'], inv:1, entry:2, flex:5, growth:5, contact:2, digital:3, phys:1, hoursMin:3, places:['home','remote'],
+  test:{hacer:'Aprende una herramienta sin código en 2 semanas y monta gratis una automatización para un negocio conocido (por ejemplo, recordatorios de cita).', herramientas:'Cuenta gratuita en una herramienta de automatización y en un asistente de IA.', dinero:'0 a 20 €', primeros:'Un negocio de confianza al que puedas preguntar qué tarea le quita más tiempo.', seguir:'Funciona, lo usan y te recomiendan.', cambiar:'Te frustra la parte técnica sin que te enganche resolverla.', disfrute:'Cuando algo no funcionaba, ¿te picaba la curiosidad o te agobiabas?'}},
+ {id:'admin', n:'Administración y contabilidad', tipo:'Empleo',
+  que:'Llevar facturación, contabilidad, nóminas o trámites en una empresa o asesoría.',
+  dia:'Registrar facturas, conciliar cuentas, preparar impuestos, atender a clientes.',
+  sabe:'FP de administración y finanzas o cursos, programas de contabilidad y Excel.',
+  coste:'Bajo: formación a menudo gratuita.',
+  tiempo:'Meses a un año.',
+  difi:'Mucho trabajo de pantalla; picos de estrés en fechas de impuestos.',
+  clientes:'Asesorías, departamentos de administración, ETT, y la administración de tu propia empresa.',
+  crecer:'Asesoría propia para autónomos con los años.',
+  libertad:'Media; a veces teletrabajo.',
+  ia:'IA para leer facturas, clasificar gastos y preparar informes.',
+  dem:'Estable: toda empresa necesita administración.',
+  r:{R:0,I:2,A:0,S:1,E:1,C:3}, areas:['numeros','orden'], inv:1, entry:3, flex:2, growth:3, contact:2, digital:3, phys:1, hoursMin:2, places:['company','home'],
+  test:{hacer:'Haz un curso corto de contabilidad básica y lleva durante un mes las cuentas de un pequeño negocio conocido o de tu casa con un programa.', herramientas:'Curso gratuito y un programa de contabilidad con versión de prueba.', dinero:'0 €', primeros:'Pregunta en una asesoría de tu barrio qué perfiles buscan.', seguir:'Te satisface que todo cuadre.', cambiar:'Se te hace eterno.', disfrute:'¿Te gustó encontrar el error que descuadraba?'}},
+ {id:'clases', n:'Clases particulares y formación', tipo:'Negocio local',
+  que:'Enseñar lo que sabes: refuerzo escolar, idiomas, informática para mayores, costura, cocina, un oficio.',
+  dia:'Preparar materiales y dar clases individuales o en grupo, en persona u online.',
+  sabe:'Dominar la materia y saber explicarla. Para algunos ámbitos conviene un certificado.',
+  coste:'Bajo.',
+  tiempo:'Semanas.',
+  difi:'Ingresos ligados a tus horas y al calendario escolar.',
+  clientes:'Familias, academias, asociaciones de mayores, ayuntamientos, redes.',
+  crecer:'Grupos, cursos online grabados, academia.',
+  libertad:'Media-alta.',
+  ia:'IA para preparar ejercicios, adaptar materiales y corregir.',
+  dem:'Existe demanda constante de refuerzo y de formación práctica para adultos.',
+  r:{R:0,I:2,A:1,S:3,E:1,C:1}, areas:['ensenar','idiomas','tecnologia','escribir','cocina','moda'], inv:1, entry:4, flex:3, growth:3, contact:4, digital:2, phys:1, hoursMin:1, places:['home','field','remote'],
+  test:{hacer:'Imparte 4 clases (gratis o a precio de prueba) sobre algo que domines y pide opinión sincera.', herramientas:'Un guion de clase y algo de material.', dinero:'0 €', primeros:'Hijos de compañeros, personas mayores de tu entorno, una asociación.', seguir:'Repiten y te recomiendan.', cambiar:'Pierdes la paciencia cuando no entienden a la primera.', disfrute:'¿Te emocionó ver a alguien entender algo gracias a ti?'}},
+ {id:'reparamovil', n:'Reparación de móviles y ordenadores', tipo:'Oficio',
+  que:'Cambiar pantallas y baterías, limpiar equipos, instalar programas y dar soporte técnico a particulares.',
+  dia:'Diagnosticar, pedir piezas, reparar y explicar al cliente.',
+  sabe:'Electrónica básica, microsoldadura según el nivel y mucha práctica.',
+  coste:'Medio: herramientas y piezas.',
+  tiempo:'Meses de práctica.',
+  difi:'Precisión manual, riesgo de romper al reparar, competencia de tiendas.',
+  clientes:'Boca a boca, personas mayores, pequeñas empresas, tiendas que externalizan.',
+  crecer:'Soporte técnico mensual a empresas, venta de reacondicionados.',
+  libertad:'Alta.',
+  ia:'IA para diagnosticar fallos y buscar soluciones.',
+  dem:'Reparar en lugar de comprar nuevo gana interés.',
+  r:{R:3,I:3,A:0,S:1,E:1,C:1}, areas:['tecnologia','reparar'], inv:3, entry:3, flex:4, growth:3, contact:2, digital:2, phys:1, hoursMin:2, places:['home','local'],
+  test:{hacer:'Compra 2 o 3 móviles rotos baratos y repáralos siguiendo tutoriales durante un mes.', herramientas:'Kit de destornilladores de precisión, piezas.', dinero:'60 a 150 €', primeros:'Ayuda informática a mayores de tu entorno.', seguir:'Arreglas la mayoría y te gusta el reto.', cambiar:'La precisión te frustra.', disfrute:'¿Se te pasaron las horas abriendo un aparato?'}},
+ {id:'contenido', n:'Contenido educativo sobre lo que sabes', tipo:'Online',
+  que:'Crear vídeos o publicaciones enseñando algo práctico (un oficio, recetas, ahorro, bricolaje, la vida en una fábrica) y monetizar con el tiempo.',
+  dia:'Grabar, editar, publicar y responder comentarios.',
+  sabe:'Grabar y editar con el móvil, constancia y conocer bien tu tema.',
+  coste:'Bajo.',
+  tiempo:'Largo: suelen pasar muchos meses antes de ingresos, y muchas cuentas no llegan a monetizar.',
+  difi:'Constancia sin resultados al principio y exposición pública.',
+  clientes:'Las propias plataformas; más adelante, marcas, productos propios o formación.',
+  crecer:'Ingresos que no dependen de tus horas: productos digitales, cursos, colaboraciones.',
+  libertad:'Muy alta si funciona.',
+  ia:'IA para guiones, subtítulos, edición y miniaturas.',
+  dem:'Alta audiencia para contenido práctico, pero con muchísima competencia.',
+  r:{R:0,I:1,A:3,S:2,E:3,C:0}, areas:['redes','foto','ensenar','escribir'], inv:1, entry:4, flex:5, growth:5, contact:1, digital:3, phys:1, hoursMin:3, places:['home','remote'],
+  test:{hacer:'Publica 12 piezas en 30 días sobre un único tema. No mires seguidores: mide si disfrutas y si alguien comenta o pregunta.', herramientas:'Móvil, app de edición, IA para guiones.', dinero:'0 €', primeros:'Tu entorno, para pedir opinión sincera.', seguir:'Te llegan preguntas de desconocidos y sigues teniendo ideas.', cambiar:'Se te acaban los temas a la tercera semana.', disfrute:'¿Te apetece grabar el vídeo número 13?'}},
+ {id:'digitales', n:'Productos digitales: plantillas, guías o cursos cortos', tipo:'Online',
+  que:'Crear una vez un recurso útil (plantilla de presupuesto, planificador, guía práctica) y venderlo muchas veces.',
+  dia:'Detectar qué necesita la gente, crearlo, mejorarlo y moverlo en redes.',
+  sabe:'Saber resolver un problema concreto, herramientas de diseño sencillas y venta online.',
+  coste:'Bajo.',
+  tiempo:'Meses: crear es rápido, vender es lo difícil.',
+  difi:'Sin audiencia previa, cuesta vender. Hay mucho producto gratuito.',
+  clientes:'Redes, marketplaces de plantillas, comunidades del tema.',
+  crecer:'Catálogo, paquetes, ventas que no dependen de tu tiempo.',
+  libertad:'Muy alta.',
+  ia:'IA para redactar, maquetar y crear variaciones.',
+  dem:'Funciona cuando resuelve un problema concreto de un público concreto.',
+  r:{R:0,I:2,A:2,S:1,E:2,C:3}, areas:['diseno','orden','numeros','escribir','ensenar'], inv:1, entry:3, flex:5, growth:5, contact:1, digital:3, phys:1, hoursMin:2, places:['home','remote'],
+  test:{hacer:'Crea en una semana una plantilla que resuelva un problema que tú has tenido y ofrécela a 20 personas con ese problema.', herramientas:'Canva, Google Sheets o similar, una tienda online gratuita.', dinero:'0 a 20 €', primeros:'Grupos donde se comenta ese problema.', seguir:'Pagan desconocidos, aunque sea poco.', cambiar:'Solo la quieren gratis.', disfrute:'¿Disfrutaste más creando o vendiendo?'}},
+ {id:'ventas', n:'Comercial o asesor/a de ventas', tipo:'Empleo',
+  que:'Vender productos o servicios a empresas o particulares: energía, seguros, inmobiliaria, maquinaria industrial.',
+  dia:'Llamadas, visitas, presentaciones, seguimiento y cierre.',
+  sabe:'Técnicas de venta, conocer el producto y resistencia al rechazo. Pocas veces piden título.',
+  coste:'Bajo.',
+  tiempo:'Semanas para entrar; meses para cobrar bien.',
+  difi:'Presión por objetivos y sueldos variables. Hay ofertas abusivas solo a comisión: evita las que no tienen fijo.',
+  clientes:'Empresas que contratan comerciales, portales de empleo.',
+  crecer:'Jefatura de ventas, agencia propia.',
+  libertad:'Media-alta.',
+  ia:'IA para preparar visitas, seguimiento de clientes y propuestas.',
+  dem:'Siempre se buscan buenos comerciales; tu experiencia industrial vale para vender maquinaria o suministros técnicos.',
+  r:{R:0,I:0,A:0,S:2,E:3,C:1}, areas:['ventas','motor','energia'], inv:1, entry:4, flex:3, growth:4, contact:5, digital:2, phys:1, hoursMin:3, places:['field','company'], car:true, fab:true,
+  test:{hacer:'Vende algo real en 2 semanas: tus objetos en apps de segunda mano o un producto de un conocido, y entrevista a 2 comerciales sobre su día.', herramientas:'Apps de segunda mano, preguntas preparadas.', dinero:'0 €', primeros:'Proveedores que visitan tu fábrica: pregúntales cómo es su trabajo.', seguir:'Te carga de energía convencer y cerrar.', cambiar:'Los "no" te afectan mucho.', disfrute:'¿Te divirtió negociar?'}}
+];
+
+const EXAMPLE = {sabado:'R', energia:'media', grupo:'R', riesgo:'2', cansa:['var','orders'], orgullo:'R',
+  intereses:['reparar','tecnologia','energia','motor'], gratis:'Desmontar y arreglar cosas: la bici, la lavadora del vecino, un portátil viejo.', sueno:'Me gustaba la electricidad, pero empecé a trabajar joven.',
+  ayuda:['arreglar','tecno'], aprende:'practica', experiencia:'Llevo 8 años en una línea de montaje y conozco bien cómo se para una máquina.',
+  horas:'25a35', estabilidad:'mixto', lugar:['field','local'], camino:'mixto', tiempo:'2', dinero:'2', digital:'2', colchon:'1', extra:['car','veh','fab']};
+
+/* ================= ESTADO ================= */
+const KEY='brujula-vocacional-v1';
+let S = {view:'intro', step:0, answers:{}, tab:'perfil', identity:null, identityNote:'', example:false, chosen:null,
+  calc:{gastos:1200, cuota:300, imp:20, gastosNeg:25, margen:15, meses:6}, checks:{}, ai:null};
+try{ const raw=localStorage.getItem(KEY); if(raw){ const s=JSON.parse(raw); S=Object.assign(S,s); S.ai=null; } }catch(e){}
+function save(){ try{ const c=Object.assign({},S); delete c.ai; localStorage.setItem(KEY,JSON.stringify(c)); }catch(e){} }
+const app=document.getElementById('app');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const eur=n=>Math.round(n).toLocaleString('es-ES')+' €';
+
+/* ================= CÁLCULO DEL PERFIL ================= */
+function compute(){
+  const A=S.answers, r={R:0,I:0,A:0,S:0,E:0,C:0};
+  const t={soc:0,solo:0,risk:2,vari:0,struct:0,noPeople:0,noScreen:0,noPhys:0,auto:0,wantFlex:1,stab:2,hours:2,budget:1,dig:2,cush:0,pref:'nose',learn:null,car:0,veh:0,space:0,fp:0,fab:0,care:0};
+  const areas=new Set(), ayuda=new Set(), places=new Set();
+  for(const sec of SECTIONS) for(const q of sec.qs){
+    const val=A[q.id]; if(val==null||q.type==='text') continue;
+    const vals=Array.isArray(val)?val:[val];
+    for(const v of vals){ const o=q.o.find(x=>x[0]===v); if(!o) continue; const e=o[2];
+      for(const k in e){ if(RIA.includes(k)) r[k]+=e[k];
+        else if(k==='area') areas.add(e[k]); else if(k==='ayuda') ayuda.add(e[k]); else if(k==='place') places.add(e[k]);
+        else if(['risk','wantFlex','stab','hours','budget','dig','cush'].includes(k)) t[k]=e[k];
+        else if(typeof e[k]==='string') t[k]=e[k]; else t[k]=(t[k]||0)+e[k]; } } }
+  const allAreas=new Set(areas); for(const a of ayuda){ const d=AYUDA.find(x=>x[0]===a); d&&d[2].forEach(z=>allAreas.add(z)); }
+  return {r,t,areas,ayuda,places,allAreas};
+}
+function sortedRia(r){ return RIA.slice().sort((a,b)=>r[b]-r[a]); }
+
+function scorePath(p,P){
+  const {r,t,allAreas,places}=P, why={};
+  // personalidad
+  const dot=RIA.reduce((s,k)=>s+r[k]*p.r[k],0), nu=Math.hypot(...RIA.map(k=>r[k]))||1, np=Math.hypot(...RIA.map(k=>p.r[k]))||1;
+  const cos=dot/(nu*np); let pers=1+9*Math.min(1,Math.max(0,(cos-0.35)/0.55)); const pw=[];
+  const topP=RIA.filter(k=>p.r[k]>=2), topU=sortedRia(r).slice(0,2);
+  const shared=topU.filter(k=>topP.includes(k)); if(shared.length) pw.push('Pide tu '+shared.map(k=>RIA_INFO[k].n.toLowerCase()).join(' y tu '));
+  else pw.push('Tira de rasgos que no son los más fuertes en ti');
+  if(p.contact>=4&&t.soc<=-1){pers-=1.5;pw.push('mucho trato con gente, y tú necesitas recargar a solas');}
+  if(p.contact>=4&&t.noPeople){pers-=1.5;pw.push('hay que lidiar con clientes difíciles');}
+  if(p.contact<=2&&t.soc>=2){pers-=1;pw.push('poco contacto humano para alguien que se carga con la gente');}
+  if(p.digital>=3&&t.noScreen){pers-=2;pw.push('muchas horas de pantalla');}
+  if(p.phys>=4&&t.noPhys){pers-=2.5;pw.push('exige esfuerzo físico');}
+  if(p.contact>=4&&t.solo){pers-=1;pw.push('se trabaja de cara a la gente y tú rindes más a tu aire');}
+  if(t.auto&&p.tipo==='Empleo'){pers-=0.8;pw.push('sigue habiendo jefes y órdenes');}
+  if(t.vari&&p.flex<=2){pers-=0.5;pw.push('puede ser rutinario');}
+  why.pers=pw.join('; ')+'.';
+  // afinidad
+  const m=p.areas.filter(a=>allAreas.has(a)); const aff=[2,6,8,10][Math.min(3,m.length)];
+  why.aff=m.length?'Conecta con lo que te gusta o te piden: '+m.map(a=>AREA_N[a].toLowerCase()).join(', ')+'.':'No coincide con los temas que marcaste.';
+  // entrada
+  let entry=p.entry*2; const ew=[];
+  if(p.digital>t.dig+1){entry-=3;ew.push('pide bastante más soltura digital de la que tienes ahora');} else if(p.digital>t.dig){entry-=1;ew.push('tendrás que ganar algo de soltura digital');}
+  if(p.hoursMin>t.hours){entry-=2;ew.push('necesita más horas semanales de las que tienes libres');}
+  if(p.car&&!(t.car&&t.veh)){entry-=t.car?1:3;ew.push(t.car?'conviene tener vehículo':'necesitas carnet y vehículo');}
+  if(p.fab&&t.fab){entry+=1;ew.push('tu experiencia en producción te da ventaja');}
+  if(!ew.length) ew.push(['','Barrera alta: requiere formación reglada o experiencia','Barrera media-alta','Barrera media: formación práctica asequible','Barrera baja: se empieza con poco','Barrera muy baja'][p.entry]);
+  why.entry=ew.join('; ')+'.';
+  // inversión
+  const cap=[0,1,2,3,5][t.budget]; let inv=11-p.inv*2;
+  why.inv=['','Casi sin inversión','Inversión pequeña','Inversión moderada','Inversión considerable','Inversión alta'][p.inv]+'. '+p.coste;
+  if(p.inv>cap){inv=Math.min(inv,3);why.inv+=' Supera lo que hoy puedes invertir.';}
+  const flex=p.flex*2; why.flex=p.libertad;
+  const growth=p.growth*2; why.growth=p.crecer;
+  const cl=x=>Math.max(1,Math.min(10,Math.round(x)));
+  const sc={aff:cl(aff),pers:cl(pers),entry:cl(entry),inv:cl(inv),flex:cl(flex),growth:cl(growth)};
+  const wf=0.1+0.05*t.wantFlex;
+  let total=(sc.aff*.25+sc.pers*.25+sc.entry*.15+sc.inv*.1+sc.flex*wf+sc.growth*.15)/(.9+wf);
+  if(t.pref==='empleo'&&(p.tipo==='Empleo'||p.tipo==='Oficio')) total+=.6;
+  if(t.pref==='negocio'&&p.tipo!=='Empleo') total+=.4;
+  if(t.pref==='mixto'&&p.entry>=4&&p.inv<=2) total+=.4;
+  if(t.stab===3&&p.tipo==='Empleo') total+=.5;
+  if(t.risk===1&&p.inv>=3) total-=.5;
+  if(p.places.some(x=>places.has(x))) total+=.3;
+  if(t.care&&p.flex<=2) total-=.4;
+  return {p,sc,why,total:Math.min(10,total)};
+}
+function ranking(P){ return PATHS.map(p=>scorePath(p,P)).sort((a,b)=>b.total-a.total); }
+function finalists(rank){ const out=[],count={}; for(const x of rank){ if((count[x.p.tipo]||0)>=2) continue; out.push(x); count[x.p.tipo]=(count[x.p.tipo]||0)+1; if(out.length===3) break; } return out; }
+
+function profile(P){
+  const {r,t,areas,ayuda,places}=P, top=sortedRia(r), A=S.answers;
+  const H=[],Y=[],X=[];
+  // hechos: lo que dijo
+  const qtxt=(id)=>{ for(const s of SECTIONS){const q=s.qs.find(q=>q.id===id); if(q){const v=A[id]; const o=q.o?.find(o=>o[0]===v); return o?o[1]:null;}} };
+  if(qtxt('sabado')) H.push('En tu tiempo libre tiendes a: '+qtxt('sabado').toLowerCase()+'.');
+  if(qtxt('orgullo')) H.push('Lo que más orgullo te daría: '+qtxt('orgullo').toLowerCase()+'.');
+  if(qtxt('energia')) H.push('Con mucha gente alrededor: '+qtxt('energia').toLowerCase()+'.');
+  if(qtxt('camino')) H.push('Ahora mismo te atrae: '+qtxt('camino').toLowerCase()+'.');
+  // hipótesis
+  Y.push(RIA_INFO[top[0]].n+' muy presente: '+RIA_INFO[top[0]].d.charAt(0).toLowerCase()+RIA_INFO[top[0]].d.slice(1));
+  if(r[top[1]]>0) Y.push('Le sigue tu '+RIA_INFO[top[1]].n.toLowerCase()+': '+RIA_INFO[top[1]].d.charAt(0).toLowerCase()+RIA_INFO[top[1]].d.slice(1));
+  Y.push(t.soc>=2?'Pareces ganar energía con la gente: los trabajos de cara al público pueden sumarte.':t.soc<=-1?'Pareces necesitar tiempo a solas para recargar: conviene que el trato con clientes sea dosificado.':'Te manejas bien con gente, pero necesitas tus ratos: un equilibrio entre trato y trabajo tranquilo.');
+  Y.push(t.risk===3?'Toleras bien la incertidumbre: puedes probar cosas nuevas sin bloquearte. Ojo con lanzarte sin números.':t.risk===1?'Te da seguridad lo estable: tu cambio debería ir por pasos pequeños y con red.':'Arriesgas con cabeza: pruebas cosas si no comprometes lo básico.');
+  if(t.solo) Y.push('Rindes mejor con autonomía que en equipos muy encima.');
+  if(t.auto) Y.push('Te pesa la falta de autonomía: es una motivación fuerte para buscar algo propio o con más margen.');
+  // explorar
+  X.push('Si de verdad disfrutas haciendo estas actividades varias semanas seguidas, o solo te atrae la idea.');
+  X.push('Cuánto dinero necesitas exactamente al mes. La calculadora de la pestaña 5 te ayuda.');
+  if(!A.gratis) X.push('Qué harías aunque no te pagaran: dejaste esa pregunta en blanco y suele dar pistas valiosas.');
+  if(r[top[0]]-r[top[2]]<2) X.push('Tus rasgos están bastante repartidos: puede ser una ventaja (versatilidad) o señal de que aún no has probado lo suficiente.');
+
+  const motiv={I:'Resolver lo difícil y entender cómo funcionan las cosas',S:'Que otras personas estén mejor gracias a ti',A:'Expresarte y dejar tu sello',E:'Construir algo propio que crezca',C:'Hacer las cosas bien, con orden y sin errores',R:'Ver un resultado tangible hecho con tus manos'};
+  const mot=[]; if(A.orgullo) mot.push(motiv[A.orgullo]); if(t.auto) mot.push('Ganar autonomía sobre tu tiempo y tus decisiones'); if(t.wantFlex>=1) mot.push('Trabajar menos horas o con horarios más tuyos'); if(t.stab===3) mot.push('Tener seguridad económica mes a mes');
+  const forts=[...ayuda].map(a=>AYUDA.find(x=>x[0]===a)[4]); if(t.fab) forts.push('Disciplina, ritmo y cumplimiento de procesos, por tu experiencia en producción (hipótesis)'); if(t.fp) forts.push('Ya tienes formación profesional que puede abrirte puertas');
+  const dev=[]; const third=top[2]; dev.push('Tu '+RIA_INFO[top[1]].n.toLowerCase()+' podría crecer con práctica en '+RIA_INFO[top[1]].env+'.');
+  if(t.learn==='video') dev.push('Aprendes bien con vídeos: puedes formarte gratis en muchas habilidades.');
+  if(t.learn==='practica') dev.push('Aprendes haciendo: prioriza formaciones con prácticas reales.');
+  if(t.learn==='persona') dev.push('Aprendes al lado de alguien: busca mentores, prácticas o acompañar a profesionales.');
+  if(t.learn==='leer') dev.push('Aprendes leyendo: puedes avanzar mucho con buenos manuales y cursos escritos.');
+  if(t.dig<3) dev.push('Ganar soltura digital y con IA multiplicaría tus opciones, sea cual sea el camino.');
+  const obs=[]; if(t.hours<=1) obs.push('Muy poco tiempo libre: necesitarás pruebas pequeñas o liberar horas.');
+  if(t.cush===0) obs.push('Sin colchón de ahorro: no es momento de dejar el empleo; primero construir ahorro.');
+  else if(t.cush===1) obs.push('Colchón pequeño: cualquier cambio debe hacerse sin soltar el sueldo.');
+  if(t.budget===1) obs.push('Poco dinero para invertir: mejor caminos que se empiezan con tiempo, no con dinero.');
+  if(t.dig===1) obs.push('Nivel digital básico: limita algunos caminos online, aunque se aprende.');
+  if(t.care) obs.push('Cargas familiares: los horarios rígidos o de tarde te encajarán peor.');
+  if(t.risk===1) obs.push('El miedo a la incertidumbre puede frenarte: los experimentos pequeños ayudan a perderle miedo.');
+  if(!obs.length) obs.push('No marcaste grandes limitaciones. Aun así, conviene probar antes de cambiar.');
+  const placeN={home:'en casa',field:'en casa de clientes o en la calle',local:'en un taller o local propio',company:'en una empresa con equipo',remote:'en remoto'};
+  const env=[RIA_INFO[top[0]].env, RIA_INFO[top[1]].env].join('; '); const envPl=[...places].map(p=>placeN[p]);
+  const no=[RIA_INFO[sortedRia(r)[5]].no]; if(t.noPhys) no.push('trabajos de mucho esfuerzo físico'); if(t.noScreen) no.push('trabajos de pantalla todo el día'); if(t.noPeople) no.push('atención al público con clientes difíciles'); if(t.vari) no.push('puestos muy repetitivos'); if(t.struct) no.push('entornos sin ningún orden ni planificación');
+  return {top,H,Y,X,mot,forts,dev,obs,env,envPl,no,areas:[...areas].map(a=>AREA_N[a])};
+}
+
+/* ================= RENDER ================= */
+function render(){
+  if(S.view==='intro') return renderIntro();
+  if(S.view==='quiz') return renderQuiz();
+  return renderResults();
+}
+function compassSVG(){
+  const pts=RIA.map((k,i)=>{const a=-Math.PI/2+i*Math.PI/3;return [80+62*Math.cos(a),80+62*Math.sin(a),k,a];});
+  return `<svg class="compass" viewBox="0 0 160 160" aria-hidden="true">
+   <polygon points="${pts.map(p=>p[0]+','+p[1]).join(' ')}" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+   <polygon points="80,22 90,80 80,138 70,80" fill="var(--accent)"/><polygon points="80,22 90,80 70,80" fill="var(--sun)"/>
+   <circle cx="80" cy="80" r="5" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/>
+   ${pts.map(p=>`<text x="${80+76*Math.cos(p[3])}" y="${80+76*Math.sin(p[3])+4}" text-anchor="middle" font-size="11" font-weight="700" fill="var(--muted)" font-family="var(--font-body)">${p[2]}</text>`).join('')}
+  </svg>`;
+}
+function renderIntro(){
+  const has=Object.keys(S.answers).length>0;
+  app.innerHTML=`<div class="stack-lg">
+   <header class="hero"><div class="stack">
+     <span class="eyebrow">Orientación vocacional y emprendimiento</span>
+     <h1>Brújula Vocacional</h1>
+     <p class="lead">Un test para descubrir qué podrías hacer profesionalmente si ya no quieres seguir en el mismo trabajo toda la vida. Sin vender sueños: con pruebas pequeñas y números claros.</p>
+     <div class="row"><button class="btn" data-act="start">${has?'Seguir con mi test':'Empezar el test'}</button>
+     <button class="btn quiet" data-act="example">Ver un resultado de ejemplo</button>${has?'<button class="btn quiet" data-act="reset">Empezar de cero</button>':''}</div>
+     <p class="small muted">Unos 10 minutos · 5 bloques de preguntas · Tus respuestas se quedan en tu navegador.</p>
+   </div>${compassSVG()}</header>
+   <section class="stack"><h2>Qué vas a obtener</h2>
+   <ol class="phases">
+    <li><span class="n">1</span><div><h4>Tu perfil</h4><p class="small muted">Rasgos, motivaciones, fortalezas y obstáculos. Separando lo que dijiste de lo que es hipótesis.</p></div></li>
+    <li><span class="n">2</span><div><h4>Diez caminos</h4><p class="small muted">Empleos, oficios, negocios locales y online, puntuados según tu perfil y tu punto de partida.</p></div></li>
+    <li><span class="n">3</span><div><h4>Tres finalistas</h4><p class="small muted">Equilibrando lo que te gusta, lo que sabes hacer, la facilidad de empezar y la calidad de vida.</p></div></li>
+    <li><span class="n">4</span><div><h4>Pruebas reales</h4><p class="small muted">Experimentos de 7 a 30 días para comprobarlo sin dejar tu trabajo.</p></div></li>
+    <li><span class="n">5</span><div><h4>Plan de transición</h4><p class="small muted">Hoja de ruta a 3, 6, 12 y 24 meses y cuánto necesitas ganar antes de dar el salto.</p></div></li>
+   </ol></section>
+   <p class="note">Esto no es un diagnóstico psicológico ni una promesa de ingresos. Es una herramienta para pensar con más claridad. Las cifras que veas son las que tú introduzcas.</p>
+   <footer>El perfil se inspira en el modelo RIASEC de intereses vocacionales (John Holland), adaptado y simplificado.</footer>
+  </div>`;
+}
+function answered(q){ const v=S.answers[q.id]; if(q.type==='text') return true; if(q.opt) return true; return Array.isArray(v)?v.length>0:v!=null; }
+function renderQuiz(){
+  const sec=SECTIONS[S.step];
+  const prog=SECTIONS.map((s,i)=>`<span class="${i<S.step?'done':i===S.step?'now':''}"></span>`).join('');
+  const qs=sec.qs.map(q=>{
+    const v=S.answers[q.id];
+    if(q.type==='text') return `<div class="q"><label class="qt" for="q-${q.id}">${esc(q.t)}</label>${q.hint?`<p class="hint">${esc(q.hint)}</p>`:''}<textarea id="q-${q.id}" data-text="${q.id}" maxlength="800">${esc(v||'')}</textarea></div>`;
+    const multi=q.type==='multi', sel=multi?(v||[]):[v];
+    const btns=q.o.map(o=>`<button type="button" class="${q.id==='intereses'||q.id==='ayuda'?'chip':'opt'}" aria-pressed="${sel.includes(o[0])}" data-q="${q.id}" data-v="${o[0]}">${esc(o[1])}</button>`).join('');
+    return `<div class="q"><fieldset><legend>${esc(q.t)}</legend>${q.hint?`<p class="hint" style="margin-top:6px">${esc(q.hint)}</p>`:''}<div class="${q.id==='intereses'||q.id==='ayuda'?'chips':'opts'}" style="margin-top:12px">${btns}</div></fieldset></div>`;
+  }).join('');
+  app.innerHTML=`<div class="stack-lg">
+   <div><div class="progress">${prog}</div><div class="progress-label"><span>Bloque ${S.step+1} de ${SECTIONS.length}</span><span>${esc(sec.t)}</span></div></div>
+   <div class="stack"><h2>${esc(sec.t)}</h2><p class="muted">${esc(sec.intro)}</p></div>
+   <div class="stack">${qs}</div>
+   <p class="missing" id="missing" hidden></p>
+   <div class="navbar"><button class="btn quiet" data-act="back">${S.step===0?'Volver al inicio':'Anterior'}</button>
+   <button class="btn" data-act="next">${S.step===SECTIONS.length-1?'Ver mi resultado':'Siguiente'}</button></div>
+  </div>`;
+}
+function hexSVG(r){
+  const max=Math.max(4,...RIA.map(k=>r[k])), c=150, R=95;
+  const ang=i=>-Math.PI/2+i*Math.PI/3, pt=(i,v)=>[c+R*v*Math.cos(ang(i)),c+R*v*Math.sin(ang(i))];
+  const rings=[.25,.5,.75,1].map(f=>`<polygon points="${RIA.map((_,i)=>pt(i,f).join(',')).join(' ')}" fill="none" stroke="var(--line)" stroke-width="1"/>`).join('');
+  const axes=RIA.map((_,i)=>{const p=pt(i,1);return `<line x1="${c}" y1="${c}" x2="${p[0]}" y2="${p[1]}" stroke="var(--line)"/>`}).join('');
+  const poly=RIA.map((k,i)=>pt(i,Math.max(.06,r[k]/max)).join(',')).join(' ');
+  const labels=RIA.map((k,i)=>{const p=pt(i,1.24);return `<text x="${p[0]}" y="${p[1]+4}" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)" font-family="var(--font-body)">${(s=>s.charAt(0).toUpperCase()+s.slice(1))(RIA_INFO[k].n.replace('Lado ','').replace('de ayuda','Ayuda'))}</text>`}).join('');
+  return `<svg viewBox="0 0 300 300" role="img" aria-label="Hexágono de intereses: ${RIA.map(k=>RIA_INFO[k].n+' '+r[k]).join(', ')}">${rings}${axes}<polygon points="${poly}" fill="var(--accent)" fill-opacity=".28" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round"/>${RIA.map((k,i)=>{const p=pt(i,Math.max(.06,r[k]/max));return `<circle cx="${p[0]}" cy="${p[1]}" r="3.5" fill="var(--accent)"/>`}).join('')}${labels}</svg>`;
+}
+const li=(arr,tag,lab)=>arr.map(x=>`<li>${tag?`<span class="tag ${tag}">${lab}</span>`:''}<span>${esc(x)}</span></li>`).join('');
+
+function renderResults(){
+  const P=compute(), pr=profile(P), rank=ranking(P), top10=rank.slice(0,10), fin=finalists(rank);
+  if(!S.chosen||!fin.find(f=>f.p.id===S.chosen)) S.chosen=fin[0].p.id;
+  const locked=!S.identity;
+  const tabs=[['perfil','1 · Tu perfil'],['caminos','2 · Diez caminos'],['finalistas','3 · Finalistas'],['pruebas','4 · Pruebas reales'],['plan','5 · Plan de transición']];
+  let body='';
+  if(S.tab==='perfil') body=tabPerfil(P,pr);
+  else if(S.tab==='caminos') body=tabCaminos(top10);
+  else if(S.tab==='finalistas') body=tabFinal(fin);
+  else if(S.tab==='pruebas') body=tabPruebas(fin);
+  else body=tabPlan(fin);
+  app.innerHTML=`<div class="stack-lg">
+   ${S.example?`<div class="banner"><span>Estás viendo un <b>resultado de ejemplo</b> con respuestas inventadas.</span><button class="btn quiet" data-act="reset">Hacer mi propio test</button></div>`:''}
+   <header class="stack"><span class="eyebrow">Brújula Vocacional · Resultado</span><h1 style="font-size:clamp(1.9rem,5vw,2.6rem)">Tu mapa de caminos</h1></header>
+   <nav class="tabs" role="tablist">${tabs.map((t,i)=>`<button class="tab" role="tab" aria-selected="${S.tab===t[0]}" data-tab="${t[0]}" ${i>0&&locked?'disabled title="Responde primero si te reconoces en tu perfil"':''}>${t[1]}</button>`).join('')}</nav>
+   ${body}
+   <section class="card ai" id="ai-card" hidden></section>
+   <section class="card"><h3>Guarda tu resultado</h3><p class="small muted">Tus respuestas se guardan solo en este navegador. Copia el resumen para guardarlo donde quieras.</p>
+    <div class="row"><button class="btn ghost" data-act="copy">Copiar resumen</button><button class="btn ghost" data-act="download" id="dl-btn" hidden>Descargar informe (.md)</button><button class="btn quiet" data-act="edit">Revisar mis respuestas</button><button class="btn quiet" data-act="reset">Empezar de cero</button></div>
+    <p class="small" id="copy-msg" hidden></p><textarea class="fallback" id="fallback" hidden readonly></textarea></section>
+   <footer>Herramienta orientativa. No es un diagnóstico psicológico, no garantiza ingresos y no sustituye el consejo de una gestoría sobre impuestos y cotizaciones de tu país.</footer>
+  </div>`;
+  renderAI(); if(downloadsApi) document.getElementById('dl-btn').hidden=false;
+  save();
+}
+function tabPerfil(P,pr){
+  const idq=S.identity;
+  return `<section class="stack-lg">
+   <div class="card"><div class="hexwrap">${hexSVG(P.r)}<div class="traits">
+     <h2>Tus principales rasgos</h2>
+     ${pr.top.slice(0,2).map((k,i)=>`<div><h3>${i===0?'Más fuerte':'Le sigue'}: ${RIA_INFO[k].n.toLowerCase()}</h3><p class="muted">${RIA_INFO[k].d}</p></div>`).join('')}
+   </div></div></div>
+   <div class="legend"><span><span class="tag hecho">Dicho por ti</span>lo que respondiste</span><span><span class="tag hipo">Hipótesis</span>lo que deducimos</span><span><span class="tag explorar">Por explorar</span>lo que falta comprobar</span></div>
+   <div class="card"><h3>Cómo eres, según el test</h3><ul class="list">${li(pr.H,'hecho','Dicho por ti')}${li(pr.Y,'hipo','Hipótesis')}${li(pr.X,'explorar','Por explorar')}</ul></div>
+   <div class="grid2">
+    <div class="card"><h3>Lo que te mueve por dentro</h3><ul class="list">${li(pr.mot.length?pr.mot:['Aún no hay datos suficientes'],'hipo','Hipótesis')}</ul></div>
+    <div class="card"><h3>Lo que te interesa</h3><p>${pr.areas.length?esc(pr.areas.join(' · ')):'<span class="muted">No marcaste intereses.</span>'}</p>${S.answers.gratis?`<p class="muted small">Lo harías gratis: «${esc(S.answers.gratis)}»</p>`:''}${S.answers.sueno?`<p class="muted small">Un sueño aparcado: «${esc(S.answers.sueno)}»</p>`:''}</div>
+    <div class="card"><h3>Fortalezas que ya tienes</h3><ul class="list">${li(pr.forts.length?pr.forts:['Marca para qué te piden ayuda y aparecerán aquí'],'','')}</ul>${S.answers.experiencia?`<p class="muted small">Tu experiencia: «${esc(S.answers.experiencia)}». Vivencias así pueden servir a otras personas que pasan por lo mismo.</p>`:''}</div>
+    <div class="card"><h3>Talentos por desarrollar</h3><ul class="list">${li(pr.dev,'','')}</ul></div>
+    <div class="card"><h3>Tus principales obstáculos</h3><ul class="list">${li(pr.obs,'','')}</ul></div>
+    <div class="card"><h3>Dónde podrías sentirte bien</h3><p>${esc(pr.env)}.</p>${pr.envPl.length?`<p class="muted small">Prefieres trabajar ${esc(pr.envPl.join(' o '))}.</p>`:''}<h4 style="margin-top:6px">Lo que probablemente no encaje contigo</h4><p class="muted">${esc(pr.no.join('; '))}.</p></div>
+   </div>
+   <div class="card" style="border-color:var(--accent)"><h3>¿Te reconoces en este perfil?</h3><p class="muted small">Antes de ver caminos, confirma si el retrato se parece a ti. Si no, revisa tus respuestas o cuéntanos qué falla.</p>
+    <div class="seg">${[['si','Sí, bastante'],['parte','En parte'],['no','No mucho']].map(o=>`<button class="opt" style="min-width:150px" aria-pressed="${idq===o[0]}" data-identity="${o[0]}">${o[1]}</button>`).join('')}</div>
+    ${idq&&idq!=='si'?`<label class="small" for="idnote" style="font-weight:600">¿Qué no encaja?</label><textarea id="idnote" data-idnote maxlength="600" placeholder="Por ejemplo: no soy tan sociable como dice, o me falta algo de lo que me gusta.">${esc(S.identityNote)}</textarea><div class="row"><button class="btn quiet" data-act="edit">Revisar mis respuestas</button></div>`:''}
+    ${idq?`<div class="row"><button class="btn" data-tab="caminos">Ver mis diez caminos</button></div>`:''}
+   </div>
+  </section>`;
+}
+const CRIT=[['aff','Afinidad con tus intereses'],['pers','Compatibilidad con tu forma de ser'],['entry','Facilidad de entrada'],['inv','Inversión necesaria (10 = casi nada)'],['flex','Flexibilidad horaria'],['growth','Posibilidad de crecimiento']];
+function bars(x){ return `<div class="bars">${CRIT.map(c=>`<div class="bar"><span>${c[1]}</span><div class="track"><div class="fill" style="width:${x.sc[c[0]]*10}%"></div></div><b>${x.sc[c[0]]}</b><span class="why">${esc(x.why[c[0]])}</span></div>`).join('')}
+  <div class="bar"><span>Demanda y potencial económico</span><div class="track"></div><b>?</b><span class="why">Sin puntuar a propósito: dependen de tu zona y del momento, y no queremos inventar cifras. Orientación general: ${esc(x.p.dem)} Lo comprobarás con la prueba real.</span></div></div>`; }
+function pathCard(x,i,open){
+  const p=x.p;
+  return `<details class="path" ${open?'open':''}><summary><span class="rank">${i+1}</span><span class="ptitle"><h3>${esc(p.n)}</h3><span class="pill ${p.tipo==='Con IA'?'ia':''}">${esc(p.tipo)}</span></span><span class="score">${x.total.toFixed(1)}<br><small>de 10</small></span></summary>
+  <div class="pbody">
+   <div class="facts">
+    <div class="fact"><h4>En qué consiste</h4><p>${esc(p.que)}</p></div>
+    <div class="fact"><h4>Por qué podría encajar contigo</h4><p>${esc(x.why.pers)} ${esc(x.why.aff)}</p></div>
+    <div class="fact"><h4>Un día normal</h4><p>${esc(p.dia)}</p></div>
+    <div class="fact"><h4>Qué necesitas saber</h4><p>${esc(p.sabe)}</p></div>
+    <div class="fact"><h4>Cuánto cuesta empezar</h4><p>${esc(p.coste)}</p></div>
+    <div class="fact"><h4>Primeros ingresos</h4><p>${esc(p.tiempo)}</p></div>
+    <div class="fact"><h4>Dificultades</h4><p>${esc(p.difi)}</p></div>
+    <div class="fact"><h4>Cómo conseguir clientes o trabajo</h4><p>${esc(p.clientes)}</p></div>
+    <div class="fact"><h4>Cómo crecer</h4><p>${esc(p.crecer)}</p></div>
+    <div class="fact"><h4>Libertad personal</h4><p>${esc(p.libertad)}</p></div>
+    <div class="fact"><h4>Cómo te ayuda la IA</h4><p>${esc(p.ia)}</p></div>
+   </div>
+   <h4>Puntuación y por qué</h4>${bars(x)}
+  </div></details>`;
+}
+function tabCaminos(top10){
+  return `<section class="stack"><h2>Diez caminos que encajan contigo</h2>
+   <p class="muted">Ordenados por encaje global. Ábrelos para ver el detalle y el porqué de cada nota. Recuerda: <b>facturación</b> es lo que cobras, <b>ingresos</b> lo que entra después de devoluciones y <b>beneficio neto</b> lo que te queda tras gastos, impuestos y cotizaciones. Ninguna opción garantiza ingresos.</p>
+   ${top10.map((x,i)=>pathCard(x,i,i===0)).join('')}
+   <div class="row"><button class="btn" data-tab="finalistas">Ver mis tres finalistas</button></div></section>`;
+}
+function firstToTry(fin){ return fin.slice().sort((a,b)=>(b.sc.entry+b.sc.inv+b.sc.aff)-(a.sc.entry+a.sc.inv+a.sc.aff))[0]; }
+function tabFinal(fin){
+  const f=firstToTry(fin), rows=[['Pasión (afinidad)','aff'],['Encaje con tu forma de ser','pers'],['Facilidad para empezar','entry'],['Inversión (10 = casi nada)','inv'],['Potencial de crecimiento','growth'],['Calidad de vida y flexibilidad','flex']];
+  return `<section class="stack-lg"><div class="stack"><h2>Tus tres finalistas</h2><p class="muted">No hemos elegido solo lo que más dinero podría dar. Buscamos equilibrio entre lo que te gusta, lo que se te da bien, la demanda real, la rentabilidad y tu calidad de vida. Hemos evitado que las tres sean del mismo tipo.</p></div>
+   <div class="tablewrap"><table><thead><tr><th>Criterio</th>${fin.map(x=>`<th>${esc(x.p.n)}</th>`).join('')}</tr></thead><tbody>
+    ${rows.map(r=>`<tr><td>${r[0]}</td>${fin.map(x=>`<td class="num">${x.sc[r[1]]}</td>`).join('')}</tr>`).join('')}
+    <tr><td>Demanda real</td>${fin.map(x=>`<td class="small">Por validar. ${esc(x.p.dem)}</td>`).join('')}</tr>
+    <tr><td><b>Encaje global</b></td>${fin.map(x=>`<td class="num">${x.total.toFixed(1)}</td>`).join('')}</tr>
+   </tbody></table></div>
+   <div class="card" style="border-color:var(--accent)"><span class="eyebrow">Por dónde empezaríamos</span><h3>${esc(f.p.n)}</h3>
+    <p>Es la que puedes probar antes y con menos riesgo: facilidad de entrada ${f.sc.entry}/10, inversión ${f.sc.inv}/10 y afinidad ${f.sc.aff}/10. Probar primero lo barato y rápido te da información real sin jugarte nada. Si no funciona, pasas a la siguiente.</p></div>
+   <p class="note warn">Ninguna de estas tres opciones está validada todavía. El test solo dice que encajan sobre el papel. Sabrás si son viables cuando consigas clientes o experiencia real.</p>
+   <div class="row"><button class="btn" data-tab="pruebas">Diseñar las pruebas</button></div></section>`;
+}
+function tabPruebas(fin){
+  return `<section class="stack-lg"><div class="stack"><h2>Pruebas en el mundo real</h2><p class="muted">Experimentos de 7 a 30 días para hacer sin dejar tu trabajo. Sirven para comprobar dos cosas: si alguien paga por ello y si de verdad disfrutas haciéndolo, no solo imaginándolo.</p></div>
+   ${fin.map(x=>{const t=x.p.test; return `<div class="card"><span class="pill ${x.p.tipo==='Con IA'?'ia':''}">${esc(x.p.tipo)} · 14 a 30 días</span><h3>${esc(x.p.n)}</h3>
+    <div class="facts">
+     <div class="fact"><h4>Qué hacer</h4><p>${esc(t.hacer)}</p></div>
+     <div class="fact"><h4>Herramientas</h4><p>${esc(t.herramientas)}</p></div>
+     <div class="fact"><h4>Inversión orientativa</h4><p>${esc(t.dinero)}</p></div>
+     <div class="fact"><h4>Primeros clientes o experiencias</h4><p>${esc(t.primeros)}</p></div>
+     <div class="fact"><h4>Señal para seguir</h4><p>${esc(t.seguir)}</p></div>
+     <div class="fact"><h4>Señal para cambiar o descartar</h4><p>${esc(t.cambiar)}</p></div>
+    </div>
+    <p class="note ok"><b>Pregunta de disfrute:</b> ${esc(t.disfrute)}</p></div>`;}).join('')}
+   <div class="card"><h3>Diario de la prueba</h3><p class="muted small">Al acabar cada sesión, contesta en una nota del móvil. Al final del mes, léelo entero: tus notas dirán más que tu ilusión inicial.</p>
+    <ul class="list">${li(['Del 1 al 5, ¿con cuánta energía acabé?','¿Se me pasó el tiempo rápido o miré el reloj?','¿Lo repetiría mañana aunque no cobrara mucho?','¿Qué parte me gustó más y cuál evitaría?','¿Alguien pagó o pidió repetir? ¿Cuánto gané y cuántas horas puse?'],'','')}</ul></div>
+   <div class="row"><button class="btn" data-tab="plan">Ver el plan de transición</button></div></section>`;
+}
+function calcVals(){ const c=S.calc, N=c.gastos*(1+c.margen/100), B=N/(1-c.imp/100)+ +c.cuota, F=B/(1-c.gastosNeg/100); return {N,B,F,col:c.gastos*c.meses}; }
+function tabPlan(fin){
+  const x=fin.find(f=>f.p.id===S.chosen)||fin[0], p=x.p, c=S.calc, v=calcVals();
+  const steps=[
+   ['3','Validar',[`Haz la prueba: ${p.test.hacer}`,`Formación mínima: ${p.sabe}`,'Consigue tus primeros 3 a 5 clientes o experiencias reales.',`Objetivo económico: recuperar lo invertido en la prueba (${p.test.dinero}).`,'Indicadores: clientes conseguidos, cuántos repiten y tu nota de disfrute.']],
+   ['6','Ordenar',['Revisa precios con tus horas reales: que cada hora te deje un beneficio digno.','Infórmate en una gestoría sobre cuándo y cómo darte de alta, permisos y seguros.',`Captación: ${p.clientes}`,`Herramientas y automatizaciones: ${p.ia}`,`Objetivo: beneficio neto de unos ${eur(v.N*.25)} al mes (25 % de lo que necesitas).`]],
+   ['12','Consolidar',['Clientes que repiten y recomendaciones constantes.','Valora reducir jornada o pedir una excedencia en lugar de dejar el empleo de golpe.','Empieza a construir el colchón aparte de tu ahorro normal.',`Objetivo: beneficio neto de unos ${eur(v.N*.5)} al mes (50 %).`,`Riesgo a vigilar: ${p.difi}`]],
+   ['24','Dar el salto (o no)',[`Crecimiento: ${p.crecer}`,'Procesos y herramientas que no dependan solo de tus horas.',`Objetivo: ${eur(v.N)} de beneficio neto al mes durante al menos 6 meses seguidos.`,'Solo entonces plantéate dejar la fábrica, si se cumplen las condiciones de abajo.']]
+  ];
+  const conds=[['colchon',`Tienes ahorrado un colchón de ${c.meses} meses de gastos (${eur(v.col)}).`],['seis',`Llevas al menos 6 meses seguidos con un beneficio neto de ${eur(v.N)} o más.`],['clientes','Ningún cliente supone casi todo tu ingreso.'],['disfrute','Después de meses haciéndolo, sigues disfrutándolo.'],['gestoria','Una gestoría te ha confirmado impuestos, cotizaciones y obligaciones.'],['plan','Tienes un plan B si los ingresos bajan (volver a un empleo, reducir gastos).']];
+  const inp=(k,l,h)=>`<label for="c-${k}">${l}<input type="number" min="0" step="any" id="c-${k}" data-calc="${k}" value="${c[k]}"><span>${h}</span></label>`;
+  return `<section class="stack-lg"><div class="stack"><h2>Plan de transición</h2><p class="muted">Elige con qué finalista quieres ver el plan. Úsalo solo cuando la prueba haya salido bien.</p>
+   <div class="seg">${fin.map(f=>`<button class="opt" style="min-width:200px" aria-pressed="${f.p.id===p.id}" data-choose="${f.p.id}">${esc(f.p.n)}</button>`).join('')}</div></div>
+   <div class="timeline">${steps.map(s=>`<div class="card"><h3><span>${s[0]} meses</span> · ${s[1]}</h3><ul class="list small">${li(s[2],'','')}</ul></div>`).join('')}</div>
+   <div class="card"><h3>¿Cuánto necesitas ganar para vivir de esto?</h3>
+    <p class="muted small">Los valores son de ejemplo: cámbialos por los tuyos. Impuestos y cotizaciones varían según el país y tu situación; pregúntalo en una gestoría.</p>
+    <div class="calc">${inp('gastos','Gastos personales al mes (€)','Vivienda, comida, transporte, etc.')}${inp('cuota','Cotización o cuota mensual (€)','Lo que pagarías como autónomo/a en tu país')}${inp('imp','Impuestos sobre el beneficio (%)','Tipo medio estimado')}${inp('gastosNeg','Gastos del negocio (% de lo que cobras)','Material, herramientas, desplazamientos, comisiones')}${inp('margen','Margen de seguridad (%)','Para imprevistos y meses flojos')}${inp('meses','Meses de colchón','Antes de dejar el empleo')}</div>
+    <div class="out" id="calc-out">${calcOut(v)}</div>
+    <p class="small muted">Cálculo: beneficio neto = gastos × (1 + margen). Beneficio antes de impuestos y cuota = neto ÷ (1 − impuestos) + cuota. Facturación = ese beneficio ÷ (1 − gastos del negocio).</p></div>
+   <div class="card"><h3>Condiciones antes de dejar tu trabajo</h3><p class="muted small">No dejes el empleo hasta poder marcar todas.</p>
+    <div class="stack">${conds.map(k=>`<label class="check"><input type="checkbox" data-check="${k[0]}" ${S.checks[k[0]]?'checked':''}><span>${esc(k[1])}</span></label>`).join('')}</div>
+    <p class="note ${conds.every(k=>S.checks[k[0]])?'ok':'warn'}" id="cond-note">${conds.every(k=>S.checks[k[0]])?'Cumples todas las condiciones. Aun así, decide con calma y con tu entorno.':'Todavía no es momento de dejar el empleo. Sigue construyendo mientras cobras tu sueldo.'}</p></div>
+  </section>`;
+}
+function calcOut(v){ return `<div><span class="small muted">Beneficio neto que necesitas</span><b>${eur(v.N)}</b><span class="small muted">al mes, en tu bolsillo</span></div><div><span class="small muted">Beneficio antes de impuestos y cuota</span><b>${eur(v.B)}</b></div><div><span class="small muted">Facturación aproximada</span><b>${eur(v.F)}</b><span class="small muted">lo que tendrías que cobrar al mes</span></div><div><span class="small muted">Colchón recomendado</span><b>${eur(v.col)}</b></div>`; }
+
+/* ================= IA (opcional, usa el Claude de quien visita) ================= */
+let sampleApi=null, downloadsApi=null, aiCtl=null;
+function aiPayload(){
+  const P=compute(), pr=profile(P), rank=ranking(P).slice(0,10);
+  return {rasgos:Object.fromEntries(RIA.map(k=>[RIA_INFO[k].n,P.r[k]])), hechos:pr.H, hipotesis:pr.Y, motivaciones:pr.mot, intereses:pr.areas, fortalezas:pr.forts, obstaculos:pr.obs,
+    textos:{lo_haria_gratis:S.answers.gratis||'',sueno_aparcado:S.answers.sueno||'',experiencia:S.answers.experiencia||''},
+    se_reconoce:S.identity, que_no_encaja:S.identityNote||'', caminos_del_test:rank.map(x=>x.p.n)};
+}
+function aiPrompt(rounds){
+  let s=`Actúas como un equipo de orientación: psicología vocacional, cambio de carrera, emprendimiento, mercado laboral, IA y finanzas personales. Escribe en español de España, tuteando, con frases claras, cercanas y sin tecnicismos. No uses lenguaje con género para referirte a la persona si no lo sabes.
+Reglas: no es un diagnóstico psicológico; no inventes cifras, porcentajes ni datos de mercado; no prometas ingresos; no confundas una afición con un negocio rentable; cuestiona con respeto; no empujes a convertir todas las pasiones en trabajo; prioriza una transición segura sin dejar el empleo.
+Resultado del test de la persona (JSON):
+${JSON.stringify(aiPayload())}
+`;
+  rounds.forEach((r,i)=>{ s+=`\nRonda ${i+1}: le hiciste estas preguntas y respondió:\n`+r.qa.map(q=>`- ${q.q}\n  Respuesta: ${q.a||'(sin respuesta)'}`).join('\n')+'\n'; });
+  s+=`
+Devuelve SOLO un JSON con esta forma:
+{"lectura":"2 o 3 párrafos breves con una lectura personal y honesta del perfil","hechos":["lo que la persona ha dicho"],"hipotesis":["lo que deduces"],"explorar":["lo que falta comprobar"],"caminos_extra":[{"nombre":"","porque":"","como_probarlo":"una prueba de 7 a 30 días sin dejar el empleo"}],"preguntas":["","",""]}
+"caminos_extra": 2 o 3 caminos que probablemente no se ha planteado y que no estén en la lista caminos_del_test. "preguntas": exactamente 3 preguntas abiertas y concretas para afinar el perfil, adaptadas a lo que todavía no sabes${rounds.length?' y sin repetir las anteriores':''}.`;
+  return s;
+}
+function renderAI(){
+  const el=document.getElementById('ai-card'); if(!el) return;
+  if(!sampleApi){ el.hidden=true; return; } el.hidden=false;
+  const st=S.ai||{status:'idle',rounds:[],res:null};
+  let h=`<span class="eyebrow">Opcional · Con Claude</span><h3>Profundiza con una entrevista</h3>`;
+  if(st.status==='idle'&&!st.res) h+=`<p class="muted">Claude lee tu resultado, te da una lectura personal, propone caminos que quizá no te habías planteado y te hace preguntas para afinar el perfil. Usa tu propia cuenta de Claude y te pedirá permiso la primera vez. Solo se envían tus respuestas del test.</p><div class="row"><button class="btn" data-act="ai">Empezar la entrevista</button></div>`;
+  if(st.status==='loading') h+=`<div class="thinking"><span class="dot"></span><span>Pensando… puede tardar hasta un minuto.</span></div><div class="row"><button class="btn quiet" data-act="ai-stop">Detener</button></div>`;
+  if(st.error) h+=`<p class="note warn">${esc(st.error)}</p>${st.status==='idle'?`<div class="row"><button class="btn ghost" data-act="ai">Intentar de nuevo</button></div>`:''}`;
+  if(st.res&&st.status!=='loading'){ const r=st.res, arr=a=>Array.isArray(a)?a:[];
+    h+=`<div class="stack">${String(r.lectura||'').split(/\n+/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('')}</div>
+    <ul class="list">${li(arr(r.hechos).map(String),'hecho','Dicho por ti')}${li(arr(r.hipotesis).map(String),'hipo','Hipótesis')}${li(arr(r.explorar).map(String),'explorar','Por explorar')}</ul>
+    ${arr(r.caminos_extra).length?`<h4>Caminos que quizá no te habías planteado</h4><div class="grid3">${arr(r.caminos_extra).map(c=>`<div class="card" style="background:var(--bg)"><h4>${esc(c.nombre)}</h4><p class="small">${esc(c.porque)}</p><p class="small muted"><b>Cómo probarlo:</b> ${esc(c.como_probarlo)}</p></div>`).join('')}</div>`:''}
+    ${arr(r.preguntas).length?`<h4>Preguntas para afinar tu perfil</h4><div class="stack">${arr(r.preguntas).slice(0,3).map((q,i)=>`<div class="stack" style="gap:6px"><label for="aiq-${i}" style="font-weight:600">${esc(q)}</label><textarea id="aiq-${i}" data-aiq="${i}" maxlength="800"></textarea></div>`).join('')}</div><div class="row"><button class="btn" data-act="ai-refine">Afinar con mis respuestas</button></div>`:''}
+    <p class="small muted">Ronda ${st.rounds.length+1}. Esta lectura la ha generado una IA: tómala como una conversación, no como una verdad.</p>`; }
+  el.innerHTML=h;
+}
+const AI_ERR={not_granted:'No has dado permiso para usar Claude. El resto del test funciona igual.',rate_limited:'Demasiadas peticiones seguidas. Espera un minuto y vuelve a intentarlo.',invalid_json:'La respuesta llegó incompleta. Vuelve a intentarlo.',cancelled:'Has detenido la entrevista.'};
+async function runAI(refine){
+  if(!sampleApi) return; const prev=S.ai||{rounds:[],res:null};
+  const rounds=prev.rounds.slice();
+  if(refine&&prev.res){ const qs=(prev.res.preguntas||[]).slice(0,3); rounds.push({qa:qs.map((q,i)=>({q:String(q),a:(document.getElementById('aiq-'+i)||{}).value||''}))}); }
+  S.ai={status:'loading',rounds:prev.rounds,res:prev.res}; renderAI();
+  aiCtl=new AbortController();
+  try{ const res=await sampleApi.json(aiPrompt(rounds),{signal:aiCtl.signal,cache:false});
+    if(!res||typeof res!=='object') throw {code:'invalid_json'};
+    S.ai={status:'idle',rounds,res};
+  }catch(e){ S.ai={status:'idle',rounds:prev.rounds,res:prev.res,error:AI_ERR[e&&e.code]||'No se pudo completar. Vuelve a intentarlo más tarde.'}; if(e&&e.code==='not_granted') sampleApi=null; }
+  renderAI();
+}
+
+/* ================= RESUMEN EXPORTABLE ================= */
+function summaryText(){
+  const P=compute(), pr=profile(P), rank=ranking(P), fin=finalists(rank), v=calcVals();
+  let s=`# Brújula Vocacional · Mi resultado\n\n## Perfil\n`+pr.top.slice(0,2).map(k=>`- ${RIA_INFO[k].n}: ${RIA_INFO[k].d}`).join('\n')+
+   `\n\n### Dicho por mí\n${pr.H.map(x=>'- '+x).join('\n')}\n\n### Hipótesis\n${pr.Y.map(x=>'- '+x).join('\n')}\n\n### Por explorar\n${pr.X.map(x=>'- '+x).join('\n')}\n\n### Motivaciones\n${pr.mot.map(x=>'- '+x).join('\n')}\n\n### Fortalezas\n${pr.forts.map(x=>'- '+x).join('\n')}\n\n### Obstáculos\n${pr.obs.map(x=>'- '+x).join('\n')}\n\n## Diez caminos\n`+
+   rank.slice(0,10).map((x,i)=>`${i+1}. ${x.p.n} (${x.p.tipo}) · ${x.total.toFixed(1)}/10`).join('\n')+
+   `\n\n## Finalistas y pruebas\n`+fin.map(x=>`### ${x.p.n}\n- Qué hacer: ${x.p.test.hacer}\n- Inversión: ${x.p.test.dinero}\n- Seguir si: ${x.p.test.seguir}\n- Cambiar si: ${x.p.test.cambiar}`).join('\n\n')+
+   `\n\n## Números\n- Beneficio neto necesario: ${eur(v.N)}/mes\n- Facturación aproximada: ${eur(v.F)}/mes\n- Colchón: ${eur(v.col)}\n`;
+  if(S.ai&&S.ai.res&&S.ai.res.lectura) s+=`\n## Lectura con Claude\n${S.ai.res.lectura}\n`;
+  return s;
+}
+
+/* ================= EVENTOS ================= */
+app.addEventListener('click',async e=>{
+  const b=e.target.closest('button'); if(!b||b.disabled) return;
+  if(b.dataset.q){ const q=SECTIONS[S.step].qs.find(q=>q.id===b.dataset.q), v=b.dataset.v;
+    if(q.type==='multi'){ let arr=(S.answers[q.id]||[]).slice(); if(arr.includes(v)) arr=arr.filter(x=>x!==v); else { if(arr.length>=q.max) arr.shift(); arr.push(v);} S.answers[q.id]=arr;
+      b.parentElement.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',arr.includes(x.dataset.v))); }
+    else { S.answers[q.id]=v; b.parentElement.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.v===v)); }
+    save(); return; }
+  if(b.dataset.tab){ S.tab=b.dataset.tab; render(); app.scrollIntoView({block:'start'}); return; }
+  if(b.dataset.identity){ S.identity=b.dataset.identity; render(); return; }
+  if(b.dataset.choose){ S.chosen=b.dataset.choose; render(); return; }
+  const a=b.dataset.act;
+  if(a==='start'){ if(S.example){S.answers={};S.example=false;} S.view='quiz'; render(); }
+  if(a==='example'){ S.answers=JSON.parse(JSON.stringify(EXAMPLE)); S.example=true; S.identity='si'; S.view='results'; S.tab='perfil'; render(); }
+  if(a==='reset'){ S.answers={}; S.step=0; S.identity=null; S.identityNote=''; S.example=false; S.checks={}; S.ai=null; S.tab='perfil'; S.view='intro'; save(); render(); window.scrollTo(0,0); }
+  if(a==='edit'){ S.view='quiz'; S.step=0; S.example=false; render(); window.scrollTo(0,0); }
+  if(a==='back'){ if(S.step===0) S.view='intro'; else S.step--; render(); window.scrollTo(0,0); }
+  if(a==='next'){ const sec=SECTIONS[S.step], miss=sec.qs.filter(q=>!answered(q));
+    if(miss.length){ const m=document.getElementById('missing'); m.hidden=false; m.textContent='Te falta responder: '+miss.map(q=>'«'+q.t+'»').join(', '); return; }
+    if(S.step<SECTIONS.length-1) S.step++; else { S.view='results'; S.tab='perfil'; S.identity=null; }
+    render(); window.scrollTo(0,0); }
+  if(a==='ai') runAI(false);
+  if(a==='ai-refine') runAI(true);
+  if(a==='ai-stop') aiCtl&&aiCtl.abort();
+  if(a==='copy'){ const txt=summaryText(), msg=document.getElementById('copy-msg'), fb=document.getElementById('fallback');
+    try{ await navigator.clipboard.writeText(txt); msg.hidden=false; msg.textContent='Resumen copiado.'; fb.hidden=true; }
+    catch(err){ fb.hidden=false; fb.value=txt; fb.focus(); fb.select(); msg.hidden=false; msg.textContent='Selecciona el texto y cópialo.'; } }
+  if(a==='download'&&downloadsApi){ try{ await downloadsApi.save({filename:'brujula-vocacional.md',data:new Blob([summaryText()],{type:'text/markdown'})}); }catch(err){} }
+});
+app.addEventListener('input',e=>{
+  const t=e.target;
+  if(t.dataset.text){ S.answers[t.dataset.text]=t.value; save(); }
+  if(t.dataset.idnote!==undefined){ S.identityNote=t.value; save(); }
+  if(t.dataset.calc){ const n=parseFloat(t.value); if(!isNaN(n)){ const lim={imp:95,gastosNeg:95}; S.calc[t.dataset.calc]=lim[t.dataset.calc]?Math.min(n,lim[t.dataset.calc]):n; save(); const o=document.getElementById('calc-out'); if(o) o.innerHTML=calcOut(calcVals()); } }
+});
+app.addEventListener('change',e=>{
+  const t=e.target; if(t.dataset.check){ S.checks[t.dataset.check]=t.checked; save(); render(); }
+});
+
+render();
+(async()=>{ if(!window.claude||!window.claude.use) return;
+  try{ sampleApi=await window.claude.use('sample'); }catch(e){ sampleApi=null; }
+  try{ downloadsApi=await window.claude.use('downloads'); }catch(e){ downloadsApi=null; }
+  if(S.view==='results'){ renderAI(); const d=document.getElementById('dl-btn'); if(d&&downloadsApi) d.hidden=false; }
+})();
+</script>
