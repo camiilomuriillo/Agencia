@@ -1,0 +1,13 @@
+{
+  "nota": "Tramos en orden. ini/dur en segundos. El tramo 05 usa el fotograma fijo de forma PROVISIONAL hasta tener el clip de la demostración.",
+  "tramos": [
+    {"clip": "01_gancho.mp4",     "ini": 0.0, "dur": 4.0},
+    {"clip": "02_historia.mp4",   "ini": 0.0, "dur": 5.0},
+    {"clip": "03_problema.mp4",   "ini": 0.0, "dur": 5.0},
+    {"clip": "04a_estuche.mp4",   "ini": 0.0, "dur": 4.0},
+    {"clip": "04b_montaje_L.mp4", "ini": 0.0, "dur": 3.7},
+    {"imagen": "fotogramas/05_demo.jpg", "dur": 3.0},
+    {"clip": "06_regalo.mp4",     "ini": 0.0, "dur": 6.0},
+    {"imagen": "fotogramas/07_tarjeta_final.jpg", "dur": 2.0}
+  ]
+}

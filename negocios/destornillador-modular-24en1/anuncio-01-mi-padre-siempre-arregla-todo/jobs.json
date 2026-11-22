@@ -1,0 +1,15 @@
+{
+  "modelos": {"imagen": "gpt_image_2_6 (high, 2k)", "video": "seedance_2_5 (omni_reference, 1080p, audio nativo)"},
+  "referencias_producto_higgsfield": ["76af1bd7-9d30-400a-b979-0254557c7e39","2003a6b7-e8ba-41e8-9d1b-b55c40a0b29f","0cc5043d-654e-492c-a04a-790c5985c71c","cc23c139-189e-4ad5-9996-571843e08b19","8b3688b8-26c7-44a3-8320-584205fede77","7e2a6bb3-c217-41ea-b7f6-2c1e9c118e6f","e7a402ca-5714-401b-bebf-2dff3144ad8a"],
+  "personajes": "6031b870-b08b-4c5e-9620-ec3d648491f3",
+  "fotogramas": {"01":"ddda5841-4375-408c-8880-0a5f2be30989","02":"a1a148e0-1852-4466-b0ed-9197feb146e3","03":"85b5b046-1b75-4e40-9d21-20f009f3bea3","04a":"51769186-c4dc-4bad-939e-0caf662d6459","04b":"7e9b3507-edca-4588-b554-792e7629c148","05":"8eaa025a-2309-46de-817a-4786e4e69c53","06":"64df1228-34f1-4a4a-8be9-4079507e2ca6","07":"652a6328-fee8-4dbd-bad5-efa368aea1f1"},
+  "clips": {
+    "01_gancho.mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261122_041529_72c02d9f-4e8e-4f05-b70b-0cead5b46ab9.mp4",
+    "02_historia.mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261122_041529_676a9e61-b747-4ac5-aad4-9133d2751eca.mp4",
+    "03_problema.mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261122_041529_0537d54a-a9cc-4389-a560-f791827e0561.mp4",
+    "04a_estuche.mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261122_041529_3f262a43-656a-40f1-81dd-818ff952c803.mp4",
+    "04b_montaje_L.mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261122_041529_d60a54aa-42ec-4660-b93c-27f70bba32f8.mp4",
+    "05_demo.mp4": "PENDIENTE — el job 0801d4be-f053-459b-ad94-a5efd8a00d3a fue rechazado por el filtro de contenido sensible (falso positivo)",
+    "06_regalo.mp4": "https://d8j0ntlcm91z4.cloudfront.net/user_3KkE00a8o8AFC4Q4dvloxwYM5k3/hf_20261122_041529_36f395e6-7b35-4327-b605-d45f744cb4ba.mp4"
+  }
+}
